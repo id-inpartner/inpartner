@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/components/*", "./src/components/*/index"],
+      "@components": ["./src/components/index"],
+      "@containers/*": ["./src/containers/*", "./src/containers/*/index"],
+      "@containers": ["./src/containers/index"],
+      "@sass/*": ["./src/sass/*", "./src/sass/*/index"],
+      "@sass": ["./src/sass/index"],
+      "@fonts/*": ["./src/fonts/*", "./src/fonts/*/index"],
+      "@fonts": ["./src/fonts/index"],
+      "@images/*": ["./src/images/*", "./src/images/*/index"],
+      "@images": ["./src/images/index"],
+      "@storage/*": ["./src/storage/*", "./src/storage/*/index"],
+      "@storage": ["./src/storage/index"]
+    }
+  }
+}

@@ -1,0 +1,133 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      # - master
+      - development
+  # pull_request:
+  #   branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment: development
+    strategy:
+      matrix:
+        node-version: [16.17.1]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        shell: bash
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          base: ${{ github.ref_name }}
+          filters: |
+            dependency:
+              - 'package.json'
+              - 'package-lock.json'
+      - name: NPM Cache
+        id: npm-cache
+        uses: actions/cache@v3
+        with:
+          path:  ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Build Cache
+        id: build-cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-
+          restore-keys: |
+            ${{ runner.os }}-nextjs-
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - name: install dependencies
+        run: npm ci
+      - name: build
+        run: npm run build --if-present
+      - name: commit build
+        run: |
+          git config --global user.name 'Inpartner'
+          git config --global user.email 'inpartner@users.noreply.github.com'
+          git add -f .next
+          git rm -r --cached .next/cache
+          git commit -m "Automated Build"
+          git push
+      # - name: Archive production artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: build result
+      #     path: |
+      #       .next
+      # - name: Sync build directory to server
+      #   uses: up9cloud/action-rsync@master
+      #   env:
+      #     HOST: ${{ secrets.SSH_HOST }}
+      #     PORT: ${{ secrets.SSH_PORT }}
+      #     USER: ${{ secrets.SSH_USERNAME }}
+      #     KEY: ${{ secrets.SSH_KEY }}
+      #     SOURCE: ${{ github.workspace }}/.next/
+      #     TARGET: ${{ secrets.APP_DIR }}/.next/
+      #     ARGS: -avz --delete
+      - name: pull code on server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
+          script: |
+            cd ${{ secrets.APP_DIR }}
+            git pull
+
+      - name: install dependencies on server
+        if: steps.filter.outputs.dependency == 'true'
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
+          script: |
+            source ${{ secrets.VENV }} && cd ${{ secrets.APP_DIR }}
+            npm ci
+
+      - name: restart app on server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
+          script: |
+            /usr/sbin/cloudlinux-selector stop --json --interpreter nodejs \
+              --user ${{ secrets.SSH_USERNAME }} \
+              --app-root ${{ secrets.APP_DIR }}
+            /usr/sbin/cloudlinux-selector start --json --interpreter nodejs \
+              --user ${{ secrets.SSH_USERNAME }} \
+              --app-root ${{ secrets.APP_DIR }}
+      # - name: copy build to server
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ${{ secrets.SSH_USERNAME }}
+      #     key: ${{ secrets.SSH_KEY }}
+      #     port: ${{ secrets.SSH_PORT }}
+      #     source: ${{ github.workspace }}/.next/*
+      #     target: ${{ secrets.APP_DIR }}/.next
+      #     rm: true
+      #     strip_components: 3

@@ -31,6 +31,12 @@ jobs:
             dependency:
               - 'package.json'
               - 'package-lock.json'
+            build:
+              - 'package.json'
+              - 'package-lock.json'
+              - 'src/**'
+              - 'next.config.js'
+              - 'tsconfig.json'
       - name: NPM Cache
         id: npm-cache
         uses: actions/cache@v3
@@ -48,15 +54,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-
       - name: Use Node.js ${{ matrix.node-version }}
+        if: steps.filter.outputs.build == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - name: install dependencies
+        if: steps.filter.outputs.build == 'true'
         run: npm i
       - name: build
+        if: steps.filter.outputs.build == 'true'
         run: npm run build --if-present
       - name: commit build
+        if: steps.filter.outputs.build == 'true'
         run: |
           git config --global user.name 'Inpartner'
           git config --global user.email 'inpartner@users.noreply.github.com'

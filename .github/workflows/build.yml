@@ -37,7 +37,17 @@ jobs:
               - 'src/**'
               - 'next.config.js'
               - 'tsconfig.json'
+            deploy:
+              - 'package.json'
+              - 'package-lock.json'
+              - 'src/**'
+              - 'next.config.js'
+              - 'tsconfig.json'
+              - 'api/**'
+              - 'public/**'
+              - 'server.js'
       - name: NPM Cache
+        if: steps.filter.outputs.build == 'true'
         id: npm-cache
         uses: actions/cache@v3
         with:
@@ -46,6 +56,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
       - name: Build Cache
+        if: steps.filter.outputs.build == 'true'
         id: build-cache
         uses: actions/cache@v3
         with:
@@ -91,6 +102,7 @@ jobs:
       #     TARGET: ${{ secrets.APP_DIR }}/.next/
       #     ARGS: -avz --delete
       - name: pull code on server
+        if: steps.filter.outputs.deploy == 'true'
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -103,7 +115,7 @@ jobs:
             git pull
 
       - name: install dependencies on server
-        if: steps.filter.outputs.dependency == 'true'
+        if: steps.filter.outputs.dependency == 'true' && steps.filter.outputs.deploy == 'true'
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -116,6 +128,7 @@ jobs:
             npm i
 
       - name: restart app on server
+        if: steps.filter.outputs.deploy == 'true'
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SSH_HOST }}

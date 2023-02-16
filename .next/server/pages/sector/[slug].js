@@ -46,6 +46,9 @@ const Title = /*#__PURE__*/ styled_default()("h1", {
 const Projects = /*#__PURE__*/ styled_default()(Project/* ProjectsComponent */.vP, {
     target: "e9mois81"
 })("margin-top:28px;margin-bottom:28px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:52px;margin-bottom:52px;}");
+const Description = /*#__PURE__*/ styled_default()("div", {
+    target: "e9mois82"
+})("padding-top:1rem;& p{margin-bottom:1rem;}& li{margin-bottom:1rem;}");
 
 ;// CONCATENATED MODULE: ./src/containers/Sector/index.tsx
 
@@ -69,9 +72,11 @@ const Index = ({ data  })=>{
                     /*#__PURE__*/ jsx_runtime_.jsx(Title, {
                         children: data.title
                     }),
-                    descs.map((d, i)=>/*#__PURE__*/ jsx_runtime_.jsx("p", {
-                            children: d
-                        }, i)),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Description, {
+                        dangerouslySetInnerHTML: {
+                            __html: data.description
+                        }
+                    }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Projects, {
                         children: data.projects.map((p, i)=>/*#__PURE__*/ jsx_runtime_.jsx(Project/* default */.ZP, {
                                 data: p

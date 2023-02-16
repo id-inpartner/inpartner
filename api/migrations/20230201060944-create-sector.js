@@ -25,6 +25,12 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
+      metaTitle: {
+        type: Sequelize.STRING,
+      },
+      metaDescription: {
+        type: Sequelize.TEXT,
+      },
       image: {
         type: Sequelize.STRING,
       },

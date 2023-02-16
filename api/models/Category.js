@@ -1,6 +1,15 @@
 const { Model, DataTypes } = require('sequelize')
 
 class Category extends Model {
+  /** @type {number} */
+  id
+
+  /** @type {string} */
+  title
+
+  /** @type {import('./Project').Project[]} */
+  projects
+
   /**
    * @param {import('sequelize').Sequelize} sequelize
    */
@@ -10,6 +19,7 @@ class Category extends Model {
       foreignKey: 'categoryId',
       onDelete: 'cascade',
       onUpdate: 'cascade',
+      as: 'projects',
     })
   }
 }

@@ -1,6 +1,27 @@
 const { Model, DataTypes } = require('sequelize')
 
 class Sector extends Model {
+  /** @type {number} */
+  id
+
+  /** @type {string} */
+  slug
+
+  /** @type {string} */
+  title
+
+  /** @type {string} */
+  image
+
+  /** @type {string} */
+  metaTitle
+
+  /** @type {string} */
+  metaDescription
+
+  /** @type {import('./Project')[]} */
+  projects
+
   /**
    * @param {import('sequelize').Sequelize} sequelize
    */
@@ -34,6 +55,12 @@ const init = (sequelize) => {
       },
       image: {
         type: DataTypes.STRING,
+      },
+      metaTitle: {
+        type: DataTypes.STRING,
+      },
+      metaDescription: {
+        type: DataTypes.TEXT,
       },
     },
     { sequelize, modelName: 'Sector' }

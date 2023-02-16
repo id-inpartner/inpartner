@@ -8,10 +8,12 @@ const Page: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Service & Scope | INPARTNER CONSULTANT</title>
+        <title>
+          Business and Management Consulting, Investment, Capacity Building
+        </title>
         <meta
           name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+          content="Inpartner Services Cover Business and Management Consulting, Investment and Capacity Building (Inpartner Academy)"
         />
       </Head>
       <Navbar />

@@ -7,6 +7,9 @@ module.exports = {
       {
         id: 1,
         slug: 'restructuring-pre-ipo-ipo-and-right-issue',
+        metaTitle: 'Inpartner managing  a company for an IPO in Indonesia',
+        metaDescription:
+          'Preparing a company for an IPO in Indonesia can be a complex and challenging process, but We have a skilled and experienced, the journey to going public can be smoother and more successful',
         name: 'Restructuring, Pre-IPO, IPO, and Right Issue',
         title: 'Restructuring, Pre-IPO, IPO, and Right Issue',
         description: `
@@ -22,6 +25,9 @@ module.exports = {
       {
         id: 2,
         slug: 'alternative-investment',
+        metaTitle: 'Inpartner alternative investment',
+        metaDescription:
+          'Alternative investments are gaining popularity in Indonesia as investors look for new opportunities to diversify their portfolios and potentially achieve higher returns',
         name: 'Alternative Investment',
         title: 'Alternative Investment',
         description: `
@@ -40,6 +46,9 @@ module.exports = {
       {
         id: 3,
         slug: 'financial-services',
+        metaTitle: 'Inpartner provide a range of financial services',
+        metaDescription:
+          'As a partner managing company, Inpartner can provide a range of financial services to help clients manage their money, investments, and financial risk',
         name: 'Financial Services',
         title: 'Financial Services',
         description: `
@@ -58,6 +67,9 @@ module.exports = {
       {
         id: 4,
         slug: 'health-and-pharmaceutical',
+        metaTitle: 'Inpartner Health & Pharmaceutical',
+        metaDescription:
+          'Inpartner can help health and pharmaceutical companies navigate the complex regulatory environment in Indonesia. This includes ensuring compliance with local regulations, obtaining necessary licenses and permits, and preparing regulatory submissions.',
         name: 'Health and Pharmaceutical',
         title: 'Health and Pharmaceutical',
         description: `
@@ -76,6 +88,9 @@ module.exports = {
       {
         id: 5,
         slug: 'biotechnology',
+        metaTitle: 'Inpartner Biotechnology',
+        metaDescription:
+          'We work closely with biotechnology clients provide the expertise and support they need to succeed.',
         name: 'Biotechnology',
         title: 'Biotechnology',
         description: `
@@ -94,6 +109,9 @@ module.exports = {
       {
         id: 6,
         slug: 'renewable-energy',
+        metaTitle: 'Inpartner  Renewable energy',
+        metaDescription:
+          'commitment to make world green, healthy living environment we cooperate, coordinate with renewable energy industry in marketing and promoting use of renewable energy',
         name: 'Renewable Energy',
         title: 'Renewable Energy',
         description: `
@@ -106,6 +124,9 @@ module.exports = {
       {
         id: 7,
         slug: 'waste-solution',
+        metaTitle: 'Inpartner Waste Solution',
+        metaDescription:
+          'provides services to manage and reduce waste for businesses, communities, and governments',
         name: 'Waste Solution',
         title: 'Waste Solution',
         description: `
@@ -126,6 +147,9 @@ module.exports = {
       {
         id: 8,
         slug: 'property-investment-and-development',
+        metaTitle: 'Inparter Property Investment & Development',
+        metaDescription:
+          'Inpartner can provide a range of investment and development services to help clients achieve their financial and development goals',
         name: 'Property Investment and Development',
         title: 'Property Investment and Development',
         description: `
@@ -145,6 +169,9 @@ module.exports = {
       {
         id: 9,
         slug: 'electric-vehicle',
+        metaTitle: 'Inpartner Electric vehicle',
+        metaDescription:
+          'Inpartner cooperate with electric vehicle  by providing a range of services, including investment planning, project development, and project management.',
         name: 'Electric Vehicle',
         title: 'Electric Vehicle',
         description: `
@@ -163,6 +190,9 @@ module.exports = {
       {
         id: 10,
         slug: 'infrastructure',
+        metaTitle: 'Inpartner Infrastucture',
+        metaDescription:
+          'Inpartner provides a range of services to clients in the infrastructure industry, including investment planning, project development, and project management',
         name: 'Infrastructure',
         title: 'Infrastructure',
         description: `
@@ -174,6 +204,9 @@ module.exports = {
       {
         id: 11,
         slug: 'information-technology',
+        metaTitle: 'Inpartner Information technology',
+        metaDescription:
+          'Inpartner can offer a variety of services, including website development, network infrastructure design and management, software development, cloud computing, and cybersecurity services.',
         name: 'Information Technology',
         title: 'Information Technology',
         description: `
@@ -184,6 +217,9 @@ module.exports = {
       {
         id: 12,
         slug: 'environmental-social-and-governance',
+        metaTitle: 'Inpartner ESG',
+        metaDescription:
+          'We takes a comprehensive approach to ESG considerations, recognizing that environmental, social, and governance factors are critical to the long-term sustainability and success of any organization',
         name: 'Environmental, Social, and Governance',
         title: 'Environmental, Social, and Governance',
         description: `
@@ -200,6 +236,9 @@ module.exports = {
       {
         id: 13,
         slug: 'food-and-beverange',
+        metaTitle: 'Inpartner Food and Baverage',
+        metaDescription:
+          'Inpartner is committed to supporting the food and beverage (F&B) industry in Indonesia by providing investment and development services to help businesses grow and thrive',
         name: 'Food and Beverange',
         title: 'Food and Beverange',
         description: `
@@ -210,6 +249,9 @@ module.exports = {
       {
         id: 14,
         slug: 'industrial-gas',
+        metaTitle: 'Inpartner Industrial Gas',
+        metaDescription:
+          'At Inpartner, we are committed to supporting the industrial gas industry in Indonesia by providing investment and development services to help businesses grow and innovate',
         name: 'Industrial Gas',
         title: 'Industrial Gas',
         description: `

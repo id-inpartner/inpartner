@@ -8,10 +8,12 @@ const Page: NextPage<IndexProps> = ({ projects }) => {
   return (
     <>
       <Head>
-        <title>INPARTNER CONSULTANT</title>
+        <title>
+          Business Consultant Company, Jakarta, Indonesia | Inpartner
+        </title>
         <meta
           name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+          content="Inpartner are The Most Trusted Consulting Partner To help create positive and endure changes in Local and Global Coverage"
         />
       </Head>
       <Navbar />

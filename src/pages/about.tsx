@@ -8,10 +8,10 @@ const Page: NextPage = () => {
   return (
     <>
       <Head>
-        <title>INPARTNER CONSULTANT</title>
+        <title>The Most Trusted Consulting Partner | Inpartner</title>
         <meta
           name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+          content="Through our Consultation Services, we take a holistic approach to identify the right problem and give clear guides to unleash the power of your business for a brighter future"
         />
       </Head>
       <Navbar />

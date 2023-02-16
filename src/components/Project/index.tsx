@@ -29,6 +29,8 @@ export interface Project {
 export interface Sector {
   readonly id: number
   readonly slug: string
+  readonly metaTitle: string
+  readonly metaDescription: string
   readonly name: string
   readonly title: string
   readonly description: string

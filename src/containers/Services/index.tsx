@@ -16,8 +16,26 @@ export const Index: FC = () => {
         id="business-and-management"
         smallImage={business1}
         largImage={business2}
-        title="Business and Management Consulting"
-        description="With 30 years of experiences, we have in-depth knowledge in project planning, management, construction, maintenance and operation especially in oil & gas Industry. We are experienced in the development of Oil / LPG Terminal, Spherical (LPG) storage tanks, Oil / liquid storage tanks."
+        title="Busines and Management Consulting"
+        description={
+          <>
+            <div>
+              We bring a fresh view with the aim of improving the effectiveness
+              of business strategy, Organizational performance and operational
+              processes. We align business strategy and goals with people,
+              processes, technology and data, have the ability to optimize and
+              improve the way you operate, and as your strategic partner,
+              we&apos;ll be there for you every step of the way.
+            </div>
+            <div>
+              Our business experts research on potential growth areas, study
+              segments, sub segment&apos;s demands and expectations and draw
+              strategy to reach out to the new clientele, spot on current trends
+              and anticipate changes in advance. We also recommends alternative
+              strategies to meet the goals
+            </div>
+          </>
+        }
         href="/"
         hrefLabel="View More"
       />
@@ -27,7 +45,7 @@ export const Index: FC = () => {
         smallImage={capacity1}
         largImage={capacity2}
         title="Capacity Building (Inpartner Academy)"
-        description="With 30 years of experiences, we have in-depth knowledge in project planning, management, construction, maintenance and operation especially in oil & gas Industry. We are experienced in the development of Oil / LPG Terminal, Spherical (LPG) storage tanks, Oil / liquid storage tanks."
+        description="Inpartner capacity building involve various activities such as training, education, mentoring, coaching, and providing resources and tools to support development.  The goal is to increase the efficiency, production, effectiveness to stay ahead in competitive market, Making positive impacts on the clientele we serves, We helps making business plans and effectively implements, swiftly taking new challenges, develop business relations, creating partnerships"
         href="/"
         hrefLabel="View More"
       />

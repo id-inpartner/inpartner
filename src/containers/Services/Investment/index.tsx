@@ -23,11 +23,12 @@ export const Investment: FC = () => {
           </Ratio>
         </Images>
         <Content title="Investment" href="/" hrefLabel="View More">
-          With 30 years of experiences, we have in-depth knowledge in project
-          planning, management, construction, maintenance and operation
-          especially in oil & gas Industry. We are experienced in the
-          development of Oil / LPG Terminal, Spherical (LPG) storage tanks, Oil
-          / liquid storage tanks.
+          We experienced professionals can work closely with clients to
+          understand their investment needs and develop customized solutions to
+          help them achieve their goals. Whether clients are individuals,
+          institutional investors, or corporate clients, Inpartner can provide
+          the expertise and support they need to make informed investment
+          decisions and achieve their investment objectives.
         </Content>
       </Container>
     </Background>

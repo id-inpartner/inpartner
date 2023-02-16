@@ -2,7 +2,7 @@ import Banner from '@components/Banner'
 import { FC, useMemo } from 'react'
 import { Container } from 'react-bootstrap'
 import ProjectComponent, { Project, Sector } from '@components/Project'
-import { Projects, Title } from './styled'
+import { Description, Projects, Title } from './styled'
 
 export type { Project, Sector }
 
@@ -20,9 +20,10 @@ const Index: FC<IndexProps> = ({ data }) => {
       <Banner backgroundSrc={data.image} size="short" />
       <Container>
         <Title>{data.title}</Title>
-        {descs.map((d, i) => (
+        <Description dangerouslySetInnerHTML={{ __html: data.description }} />
+        {/* {descs.map((d, i) => (
           <p key={i}>{d}</p>
-        ))}
+        ))} */}
         <Projects>
           {data.projects.map((p, i) => (
             <ProjectComponent key={i} data={p} />

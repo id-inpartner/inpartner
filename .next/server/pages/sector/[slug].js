@@ -105,11 +105,11 @@ const Page = (props)=>{
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("title", {
-                        children: "Sectors & Themes Coverage | INPARTNER CONSULTANT"
+                        children: props.metaTitle
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("meta", {
                         name: "description",
-                        content: "Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+                        content: props.metaDescription
                     })
                 ]
             }),

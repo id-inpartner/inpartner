@@ -1777,11 +1777,11 @@ const Page = ({ projects  })=>{
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("title", {
-                        children: "INPARTNER CONSULTANT"
+                        children: "Business Consultant Company, Jakarta, Indonesia | Inpartner"
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("meta", {
                         name: "description",
-                        content: "Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+                        content: "Inpartner are The Most Trusted Consulting Partner To help create positive and endure changes in Local and Global Coverage"
                     })
                 ]
             }),

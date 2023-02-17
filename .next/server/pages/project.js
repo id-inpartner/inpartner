@@ -345,11 +345,11 @@ const Page = (props)=>{
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("title", {
-                        children: "Project & Tender | INPARTNER CONSULTANT"
+                        children: "Project & tender Inpartner"
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("meta", {
                         name: "description",
-                        content: "Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+                        content: "Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
                     })
                 ]
             }),

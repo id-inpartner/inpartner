@@ -8,10 +8,10 @@ const Page: NextPage<IndexProps> = (props) => {
   return (
     <>
       <Head>
-        <title>Project & Tender | INPARTNER CONSULTANT</title>
+        <title>Project & tender Inpartner</title>
         <meta
           name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+          content="Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
         />
       </Head>
       <Navbar />

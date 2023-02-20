@@ -333,7 +333,10 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
 var Navbar = __webpack_require__(1387);
 // EXTERNAL MODULE: ./src/components/Footer/index.tsx + 2 modules
 var Footer = __webpack_require__(841);
+// EXTERNAL MODULE: ./src/utils/json.ts
+var json = __webpack_require__(4139);
 ;// CONCATENATED MODULE: ./src/pages/project/index.tsx
+
 
 
 
@@ -418,7 +421,7 @@ const getServerSideProps = async ({ req , query  })=>{
         });
         return {
             props: {
-                rows: JSON.parse(JSON.stringify(rows.map((d)=>d.toJSON()))),
+                rows: JSON.parse(JSON.stringify((0,json/* jsonify */.K)(rows))),
                 count,
                 page,
                 perPage,
@@ -440,6 +443,23 @@ const getServerSideProps = async ({ req , query  })=>{
     }
 };
 /* harmony default export */ const project = (Page);
+
+
+/***/ }),
+
+/***/ 4139:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "K": () => (/* binding */ jsonify)
+/* harmony export */ });
+/* unused harmony export toJSON */
+const toJSON = (obj)=>{
+    return obj.toJSON();
+};
+const jsonify = (obj)=>{
+    return obj.map(toJSON);
+};
 
 
 /***/ }),

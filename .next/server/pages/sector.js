@@ -127,7 +127,10 @@ const Index = ({ data  })=>{
 var Navbar = __webpack_require__(1387);
 // EXTERNAL MODULE: ./src/components/Footer/index.tsx + 2 modules
 var Footer = __webpack_require__(841);
+// EXTERNAL MODULE: ./src/utils/json.ts
+var json = __webpack_require__(4139);
 ;// CONCATENATED MODULE: ./src/pages/sector/index.tsx
+
 
 
 
@@ -161,11 +164,28 @@ const getServerSideProps = async ({ req  })=>{
     const data = await Sector.findAll();
     return {
         props: {
-            data: JSON.parse(JSON.stringify(data.map((d)=>d.toJSON())))
+            data: JSON.parse(JSON.stringify((0,json/* jsonify */.K)(data)))
         }
     };
 };
 /* harmony default export */ const sector = (Page);
+
+
+/***/ }),
+
+/***/ 4139:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "K": () => (/* binding */ jsonify)
+/* harmony export */ });
+/* unused harmony export toJSON */
+const toJSON = (obj)=>{
+    return obj.toJSON();
+};
+const jsonify = (obj)=>{
+    return obj.map(toJSON);
+};
 
 
 /***/ }),

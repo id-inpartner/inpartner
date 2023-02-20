@@ -14,70 +14,71 @@ export const Index: FC = () => {
       <Container>
         <Inner>
           <SearchForm>
-            <Form.Select>
-              <option>Location</option>
-              <option value="1">South Jakarta, Indonesia</option>
-              <option value="2">Surabaya, Indonesia</option>
-              <option value="3">Bandung, Indonesia</option>
-            </Form.Select>
-            <Form.Select>
-              <option>Department</option>
-              <option value="1">Business Consultant</option>
-              <option value="2">HRD</option>
-            </Form.Select>
-            <Form.Select>
-              <option>Work Type</option>
-              <option value="1">Full Time</option>
-              <option value="2">Part Time</option>
-              <option value="3">Internship</option>
-            </Form.Select>
-            <Button>Search</Button>
+            <Table responsive>
+              <tbody>
+                <tr className="form-row">
+                  <td>
+                    <Form.Select>
+                      <option>Location</option>
+                      <option value="1">Jakarta</option>
+                      <option value="2">Work Anywhere</option>
+                    </Form.Select>
+                  </td>
+                  <td>
+                    <Form.Select>
+                      <option>Department</option>
+                      <option value="1">Business Consultant</option>
+                      <option value="2">HRD</option>
+                    </Form.Select>
+                  </td>
+                  <td>
+                    <Form.Select>
+                      <option>Work Type</option>
+                      <option value="1">Full Time</option>
+                      <option value="2">Part Time</option>
+                      <option value="3">Internship</option>
+                    </Form.Select>
+                  </td>
+                  <td>
+                    <Button>Search</Button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan={4}>
+                    <SectionTitle>Jobs Available</SectionTitle>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Jakarta / Work Anywhere</td>
+                  <td>Junior Consultant</td>
+                  <td>Full Time</td>
+                  <td>
+                    <Link
+                      href="https://bit.ly/Rekrutmen-JC"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Detail
+                    </Link>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Work Anywhere</td>
+                  <td>Research Assistant</td>
+                  <td>Internship</td>
+                  <td>
+                    <Link
+                      href="https://bit.ly/Rekrutmen-RA"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Detail
+                    </Link>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
           </SearchForm>
-          <SectionTitle>Jobs Available</SectionTitle>
-          <Table responsive>
-            <tbody>
-              <tr>
-                <td>South Jakarta, Indonesia</td>
-                <td>Business Consultant</td>
-                <td>Full Time</td>
-                <td>
-                  <Link href="">Detail</Link>
-                </td>
-              </tr>
-              <tr>
-                <td>South Jakarta, Indonesia</td>
-                <td>Business Consultant</td>
-                <td>Full Time</td>
-                <td>
-                  <Link href="">Detail</Link>
-                </td>
-              </tr>
-              <tr>
-                <td>South Jakarta, Indonesia</td>
-                <td>Business Consultant</td>
-                <td>Full Time</td>
-                <td>
-                  <Link href="">Detail</Link>
-                </td>
-              </tr>
-              <tr>
-                <td>South Jakarta, Indonesia</td>
-                <td>Business Consultant</td>
-                <td>Full Time</td>
-                <td>
-                  <Link href="">Detail</Link>
-                </td>
-              </tr>
-              <tr>
-                <td>South Jakarta, Indonesia</td>
-                <td>Business Consultant</td>
-                <td>Full Time</td>
-                <td>
-                  <Link href="">Detail</Link>
-                </td>
-              </tr>
-            </tbody>
-          </Table>
         </Inner>
       </Container>
     </>

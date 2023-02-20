@@ -13,7 +13,9 @@
       "@images/*": ["./src/images/*", "./src/images/*/index"],
       "@images": ["./src/images/index"],
       "@storage/*": ["./src/storage/*", "./src/storage/*/index"],
-      "@storage": ["./src/storage/index"]
+      "@storage": ["./src/storage/index"],
+      "@utils/*": ["./src/utils/*", "./src/utils/*/index"],
+      "@utils": ["./src/utils/index"]
     }
   }
 }

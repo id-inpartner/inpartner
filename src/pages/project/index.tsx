@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Container, { IndexProps } from '@containers/Projects'
 import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
+import { jsonify } from '@utils/json'
 
 const Page: NextPage<IndexProps> = (props) => {
   return (
@@ -71,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     })
     return {
       props: {
-        rows: JSON.parse(JSON.stringify(rows.map((d) => d.toJSON()))),
+        rows: JSON.parse(JSON.stringify(jsonify(rows))),
         count,
         page,
         perPage,

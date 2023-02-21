@@ -77,15 +77,16 @@ var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 var ColumnContainer = __webpack_require__(3320);
 // EXTERNAL MODULE: ./src/components/Text/index.tsx
 var Text = __webpack_require__(3411);
-// EXTERNAL MODULE: ./src/components/Button/index.ts
-var Button = __webpack_require__(6753);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 ;// CONCATENATED MODULE: ./src/containers/Home/styled.ts
 
 
 
-const ViewMore = /*#__PURE__*/ styled_default()(Button/* default */.Z, {
+const ViewMore = /*#__PURE__*/ styled_default()((link_default()), {
     target: "e1sn07zy0"
-})("margin-top:10px;margin-bottom:16px;align-self:center;min-width:140px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:24px;margin-bottom:30px;}");
+})("margin-top:10px;margin-bottom:16px;align-self:center;min-width:140px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:24px;margin-bottom:30px;}& > button{width:100%;}");
 
 // EXTERNAL MODULE: ./src/components/SectionTitle/index.tsx
 var SectionTitle = __webpack_require__(5242);
@@ -134,6 +135,8 @@ var Carousel_default = /*#__PURE__*/__webpack_require__.n(Carousel_namespaceObje
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/Image.tsx
 var Image = __webpack_require__(5562);
+// EXTERNAL MODULE: ./src/components/Button/index.ts
+var Button = __webpack_require__(6753);
 // EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"sans"}
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(5256);
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_);
@@ -1346,11 +1349,12 @@ const Project_styled_Items = /*#__PURE__*/ styled_default()(Project/* ProjectsCo
 
 
 
+
 const Project_Project = ({ data  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Project_styled_Title, {
-                children: "Project & Tender"
+                children: "Projects"
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Project_styled_Items, {
                 children: data.map((r)=>/*#__PURE__*/ jsx_runtime_.jsx(Project/* default */.ZP, {
@@ -1358,7 +1362,10 @@ const Project_Project = ({ data  })=>{
                     }, r.id))
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
-                children: "View All"
+                href: "/project",
+                children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                    children: "View All"
+                })
             })
         ]
     });
@@ -1437,6 +1444,7 @@ const Sectors_Item_Item = ({ image , label  })=>{
 /* harmony default export */ const Sectors_Item = (Sectors_Item_Item);
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/index.tsx
+
 
 
 
@@ -1562,7 +1570,10 @@ const Sectors = ()=>{
                 ]
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
-                children: "View All"
+                href: "/project",
+                children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                    children: "View All"
+                })
             })
         ]
     });
@@ -1577,6 +1588,7 @@ var Ratio_default = /*#__PURE__*/__webpack_require__.n(Ratio_);
 
 
 
+
 const Services_styled_Title = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
     target: "eif5kcm0"
 })("text-align:center;margin-top:50px;margin-bottom:32px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;margin-bottom:60px;}");
@@ -1586,17 +1598,17 @@ const Services_styled_Items = /*#__PURE__*/ styled_default()("div", {
 const Col = /*#__PURE__*/ styled_default()("div", {
     target: "eif5kcm2"
 })("display:flex;flex-direction:column;flex:1;margin-left:8px;margin-right:8px;");
-const styled_Item = /*#__PURE__*/ styled_default()("div", {
+const styled_Item = /*#__PURE__*/ styled_default()((link_default()), {
     target: "eif5kcm3"
-})("position:relative;flex:1;margin-top:8px;margin-bottom:8px;border-radius:8px;overflow:hidden;min-width:300px;& > .ratio{min-height:100%;& > img{transition:transform 1s ease-in-out;}}&:hover{& > .ratio > img{transform:scale(1.1);}}");
+})("display:block;position:relative;flex:1;margin-top:8px;margin-bottom:8px;border-radius:8px;overflow:hidden;min-width:300px;& > .ratio{min-height:100%;& > img{transition:transform 1s ease-in-out;}}&:hover{& > .ratio > img{transform:scale(1.1);}}");
 const styled_Label = /*#__PURE__*/ styled_default()(Text/* default */.Z, {
     target: "eif5kcm4"
 })("color:white;max-width:260px;font-weight:500;text-align:left;position:absolute;left:18px;top:18px;right:18px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){left:32px;top:32px;right:32px;}");
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/business.png
-/* harmony default export */ const business = ({"src":"/_next/static/media/business.be1e5e68.png","height":284,"width":559,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAIAAAA8r+mnAAAAb0lEQVR42gFkAJv/ALepj76YVLeZatfLwNTPyLmqmKyZgaiahwDKx729rpKEZCXPtKPW0c/l1c/LvLGpoI4Auret09LGwLer2bij9ujk3dfSu7aqtK6gAHhwY8nDts/Jvs7AsczEvL+3qr62qbeypt4WQzXfs3vxAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
+/* harmony default export */ const business = ({"src":"/_next/static/media/business.8c500a01.png","height":1280,"width":1920,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAiElEQVR42gF9AIL/ALu7u66urbm4t8zNzc3O0Ly9vrO3uMfOzwC+v8CLgH2snJjO0dHN0dKVjImWk5HFzdAAoaGjkpGYlJGXt7e5jpGSWkpHUE5PmZyhAIeHioaHjoqChZaFg0JFS2JSTwAAAHBwdAC/u7a6ta7Gw8HPzM3Ix8m8t7OkoZuzs6/2j0obcEf5ZwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/capacity.png
-/* harmony default export */ const capacity = ({"src":"/_next/static/media/capacity.9a0f03a8.png","height":127,"width":508,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAPUlEQVR42gEyAM3/AMrKz8rGx9XV3djZ4Nzc49/f5trX3aaTkwDKzNbOz9rR0tjZ2t/e3uLe3N/W09i8t7jV6yc/+YOUtwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const capacity = ({"src":"/_next/static/media/capacity.ecfaee05.png","height":1000,"width":1500,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAh0lEQVR42mPg0VDVNTJnEJWT8dSWsNE102KIcRRl4BNmcIuQDcsx9yozWjC1pLs6elZ1SllaoIgcA0PhBMPqRW5FE8PmdHW3VkQvXzjjyLGTfkHuDFpWhmHZHnHJ/oGefhPzovJDXFdsPZBeVsLg4uqQmBRbWJCXEp8gy8CQHx9VWNls6eEFAA1+KT1FsEQaAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/investment.png
 /* harmony default export */ const Services_investment = ({"src":"/_next/static/media/investment.89348a66.png","height":136,"width":543,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAO0lEQVR42mMI9PEK8PFydnTJSw7aMSdnx4K8VZPTQr3tGfy8PJwd7HikDJtrU56e6T6wJD/Cx8zY2AgAzkUSnoF4SNoAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/index.tsx
@@ -1618,6 +1630,10 @@ const Services = ()=>{
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx(Col, {
                         children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                            href: {
+                                pathname: "/services",
+                                hash: "business-and-management"
+                            },
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx((Ratio_default()), {
                                     aspectRatio: 274 / 559,
@@ -1638,23 +1654,31 @@ const Services = ()=>{
                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Col, {
                         children: [
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                                href: {
+                                    pathname: "/services",
+                                    hash: "capacity-building"
+                                },
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx((Ratio_default()), {
                                         aspectRatio: 127 / 543,
                                         children: /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
                                             fill: true,
                                             src: capacity,
-                                            alt: "Capacity Building (Inpartner Academy)",
+                                            alt: "Capacity Building (The Executive Business Program)",
                                             quality: 100,
                                             sizes: "(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
                                         })
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(styled_Label, {
-                                        children: "Capacity Building (Inpartner Academy)"
+                                        children: "Capacity Building (The Executive Business Program)"
                                     })
                                 ]
                             }),
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                                href: {
+                                    pathname: "/services",
+                                    hash: "investment"
+                                },
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx((Ratio_default()), {
                                         aspectRatio: 127 / 543,
@@ -1877,13 +1901,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 4384:
-/***/ ((module) => {
-
-module.exports = require("date-fns/format");
 
 /***/ }),
 

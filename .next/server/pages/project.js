@@ -148,7 +148,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Banner/* default */.ZP, {
-                title: "Project & Tender",
+                title: "Projects",
                 backgroundSrc: banner
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
@@ -157,7 +157,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)(SideMenu, {
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
-                                children: "Project & Tender"
+                                children: "Projects"
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx(MenuItem, {
                                 href: {
@@ -190,7 +190,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                     }
                                 },
                                 className: categoryId === 3 ? "selected" : "",
-                                children: "Capacity Building (Inpartner Academy)"
+                                children: "Capacity Building (The Executive Business Program)"
                             })
                         ]
                     }),
@@ -496,13 +496,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 4384:
-/***/ ((module) => {
-
-module.exports = require("date-fns/format");
 
 /***/ }),
 

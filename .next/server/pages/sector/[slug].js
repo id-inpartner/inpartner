@@ -203,13 +203,6 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ 4384:
-/***/ ((module) => {
-
-module.exports = require("date-fns/format");
-
-/***/ }),
-
 /***/ 3918:
 /***/ ((module) => {
 

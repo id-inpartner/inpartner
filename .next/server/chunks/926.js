@@ -392,15 +392,12 @@ const Footer = ()=>{
                                         children: [
                                             "Capacity Building",
                                             /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
-                                            "(Inpartner Academy)"
+                                            "(The Executive Business Program)"
                                         ]
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
-                                        href: {
-                                            pathname: "/project",
-                                            hash: "missions"
-                                        },
-                                        children: "Project & Tender"
+                                        href: "/project",
+                                        children: "Projects"
                                     })
                                 ]
                             }),
@@ -799,7 +796,7 @@ const Navbar = ()=>{
                                 /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     className: "nav-link",
                                     href: "/project",
-                                    children: "Project & Tender"
+                                    children: "Projects"
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     className: "nav-link",

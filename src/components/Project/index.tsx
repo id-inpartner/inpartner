@@ -58,7 +58,7 @@ export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
       <Subtitle>
         {data.category.title} | {data.sector.title}
       </Subtitle>
-      <Dates>
+      {/* <Dates>
         <tr>
           <td>Project Started</td>
           <td>:</td>
@@ -69,7 +69,7 @@ export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
           <td>:</td>
           <td>{format(new Date(data.endAt), 'MMM yyyy')}</td>
         </tr>
-      </Dates>
+      </Dates> */}
     </C>
   )
 }
@@ -108,7 +108,7 @@ const Title = styled.h2`
 `
 
 const Subtitle = styled.div`
-  margin: 0 24px;
+  margin: 12px 24px 24px 24px;
 `
 
 const Dates = styled.table`

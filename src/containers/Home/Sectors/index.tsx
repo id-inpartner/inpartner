@@ -16,6 +16,8 @@ import waste from './waste.png'
 import renewable_energy from './renewable_energy.png'
 import biotechnology from './biotechnology.png'
 import Item from './Item'
+import Link from 'next/link'
+import Button from '@components/Button'
 
 export const Sectors: FC = () => {
   return (
@@ -87,7 +89,9 @@ export const Sectors: FC = () => {
         <Item image={renewable_energy} label="Renewable Energy" />
         <Item image={biotechnology} label="Biotechnology" />
       </Items>
-      <ViewMore>View All</ViewMore>
+      <ViewMore href="/project">
+        <Button>View All</Button>
+      </ViewMore>
     </ColumnContainer>
   )
 }

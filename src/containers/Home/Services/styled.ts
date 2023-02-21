@@ -2,6 +2,7 @@ import { breakpoints } from '@components/GlobalStyle'
 import SectionTitle from '@components/SectionTitle'
 import Text from '@components/Text'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 
 export const Title = styled(SectionTitle)`
   text-align: center;
@@ -33,7 +34,8 @@ export const Col = styled.div`
   margin-right: 8px;
 `
 
-export const Item = styled.div`
+export const Item = styled(Link)`
+  display: block;
   position: relative;
   flex: 1;
   margin-top: 8px;

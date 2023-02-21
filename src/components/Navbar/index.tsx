@@ -256,7 +256,7 @@ export const Navbar: FC = () => {
               Sectors
             </Link>
             <Link className="nav-link" href="/project">
-              Project & Tender
+              Projects
             </Link>
             <Link className="nav-link" href="/career">
               Career

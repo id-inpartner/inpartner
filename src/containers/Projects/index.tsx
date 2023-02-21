@@ -10,7 +10,6 @@ import {
   Projects,
   SideMenu,
 } from './styled'
-import SectionTitle from '@components/SectionTitle'
 import { Form, Pagination } from 'react-bootstrap'
 import { PageItem } from '@components/Pagination'
 
@@ -49,10 +48,10 @@ const Index: FC<IndexProps> = ({
   }
   return (
     <>
-      <Banner title="Project & Tender" backgroundSrc={banner} />
+      <Banner title="Projects" backgroundSrc={banner} />
       <Container id="content">
         <SideMenu>
-          <MenuTitle>Project & Tender</MenuTitle>
+          <MenuTitle>Projects</MenuTitle>
           <MenuItem
             href={{
               pathname: '/project',
@@ -81,7 +80,7 @@ const Index: FC<IndexProps> = ({
             }}
             className={categoryId === 3 ? 'selected' : ''}
           >
-            Capacity Building (Inpartner Academy)
+            Capacity Building (The Executive Business Program)
           </MenuItem>
         </SideMenu>
         <Projects>

@@ -143,11 +143,9 @@ export const Footer: FC = () => {
             <Menu href={{ pathname: '/services', hash: 'capacity-building' }}>
               Capacity Building
               <br />
-              (Inpartner Academy)
+              (The Executive Business Program)
             </Menu>
-            <MenuTitle href={{ pathname: '/project', hash: 'missions' }}>
-              Project & Tender
-            </MenuTitle>
+            <MenuTitle href="/project">Projects</MenuTitle>
           </Col>
           <Col>
             <MenuTitle href="/sector">Sectors</MenuTitle>

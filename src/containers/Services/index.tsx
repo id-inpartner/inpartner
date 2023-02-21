@@ -44,7 +44,7 @@ export const Index: FC = () => {
         id="capacity-building"
         smallImage={capacity1}
         largImage={capacity2}
-        title="Capacity Building (Inpartner Academy)"
+        title="Capacity Building (The Executive Business Program)"
         description="Inpartner capacity building involve various activities such as training, education, mentoring, coaching, and providing resources and tools to support development.  The goal is to increase the efficiency, production, effectiveness to stay ahead in competitive market, Making positive impacts on the clientele we serves, We helps making business plans and effectively implements, swiftly taking new challenges, develop business relations, creating partnerships"
         href="/"
         hrefLabel="View More"

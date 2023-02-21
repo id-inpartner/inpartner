@@ -69,9 +69,6 @@ var styled_ = __webpack_require__(1480);
 var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
 var GlobalStyle = __webpack_require__(8857);
-// EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"PT_Serif","arguments":[{"weight":["400","700"],"subsets":["latin"]}],"variableName":"serif"}
-var index_tsx_import_PT_Serif_arguments_weight_400_700_subsets_latin_variableName_serif_ = __webpack_require__(1311);
-var index_tsx_import_PT_Serif_arguments_weight_400_700_subsets_latin_variableName_serif_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_PT_Serif_arguments_weight_400_700_subsets_latin_variableName_serif_);
 // EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"sans"}
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(5256);
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_);
@@ -83,7 +80,7 @@ var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /
 
 const Root = /*#__PURE__*/ styled_default()("div", {
     target: "e1rv6jwp0"
-})("background-color:", GlobalStyle/* color.primary.normal */.$_.primary.normal, ";color:white;font-family:", (index_tsx_import_PT_Serif_arguments_weight_400_700_subsets_latin_variableName_serif_default()).style.fontFamily, ";box-shadow:2px 0 6px rgba(0,0,0,0.3);& a:hover{cursor:pointer;color:white;opacity:0.6;}");
+})("background-color:", GlobalStyle/* color.primary.normal */.$_.primary.normal, ";color:white;font-family:", (index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default()).style.fontFamily, ";box-shadow:2px 0 6px rgba(0,0,0,0.3);& a:hover{cursor:pointer;color:white;opacity:0.6;}");
 const Row = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e1rv6jwp1"
 })("display:flex;flex-wrap:wrap;padding-top:25px;flex-direction:column;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){flex-direction:row;}");

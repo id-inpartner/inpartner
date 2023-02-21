@@ -1,5 +1,5 @@
-exports.id = 954;
-exports.ids = [954];
+exports.id = 302;
+exports.ids = [302];
 exports.modules = {
 
 /***/ 932:
@@ -57,18 +57,6 @@ function _asyncToGenerator(fn) {
 module.exports = {
 	"style": {"fontFamily":"'__Inter_9c9965', '__Inter_Fallback_9c9965'","fontStyle":"normal"},
 	"className": "__className_9c9965"
-};
-
-
-/***/ }),
-
-/***/ 1311:
-/***/ ((module) => {
-
-// Exports
-module.exports = {
-	"style": {"fontFamily":"'__PT_Serif_372c21', '__PT_Serif_Fallback_372c21'","fontStyle":"normal"},
-	"className": "__className_372c21"
 };
 
 

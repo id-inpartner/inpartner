@@ -68,7 +68,7 @@ export const Index: FC = () => {
                   <td>Internship</td>
                   <td>
                     <Link
-                      href="https://bit.ly/Rekrutmen-RA"
+                      href="https://bit.ly/Rekrutmen_RA"
                       rel="noreferrer"
                       target="_blank"
                     >

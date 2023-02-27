@@ -79,7 +79,7 @@ module.exports = {
       {
         id: 9,
         title: 'Project Title',
-        image: '/storage/project/Jasa Sarana.jpg',
+        image: '/storage/project/Jasa sarana.jpg',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 3,

@@ -98,7 +98,7 @@ const Aspect = styled.div`
   padding-top: ${235 / 3.57}%;
   position: relative;
   & img {
-    object-fit: cover;
+    object-fit: contain;
   }
 `
 

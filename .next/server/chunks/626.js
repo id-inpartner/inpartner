@@ -61,7 +61,7 @@ const C = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()(_
 })("display:flex;flex-direction:column;align-items:stretch;margin:12px;flex:1;min-width:300px;transition:transform 0.3s ease-in-out;&:hover{transform:scale(1.015);}");
 const Aspect = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
     target: "e4r3l9o3"
-})("padding-top:", 235 / 3.57, "%;position:relative;& img{object-fit:cover;}");
+})("padding-top:", 235 / 3.57, "%;position:relative;& img{object-fit:contain;}");
 const Title = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("h2", {
     target: "e4r3l9o4"
 })("font-size:20px;margin:24px 24px 4px 24px;");

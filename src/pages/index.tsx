@@ -32,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     const projects = await Project.findAll({
       transaction,
       limit: 3,
-      order: [['id', 'ASC']],
+      order: [['promotedWeight', 'DESC']],
       include: [
         {
           association: 'category',

@@ -1827,8 +1827,8 @@ const getServerSideProps = async ({ req  })=>{
             limit: 3,
             order: [
                 [
-                    "id",
-                    "ASC"
+                    "promotedWeight",
+                    "DESC"
                 ]
             ],
             include: [

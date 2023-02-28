@@ -14,6 +14,9 @@ import jsn from './jsn.png'
 import bkpm from './bkpm.png'
 import kemenkopukm from './kemenkopukm.png'
 import batan from './batan.png'
+import csu from './csu.png'
+import falga from './falga.svg'
+import menn from './menn.webp'
 
 import bumiyasa from './bumiyasa.png'
 import jasamargaSemarangBatang from './jasamarga-semarang-batang.png'
@@ -29,6 +32,8 @@ import adiyasa from './adiyasa.png'
 import transoptimaluhur from './transoptimaluhur.png'
 import lmj from './lmj.png'
 import jasasarana from './jasasarana.png'
+import giz from './giz.gif'
+import danareksa from './danareksa.png'
 
 export const Clients: FC = () => {
   return (
@@ -93,6 +98,22 @@ export const Clients: FC = () => {
               quality={100}
             />
             <Image width={96} height={99} src={batan} alt="" quality={100} />
+            <Image width={80} height={80} src={csu} alt="" quality={100} />
+            <Image
+              width={180}
+              height={66}
+              src={falga}
+              alt=""
+              quality={100}
+              placeholder="empty"
+            />
+            <Image
+              width={144 * 1.1}
+              height={48 * 1.1}
+              src={menn}
+              alt=""
+              quality={100}
+            />
           </Row>
           <Row role="list">
             <Image
@@ -149,6 +170,22 @@ export const Clients: FC = () => {
               quality={100}
             />
             <Image width={96} height={99} src={batan} alt="" quality={100} />
+            <Image width={80} height={80} src={csu} alt="" quality={100} />
+            <Image
+              width={180}
+              height={66}
+              src={falga}
+              alt=""
+              quality={100}
+              placeholder="empty"
+            />
+            <Image
+              width={144 * 1.1}
+              height={48 * 1.1}
+              src={menn}
+              alt=""
+              quality={100}
+            />
           </Row>
           <Row role="list">
             <Image
@@ -205,6 +242,22 @@ export const Clients: FC = () => {
               quality={100}
             />
             <Image width={96} height={99} src={batan} alt="" quality={100} />
+            <Image width={80} height={80} src={csu} alt="" quality={100} />
+            <Image
+              width={180}
+              height={66}
+              src={falga}
+              alt=""
+              quality={100}
+              placeholder="empty"
+            />
+            <Image
+              width={144 * 1.1}
+              height={48 * 1.1}
+              src={menn}
+              alt=""
+              quality={100}
+            />
           </Row>
           <Row role="list">
             <Image
@@ -261,6 +314,22 @@ export const Clients: FC = () => {
               quality={100}
             />
             <Image width={96} height={99} src={batan} alt="" quality={100} />
+            <Image width={80} height={80} src={csu} alt="" quality={100} />
+            <Image
+              width={180}
+              height={66}
+              src={falga}
+              alt=""
+              quality={100}
+              placeholder="empty"
+            />
+            <Image
+              width={144 * 1.1}
+              height={48 * 1.1}
+              src={menn}
+              alt=""
+              quality={100}
+            />
           </Row>
         </Items>
       </Con>
@@ -329,195 +398,18 @@ export const Clients: FC = () => {
               alt=""
               quality={100}
             />
-          </Row>
-          <Row className="last">
             <Image
-              width={227}
-              height={68}
-              src={jasamargaSemarangBatang}
+              width={236 * 0.9}
+              height={62 * 0.9}
+              src={giz}
               alt=""
               quality={100}
+              placeholder="empty"
             />
             <Image
-              width={137}
-              height={75}
-              src={bankIndonesia}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={142}
-              height={70}
-              src={mandiriInvestasi}
-              alt=""
-              quality={100}
-              placeholder={null}
-            />
-            <Image width={158} height={59} src={bpkh} alt="" quality={100} />
-            <Image width={141} height={65} src={tmj} alt="" quality={100} />
-            <Image
-              width={227}
-              height={59}
-              src={jasamargaPandaan}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={78}
-              height={90}
-              src={kemenpora}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={73}
-              height={99}
-              src={jerbasukimawabeya}
-              alt=""
-              quality={100}
-            />
-            <Image width={96} height={84} src={kazuhiro} alt="" quality={100} />
-            <Image width={99} height={99} src={adiyasa} alt="" quality={100} />
-            <Image
-              width={128}
-              height={104}
-              src={transoptimaluhur}
-              alt=""
-              quality={100}
-            />
-            <Image width={105} height={103} src={lmj} alt="" quality={100} />
-            <Image
-              width={99}
-              height={99}
-              src={jasasarana}
-              alt=""
-              quality={100}
-            />
-          </Row>
-          <Row className="last">
-            <Image
-              width={227}
-              height={68}
-              src={jasamargaSemarangBatang}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={137}
-              height={75}
-              src={bankIndonesia}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={142}
-              height={70}
-              src={mandiriInvestasi}
-              alt=""
-              quality={100}
-              placeholder={null}
-            />
-            <Image width={158} height={59} src={bpkh} alt="" quality={100} />
-            <Image width={141} height={65} src={tmj} alt="" quality={100} />
-            <Image
-              width={227}
-              height={59}
-              src={jasamargaPandaan}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={78}
-              height={90}
-              src={kemenpora}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={73}
-              height={99}
-              src={jerbasukimawabeya}
-              alt=""
-              quality={100}
-            />
-            <Image width={96} height={84} src={kazuhiro} alt="" quality={100} />
-            <Image width={99} height={99} src={adiyasa} alt="" quality={100} />
-            <Image
-              width={128}
-              height={104}
-              src={transoptimaluhur}
-              alt=""
-              quality={100}
-            />
-            <Image width={105} height={103} src={lmj} alt="" quality={100} />
-            <Image
-              width={99}
-              height={99}
-              src={jasasarana}
-              alt=""
-              quality={100}
-            />
-          </Row>
-          <Row className="last">
-            <Image
-              width={227}
-              height={68}
-              src={jasamargaSemarangBatang}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={137}
-              height={75}
-              src={bankIndonesia}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={142}
-              height={70}
-              src={mandiriInvestasi}
-              alt=""
-              quality={100}
-              placeholder={null}
-            />
-            <Image width={158} height={59} src={bpkh} alt="" quality={100} />
-            <Image width={141} height={65} src={tmj} alt="" quality={100} />
-            <Image
-              width={227}
-              height={59}
-              src={jasamargaPandaan}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={78}
-              height={90}
-              src={kemenpora}
-              alt=""
-              quality={100}
-            />
-            <Image
-              width={73}
-              height={99}
-              src={jerbasukimawabeya}
-              alt=""
-              quality={100}
-            />
-            <Image width={96} height={84} src={kazuhiro} alt="" quality={100} />
-            <Image width={99} height={99} src={adiyasa} alt="" quality={100} />
-            <Image
-              width={128}
-              height={104}
-              src={transoptimaluhur}
-              alt=""
-              quality={100}
-            />
-            <Image width={105} height={103} src={lmj} alt="" quality={100} />
-            <Image
-              width={99}
-              height={99}
-              src={jasasarana}
+              width={256 * 0.86}
+              height={64 * 0.86}
+              src={danareksa}
               alt=""
               quality={100}
             />

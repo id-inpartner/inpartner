@@ -262,7 +262,7 @@ module.exports = {
       {
         id: 29,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/csu.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 1,
@@ -271,7 +271,7 @@ module.exports = {
       {
         id: 30,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/danareksa.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 1,
@@ -280,7 +280,7 @@ module.exports = {
       {
         id: 31,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/falga.svg',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 2,
@@ -289,7 +289,7 @@ module.exports = {
       {
         id: 32,
         title: 'Project Title',
-        image: '/storage/project/KImia Farma.png',
+        image: '/storage/project/giz.gif',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 2,
@@ -298,7 +298,7 @@ module.exports = {
       {
         id: 33,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/menn.webp',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 2,
@@ -307,7 +307,7 @@ module.exports = {
       {
         id: 34,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/raiz.svg',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 3,
@@ -316,7 +316,7 @@ module.exports = {
       {
         id: 35,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/Jawa Timur.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 3,
@@ -325,7 +325,7 @@ module.exports = {
       {
         id: 36,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/Bumiyasa.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 3,
@@ -334,7 +334,7 @@ module.exports = {
       {
         id: 37,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/Kazuhiro.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 1,
@@ -343,7 +343,7 @@ module.exports = {
       {
         id: 38,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/JSN.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 1,
@@ -352,7 +352,7 @@ module.exports = {
       {
         id: 39,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/LMJ.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 1,
@@ -361,7 +361,7 @@ module.exports = {
       {
         id: 40,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/Kemenpora.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 2,
@@ -370,7 +370,7 @@ module.exports = {
       {
         id: 41,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/MoBiol.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 2,
@@ -379,7 +379,7 @@ module.exports = {
       {
         id: 42,
         title: 'Project Title',
-        image: '/storage/project/YPII.png',
+        image: '/storage/project/UG Mandiri.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),
         categoryId: 2,

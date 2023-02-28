@@ -5,6 +5,7 @@ on:
     branches:
       # - master
       - development
+      - production
   # pull_request:
   #   branches: [ master ]
 
@@ -22,7 +23,16 @@ jobs:
       - name: Get npm cache directory
         id: npm-cache-dir
         shell: bash
-        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+        run: |
+          echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+          if [[ "${{github.base_ref}}" == "development" || "${{github.ref}}" == "refs/heads/development" ]]; then
+            echo "APP_DIR=${{ secrets.APP_DIR_DEV }}" >> ${GITHUB_OUTPUT}
+            echo "VENV=${{ secrets.VENV_DEV }}" >> ${GITHUB_OUTPUT}
+          fi
+          if [[ "${{github.base_ref}}" == "production" || "${{github.ref}}" == "refs/heads/production" ]]; then
+            echo "APP_DIR=${{ secrets.APP_DIR_PROD }}" >> ${GITHUB_OUTPUT}
+            echo "VENV=${{ secrets.VENV_PROD }}" >> ${GITHUB_OUTPUT}
+          fi
       - uses: dorny/paths-filter@v2
         id: filter
         with:
@@ -99,7 +109,7 @@ jobs:
       #     USER: ${{ secrets.SSH_USERNAME }}
       #     KEY: ${{ secrets.SSH_KEY }}
       #     SOURCE: ${{ github.workspace }}/.next/
-      #     TARGET: ${{ secrets.APP_DIR }}/.next/
+      #     TARGET: ${{ steps.npm-cache-dir.outputs.APP_DIR }}/.next/
       #     ARGS: -avz --delete
       - name: pull code on server
         if: steps.filter.outputs.deploy == 'true'
@@ -111,7 +121,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
           script: |
-            cd ${{ secrets.APP_DIR }}
+            cd ${{ steps.npm-cache-dir.outputs.APP_DIR }}
             git pull
 
       - name: install dependencies on server
@@ -124,7 +134,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
           script: |
-            source ${{ secrets.VENV }} && cd ${{ secrets.APP_DIR }}
+            source ${{ steps.npm-cache-dir.outputs.VENV }} && cd ${{ steps.npm-cache-dir.outputs.APP_DIR }}
             npm i
 
       - name: restart app on server
@@ -139,10 +149,10 @@ jobs:
           script: |
             /usr/sbin/cloudlinux-selector stop --json --interpreter nodejs \
               --user ${{ secrets.SSH_USERNAME }} \
-              --app-root ${{ secrets.APP_DIR }}
+              --app-root ${{ steps.npm-cache-dir.outputs.APP_DIR }}
             /usr/sbin/cloudlinux-selector start --json --interpreter nodejs \
               --user ${{ secrets.SSH_USERNAME }} \
-              --app-root ${{ secrets.APP_DIR }}
+              --app-root ${{ steps.npm-cache-dir.outputs.APP_DIR }}
       # - name: copy build to server
       #   uses: appleboy/scp-action@master
       #   with:
@@ -151,6 +161,6 @@ jobs:
       #     key: ${{ secrets.SSH_KEY }}
       #     port: ${{ secrets.SSH_PORT }}
       #     source: ${{ github.workspace }}/.next/*
-      #     target: ${{ secrets.APP_DIR }}/.next
+      #     target: ${{ steps.npm-cache-dir.outputs.APP_DIR }}/.next
       #     rm: true
       #     strip_components: 3

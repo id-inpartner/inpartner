@@ -401,7 +401,8 @@ const getServerSideProps = async ({ req , query  })=>{
                     } : undefined,
                     attributes: [
                         "id",
-                        "title"
+                        "title",
+                        "name"
                     ],
                     required: !!categoryId
                 },

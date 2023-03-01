@@ -48,7 +48,7 @@ const Text = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default(
 
 /***/ }),
 
-/***/ 226:
+/***/ 9485:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -325,6 +325,10 @@ const Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const falga = ({"src":"/_next/static/media/falga.6e8301d4.svg","height":66,"width":180});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/menn.webp
 /* harmony default export */ const menn = ({"src":"/_next/static/media/menn.8ffda562.webp","height":48,"width":144,"blurDataURL":"data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAMAAkA4JQBOgCHSx68AAP5b2iNfv/VEms3E9JW8h4OBztWzB1wMgAA=","blurWidth":8,"blurHeight":3});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/raiz.webp
+/* harmony default export */ const raiz = ({"src":"/_next/static/media/raiz.1ebd7e10.webp","height":174,"width":608,"blurDataURL":"data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoIAAIAAkA4JZQCdH8AFco5GoAA/vj5rGabZ2rn5F8iPsCXe9Vr0CEfhlgAAA==","blurWidth":8,"blurHeight":2});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/IFGF.jpg
+/* harmony default export */ const IFGF = ({"src":"/_next/static/media/IFGF.fdae05b4.jpg","height":146,"width":367,"blurDataURL":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoKCgoKCgsMDAsPEA4QDxYUExMUFiIYGhgaGCIzICUgICUgMy03LCksNy1RQDg4QFFeT0pPXnFlZXGPiI+7u/sBCgoKCgoKCwwMCw8QDhAPFhQTExQWIhgaGBoYIjMgJSAgJSAzLTcsKSw3LVFAODhAUV5PSk9ecWVlcY+Ij7u7+//CABEIAAMACAMBIgACEQEDEQH/xAAnAAEBAAAAAAAAAAAAAAAAAAAABwEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAAoIUv/8QAGhAAAwEAAwAAAAAAAAAAAAAAAQIDIQAEEf/aAAgBAQABPwCMJNboqRjli+nfH5//xAAXEQADAQAAAAAAAAAAAAAAAAAAASED/9oACAECAQE/ANG5T//EABcRAAMBAAAAAAAAAAAAAAAAAAABIQP/2gAIAQMBAT8AzSsP/9k=","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bumiyasa.png
 /* harmony default export */ const bumiyasa = ({"src":"/_next/static/media/bumiyasa.b4c152f3.png","height":95,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAM0lEQVR42iXIQQoAIAgEwP7/vwJJVsEV8xcFzXGGcHpaMrs7IurUN5bohr1yd5KqChiACyXBKkpKTEmhAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamarga-semarang-batang.png
@@ -357,7 +361,18 @@ const Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const giz = ({"src":"/_next/static/media/giz.3923c8ea.gif","height":62,"width":236});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/danareksa.png
 /* harmony default export */ const danareksa = ({"src":"/_next/static/media/danareksa.4eda84f4.png","height":78,"width":314,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAYAAABllJ3tAAAATUlEQVR4nGPcvGZFHxs7z2P39g/75KT/M739y/DzLwMDOxMDA8N/BoY/jPt3bOkREZV8out37qiiDafQy9//fzAwMv5n+P+f8R8DAwcAnAkbcgyDxQ8AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/pae.jpeg
+/* harmony default export */ const pae = ({"src":"/_next/static/media/pae.20fe4948.jpeg","height":161,"width":118,"blurDataURL":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoKCgoKCgsMDAsPEA4QDxYUExMUFiIYGhgaGCIzICUgICUgMy03LCksNy1RQDg4QFFeT0pPXnFlZXGPiI+7u/sBCgoKCgoKCwwMCw8QDhAPFhQTExQWIhgaGBoYIjMgJSAgJSAzLTcsKSw3LVFAODhAUV5PSk9ecWVlcY+Ij7u7+//CABEIAAgABgMBIgACEQEDEQH/xAAoAAEBAAAAAAAAAAAAAAAAAAAABQEBAQAAAAAAAAAAAAAAAAAABQb/2gAMAwEAAhADEAAAAKooRP/EABwQAAICAgMAAAAAAAAAAAAAAAEDAgQSIQBCgf/aAAgBAQABPwC6UOoVVLlEOUIRzy6iOx6d8//EABgRAQEAAwAAAAAAAAAAAAAAAAECABFR/9oACAECAQE/AIWDR3P/xAAYEQEBAAMAAAAAAAAAAAAAAAABAgAxUf/aAAgBAwEBPwC4m0Xhpz//2Q==","blurWidth":6,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/tamansafarisolo.png
+/* harmony default export */ const tamansafarisolo = ({"src":"/_next/static/media/tamansafarisolo.75e7e36f.png","height":225,"width":225,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAdVBMVEX////+/v7u8O/s7+3h5eLf4uDO5brM5LbR1tPH4q7Q1NPP1NDM0s7A36PB3qXL0M3G0sO93Z7G0cPEy8bEyce/zbm+y7nAx8G4wLq4v7y2v7m3vru1vLmzvLWyu7StvqisvqawubOxuLWttrCsta6msamhraXyWimzAAAAQElEQVR42g3FxREAIRAAwdlzd+FcIf8QofrRCHwniPPn9eMi1GACoPfAL4BEHauagWzZt3cAumuc7gaIyiptY7FjhwMCCUO4DwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/wiucycling.png
+/* harmony default export */ const wiucycling = ({"src":"/_next/static/media/wiucycling.ec56ce9d.png","height":86,"width":611,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAABCAQAAABJCSfIAAAAGklEQVR42mP4FfIr/FfQT4efnj9sfwb+9AYAWcgKKnB5V7EAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":1});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/index.tsx
+
+
+
+
+
 
 
 
@@ -511,115 +526,18 @@ const Clients = ()=>{
                                     src: menn,
                                     alt: "",
                                     quality: 100
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
-                            role: "list",
-                            children: [
+                                }),
                                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 169,
-                                    height: 46,
-                                    src: ug_mandiri,
+                                    width: 128 * 1.5,
+                                    height: 37 * 1.5,
+                                    src: raiz,
                                     alt: "",
                                     quality: 100
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 219,
-                                    height: 50,
-                                    src: bank_bengkulu,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 148,
-                                    height: 58,
-                                    src: kimia_farma,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 156,
-                                    height: 47,
-                                    src: plan_international,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 130,
-                                    height: 48,
-                                    src: mo_biol,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 217,
-                                    height: 60,
-                                    src: bumiyasa,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 165,
-                                    height: 73,
-                                    src: jnk,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 164,
-                                    height: 80,
-                                    src: berdikari,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 134,
-                                    height: 74,
-                                    src: jsn,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 132,
-                                    height: 101,
-                                    src: bkpm,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 131,
-                                    height: 101,
-                                    src: kemenkopukm,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 96,
-                                    height: 99,
-                                    src: batan,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 80,
-                                    height: 80,
-                                    src: csu,
-                                    alt: "",
-                                    quality: 100
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 180,
-                                    height: 66,
-                                    src: falga,
-                                    alt: "",
-                                    quality: 100,
-                                    placeholder: "empty"
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 144 * 1.1,
-                                    height: 48 * 1.1,
-                                    src: menn,
+                                    width: 256 * 0.6,
+                                    height: 102 * 0.6,
+                                    src: IFGF,
                                     alt: "",
                                     quality: 100
                                 })
@@ -733,6 +651,20 @@ const Clients = ()=>{
                                     src: menn,
                                     alt: "",
                                     quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 128 * 1.5,
+                                    height: 37 * 1.5,
+                                    src: raiz,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 * 0.6,
+                                    height: 102 * 0.6,
+                                    src: IFGF,
+                                    alt: "",
+                                    quality: 100
                                 })
                             ]
                         }),
@@ -842,6 +774,20 @@ const Clients = ()=>{
                                     width: 144 * 1.1,
                                     height: 48 * 1.1,
                                     src: menn,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 128 * 1.5,
+                                    height: 37 * 1.5,
+                                    src: raiz,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 * 0.6,
+                                    height: 102 * 0.6,
+                                    src: IFGF,
                                     alt: "",
                                     quality: 100
                                 })
@@ -851,120 +797,412 @@ const Clients = ()=>{
                 })
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Con, {
-                children: /*#__PURE__*/ jsx_runtime_.jsx(Items, {
+                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Items, {
                     className: "last",
-                    children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
-                        className: "last",
-                        children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 227,
-                                height: 68,
-                                src: jasamarga_semarang_batang,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 137,
-                                height: 75,
-                                src: bank_indonesia,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 142,
-                                height: 70,
-                                src: mandiri_investasi,
-                                alt: "",
-                                quality: 100,
-                                placeholder: null
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 158,
-                                height: 59,
-                                src: bpkh,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 141,
-                                height: 65,
-                                src: tmj,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 227,
-                                height: 59,
-                                src: jasamarga_pandaan,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 78,
-                                height: 90,
-                                src: kemenpora,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 73,
-                                height: 99,
-                                src: jerbasukimawabeya,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 96,
-                                height: 84,
-                                src: kazuhiro,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 99,
-                                height: 99,
-                                src: adiyasa,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 128,
-                                height: 104,
-                                src: transoptimaluhur,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 105,
-                                height: 103,
-                                src: lmj,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 99,
-                                height: 99,
-                                src: jasasarana,
-                                alt: "",
-                                quality: 100
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 236 * 0.9,
-                                height: 62 * 0.9,
-                                src: giz,
-                                alt: "",
-                                quality: 100,
-                                placeholder: "empty"
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                width: 256 * 0.86,
-                                height: 64 * 0.86,
-                                src: danareksa,
-                                alt: "",
-                                quality: 100
-                            })
-                        ]
-                    })
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
+                            role: "list",
+                            className: "last",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 68,
+                                    src: jasamarga_semarang_batang,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 137,
+                                    height: 75,
+                                    src: bank_indonesia,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 142,
+                                    height: 70,
+                                    src: mandiri_investasi,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: null
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 158,
+                                    height: 59,
+                                    src: bpkh,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 141,
+                                    height: 65,
+                                    src: tmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 59,
+                                    src: jasamarga_pandaan,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 78,
+                                    height: 90,
+                                    src: kemenpora,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 73,
+                                    height: 99,
+                                    src: jerbasukimawabeya,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 84,
+                                    src: kazuhiro,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: adiyasa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 128,
+                                    height: 104,
+                                    src: transoptimaluhur,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 105,
+                                    height: 103,
+                                    src: lmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: jasasarana,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 236 * 0.9,
+                                    height: 62 * 0.9,
+                                    src: giz,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: "empty"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 * 0.86,
+                                    height: 64 * 0.86,
+                                    src: danareksa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 118 * 0.61,
+                                    height: 164 * 0.61,
+                                    src: pae,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 96,
+                                    src: tamansafarisolo,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256,
+                                    height: 36,
+                                    src: wiucycling,
+                                    alt: "",
+                                    quality: 100
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
+                            role: "list",
+                            className: "last",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 68,
+                                    src: jasamarga_semarang_batang,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 137,
+                                    height: 75,
+                                    src: bank_indonesia,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 142,
+                                    height: 70,
+                                    src: mandiri_investasi,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: null
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 158,
+                                    height: 59,
+                                    src: bpkh,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 141,
+                                    height: 65,
+                                    src: tmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 59,
+                                    src: jasamarga_pandaan,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 78,
+                                    height: 90,
+                                    src: kemenpora,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 73,
+                                    height: 99,
+                                    src: jerbasukimawabeya,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 84,
+                                    src: kazuhiro,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: adiyasa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 128,
+                                    height: 104,
+                                    src: transoptimaluhur,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 105,
+                                    height: 103,
+                                    src: lmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: jasasarana,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 236 * 0.9,
+                                    height: 62 * 0.9,
+                                    src: giz,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: "empty"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 * 0.86,
+                                    height: 64 * 0.86,
+                                    src: danareksa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 118 * 0.61,
+                                    height: 164 * 0.61,
+                                    src: pae,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 96,
+                                    src: tamansafarisolo,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256,
+                                    height: 36,
+                                    src: wiucycling,
+                                    alt: "",
+                                    quality: 100
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
+                            role: "list",
+                            className: "last",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 68,
+                                    src: jasamarga_semarang_batang,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 137,
+                                    height: 75,
+                                    src: bank_indonesia,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 142,
+                                    height: 70,
+                                    src: mandiri_investasi,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: null
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 158,
+                                    height: 59,
+                                    src: bpkh,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 141,
+                                    height: 65,
+                                    src: tmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 59,
+                                    src: jasamarga_pandaan,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 78,
+                                    height: 90,
+                                    src: kemenpora,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 73,
+                                    height: 99,
+                                    src: jerbasukimawabeya,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 84,
+                                    src: kazuhiro,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: adiyasa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 128,
+                                    height: 104,
+                                    src: transoptimaluhur,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 105,
+                                    height: 103,
+                                    src: lmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: jasasarana,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 236 * 0.9,
+                                    height: 62 * 0.9,
+                                    src: giz,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: "empty"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 * 0.86,
+                                    height: 64 * 0.86,
+                                    src: danareksa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 118 * 0.61,
+                                    height: 164 * 0.61,
+                                    src: pae,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 96,
+                                    src: tamansafarisolo,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256,
+                                    height: 36,
+                                    src: wiucycling,
+                                    alt: "",
+                                    quality: 100
+                                })
+                            ]
+                        })
+                    ]
                 })
             })
         ]
@@ -1428,7 +1666,7 @@ const styled_Item = /*#__PURE__*/ styled_default()((link_default()), {
 })("display:block;position:relative;flex:1;margin-top:8px;margin-bottom:8px;border-radius:8px;overflow:hidden;min-width:300px;& > .ratio{min-height:100%;& > img{transition:transform 1s ease-in-out;}}&:hover{& > .ratio > img{transform:scale(1.1);}}");
 const styled_Label = /*#__PURE__*/ styled_default()(Text/* default */.Z, {
     target: "eif5kcm4"
-})("color:white;max-width:260px;font-weight:500;text-align:left;position:absolute;left:18px;top:18px;right:18px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){left:32px;top:32px;right:32px;}");
+})("color:white;/* max-width:260px;*/\n  font-weight:500;text-align:left;position:absolute;left:18px;top:18px;right:18px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){left:32px;top:32px;right:32px;}");
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/business.png
 /* harmony default export */ const business = ({"src":"/_next/static/media/business.8c500a01.png","height":1280,"width":1920,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAiElEQVR42gF9AIL/ALu7u66urbm4t8zNzc3O0Ly9vrO3uMfOzwC+v8CLgH2snJjO0dHN0dKVjImWk5HFzdAAoaGjkpGYlJGXt7e5jpGSWkpHUE5PmZyhAIeHioaHjoqChZaFg0JFS2JSTwAAAHBwdAC/u7a6ta7Gw8HPzM3Ix8m8t7OkoZuzs6/2j0obcEf5ZwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
@@ -1470,8 +1708,12 @@ const Services = ()=>{
                                         sizes: "(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
                                     })
                                 }),
-                                /*#__PURE__*/ jsx_runtime_.jsx(styled_Label, {
-                                    children: "Business and Management Consulting"
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Label, {
+                                    children: [
+                                        "Business and",
+                                        /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
+                                        "Management Consulting"
+                                    ]
                                 })
                             ]
                         })
@@ -1494,8 +1736,12 @@ const Services = ()=>{
                                             sizes: "(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
                                         })
                                     }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx(styled_Label, {
-                                        children: "Capacity Building (The Executive Business Program)"
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Label, {
+                                        children: [
+                                            "Capacity Building",
+                                            /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
+                                            "(The Executive Business Program)"
+                                        ]
                                     })
                                 ]
                             }),
@@ -1661,7 +1907,8 @@ const getServerSideProps = async ({ req  })=>{
                     association: "category",
                     attributes: [
                         "id",
-                        "title"
+                        "title",
+                        "name"
                     ]
                 },
                 {
@@ -2044,7 +2291,7 @@ module.exports = require("react-dom");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,926,626,891], () => (__webpack_exec__(226)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,926,626,891], () => (__webpack_exec__(9485)));
 module.exports = __webpack_exports__;
 
 })();

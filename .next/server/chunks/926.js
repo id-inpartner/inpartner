@@ -95,7 +95,7 @@ const MenuTitle = /*#__PURE__*/ styled_default()((link_default()), {
 })("padding-top:5px;padding-bottom:5px;font-size:12px;font-weight:bold;text-decoration:none;color:white;margin-top:10px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:16px;margin-top:0;}");
 const Menu = /*#__PURE__*/ styled_default()((link_default()), {
     target: "e1rv6jwp5"
-})("padding-top:5px;padding-bottom:5px;font-size:12px;text-decoration:none;color:white;overflow-wrap:break-word;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:16px;max-width:260px;}");
+})("padding-top:5px;padding-bottom:5px;font-size:12px;text-decoration:none;color:white;overflow-wrap:break-word;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:16px;max-width:289px;}");
 const Divider = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e1rv6jwp6"
 })("margin-top:25px;height:1px;background-color:white;border-radius:100%;");
@@ -146,19 +146,12 @@ const Footer = ()=>{
                                         className: "c",
                                         children: ":"
                                     }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "value",
-                                        children: [
-                                            /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                                                href: "tel:+6281398285475",
-                                                children: "0813 9828 5475"
-                                            }),
-                                            " | ",
-                                            /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                                                href: "tel:+6289628310192",
-                                                children: "0896 2831 0192"
-                                            })
-                                        ]
+                                        children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                            href: "tel:+6289628310192",
+                                            children: "0896 2831 0192"
+                                        })
                                     })
                                 ]
                             }),
@@ -366,16 +359,12 @@ const Footer = ()=>{
                                         href: "/services",
                                         children: "Services"
                                     }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Menu, {
+                                    /*#__PURE__*/ jsx_runtime_.jsx(Menu, {
                                         href: {
                                             pathname: "/services",
                                             hash: "business-and-management"
                                         },
-                                        children: [
-                                            "Business and",
-                                            /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
-                                            "Management Consulting"
-                                        ]
+                                        children: "Business and Management Consulting"
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(Menu, {
                                         href: {
@@ -384,53 +373,24 @@ const Footer = ()=>{
                                         },
                                         children: "Investment"
                                     }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Menu, {
+                                    /*#__PURE__*/ jsx_runtime_.jsx(Menu, {
                                         href: {
                                             pathname: "/services",
                                             hash: "capacity-building"
                                         },
-                                        children: [
-                                            "Capacity Building",
-                                            /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
-                                            "(The Executive Business Program)"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
-                                        href: "/project",
-                                        children: "Projects"
+                                        children: "Capacity Building"
                                     })
                                 ]
                             }),
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Col, {
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
+                                        href: "/project",
+                                        children: "Projects"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
                                         href: "/sector",
                                         children: "Sectors"
-                                    }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx(Menu, {
-                                        href: {
-                                            pathname: "/sector",
-                                            hash: "missions"
-                                        },
-                                        children: "Business Development"
-                                    }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Menu, {
-                                        href: {
-                                            pathname: "/sector",
-                                            hash: "missions"
-                                        },
-                                        children: [
-                                            "Fund Raising",
-                                            /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
-                                            "& Investment Advisory"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx(Menu, {
-                                        href: {
-                                            pathname: "/sector",
-                                            hash: "missions"
-                                        },
-                                        children: "Research & Development"
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
                                         href: "/career",

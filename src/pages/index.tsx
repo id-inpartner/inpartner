@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       include: [
         {
           association: 'category',
-          attributes: ['id', 'title'],
+          attributes: ['id', 'title', 'name'],
         },
         {
           association: 'sector',

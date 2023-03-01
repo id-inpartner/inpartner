@@ -25,7 +25,11 @@ export const Services: FC = () => {
                 sizes="(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
               />
             </Ratio>
-            <Label>Business and Management Consulting</Label>
+            <Label>
+              Business and
+              <br />
+              Management Consulting
+            </Label>
           </Item>
         </Col>
         <Col>
@@ -39,7 +43,11 @@ export const Services: FC = () => {
                 sizes="(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
               />
             </Ratio>
-            <Label>Capacity Building (The Executive Business Program)</Label>
+            <Label>
+              Capacity Building
+              <br />
+              (The Executive Business Program)
+            </Label>
           </Item>
           <Item href={{ pathname: '/services', hash: 'investment' }}>
             <Ratio aspectRatio={127 / 543}>

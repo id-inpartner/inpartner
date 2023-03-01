@@ -58,7 +58,7 @@ export const Item = styled(Link)`
 
 export const Label = styled(Text)`
   color: white;
-  max-width: 260px;
+  /* max-width: 260px; */
   font-weight: 500;
   text-align: left;
   position: absolute;

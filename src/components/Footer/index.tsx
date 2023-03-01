@@ -34,8 +34,6 @@ export const Footer: FC = () => {
             <div className="name">Phone</div>
             <div className="c">:</div>
             <div className="value">
-              <a href="tel:+6281398285475">0813 9828 5475</a>
-              {' | '}
               <a href="tel:+6289628310192">0896 2831 0192</a>
             </div>
           </div>
@@ -133,32 +131,18 @@ export const Footer: FC = () => {
             <Menu
               href={{ pathname: '/services', hash: 'business-and-management' }}
             >
-              Business and
-              <br />
-              Management Consulting
+              Business and Management Consulting
             </Menu>
             <Menu href={{ pathname: '/services', hash: 'investment' }}>
               Investment
             </Menu>
             <Menu href={{ pathname: '/services', hash: 'capacity-building' }}>
               Capacity Building
-              <br />
-              (The Executive Business Program)
             </Menu>
-            <MenuTitle href="/project">Projects</MenuTitle>
           </Col>
           <Col>
+            <MenuTitle href="/project">Projects</MenuTitle>
             <MenuTitle href="/sector">Sectors</MenuTitle>
-            <Menu href={{ pathname: '/sector', hash: 'missions' }}>
-              Business Development
-            </Menu>
-            <Menu href={{ pathname: '/sector', hash: 'missions' }}>
-              Fund Raising
-              <br />& Investment Advisory
-            </Menu>
-            <Menu href={{ pathname: '/sector', hash: 'missions' }}>
-              Research & Development
-            </Menu>
             <MenuTitle href="/career">Career</MenuTitle>
             <MenuTitle href={{ pathname: '/about', hash: 'missions' }}>
               Blog

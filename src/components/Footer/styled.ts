@@ -70,7 +70,7 @@ export const Menu = styled(Link)`
   overflow-wrap: break-word;
   @media (min-width: ${breakpoints.md}) {
     font-size: 16px;
-    max-width: 260px;
+    max-width: 289px;
   }
 `
 

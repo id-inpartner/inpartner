@@ -59,7 +59,7 @@ export const getServerSideProps: GetServerSideProps = async ({
         {
           association: 'category',
           where: categoryId ? { id: categoryId } : undefined,
-          attributes: ['id', 'title'],
+          attributes: ['id', 'title', 'name'],
           required: !!categoryId,
         },
         {

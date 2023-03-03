@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('Projects', [
       {
         id: 1,
-        title: 'IPO preparation & implementation for one of Regional Bank',
+        title: 'IPO preparation & implementation',
         image: '/storage/project/bank-sumut.png',
         startAt: new Date(2020, 12),
         endAt: new Date(2021, 4),

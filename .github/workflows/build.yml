@@ -47,6 +47,7 @@ jobs:
               - 'src/**'
               - 'next.config.js'
               - 'tsconfig.json'
+              - 'public/**'
             deploy:
               - 'package.json'
               - 'package-lock.json'

@@ -402,6 +402,10 @@ const Footer = ()=>{
                                             hash: "missions"
                                         },
                                         children: "Blog"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
+                                        href: "https://btf.inpartner.id/public",
+                                        children: "ICT-BTF"
                                     })
                                 ]
                             })

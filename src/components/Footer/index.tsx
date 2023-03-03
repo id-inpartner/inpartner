@@ -147,6 +147,9 @@ export const Footer: FC = () => {
             <MenuTitle href={{ pathname: '/about', hash: 'missions' }}>
               Blog
             </MenuTitle>
+            <MenuTitle href="https://btf.inpartner.id/public">
+              ICT-BTF
+            </MenuTitle>
           </Col>
         </Menus>
       </Row>

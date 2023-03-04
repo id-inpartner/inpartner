@@ -1,6 +1,6 @@
 "use strict";
-exports.id = 139;
-exports.ids = [139];
+exports.id = 500;
+exports.ids = [500];
 exports.modules = {
 
 /***/ 6139:
@@ -72,6 +72,24 @@ const Banner = ({ backgroundSrc , title , description , size  })=>{
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Banner);
+
+
+/***/ }),
+
+/***/ 2042:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "C": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* unused harmony export Card */
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1480);
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_0__);
+
+const Card = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()("div", {
+    target: "ev7rpqc0"
+})("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
 
 
 /***/ })

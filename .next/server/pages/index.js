@@ -5,6 +5,24 @@ exports.id = 405;
 exports.ids = [405];
 exports.modules = {
 
+/***/ 2042:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "C": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* unused harmony export Card */
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1480);
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_0__);
+
+const Card = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()("div", {
+    target: "ev7rpqc0"
+})("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
+
+
+/***/ }),
+
 /***/ 5242:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -792,6 +810,131 @@ const Clients = ()=>{
                                     quality: 100
                                 })
                             ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
+                            role: "list",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 169,
+                                    height: 46,
+                                    src: ug_mandiri,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 219,
+                                    height: 50,
+                                    src: bank_bengkulu,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 148,
+                                    height: 58,
+                                    src: kimia_farma,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 156,
+                                    height: 47,
+                                    src: plan_international,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 130,
+                                    height: 48,
+                                    src: mo_biol,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 217,
+                                    height: 60,
+                                    src: bumiyasa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 165,
+                                    height: 73,
+                                    src: jnk,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 164,
+                                    height: 80,
+                                    src: berdikari,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 134,
+                                    height: 74,
+                                    src: jsn,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 132,
+                                    height: 101,
+                                    src: bkpm,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 131,
+                                    height: 101,
+                                    src: kemenkopukm,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 99,
+                                    src: batan,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 80,
+                                    height: 80,
+                                    src: csu,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 180,
+                                    height: 66,
+                                    src: falga,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: "empty"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 144 * 1.1,
+                                    height: 48 * 1.1,
+                                    src: menn,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 128 * 1.5,
+                                    height: 37 * 1.5,
+                                    src: raiz,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 * 0.6,
+                                    height: 102 * 0.6,
+                                    src: IFGF,
+                                    alt: "",
+                                    quality: 100
+                                })
+                            ]
                         })
                     ]
                 })
@@ -800,6 +943,140 @@ const Clients = ()=>{
                 children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Items, {
                     className: "last",
                     children: [
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
+                            role: "list",
+                            className: "last",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 68,
+                                    src: jasamarga_semarang_batang,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 137,
+                                    height: 75,
+                                    src: bank_indonesia,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 142,
+                                    height: 70,
+                                    src: mandiri_investasi,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: null
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 158,
+                                    height: 59,
+                                    src: bpkh,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 141,
+                                    height: 65,
+                                    src: tmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 227,
+                                    height: 59,
+                                    src: jasamarga_pandaan,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 78,
+                                    height: 90,
+                                    src: kemenpora,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 73,
+                                    height: 99,
+                                    src: jerbasukimawabeya,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 84,
+                                    src: kazuhiro,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: adiyasa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 128,
+                                    height: 104,
+                                    src: transoptimaluhur,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 105,
+                                    height: 103,
+                                    src: lmj,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 99,
+                                    height: 99,
+                                    src: jasasarana,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 236 * 0.9,
+                                    height: 62 * 0.9,
+                                    src: giz,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: "empty"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 * 0.86,
+                                    height: 64 * 0.86,
+                                    src: danareksa,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 118 * 0.61,
+                                    height: 164 * 0.61,
+                                    src: pae,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 96,
+                                    height: 96,
+                                    src: tamansafarisolo,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256,
+                                    height: 36,
+                                    src: wiucycling,
+                                    alt: "",
+                                    quality: 100
+                                })
+                            ]
+                        }),
                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
                             role: "list",
                             className: "last",
@@ -2291,7 +2568,7 @@ module.exports = require("react-dom");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,926,626,891], () => (__webpack_exec__(9485)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,94,626,891], () => (__webpack_exec__(9485)));
 module.exports = __webpack_exports__;
 
 })();

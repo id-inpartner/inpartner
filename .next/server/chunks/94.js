@@ -1,6 +1,6 @@
 "use strict";
-exports.id = 926;
-exports.ids = [926];
+exports.id = 94;
+exports.ids = [94];
 exports.modules = {
 
 /***/ 6753:
@@ -23,24 +23,6 @@ const Button = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___defaul
     target: "e13khrpr0"
 })("font-weight:bold;font-size:16px;font-family:", (_fonts_index__WEBPACK_IMPORTED_MODULE_2___default().style.fontFamily), ";&.btn-primary,&.btn-secondary{box-shadow:1px 3px 3px rgba(0,0,0,0.3);&:hover{box-shadow:1px 3px 3px rgba(0,0,0,0.6);}}");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);
-
-
-/***/ }),
-
-/***/ 2042:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "C": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* unused harmony export Card */
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1480);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_0__);
-
-const Card = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()("div", {
-    target: "ev7rpqc0"
-})("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
 
 
 /***/ }),
@@ -397,10 +379,7 @@ const Footer = ()=>{
                                         children: "Career"
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
-                                        href: {
-                                            pathname: "/about",
-                                            hash: "missions"
-                                        },
+                                        href: "/blog",
                                         children: "Blog"
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
@@ -769,7 +748,7 @@ const Navbar = ()=>{
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     className: "nav-link",
-                                    href: "/Services.html",
+                                    href: "/blog",
                                     children: "Blog"
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx(GetInTouch, {

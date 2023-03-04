@@ -261,7 +261,7 @@ export const Navbar: FC = () => {
             <Link className="nav-link" href="/career">
               Career
             </Link>
-            <Link className="nav-link" href="/Services.html">
+            <Link className="nav-link" href="/blog">
               Blog
             </Link>
             <GetInTouch href="https://wa.me/6281389285475">

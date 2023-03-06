@@ -1,21 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 
 class Contact extends Model {
-  /** @type {number} */
-  id
-
-  /** @type {string} */
-  name
-
-  /** @type {string} */
-  email
-
-  /** @type {string} */
-  subject
-
-  /** @type {string} */
-  message
-
   /**
    * @param {import('sequelize').Sequelize} sequelize
    */

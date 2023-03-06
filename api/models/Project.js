@@ -4,27 +4,6 @@ const { Model, DataTypes } = require('sequelize')
  * @class
  */
 class Project extends Model {
-  /** @type {number} */
-  id
-
-  /** @type {string} */
-  title
-
-  /** @type {string} */
-  image
-
-  /** @type {Date} */
-  startAt
-
-  /** @type {Date} */
-  endAt
-
-  /** @type {import('./Category').Category[]} */
-  category
-
-  /** @type {import('./Sector').Sector[]} */
-  sector
-
   /**
    * @param {import('sequelize').Sequelize} sequelize
    */

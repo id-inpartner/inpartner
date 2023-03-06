@@ -1,27 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 
 class Sector extends Model {
-  /** @type {number} */
-  id
-
-  /** @type {string} */
-  slug
-
-  /** @type {string} */
-  title
-
-  /** @type {string} */
-  image
-
-  /** @type {string} */
-  metaTitle
-
-  /** @type {string} */
-  metaDescription
-
-  /** @type {import('./Project')[]} */
-  projects
-
   /**
    * @param {import('sequelize').Sequelize} sequelize
    */

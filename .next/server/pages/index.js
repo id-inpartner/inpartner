@@ -1499,13 +1499,73 @@ var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
 
 
 
+
 const Contact_Root = /*#__PURE__*/ styled_default()("div", {
     target: "e1rfrusq0"
 })("display:flex;flex-direction:column;flex:1;align-items:stretch;min-width:100%;@media (min-width:404px){min-width:380px;}");
 const F = /*#__PURE__*/ styled_default()((Form_default()), {
     target: "e1rfrusq1"
 })("display:flex;flex-direction:column;align-items:stretch;margin-right:auto;margin-left:auto;& input,textarea{padding-top:11px;padding-bottom:11px;box-shadow:0px 4px 4px rgba(0,0,0,0.35);}min-width:100%;@media (min-width:404px){min-width:380px;}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:300px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:380px;}");
+const reducer = (state, action)=>{
+    switch(action.type){
+        case "submit":
+            return {
+                ...state,
+                status: "progress"
+            };
+        case "success":
+            return {
+                ...state,
+                status: "success"
+            };
+        case "failed":
+            return {
+                ...state,
+                status: "idle",
+                error: action.error
+            };
+        case "reset":
+            return {
+                ...state,
+                status: "idle",
+                error: undefined
+            };
+        default:
+            return state;
+    }
+};
 const Contact = ()=>{
+    const [state, dispatch] = (0,external_react_.useReducer)(reducer, {
+        status: "idle"
+    });
+    const [values, setValues] = (0,external_react_.useState)({
+        email: "",
+        name: "",
+        subject: "",
+        message: ""
+    });
+    (0,external_react_.useEffect)(()=>{
+        if (state.error) {
+            alert(state.error);
+            dispatch({
+                type: "reset"
+            });
+        } else if (state.status === "success") {
+            alert("Message recorded!");
+            dispatch({
+                type: "reset"
+            });
+        }
+    }, [
+        state.status,
+        state.error
+    ]);
+    const onChange = (e)=>{
+        setValues({
+            ...values,
+            [e.target.name]: e.target.value
+        });
+    };
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Contact_Root, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(TitleDescription/* default */.ZP, {
@@ -1515,17 +1575,60 @@ const Contact = ()=>{
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(F, {
                 onSubmit: (a)=>{
                     a.preventDefault();
-                    alert("submited");
+                    dispatch({
+                        type: "submit",
+                        values
+                    });
+                    fetch("/api/contact", {
+                        method: "POST",
+                        headers: {
+                            "content-type": "application/json"
+                        },
+                        body: JSON.stringify(values)
+                    }).then((res)=>{
+                        if (res.ok) {
+                            dispatch({
+                                type: "success"
+                            });
+                        } else {
+                            dispatch({
+                                type: "failed",
+                                error: "Internal Server Error"
+                            });
+                        }
+                    }).catch((e)=>{
+                        dispatch({
+                            type: "failed",
+                            error: e.message
+                        });
+                    });
                 },
                 children: [
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Form_default()).Group, {
+                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Group, {
                         className: "mb-4",
                         controlId: "name",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
+                            name: "name",
+                            required: true,
+                            type: "name",
+                            placeholder: "Enter your full name",
+                            disabled: state.status === "progress",
+                            value: values.name,
+                            onChange: onChange
+                        })
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Form_default()).Group, {
+                        className: "mb-4",
+                        controlId: "email",
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
+                                name: "email",
                                 required: true,
-                                type: "name",
-                                placeholder: "Enter your full name"
+                                type: "email",
+                                placeholder: "Enter your email",
+                                disabled: state.status === "progress",
+                                value: values.email,
+                                onChange: onChange
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control.Feedback, {
                                 type: "invalid",
@@ -1535,36 +1638,36 @@ const Contact = ()=>{
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Group, {
                         className: "mb-4",
-                        controlId: "email",
-                        children: /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
-                            required: true,
-                            type: "email",
-                            placeholder: "Enter your email"
-                        })
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Group, {
-                        className: "mb-4",
                         controlId: "subject",
                         children: /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
+                            name: "subject",
                             required: true,
                             type: "text",
-                            placeholder: "Enter your subject"
+                            placeholder: "Enter your subject",
+                            disabled: state.status === "progress",
+                            value: values.subject,
+                            onChange: onChange
                         })
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Group, {
                         className: "mb-4",
                         controlId: "message",
                         children: /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
+                            name: "message",
                             required: true,
                             type: "text",
                             as: "textarea",
                             rows: 3,
-                            placeholder: "Enter your subject"
+                            placeholder: "Enter your subject",
+                            disabled: state.status === "progress",
+                            value: values.message,
+                            onChange: onChange
                         })
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
                         className: "mt-3",
                         type: "submit",
+                        disabled: state.status === "progress",
                         children: "Submit"
                     })
                 ]

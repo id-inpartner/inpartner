@@ -12,7 +12,7 @@
     <loc>https://inpartner.id/about/</loc>
     <lastmod>2023-03-06T03:57:15+00:00</lastmod>
     <image:image>
-      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.efd0f124.png&w=3840&q=100</image:loc>
+      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.efd0f124.png&amp;w=3840&amp;q=100</image:loc>
     </image:image>
   </url>
   <url>
@@ -23,28 +23,28 @@
     <loc>https://inpartner.id/career/</loc>
     <lastmod>2023-03-06T03:57:15+00:00</lastmod>
     <image:image>
-      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.85c59509.png&w=3840&q=100</image:loc>
+      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.85c59509.png&amp;w=3840&amp;q=100</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://inpartner.id/project/</loc>
     <lastmod>2023-03-06T03:57:15+00:00</lastmod>
     <image:image>
-      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.c5da7d6b.png&w=3840&q=100</image:loc>
+      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.c5da7d6b.png&amp;w=3840&amp;q=100</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://inpartner.id/sector/</loc>
     <lastmod>2023-03-06T03:57:15+00:00</lastmod>
     <image:image>
-      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.46216b9d.png&w=3840&q=100</image:loc>
+      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.46216b9d.png&amp;w=3840&amp;q=100</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://inpartner.id/services/</loc>
     <lastmod>2023-03-06T03:57:15+00:00</lastmod>
     <image:image>
-      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.f3923d15.png&w=3840&q=100</image:loc>
+      <image:loc>https://inpartner.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbanner.f3923d15.png&amp;w=3840&amp;q=100</image:loc>
     </image:image>
   </url>
 </urlset>

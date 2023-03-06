@@ -13,9 +13,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
 /* harmony export */ });
-/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4384);
-/* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(date_fns_format__WEBPACK_IMPORTED_MODULE_0__);
-
 const Page = ()=>{
 // getServerSideProps will do the heavy lifting
 };
@@ -24,10 +21,22 @@ const getServerSideProps = async ({ req , res  })=>{
     const { Sector  } = sequelize.models;
     try {
         const data = await Sector.findAll();
+        console.log(data.map((it)=>{
+            const t = `
+  <url>
+    <loc>https://inpartner.id/sector/${it.slug}/</loc>
+    <lastmod>${it.updatedAt.toISOString()}</lastmod>
+    <image:image>
+      <image:loc>https://inpartner.id/${it.image}</image:loc>
+    </image:image>
+  </url>
+  `;
+            console.log(t);
+            return t;
+        }).join("\n"));
         res.setHeader("Content-Type", "text/xml");
         res.write(`
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="//inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
@@ -36,20 +45,20 @@ const getServerSideProps = async ({ req , res  })=>{
   ${data.map((it)=>`
 <url>
   <loc>https://inpartner.id/sector/${it.slug}/</loc>
-  <lastmod>${date_fns_format__WEBPACK_IMPORTED_MODULE_0___default()(it.updatedAt, "YYYY-MM-DDTHH:mm:ss.SSSZ")}</lastmod>
+  <lastmod>${it.updatedAt.toISOString()}</lastmod>
   <image:image>
     <image:loc>https://inpartner.id/${it.image}</image:loc>
   </image:image>
 </url>
-`.trim())}
+`.trim()).join("\n")}
 </urlset>
 `.trim());
         res.end();
     } catch (e) {
+        console.log(e);
         res.setHeader("Content-Type", "text/xml");
         res.write(`
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="//inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
@@ -65,13 +74,6 @@ const getServerSideProps = async ({ req , res  })=>{
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
-
-/***/ }),
-
-/***/ 4384:
-/***/ ((module) => {
-
-module.exports = require("date-fns/format");
 
 /***/ })
 

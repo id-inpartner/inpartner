@@ -22,7 +22,6 @@ const Page = ()=>{
 // getServerSideProps will do the heavy lifting
 };
 const getServerSideProps = async ({ res  })=>{
-    console.log("getServerSideProps");
     try {
         const response = await axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://blog.inpartner.id/post-sitemap.xml", {
             headers: {
@@ -31,7 +30,7 @@ const getServerSideProps = async ({ res  })=>{
             transformResponse: (res)=>res
         });
         const raw = response.data;
-        const sitemap = raw.replaceAll("<loc>https://blog.inpartner.id", "<loc>https://inpartner.id/blog").replace('<?xml-stylesheet type="text/xsl" href="//blog.inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>', "").replaceAll(/<!--.*-->/, "");
+        const sitemap = raw.replaceAll("<loc>https://blog.inpartner.id", "<loc>https://inpartner.id/blog").replace('<?xml-stylesheet type="text/xsl" href="//blog.inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>', "").replaceAll(/<!--.*-->/gs, "");
         res.setHeader("Content-Type", "text/xml");
         res.write(sitemap);
         res.end();

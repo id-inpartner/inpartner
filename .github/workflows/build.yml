@@ -48,6 +48,7 @@ jobs:
               - 'next.config.js'
               - 'tsconfig.json'
               - 'public/**'
+              - '.env.*'
             deploy:
               - 'package.json'
               - 'package-lock.json'
@@ -57,6 +58,7 @@ jobs:
               - 'api/**'
               - 'public/**'
               - 'server.js'
+              - '.env.*'
       - name: NPM Cache
         if: steps.filter.outputs.build == 'true'
         id: npm-cache

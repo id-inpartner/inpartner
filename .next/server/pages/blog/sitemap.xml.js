@@ -31,7 +31,7 @@ const getServerSideProps = async ({ res  })=>{
             transformResponse: (res)=>res
         });
         const raw = response.data;
-        const sitemap = raw.replaceAll("<loc>https://blog.inpartner.id", "<loc>https://inpartner.id/blog").replace('<?xml-stylesheet type="text/xsl" href="//blog.inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>', "");
+        const sitemap = raw.replaceAll("<loc>https://blog.inpartner.id", "<loc>https://inpartner.id/blog").replace('<?xml-stylesheet type="text/xsl" href="//blog.inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>', "").replaceAll(/<!--.*-->/, "");
         res.setHeader("Content-Type", "text/xml");
         res.write(sitemap);
         res.end();

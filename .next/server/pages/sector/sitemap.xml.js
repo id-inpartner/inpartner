@@ -21,19 +21,6 @@ const getServerSideProps = async ({ req , res  })=>{
     const { Sector  } = sequelize.models;
     try {
         const data = await Sector.findAll();
-        console.log(data.map((it)=>{
-            const t = `
-  <url>
-    <loc>https://inpartner.id/sector/${it.slug}/</loc>
-    <lastmod>${it.updatedAt.toISOString()}</lastmod>
-    <image:image>
-      <image:loc>https://inpartner.id/${it.image}</image:loc>
-    </image:image>
-  </url>
-  `;
-            console.log(t);
-            return t;
-        }).join("\n"));
         res.setHeader("Content-Type", "text/xml");
         res.write(`
 <?xml version="1.0" encoding="UTF-8"?>
@@ -47,7 +34,7 @@ const getServerSideProps = async ({ req , res  })=>{
   <loc>https://inpartner.id/sector/${it.slug}/</loc>
   <lastmod>${it.updatedAt.toISOString()}</lastmod>
   <image:image>
-    <image:loc>https://inpartner.id/${it.image}</image:loc>
+    <image:loc>https://inpartner.id${it.image}</image:loc>
   </image:image>
 </url>
 `.trim()).join("\n")}

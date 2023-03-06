@@ -13,6 +13,15 @@ const handle = app.getRequestHandler()
   const db = await createDb()
   const server = express()
   server.use(createContentMiddleware(db))
+  server.get('/Team.html', (_, res) => {
+    return res.redirect(301, '/about#team')
+  })
+  server.get('/About.html', (_, res) => {
+    return res.redirect(301, '/about')
+  })
+  server.get('/Services.html', (_, res) => {
+    return res.redirect(301, '/services')
+  })
   server.all('*', (req, res) => {
     return handle(req, res)
   })

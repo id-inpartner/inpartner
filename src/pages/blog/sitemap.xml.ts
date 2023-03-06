@@ -6,7 +6,6 @@ const Page = () => {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  console.log('getServerSideProps')
   try {
     const response = await axios.get(
       'https://blog.inpartner.id/post-sitemap.xml',
@@ -25,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         '<?xml-stylesheet type="text/xsl" href="//blog.inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>',
         ''
       )
-      .replaceAll(/<!--.*-->/, '')
+      .replaceAll(/<!--.*-->/gs, '')
     res.setHeader('Content-Type', 'text/xml')
     res.write(sitemap)
     res.end()

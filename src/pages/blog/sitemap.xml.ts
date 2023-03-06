@@ -25,6 +25,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         '<?xml-stylesheet type="text/xsl" href="//blog.inpartner.id/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>',
         ''
       )
+      .replaceAll(/<!--.*-->/, '')
     res.setHeader('Content-Type', 'text/xml')
     res.write(sitemap)
     res.end()

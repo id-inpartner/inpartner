@@ -18,23 +18,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   try {
     const data =
       (await Sector.findAll()) as unknown as ReadonlyArray<SectorEntity>
-    console.log(
-      data
-        .map((it) => {
-          const t = `
-  <url>
-    <loc>https://inpartner.id/sector/${it.slug}/</loc>
-    <lastmod>${it.updatedAt.toISOString()}</lastmod>
-    <image:image>
-      <image:loc>https://inpartner.id/${it.image}</image:loc>
-    </image:image>
-  </url>
-  `
-          console.log(t)
-          return t
-        })
-        .join('\n')
-    )
     res.setHeader('Content-Type', 'text/xml')
     res.write(
       `
@@ -51,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   <loc>https://inpartner.id/sector/${it.slug}/</loc>
   <lastmod>${it.updatedAt.toISOString()}</lastmod>
   <image:image>
-    <image:loc>https://inpartner.id/${it.image}</image:loc>
+    <image:loc>https://inpartner.id${it.image}</image:loc>
   </image:image>
 </url>
 `.trim()

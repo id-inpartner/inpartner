@@ -55,6 +55,16 @@ export interface Category {
   readonly yoast_head_json: YoastHead
 }
 
+export interface PlainPost {
+  readonly id: number
+  readonly slug: string
+  readonly title: Rendered
+  readonly _embedded: {
+    readonly 'wp:term': ReadonlyArray<[Category]>
+    readonly 'wp:featuredmedia': ReadonlyArray<Media>
+  }
+}
+
 export interface Post {
   readonly id: number
   readonly date: string
@@ -67,6 +77,7 @@ export interface Post {
   readonly excerpt: Rendered
   readonly yoast_head: string
   readonly yoast_head_json: YoastHead
+  readonly relatedPosts: ReadonlyArray<PlainPost>
   readonly _embedded: {
     readonly author: ReadonlyArray<Author>
     readonly 'wp:term': ReadonlyArray<[Category]>

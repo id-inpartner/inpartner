@@ -10,6 +10,7 @@ const nextConfig = {
       'www.dev.inpartner.id',
       'inpartner.id',
       'www.inpartner.id',
+      'blog.inpartner.id',
     ],
   },
   i18n: {

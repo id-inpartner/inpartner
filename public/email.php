@@ -16,7 +16,7 @@ $headers = 'From: ' . $_POST["name"] . '<' . $_POST["email"] . '>' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
   //
-  mail( "consultant.customercare@inpartner.id", $_POST['subject'], $_POST['message'], $headers );
+  mail( "corporatesecretary@inpartner.id", $_POST['subject'], $_POST['message'], $headers );
  
   //      ^
   //  Replace with your email 

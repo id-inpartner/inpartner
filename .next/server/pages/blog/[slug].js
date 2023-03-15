@@ -5,29 +5,6 @@ exports.id = 492;
 exports.ids = [492];
 exports.modules = {
 
-/***/ 5242:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* unused harmony export SectionTitle */
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8857);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1480);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5256);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fonts_index__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default()("h5", {
-    target: "e3y0cv0"
-})("font-weight:600;font-family:", (_fonts_index__WEBPACK_IMPORTED_MODULE_2___default().style.fontFamily), ";font-size:20px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.md */ .AV.md, "){font-size:28px;}");
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionTitle);
-
-
-/***/ }),
-
 /***/ 3223:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -41,18 +18,27 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
+// EXTERNAL MODULE: ./src/components/Button/index.ts
+var Button = __webpack_require__(6753);
 ;// CONCATENATED MODULE: external "date-fns/format"
 const format_namespaceObject = require("date-fns/format");
 var format_default = /*#__PURE__*/__webpack_require__.n(format_namespaceObject);
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__(5675);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
 var GlobalStyle = __webpack_require__(8857);
-// EXTERNAL MODULE: ./src/components/SectionTitle/index.tsx
-var SectionTitle = __webpack_require__(5242);
 // EXTERNAL MODULE: external "@emotion/styled"
 var styled_ = __webpack_require__(1480);
 var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
+// EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"sans"}
+var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(5256);
+var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_);
 // EXTERNAL MODULE: external "react-bootstrap/Container"
 var Container_ = __webpack_require__(4678);
 var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
@@ -61,47 +47,124 @@ var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 
 
 
+
 const Container = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e1u7fl100"
-})("padding-bottom:68px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:120px;}");
-const Title = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
+})("padding-bottom:68px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:120px;}display:flex;flex-wrap:wrap;");
+const Article = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl101"
-})("text-align:center;margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}");
-const Content = /*#__PURE__*/ styled_default()("div", {
+})("flex:1;max-width:100%;");
+const Sidebar = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl102"
-})();
-const Meta = /*#__PURE__*/ styled_default()("div", {
+})("display:flex;flex-direction:column;min-width:320px;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-width:384px;min-width:384px;}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:384px;}& > .title{font-weight:bold;font-size:20px;text-align:center;width:100%;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:26px;}margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}}");
+const Title = /*#__PURE__*/ styled_default()("h1", {
     target: "e1u7fl103"
-})("color:gray;margin-bottom:12px;");
-const Chips = /*#__PURE__*/ styled_default()("div", {
+})("font-weight:bold;font-family:", (index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default()).style.fontFamily, ";font-size:22px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:32px;}margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}");
+const Content = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl104"
-})("display:flex;flex-wrap:wrap;margin-left:-4px;margin-right:-4px;& > div{margin-left:4px;margin-right:4px;margin-bottom:8px;background-color:#fff3cd;color:#664d03;border-radius:4px;padding:4px 16px;}");
+})("font-size:20px;& table{border:1px solid black;margin-bottom:2rem;& > thead{& > tr{& > th{color:white;background-color:#80304c;border-bottom:1px solid black;border-left:1px solid white;border-right:1px solid white;padding:0.5em;&:first-child{border-left-color:black;}&:last-child{border-right-color:black;}}}}& > tbody{& > tr{& > td{border-left:1px solid black;border-right:1px solid black;padding:0.5em;}}}}& .has-text-align-center{text-align:center;}& p{margin-bottom:2rem;}& h2{margin-bottom:2rem;margin-top:3rem;font-weight:700;font-size:20px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:28px;}}");
+const Meta = /*#__PURE__*/ styled_default()("div", {
+    target: "e1u7fl105"
+})("color:black;margin-bottom:12px;margin-top:12px;font-size:18px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:20px;margin-top:24px;}");
+const Chips = /*#__PURE__*/ styled_default()("div", {
+    target: "e1u7fl106"
+})("display:flex;flex-wrap:wrap;margin-left:-4px;margin-right:-4px;& > div{margin-left:4px;margin-right:4px;margin-bottom:8px;background-color:#80304c;color:#664d03;color:#fff3cd;border-radius:4px;padding:4px 16px;}font-size:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:14px;}");
+const Categories = /*#__PURE__*/ styled_default()("div", {
+    target: "e1u7fl107"
+})("display:flex;flex-wrap:wrap;margin:0 -4px;& > a{margin:4px;& > button{background-color:white;color:black;border:none;font-weight:400;text-align:center;}}");
+const Item = /*#__PURE__*/ styled_default()((link_default()), {
+    target: "e1u7fl108"
+})("display:flex;margin-top:32px;&:hover{& > .content{& > .title{text-decoration:underline;}}}& img{object-fit:cover;border-radius:12px;}& > .content{flex:1;margin-left:16px;& > .category{font-size:14px;}& > .title{font-weight:700;font-size:16px;}}");
 
 ;// CONCATENATED MODULE: ./src/containers/Post/index.tsx
 
 
 
 
-const Index = ({ post  })=>{
+
+
+
+const Index = ({ post , categories , related  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(Title, {
-                dangerouslySetInnerHTML: {
-                    __html: post.title.rendered
-                }
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Article, {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx(Title, {
+                        dangerouslySetInnerHTML: {
+                            __html: post.title.rendered
+                        }
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Meta, {
+                        children: format_default()(new Date(post.modified), "d MMMM yyyy")
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Content, {
+                        dangerouslySetInnerHTML: {
+                            __html: post.content.rendered
+                        }
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Chips, {
+                        children: post._embedded["wp:term"].map((its)=>its.map((it)=>it && it.id ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    children: it.name
+                                }, it.id) : undefined))
+                    })
+                ]
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Meta, {
-                children: `${post._embedded.author[0].name} | ${format_default()(new Date(post.modified), "d MMMM yyyy")}`
-            }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Content, {
-                dangerouslySetInnerHTML: {
-                    __html: post.content.rendered
-                }
-            }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Chips, {
-                children: post._embedded["wp:term"].map(([it])=>it && it.id ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                        children: it.name
-                    }, it.id) : undefined)
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Sidebar, {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: "title",
+                        children: "Discover More"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Categories, {
+                        children: categories.map((it)=>it.slug !== "others" && /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                                passHref: true,
+                                href: {
+                                    pathname: "/blog"
+                                },
+                                children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                                    children: it.name
+                                })
+                            }, it.id))
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: "title",
+                        children: "Related Articles"
+                    }),
+                    related.map((it)=>{
+                        const m = it._embedded["wp:featuredmedia"].length ? it._embedded["wp:featuredmedia"][0] : {
+                            alt_text: "",
+                            source_url: "/images/default_post_img.png"
+                        };
+                        const [c] = it._embedded["wp:term"].find((i)=>i.find((ii)=>ii.taxonomy === "category"));
+                        return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Item, {
+                            href: `/blog/${it.slug}`,
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                    width: 127,
+                                    height: 96,
+                                    quality: 100,
+                                    alt: m.alt_text,
+                                    src: m.source_url
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                    className: "content",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                            className: "category",
+                                            children: c && c.name
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                            className: "title",
+                                            dangerouslySetInnerHTML: {
+                                                __html: it.title.rendered
+                                            }
+                                        })
+                                    ]
+                                })
+                            ]
+                        }, it.id);
+                    })
+                ]
             })
         ]
     });
@@ -139,7 +202,7 @@ axios__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (awa
 
 
 
-const Page = ({ post  })=>{
+const Page = ({ post , categories , related  })=>{
     const meta = post.yoast_head_json;
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
@@ -193,7 +256,9 @@ const Page = ({ post  })=>{
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Post__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
-                post: post
+                post: post,
+                categories: categories,
+                related: related
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {})
         ]
@@ -201,23 +266,47 @@ const Page = ({ post  })=>{
 };
 const getServerSideProps = async ({ req , query  })=>{
     const { slug  } = query;
-    const posts = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+    const [posts, categories] = await Promise.all([
+        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+            params: {
+                slug,
+                related: 3,
+                _embed: 1
+            },
+            headers: {
+                accept: "application/json"
+            }
+        }),
+        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
+            params: {
+                _embed: 1
+            },
+            headers: {
+                accept: "application/json"
+            }
+        })
+    ]);
+    if (Array.isArray(posts.data) && posts.data.length == 0) {
+        return {
+            notFound: true
+        };
+    }
+    const post = posts.data[0];
+    const related = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/yarpp/v1/related/${post.id}`, {
         params: {
-            slug,
+            limit: 3,
+            _fields: "id,title,slug,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
             _embed: 1
         },
         headers: {
             accept: "application/json"
         }
     });
-    if (Array.isArray(posts.data) && posts.data.length == 0) {
-        return {
-            notFound: true
-        };
-    }
     return {
         props: {
-            post: posts.data[0]
+            post,
+            categories: categories.data,
+            related: related.data
         }
     };
 };

@@ -3,8 +3,9 @@ import Head from 'next/head'
 import Container, { IndexProps } from '@containers/Home'
 import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
+import axios from 'axios'
 
-const Page: NextPage<IndexProps> = ({ projects }) => {
+const Page: NextPage<IndexProps> = ({ projects, posts }) => {
   return (
     <>
       <Head>
@@ -17,7 +18,7 @@ const Page: NextPage<IndexProps> = ({ projects }) => {
         />
       </Head>
       <Navbar />
-      <Container projects={projects} />
+      <Container projects={projects} posts={posts} />
       <Footer />
     </>
   )
@@ -29,31 +30,44 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
   const transaction = await sequelize.transaction()
   try {
-    const projects = await Project.findAll({
-      transaction,
-      limit: 3,
-      order: [['promotedWeight', 'DESC']],
-      include: [
-        {
-          association: 'category',
-          attributes: ['id', 'title', 'name'],
+    const [projects, posts] = await Promise.all([
+      Project.findAll({
+        transaction,
+        limit: 3,
+        order: [['promotedWeight', 'DESC']],
+        include: [
+          {
+            association: 'category',
+            attributes: ['id', 'title', 'name'],
+          },
+          {
+            association: 'sector',
+            attributes: ['id', 'title', 'name'],
+          },
+        ],
+      }),
+      axios.get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+        params: {
+          _embed: 1,
+          per_page: 3,
+          page: 1,
+          _fields:
+            'id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term',
         },
-        {
-          association: 'sector',
-          attributes: ['id', 'title', 'name'],
-        },
-      ],
-    })
+        headers: { accept: 'application/json' },
+      }),
+    ])
     await transaction.commit()
     return {
       props: {
         projects: JSON.parse(JSON.stringify(projects.map((d) => d.toJSON()))),
+        posts: posts.data,
       },
     }
   } catch (e) {
     await transaction.rollback()
     return {
-      props: { projects: [] },
+      props: { projects: [], posts: [] },
     }
   }
 }

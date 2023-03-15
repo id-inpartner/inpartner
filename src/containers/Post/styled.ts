@@ -11,6 +11,9 @@ export const Container = styled(C)`
   @media (min-width: ${breakpoints.md}) {
     padding-bottom: 0;
   }
+  @media (min-width: ${breakpoints.xl}) {
+    flex-wrap: nowrap;
+  }
 `
 
 export const Article = styled.div`
@@ -19,6 +22,9 @@ export const Article = styled.div`
   padding-bottom: 0;
   @media (min-width: ${breakpoints.md}) {
     padding-bottom: 120px;
+  }
+  @media (min-width: ${breakpoints.xl}) {
+    max-width: 875px;
   }
 `
 
@@ -108,6 +114,16 @@ export const Content = styled.div`
   }
   & .has-text-align-center {
     text-align: center;
+  }
+  & .size-full {
+    width: 100%;
+  }
+  & .wp-block-image {
+    & img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: bottom;
+    }
   }
   & p {
     margin-bottom: 2rem;

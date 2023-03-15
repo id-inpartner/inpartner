@@ -4,6 +4,7 @@ import type { FC } from 'react'
 import Container from 'react-bootstrap/Container'
 import About from './About'
 import Banner from './Banner'
+import Blog, { BlogProps } from './Blog'
 import Clients from './Clients'
 import Contact from './Contact'
 import Pillars from './Pillars'
@@ -28,9 +29,10 @@ const C = styled(Container)`
 
 export interface IndexProps {
   readonly projects: ProjectProps['data']
+  readonly posts: BlogProps['data']
 }
 
-const Index: FC<IndexProps> = ({ projects }) => {
+const Index: FC<IndexProps> = ({ projects, posts }) => {
   return (
     <>
       <Banner />
@@ -39,6 +41,7 @@ const Index: FC<IndexProps> = ({ projects }) => {
       <Services />
       <Sectors />
       <Project data={projects} />
+      <Blog data={posts} />
       <Clients />
       <Background>
         <C>

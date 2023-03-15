@@ -41,8 +41,8 @@ export const Footer: FC = () => {
             <div className="name">Email</div>
             <div className="c">:</div>
             <div className="value">
-              <a href="mailto:consultant.customercare@inpartner.id">
-                consultant.customercare@inpartner.id
+              <a href="mailto:corporatesecretary@inpartner.id">
+                corporatesecretary@inpartner.id
               </a>
             </div>
           </div>

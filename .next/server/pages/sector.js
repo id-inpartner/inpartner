@@ -59,7 +59,7 @@ var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 const Dummy = /*#__PURE__*/ styled_default()("div", {
     target: "eof710"
 })("margin-left:12px;margin-right:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-left:20px;margin-right:20px;}flex:1;min-width:320px;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){min-width:220px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:320px;}");
-const C = /*#__PURE__*/ styled_default()(Card/* default */.C, {
+const C = /*#__PURE__*/ styled_default()(Card/* default */.ZP, {
     target: "eof711"
 })("min-width:320px;margin-left:12px;margin-right:12px;flex:1;margin-top:12px;position:relative;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){margin-top:24px;min-width:220px;}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-left:20px;margin-right:20px;margin-top:40px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:320px;}display:flex;flex-direction:column;align-items:stretch;& > .img{padding-top:", 164 / 3.4, "%;position:relative;border-radius:8px 8px 0 0;overflow:hidden;& > img{object-fit:cover;}}");
 const Title = /*#__PURE__*/ styled_default()("div", {

@@ -37,7 +37,7 @@ const Title = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_7___default
 const Description = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_7___default()(_components_Text__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
     target: "e6fxa0i1"
 })("text-align:justify;align-self:stretch;margin-top:10px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_3__/* .breakpoints.md */ .AV.md, "){margin-top:20px;}");
-const Root = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_7___default()(_components_Card__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .C, {
+const Root = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_7___default()(_components_Card__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .ZP, {
     target: "e6fxa0i2"
 })("display:flex;flex-direction:column;padding:16px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_3__/* .breakpoints.md */ .AV.md, "){padding:32px;}position:relative;");
 const Href = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_7___default()(_components_Button__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {

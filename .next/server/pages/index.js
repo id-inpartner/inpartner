@@ -9,14 +9,21 @@ exports.modules = {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "C": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "YS": () => (/* binding */ CardLink),
+/* harmony export */   "ZP": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export Card */
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+
 
 const Card = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()("div", {
     target: "ev7rpqc0"
+})("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
+const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+    target: "ev7rpqc1"
 })("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
 
@@ -66,23 +73,17 @@ const Text = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default(
 
 /***/ }),
 
-/***/ 9485:
+/***/ 6651:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ pages),
-  "getServerSideProps": () => (/* binding */ getServerSideProps)
+  "Z": () => (/* binding */ Home)
 });
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__(968);
-var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
 var GlobalStyle = __webpack_require__(8857);
 // EXTERNAL MODULE: external "@emotion/styled"
@@ -298,6 +299,125 @@ const Banner = ()=>{
 };
 /* harmony default export */ const Home_Banner = (Banner);
 
+// EXTERNAL MODULE: ./src/components/Project/index.tsx
+var Project = __webpack_require__(4626);
+;// CONCATENATED MODULE: ./src/containers/Home/Blog/styled.ts
+
+
+
+
+const Blog_styled_Title = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
+    target: "e1q81gw20"
+})("text-align:center;margin-top:50px;margin-bottom:4px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;margin-bottom:32px;}");
+const Items = /*#__PURE__*/ styled_default()(Project/* ProjectsComponent */.vP, {
+    target: "e1q81gw21"
+})("@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-width:1134px;min-width:1134px;margin-left:auto;margin-right:auto;}");
+
+// EXTERNAL MODULE: ./src/components/Card/index.ts
+var Card = __webpack_require__(2042);
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__(5675);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
+// EXTERNAL MODULE: external "date-fns/format"
+var format_ = __webpack_require__(4384);
+var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+;// CONCATENATED MODULE: ./src/containers/Home/Blog/Item.tsx
+
+
+
+
+
+
+const Item_Item = ({ data  })=>{
+    const image = data._embedded["wp:featuredmedia"][0] || {
+        source_url: "/images/default_post_img.png"
+    };
+    const category = data._embedded["wp:term"].find((it)=>it.find((i)=>i.taxonomy === "category"))[0] || {
+        name: ""
+    };
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Item_C, {
+        href: `/blog/${data.slug}`,
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx(Aspect, {
+                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: "aspect",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                        fill: true,
+                        quality: 100,
+                        src: image.source_url,
+                        alt: "",
+                        sizes: `(min-width: ${GlobalStyle/* breakpoints.xxl */.AV.xxl}) 414px, (min-width: ${GlobalStyle/* breakpoints.xl */.AV.xl}) 354px, (min-width: ${GlobalStyle/* breakpoints.lg */.AV.lg}) 454px, (min-width: ${GlobalStyle/* breakpoints.md */.AV.md}) 334px, (min-width: ${GlobalStyle/* breakpoints.sm */.AV.sm}) 514px, 400px`
+                    })
+                })
+            }),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Item_Content, {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx(Item_Subtitle, {
+                        children: category.name
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Item_Title, {
+                        children: data.title.rendered
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Dates, {
+                        children: format_default()(new Date(data.modified), "d MMMM yyyy")
+                    })
+                ]
+            })
+        ]
+    });
+};
+const Dummy = /*#__PURE__*/ (/* unused pure expression or super */ null && (styled("div", {
+    target: "e1n770x40"
+})("margin-left:12px;margin-right:12px;flex:1;min-width:300px;")));
+const Item_C = /*#__PURE__*/ styled_default()(Card/* CardLink */.YS, {
+    target: "e1n770x41"
+})("display:flex;flex-direction:column;align-items:stretch;margin:12px;flex:1;min-width:300px;transition:transform 0.3s ease-in-out;position:relative;&:hover{transform:scale(1.015);}border-radius:12px;overflow:hidden;");
+const Aspect = /*#__PURE__*/ styled_default()("div", {
+    target: "e1n770x42"
+})("position:relative;width:100%;& > .aspect{padding-top:", 415 / 3.44, "%;& > img{object-fit:cover;}}");
+const Item_Content = /*#__PURE__*/ styled_default()("div", {
+    target: "e1n770x43"
+})("position:absolute;display:flex;flex-direction:column;justify-content:flex-end;width:100%;height:100%;bottom:0;left:0;right:0;color:white;background-color:rgba(0,0,0,0.3);");
+const Item_Title = /*#__PURE__*/ styled_default()("h2", {
+    target: "e1n770x44"
+})("font-size:24px;font-weight:bold;margin:0 24px 0 24px;max-height:57.6px;min-height:57.6px;overflow:hidden;text-overflow:ellipsis;");
+const Item_Subtitle = /*#__PURE__*/ styled_default()("div", {
+    target: "e1n770x45"
+})("margin:0 24px 4px 24px;font-size:20px;font-weight:bold;");
+const Dates = /*#__PURE__*/ styled_default()("table", {
+    target: "e1n770x46"
+})("margin:0 24px 24px 24px;font-size:14px;");
+/* harmony default export */ const Blog_Item = (Item_Item);
+
+;// CONCATENATED MODULE: ./src/containers/Home/Blog/index.tsx
+
+
+
+
+
+
+const Blog = ({ data  })=>{
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx(Blog_styled_Title, {
+                children: "Blog"
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(Items, {
+                children: data.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx(Blog_Item, {
+                        data: it
+                    }, it.id))
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
+                href: "/blog",
+                children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                    children: "View All"
+                })
+            })
+        ]
+    });
+};
+/* harmony default export */ const Home_Blog = (Blog);
+
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/styled.ts
 
 
@@ -311,7 +431,7 @@ const Con = /*#__PURE__*/ styled_default()("div", {
 const Row = /*#__PURE__*/ styled_default()("div", {
     target: "exo2eev2"
 })("display:flex;align-items:center;overflow:visible;& > img{margin-left:16px;margin-right:16px;object-fit:contain;flex:0 0 auto;position:relative;}will-change:transform;animation:marquee-horizontal-alt 100s linear infinite;@keyframes marquee-horizontal-alt{from{transform:translateX(-100%);}to{transform:translateX(0%);}}&.last{animation:marquee-horizontal 100s linear infinite;@keyframes marquee-horizontal{from{transform:translateX(0%);}to{transform:translateX(-100%);}}}");
-const Items = /*#__PURE__*/ styled_default()("div", {
+const styled_Items = /*#__PURE__*/ styled_default()("div", {
     target: "exo2eev3"
 })("display:flex;flex:0 0 auto;align-items:center;justify-content:center;margin-right:-16px;margin-left:-16px;&.last{margin-bottom:92px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-bottom:120px;}}&:hover{& > div{animation-play-state:paused;}}");
 
@@ -434,7 +554,7 @@ const Clients = ()=>{
                 })
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Con, {
-                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Items, {
+                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Items, {
                     children: [
                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
                             role: "list",
@@ -940,7 +1060,7 @@ const Clients = ()=>{
                 })
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Con, {
-                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Items, {
+                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Items, {
                     className: "last",
                     children: [
                         /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Row, {
@@ -1677,16 +1797,11 @@ const Contact = ()=>{
 };
 /* harmony default export */ const Home_Contact = (Contact);
 
-// EXTERNAL MODULE: ./node_modules/next/image.js
-var next_image = __webpack_require__(5675);
-var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
-// EXTERNAL MODULE: ./src/components/Card/index.ts
-var Card = __webpack_require__(2042);
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/Item/styled.ts
 
 
 
-const styled_Root = /*#__PURE__*/ styled_default()(Card/* default */.C, {
+const styled_Root = /*#__PURE__*/ styled_default()(Card/* default */.ZP, {
     target: "ey5makt0"
 })("width:180px;display:flex;flex-direction:column;align-items:center;margin-left:5px;margin-right:5px;margin-top:20px;");
 const Img = /*#__PURE__*/ styled_default()("div", {
@@ -1700,7 +1815,7 @@ const Label = /*#__PURE__*/ styled_default()("div", {
 
 
 
-const Item_Item = ({ icon , label  })=>{
+const Pillars_Item_Item = ({ icon , label  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Root, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Img, {
@@ -1717,12 +1832,12 @@ const Item_Item = ({ icon , label  })=>{
         ]
     });
 };
-/* harmony default export */ const Pillars_Item = (Item_Item);
+/* harmony default export */ const Pillars_Item = (Pillars_Item_Item);
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/styled.ts
 
 
-const styled_Items = /*#__PURE__*/ styled_default()("div", {
+const Pillars_styled_Items = /*#__PURE__*/ styled_default()("div", {
     target: "e1p6dpdv0"
 })("display:flex;flex-wrap:wrap;justify-content:space-around;margin-bottom:16px;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){min-width:392px;max-width:392px;margin:0 auto 30px auto;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:816px;max-width:816px;margin:0 auto 30px auto;}");
 
@@ -1747,7 +1862,7 @@ const Pillars = ()=>{
                 title: "We Have Four Pillars To Work On",
                 children: "We Have Years Of Experience Working On These Fields"
             }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Items, {
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Pillars_styled_Items, {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx(Pillars_Item, {
                         icon: funding,
@@ -1772,8 +1887,6 @@ const Pillars = ()=>{
 };
 /* harmony default export */ const Home_Pillars = (Pillars);
 
-// EXTERNAL MODULE: ./src/components/Project/index.tsx
-var Project = __webpack_require__(4626);
 ;// CONCATENATED MODULE: ./src/containers/Home/Project/styled.ts
 
 
@@ -1860,7 +1973,7 @@ const Arrow = /*#__PURE__*/ styled_default()("div", {
 const Inner = /*#__PURE__*/ styled_default()("div", {
     target: "esrzdtx0"
 })("margin-left:14px;margin-right:14px;width:calc(100% - 28px);border-radius:8px;overflow:hidden;");
-const Aspect = /*#__PURE__*/ styled_default()("div", {
+const Item_Aspect = /*#__PURE__*/ styled_default()("div", {
     target: "esrzdtx1"
 })("position:relative;width:100%;padding-top:", 275 / 202 * 100, "%;");
 const Item_Label = /*#__PURE__*/ styled_default()("div", {
@@ -1868,7 +1981,7 @@ const Item_Label = /*#__PURE__*/ styled_default()("div", {
 })("font-size:16px;color:white;text-align:center;width:100%;padding-left:12px;padding-right:12px;bottom:12px;z-index:2;position:absolute;font-weight:500;");
 const Sectors_Item_Item = ({ image , label  })=>{
     return /*#__PURE__*/ jsx_runtime_.jsx(Inner, {
-        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Aspect, {
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Item_Aspect, {
             children: [
                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
                     fill: true,
@@ -2205,13 +2318,14 @@ const Sitemap = ()=>{
 
 
 
+
 const Background = /*#__PURE__*/ styled_default()("div", {
     target: "e1meulra0"
 })("background-color:#d9d9d9;padding-bottom:40px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:120px;}");
 const Home_C = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e1meulra1"
 })("display:flex;align-items:stretch;flex-wrap:wrap;");
-const Index = ({ projects  })=>{
+const Index = ({ projects , posts  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Banner, {}),
@@ -2221,6 +2335,9 @@ const Index = ({ projects  })=>{
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Sectors, {}),
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Project, {
                 data: projects
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(Home_Blog, {
+                data: posts
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Clients, {}),
             /*#__PURE__*/ jsx_runtime_.jsx(Background, {
@@ -2236,35 +2353,54 @@ const Index = ({ projects  })=>{
 };
 /* harmony default export */ const Home = (Index);
 
-// EXTERNAL MODULE: ./src/components/Navbar/index.tsx + 1 modules
-var Navbar = __webpack_require__(1387);
-// EXTERNAL MODULE: ./src/components/Footer/index.tsx + 2 modules
-var Footer = __webpack_require__(841);
-;// CONCATENATED MODULE: ./src/pages/index.tsx
+
+/***/ }),
+
+/***/ 5970:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
+/* harmony export */ });
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6651);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1387);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(841);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_5__]);
+axios__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
 
 
-const Page = ({ projects  })=>{
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+
+const Page = ({ projects , posts  })=>{
+    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
+            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("title", {
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
                         children: "Business Consultant Company, Jakarta, Indonesia | Inpartner"
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         name: "description",
                         content: "Inpartner are The Most Trusted Consulting Partner To help create positive and endure changes in Local and Global Coverage"
                     })
                 ]
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Navbar/* default */.Z, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(Home, {
-                projects: projects
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Home__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+                projects: projects,
+                posts: posts
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Footer/* default */.Z, {})
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
         ]
     });
 };
@@ -2273,51 +2409,68 @@ const getServerSideProps = async ({ req  })=>{
     const { Project  } = sequelize.models;
     const transaction = await sequelize.transaction();
     try {
-        const projects = await Project.findAll({
-            transaction,
-            limit: 3,
-            order: [
-                [
-                    "promotedWeight",
-                    "DESC"
+        const [projects, posts] = await Promise.all([
+            Project.findAll({
+                transaction,
+                limit: 3,
+                order: [
+                    [
+                        "promotedWeight",
+                        "DESC"
+                    ]
+                ],
+                include: [
+                    {
+                        association: "category",
+                        attributes: [
+                            "id",
+                            "title",
+                            "name"
+                        ]
+                    },
+                    {
+                        association: "sector",
+                        attributes: [
+                            "id",
+                            "title",
+                            "name"
+                        ]
+                    }
                 ]
-            ],
-            include: [
-                {
-                    association: "category",
-                    attributes: [
-                        "id",
-                        "title",
-                        "name"
-                    ]
+            }),
+            axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+                params: {
+                    _embed: 1,
+                    per_page: 3,
+                    page: 1,
+                    _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term"
                 },
-                {
-                    association: "sector",
-                    attributes: [
-                        "id",
-                        "title",
-                        "name"
-                    ]
+                headers: {
+                    accept: "application/json"
                 }
-            ]
-        });
+            })
+        ]);
         await transaction.commit();
         return {
             props: {
-                projects: JSON.parse(JSON.stringify(projects.map((d)=>d.toJSON())))
+                projects: JSON.parse(JSON.stringify(projects.map((d)=>d.toJSON()))),
+                posts: posts.data
             }
         };
     } catch (e) {
         await transaction.rollback();
         return {
             props: {
-                projects: []
+                projects: [],
+                posts: []
             }
         };
     }
 };
-/* harmony default export */ const pages = (Page);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -2353,6 +2506,13 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
+
+/***/ }),
+
+/***/ 4384:
+/***/ ((module) => {
+
+module.exports = require("date-fns/format");
 
 /***/ }),
 
@@ -2662,6 +2822,13 @@ module.exports = require("react-bootstrap/Ratio");
 
 module.exports = require("react-dom");
 
+/***/ }),
+
+/***/ 9648:
+/***/ ((module) => {
+
+module.exports = import("axios");;
+
 /***/ })
 
 };
@@ -2671,7 +2838,7 @@ module.exports = require("react-dom");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,94,626,891], () => (__webpack_exec__(9485)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,94,626,891], () => (__webpack_exec__(5970)));
 module.exports = __webpack_exports__;
 
 })();

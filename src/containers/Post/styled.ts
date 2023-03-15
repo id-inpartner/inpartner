@@ -5,28 +5,44 @@ import Link from 'next/link'
 import { Container as C } from 'react-bootstrap'
 
 export const Container = styled(C)`
-  padding-bottom: 68px;
-  @media (min-width: ${breakpoints.md}) {
-    padding-bottom: 120px;
-  }
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 68px;
+  @media (min-width: ${breakpoints.md}) {
+    padding-bottom: 0;
+  }
 `
 
 export const Article = styled.div`
   flex: 1;
   max-width: 100%;
+  padding-bottom: 0;
+  @media (min-width: ${breakpoints.md}) {
+    padding-bottom: 120px;
+  }
+`
+
+export const Divider = styled.div`
+  display: none;
+  @media (min-width: ${breakpoints.xl}) {
+    display: block;
+    margin-left: 20px;
+    margin-right: 16px;
+    min-width: 1px;
+    align-self: stretch;
+    background-color: #b4b4b4;
+  }
 `
 
 export const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 320px;
-  @media (min-width: ${breakpoints.lg}) {
-    max-width: 384px;
+  @media (min-width: ${breakpoints.md}) {
     min-width: 384px;
   }
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.lg}) {
+    max-width: 384px;
     min-width: 384px;
   }
   & > .title {
@@ -145,12 +161,15 @@ export const Categories = styled.div`
   margin: 0 -4px;
   & > a {
     margin: 4px;
+    flex: 1;
     & > button {
       background-color: white;
       color: black;
       border: none;
       font-weight: 400;
       text-align: center;
+      white-space: nowrap;
+      width: 100%;
     }
   }
 `

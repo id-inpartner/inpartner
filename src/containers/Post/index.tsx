@@ -9,6 +9,7 @@ import {
   Chips,
   Container,
   Content,
+  Divider,
   Item,
   Meta,
   Sidebar,
@@ -37,6 +38,7 @@ export const Index: FC<IndexProps> = ({ post, categories, related }) => {
           )}
         </Chips>
       </Article>
+      <Divider />
       <Sidebar>
         <div className="title">Discover More</div>
         <Categories>

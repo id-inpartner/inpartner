@@ -3,6 +3,7 @@ import Image, { StaticImageData } from '@components/Image'
 import { FC } from 'react'
 import type { Post } from '../../types'
 import { format } from 'date-fns'
+import Link from 'next/link'
 
 export interface ItemProps {
   readonly data: Post
@@ -16,7 +17,8 @@ const Inner = styled.div`
   overflow: hidden;
 `
 
-const Aspect = styled.div`
+const Aspect = styled(Link)`
+  display: block;
   position: relative;
   width: 100%;
   padding-top: ${(288 / 384) * 100}%;
@@ -52,7 +54,7 @@ const Dates = styled.div`
 export const Item: FC<ItemProps> = ({ data }) => {
   return (
     <Inner>
-      <Aspect>
+      <Aspect href={data.slug}>
         <Image
           fill
           src={data._embedded['wp:featuredmedia'][0].source_url}

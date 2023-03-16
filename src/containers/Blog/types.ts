@@ -47,17 +47,14 @@ export interface YoastHead {
 export interface Category {
   readonly id: number
   readonly name: string
-  readonly description: string
   readonly slug: string
-  readonly taxonomy: string
-  readonly yoast_head: string
-  readonly yoast_head_json: YoastHead
+  readonly taxonomy: 'tag' | 'category'
 }
 
 export interface Post {
   readonly id: number
   readonly date: string
-  readonly modified_date: string
+  readonly modified: string
   readonly slug: string
   readonly status: string
   readonly type: string

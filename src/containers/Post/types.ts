@@ -48,11 +48,8 @@ export interface YoastHead {
 export interface Category {
   readonly id: number
   readonly name: string
-  readonly description: string
   readonly slug: string
-  readonly taxonomy: string
-  readonly yoast_head: string
-  readonly yoast_head_json: YoastHead
+  readonly taxonomy: 'tag' | 'category'
 }
 
 export interface PlainPost {

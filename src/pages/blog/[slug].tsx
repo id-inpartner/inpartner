@@ -57,7 +57,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     axios.get<ReadonlyArray<Category>>(
       `${process.env.BLOG_URL}wp-json/wp/v2/categories`,
       {
-        params: { _embed: 1 },
+        params: { _embed: 1, _fields: 'id,name,slug' },
         headers: { accept: 'application/json' },
       }
     ),

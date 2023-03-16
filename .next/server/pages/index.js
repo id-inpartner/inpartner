@@ -73,7 +73,7 @@ const Text = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default(
 
 /***/ }),
 
-/***/ 6651:
+/***/ 5354:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -1928,9 +1928,9 @@ const Project_Project = ({ data  })=>{
 };
 /* harmony default export */ const Home_Project = (Project_Project);
 
-;// CONCATENATED MODULE: external "react-slick"
-const external_react_slick_namespaceObject = require("react-slick");
-var external_react_slick_default = /*#__PURE__*/__webpack_require__.n(external_react_slick_namespaceObject);
+// EXTERNAL MODULE: external "react-slick"
+var external_react_slick_ = __webpack_require__(8096);
+var external_react_slick_default = /*#__PURE__*/__webpack_require__.n(external_react_slick_);
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/styled.ts
 
 
@@ -2369,7 +2369,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6651);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5354);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1387);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(841);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
@@ -2821,6 +2821,13 @@ module.exports = require("react-bootstrap/Ratio");
 /***/ ((module) => {
 
 module.exports = require("react-dom");
+
+/***/ }),
+
+/***/ 8096:
+/***/ ((module) => {
+
+module.exports = require("react-slick");
 
 /***/ }),
 

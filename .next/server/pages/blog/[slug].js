@@ -283,7 +283,8 @@ const getServerSideProps = async ({ req , query  })=>{
         }),
         axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
             params: {
-                _embed: 1
+                _embed: 1,
+                _fields: "id,name,slug"
             },
             headers: {
                 accept: "application/json"

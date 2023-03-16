@@ -5,7 +5,7 @@ exports.id = 195;
 exports.ids = [195];
 exports.modules = {
 
-/***/ 1710:
+/***/ 3565:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -20,36 +20,198 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime_ = __webpack_require__(5193);
 // EXTERNAL MODULE: ./src/components/Button/index.ts
 var Button = __webpack_require__(6753);
-// EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(1664);
-var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
+;// CONCATENATED MODULE: external "@fortawesome/free-solid-svg-icons/faMagnifyingGlass"
+const faMagnifyingGlass_namespaceObject = require("@fortawesome/free-solid-svg-icons/faMagnifyingGlass");
+;// CONCATENATED MODULE: external "@fortawesome/free-solid-svg-icons/faSpinner"
+const faSpinner_namespaceObject = require("@fortawesome/free-solid-svg-icons/faSpinner");
+// EXTERNAL MODULE: external "@fortawesome/react-fontawesome"
+var react_fontawesome_ = __webpack_require__(7197);
+// EXTERNAL MODULE: external "date-fns/format"
+var format_ = __webpack_require__(4384);
+var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__(5675);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 ;// CONCATENATED MODULE: external "next/router"
 const router_namespaceObject = require("next/router");
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
-;// CONCATENATED MODULE: external "react-bootstrap/Card"
-const Card_namespaceObject = require("react-bootstrap/Card");
-var Card_default = /*#__PURE__*/__webpack_require__.n(Card_namespaceObject);
-;// CONCATENATED MODULE: external "react-bootstrap/Col"
-const Col_namespaceObject = require("react-bootstrap/Col");
-var Col_default = /*#__PURE__*/__webpack_require__.n(Col_namespaceObject);
 // EXTERNAL MODULE: external "react-bootstrap/Form"
 var Form_ = __webpack_require__(5226);
 var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
-;// CONCATENATED MODULE: external "react-bootstrap/InputGroup"
-const InputGroup_namespaceObject = require("react-bootstrap/InputGroup");
-var InputGroup_default = /*#__PURE__*/__webpack_require__.n(InputGroup_namespaceObject);
-;// CONCATENATED MODULE: external "react-bootstrap/Row"
-const Row_namespaceObject = require("react-bootstrap/Row");
-var Row_default = /*#__PURE__*/__webpack_require__.n(Row_namespaceObject);
-// EXTERNAL MODULE: external "react-bootstrap/Button"
-var Button_ = __webpack_require__(1937);
-var Button_default = /*#__PURE__*/__webpack_require__.n(Button_);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
 var GlobalStyle = __webpack_require__(8857);
 // EXTERNAL MODULE: external "@emotion/styled"
 var styled_ = __webpack_require__(1480);
 var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
+// EXTERNAL MODULE: external "react-slick"
+var external_react_slick_ = __webpack_require__(8096);
+var external_react_slick_default = /*#__PURE__*/__webpack_require__.n(external_react_slick_);
+;// CONCATENATED MODULE: ./src/containers/Blog/Categories/styled.ts
+
+
+
+
+const ItemsWrapper = /*#__PURE__*/ styled_default()("div", {
+    target: "ehbs0z60"
+})("margin-left:-16px;margin-right:-16px;margin-top:48px;");
+const Header = /*#__PURE__*/ styled_default()("div", {
+    target: "ehbs0z61"
+})("min-width:100%;display:flex;position:relative;margin-top:40px;align-items:stretch;&.index-0{margin-top:80px;}& > .underline{height:4px;position:absolute;left:6px;right:0;bottom:0;background-color:", GlobalStyle/* color.primary.normal */.$_.primary.normal, ";z-index:0;}& > .btn{border-radius:50%;min-width:40px;max-height:40px;min-height:40px;align-self:center;margin:8px 0 8px 8px;}");
+const Title = /*#__PURE__*/ styled_default()((link_default()), {
+    target: "ehbs0z62"
+})("position:relative;z-index:1;flex:1;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){flex:none;}& > .btn{border-bottom-right-radius:0;max-width:400px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:400px;}height:100%;width:100%;font-weight:700;font-size:28px;}");
+const Items = /*#__PURE__*/ styled_default()((external_react_slick_default()), {
+    target: "ehbs0z63"
+})("max-width:100%;/* align-self:center;*/\n  @media (min-width:1024px){max-width:100%;}& .slick-track{margin-left:0;}");
+
+// EXTERNAL MODULE: ./src/components/Image.tsx
+var Image = __webpack_require__(5562);
+;// CONCATENATED MODULE: ./src/containers/Blog/Categories/Item/index.tsx
+
+
+
+
+const Inner = /*#__PURE__*/ styled_default()("div", {
+    target: "e4zr5h0"
+})("margin-left:14px;margin-right:14px;width:calc(100% - 28px);border-radius:8px;overflow:hidden;");
+const Aspect = /*#__PURE__*/ styled_default()("div", {
+    target: "e4zr5h1"
+})("position:relative;width:100%;padding-top:", 288 / 384 * 100, "%;");
+const Content = /*#__PURE__*/ styled_default()("div", {
+    target: "e4zr5h2"
+})("position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:flex-end;z-index:2;background-color:rgba(0,0,0,0.3);color:white;");
+const Label = /*#__PURE__*/ styled_default()("div", {
+    target: "e4zr5h3"
+})("font-size:24px;width:100%;padding-left:16px;padding-right:16px;font-weight:700;");
+const Dates = /*#__PURE__*/ styled_default()("div", {
+    target: "e4zr5h4"
+})("font-size:14px;padding:0 16px 16px 16px;");
+const Item = ({ data  })=>{
+    return /*#__PURE__*/ jsx_runtime_.jsx(Inner, {
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Aspect, {
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                    fill: true,
+                    src: data._embedded["wp:featuredmedia"][0].source_url,
+                    alt: data._embedded["wp:featuredmedia"][0].alt_text,
+                    quality: 100,
+                    placeholder: "empty"
+                }),
+                /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Content, {
+                    children: [
+                        /*#__PURE__*/ jsx_runtime_.jsx(Label, {
+                            dangerouslySetInnerHTML: {
+                                __html: data.title.rendered
+                            }
+                        }),
+                        /*#__PURE__*/ jsx_runtime_.jsx(Dates, {
+                            children: format_default()(new Date(data.modified), "d MMMM yyyy")
+                        })
+                    ]
+                })
+            ]
+        })
+    });
+};
+/* harmony default export */ const Categories_Item = (Item);
+
+;// CONCATENATED MODULE: external "@fortawesome/free-solid-svg-icons/faAngleLeft"
+const faAngleLeft_namespaceObject = require("@fortawesome/free-solid-svg-icons/faAngleLeft");
+;// CONCATENATED MODULE: external "@fortawesome/free-solid-svg-icons/faAngleRight"
+const faAngleRight_namespaceObject = require("@fortawesome/free-solid-svg-icons/faAngleRight");
+;// CONCATENATED MODULE: ./src/containers/Blog/Categories/index.tsx
+
+
+
+
+
+
+
+
+const Cat = ({ category , posts , index  })=>{
+    const slider = (0,external_react_.useRef)();
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Header, {
+                className: `index-${index}`,
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: "underline"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Title, {
+                        href: {
+                            pathname: "/blog"
+                        },
+                        passHref: true,
+                        children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                            children: category.name
+                        })
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                        onClick: ()=>slider.current.slickPrev(),
+                        children: /*#__PURE__*/ jsx_runtime_.jsx(react_fontawesome_.FontAwesomeIcon, {
+                            icon: faAngleLeft_namespaceObject.faAngleLeft
+                        })
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                        onClick: ()=>slider.current.slickNext(),
+                        children: /*#__PURE__*/ jsx_runtime_.jsx(react_fontawesome_.FontAwesomeIcon, {
+                            icon: faAngleRight_namespaceObject.faAngleRight
+                        })
+                    })
+                ]
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(ItemsWrapper, {
+                children: /*#__PURE__*/ jsx_runtime_.jsx(Items, {
+                    ref: slider,
+                    infinite: false,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    responsive: [
+                        {
+                            breakpoint: 384 * 3 + 48 * 3,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        },
+                        {
+                            breakpoint: 384 * 2 + 48 * 2,
+                            settings: {
+                                slidesToShow: 2
+                            }
+                        },
+                        {
+                            breakpoint: 384 * 1 + 48,
+                            settings: {
+                                slidesToShow: 1
+                            }
+                        }
+                    ],
+                    children: posts.map((post, index)=>/*#__PURE__*/ jsx_runtime_.jsx(Categories_Item, {
+                            data: post
+                        }, index))
+                })
+            })
+        ]
+    });
+};
+const Categories = ({ data  })=>{
+    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+        children: data.map(({ category , posts  }, index)=>{
+            return /*#__PURE__*/ jsx_runtime_.jsx(Cat, {
+                category: category,
+                posts: posts,
+                index: index
+            }, category.id);
+        })
+    });
+};
+/* harmony default export */ const Blog_Categories = (Categories);
+
 // EXTERNAL MODULE: external "react-bootstrap/Container"
 var Container_ = __webpack_require__(4678);
 var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
@@ -57,15 +219,19 @@ var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 
 
 
+
 const Container = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e3o9it10"
 })("padding-bottom:68px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:120px;}");
-const Categories = /*#__PURE__*/ styled_default()("div", {
+const Banner = /*#__PURE__*/ styled_default()("div", {
     target: "e3o9it11"
-})("display:flex;flex-wrap:wrap;margin-top:68px;margin-bottom:32px;margin-left:-12px;margin-right:-12px;& > div{margin-left:12px;margin-right:12px;}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:120px;margin-bottom:68px;}");
-const Chips = /*#__PURE__*/ styled_default()("div", {
+})("display:flex;flex-wrap:wrap;margin-left:-8px;margin-right:-8px;margin-top:68px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:120px;}& > .search{min-width:calc(100% - 8px - 8px);display:flex;margin-bottom:16px;margin-left:8px;margin-right:8px;& > .form-control{margin-right:12px;max-width:416px;}}& > .side{min-width:calc(100% - 8px - 8px);flex:8;display:flex;flex-wrap:wrap;margin-left:8px;margin-right:8px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-left:0px;margin-right:0px;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){margin-top:-16px;margin-left:8px;margin-right:8px;min-width:0;}& > a{margin-top:16px;min-width:100%;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:0;flex:1;margin-left:8px;margin-right:8px;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){min-width:100%;margin-left:0;margin-right:0;}}}& > .main{min-width:calc(100% - 8px - 8px);margin-left:8px;margin-right:8px;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){& > .main{flex:18;min-width:0;}}");
+const PostRow = /*#__PURE__*/ styled_default()("div", {
     target: "e3o9it12"
-})("display:flex;flex-wrap:wrap;margin-left:-4px;margin-right:-4px;& > div{margin-left:4px;margin-right:4px;margin-bottom:8px;background-color:#fff3cd;color:#664d03;border-radius:4px;padding:4px 16px;}");
+})("display:flex;flex-wrap:wrap;margin-left:-8px;margin-right:-8px;align-items:stretch;& > a{margin-left:8px;margin-right:8px;margin-top:16px;min-width:calc(100% - 8px - 8px);@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){flex:1;min-width:0;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){&:first-child{flex:8;}&:last-child{flex:18;& > .aspect{padding-top:0;min-height:100%;}}}}");
+const styled_Item = /*#__PURE__*/ styled_default()((link_default()), {
+    target: "e3o9it13"
+})("position:relative;display:block;border-radius:12px;overflow:hidden;& > .aspect{width:100%;padding-top:", 296 / 3.04, "%;& > img{object-fit:cover;}}& > .content{position:absolute;width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;bottom:0;left:0;right:0;background-color:rgba(0,0,0,0.3);color:white;padding:16px;& > .term{font-size:20px;font-weight:bold;}& > .title{font-size:24px;font-weight:bold;}& > .date{font-size:14px;}}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){&.main{& > .aspect{padding-top:", 608 / 9.28, "%;}& > .content{padding:32px;& > .term{font-size:24px;}& > .title{font-size:28px;}}}}");
 
 ;// CONCATENATED MODULE: ./src/containers/Blog/index.tsx
 
@@ -109,105 +275,272 @@ const Index = ({ posts , categories  })=>{
     ]);
     const [checked, setChecked] = (0,external_react_.useState)(c);
     const [search, setSearch] = (0,external_react_.useState)(q);
+    const [loading, setLoading] = (0,external_react_.useState)(false);
+    (0,external_react_.useEffect)(()=>{
+        setLoading(false);
+        const start = ()=>{
+            setLoading(true);
+        };
+        const end = ()=>{
+            setLoading(false);
+        };
+        router.events.on("routeChangeStart", start);
+        router.events.on("routeChangeComplete", end);
+        return ()=>{
+            router.events.off("routeChangeStart", start);
+            router.events.off("routeChangeComplete", end);
+        };
+    }, [
+        router.events
+    ]);
+    const [first, second, third, fourth, fifth] = (0,external_react_.useMemo)(()=>{
+        if (posts.length === 1) {
+            return [
+                ...posts,
+                ...posts,
+                ...posts,
+                ...posts,
+                ...posts
+            ];
+        }
+        if (posts.length === 2) {
+            return [
+                ...posts,
+                ...posts,
+                ...posts,
+                ...posts,
+                posts[0]
+            ];
+        }
+        if (posts.length === 3) {
+            return [
+                ...posts,
+                posts[0],
+                posts[1]
+            ];
+        }
+        if (posts.length === 4) {
+            return [
+                ...posts,
+                posts[0]
+            ];
+        }
+        return posts;
+    }, [
+        posts
+    ]);
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
         children: [
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Categories, {
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Banner, {
                 children: [
-                    categories.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Check, {
-                            type: "checkbox",
-                            label: it.name,
-                            onChange: ()=>{
-                                const cc = checked[it.id] ? {
-                                    ...checked,
-                                    [it.id]: undefined
-                                } : {
-                                    ...checked,
-                                    [it.id]: true
-                                };
-                                router.push({
-                                    pathname: `/blog`,
-                                    query: {
-                                        c: Object.keys(cc).filter((i)=>cc[i]),
-                                        q: search.trim()
-                                    }
-                                }, null, {
-                                    shallow: false
-                                });
-                                setChecked(cc);
-                            },
-                            checked: checked[it.id]
-                        }, it.id)),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)((InputGroup_default()), {
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "search",
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
                                 placeholder: "Search article ...",
                                 "aria-label": "Search",
                                 value: search,
-                                onChange: (e)=>setSearch(e.target.value)
+                                onChange: (e)=>setSearch(e.target.value.toLowerCase())
                             }),
-                            /*#__PURE__*/ jsx_runtime_.jsx((Button_default()), {
+                            /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                                disabled: loading,
                                 onClick: ()=>{
                                     router.push({
                                         pathname: `/blog`,
                                         query: {
                                             c: Object.keys(checked).filter((i)=>checked[i]),
-                                            q: search.trim()
+                                            q: search.trim().toLowerCase()
                                         }
                                     }, null, {
                                         shallow: false
                                     });
                                 },
-                                children: "Search"
+                                children: /*#__PURE__*/ jsx_runtime_.jsx(react_fontawesome_.FontAwesomeIcon, {
+                                    icon: loading ? faSpinner_namespaceObject.faSpinner : faMagnifyingGlass_namespaceObject.faMagnifyingGlass,
+                                    spin: loading
+                                })
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                        href: `/blog/${first.slug}`,
+                        className: "main",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "aspect",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                    fill: true,
+                                    quality: 100,
+                                    src: first._embedded["wp:featuredmedia"][0].source_url,
+                                    alt: first._embedded["wp:featuredmedia"][0].alt_text
+                                })
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "content",
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "term",
+                                        children: first._embedded["wp:term"][0][0].name
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "title",
+                                        dangerouslySetInnerHTML: {
+                                            __html: first.title.rendered
+                                        }
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "dste",
+                                        children: format_default()(new Date(first.modified), "d MMMM yyyy")
+                                    })
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "side",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                                href: `/blog/${second.slug}`,
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "aspect",
+                                        children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            fill: true,
+                                            quality: 100,
+                                            src: second._embedded["wp:featuredmedia"][0].source_url,
+                                            alt: second._embedded["wp:featuredmedia"][0].alt_text
+                                        })
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                        className: "content",
+                                        children: [
+                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                className: "term",
+                                                children: second._embedded["wp:term"][0][0].name
+                                            }),
+                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                className: "title",
+                                                dangerouslySetInnerHTML: {
+                                                    __html: second.title.rendered
+                                                }
+                                            }),
+                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                className: "dste",
+                                                children: format_default()(new Date(second.modified), "d MMMM yyyy")
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                                href: `/blog/${third.slug}`,
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "aspect",
+                                        children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                            fill: true,
+                                            quality: 100,
+                                            src: third._embedded["wp:featuredmedia"][0].source_url,
+                                            alt: third._embedded["wp:featuredmedia"][0].alt_text
+                                        })
+                                    }),
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                        className: "content",
+                                        children: [
+                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                className: "term",
+                                                children: third._embedded["wp:term"][0][0].name
+                                            }),
+                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                className: "title",
+                                                dangerouslySetInnerHTML: {
+                                                    __html: third.title.rendered
+                                                }
+                                            }),
+                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                className: "dste",
+                                                children: format_default()(new Date(third.modified), "d MMMM yyyy")
+                                            })
+                                        ]
+                                    })
+                                ]
                             })
                         ]
                     })
                 ]
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx((Row_default()), {
-                children: posts.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx((Col_default()), {
-                        xs: 12,
-                        sm: 12,
-                        md: 12,
-                        lg: 6,
-                        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Card_default()), {
-                            style: {
-                                width: "100%",
-                                marginTop: "1rem"
-                            },
-                            children: [
-                                /*#__PURE__*/ jsx_runtime_.jsx((Card_default()).Img, {
-                                    variant: "top",
-                                    src: it._embedded["wp:featuredmedia"] ? it._embedded["wp:featuredmedia"][0]?.source_url : "/images/contemporary-architecture-office-building-cityscape-personal-perspective-concept_53876-42940.jpg"
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Card_default()).Body, {
-                                    children: [
-                                        /*#__PURE__*/ jsx_runtime_.jsx((Card_default()).Title, {
-                                            dangerouslySetInnerHTML: {
-                                                __html: it.title.rendered
-                                            }
-                                        }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx((Card_default()).Text, {
-                                            dangerouslySetInnerHTML: {
-                                                __html: it.excerpt.rendered
-                                            }
-                                        }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx(Chips, {
-                                            children: it._embedded["wp:term"].map(([it])=>it && it.id ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                    children: it.name
-                                                }, it.id) : undefined)
-                                        }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                            href: `/blog/${it.slug}`,
-                                            passHref: true,
-                                            children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
-                                                children: "See More"
-                                            })
-                                        })
-                                    ]
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PostRow, {
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                        href: `/blog/${fourth.slug}`,
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "aspect",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                    fill: true,
+                                    quality: 100,
+                                    src: fourth._embedded["wp:featuredmedia"][0].source_url,
+                                    alt: fourth._embedded["wp:featuredmedia"][0].alt_text
                                 })
-                            ]
-                        })
-                    }, it.id))
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "content",
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "term",
+                                        children: fourth._embedded["wp:term"][0][0].name
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "title",
+                                        dangerouslySetInnerHTML: {
+                                            __html: fourth.title.rendered
+                                        }
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "dste",
+                                        children: format_default()(new Date(fourth.modified), "d MMMM yyyy")
+                                    })
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                        href: `/blog/${fifth.slug}`,
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                className: "aspect",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                    fill: true,
+                                    quality: 100,
+                                    src: fifth._embedded["wp:featuredmedia"][0].source_url,
+                                    alt: fifth._embedded["wp:featuredmedia"][0].alt_text
+                                })
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "content",
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "term",
+                                        children: fifth._embedded["wp:term"][0][0].name
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "title",
+                                        dangerouslySetInnerHTML: {
+                                            __html: fifth.title.rendered
+                                        }
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                        className: "dste",
+                                        children: format_default()(new Date(fifth.modified), "d MMMM yyyy")
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(Blog_Categories, {
+                data: categories
             })
         ]
     });
@@ -233,7 +566,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1387);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(841);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9648);
-/* harmony import */ var _containers_Blog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1710);
+/* harmony import */ var _containers_Blog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3565);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_4__]);
 axios__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -265,28 +598,51 @@ const Page = (props)=>{
     });
 };
 const getServerSideProps = async ({ req , query  })=>{
-    const posts = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
-        params: {
-            _embed: 1,
-            categories: Array.isArray(query.c) ? query.c.join(",") : query.c,
-            search: query.q
-        },
-        headers: {
-            accept: "application/json"
-        }
-    });
-    const categories = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
-        params: {
-            _embed: 1
-        },
-        headers: {
-            accept: "application/json"
-        }
-    });
+    const [posts, c] = await Promise.all([
+        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+            params: {
+                _embed: 1,
+                categories: Array.isArray(query.c) ? query.c.join(",") : query.c,
+                limit: query.q && query.q !== "" ? 20 : 5,
+                _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
+                search: query.q
+            },
+            headers: {
+                accept: "application/json"
+            }
+        }),
+        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
+            params: {
+                _embed: 1,
+                _fields: "id,name,slug"
+            },
+            headers: {
+                accept: "application/json"
+            }
+        })
+    ]);
+    const categories = await Promise.all(c.data.filter((it)=>it.slug !== "other").map(async (it)=>{
+        const posts = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+            params: {
+                _embed: 1,
+                categories: it.id,
+                limit: 6,
+                _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
+                search: query.q
+            },
+            headers: {
+                accept: "application/json"
+            }
+        });
+        return {
+            category: it,
+            posts: posts.data
+        };
+    }));
     return {
         props: {
             posts: posts.data,
-            categories: categories.data
+            categories: categories.filter((it)=>it.posts.length)
         }
     };
 };
@@ -329,6 +685,13 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
+
+/***/ }),
+
+/***/ 4384:
+/***/ ((module) => {
+
+module.exports = require("date-fns/format");
 
 /***/ }),
 
@@ -630,6 +993,13 @@ module.exports = require("react-bootstrap/Navbar");
 /***/ ((module) => {
 
 module.exports = require("react-dom");
+
+/***/ }),
+
+/***/ 8096:
+/***/ ((module) => {
+
+module.exports = require("react-slick");
 
 /***/ }),
 

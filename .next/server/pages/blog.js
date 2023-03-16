@@ -603,7 +603,7 @@ const getServerSideProps = async ({ req , query  })=>{
             params: {
                 _embed: 1,
                 categories: Array.isArray(query.c) ? query.c.join(",") : query.c,
-                limit: query.q && query.q !== "" ? 20 : 5,
+                per_page: 5,
                 _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
                 search: query.q
             },
@@ -626,7 +626,7 @@ const getServerSideProps = async ({ req , query  })=>{
             params: {
                 _embed: 1,
                 categories: it.id,
-                limit: 6,
+                per_page: 6,
                 _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
                 search: query.q
             },

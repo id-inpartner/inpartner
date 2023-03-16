@@ -40,26 +40,21 @@ export const Header = styled.div`
 export const Title = styled(Link)`
   position: relative;
   z-index: 1;
-  flex: 1;
-  @media (min-width: ${breakpoints.sm}) {
-    flex: none;
-  }
   & > .btn {
     border-bottom-right-radius: 0;
-    max-width: 400px;
-    @media (min-width: ${breakpoints.md}) {
-      min-width: 400px;
+    @media (min-width: ${breakpoints.sm}) {
+      padding-left: 32px;
+      padding-right: 32px;
+      font-weight: 700;
+      font-size: 28px;
     }
     height: 100%;
     width: 100%;
-    font-weight: 700;
-    font-size: 28px;
   }
 `
 
 export const Items = styled(Slider)`
   max-width: 100%;
-  /* align-self: center; */
   @media (min-width: 1024px) {
     max-width: 100%;
   }

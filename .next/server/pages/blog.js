@@ -75,12 +75,13 @@ var Image = __webpack_require__(5562);
 
 
 
+
 const Inner = /*#__PURE__*/ styled_default()("div", {
     target: "e4zr5h0"
 })("margin-left:14px;margin-right:14px;width:calc(100% - 28px);border-radius:8px;overflow:hidden;");
-const Aspect = /*#__PURE__*/ styled_default()("div", {
+const Aspect = /*#__PURE__*/ styled_default()((link_default()), {
     target: "e4zr5h1"
-})("position:relative;width:100%;padding-top:", 288 / 384 * 100, "%;");
+})("display:block;position:relative;width:100%;padding-top:", 288 / 384 * 100, "%;");
 const Content = /*#__PURE__*/ styled_default()("div", {
     target: "e4zr5h2"
 })("position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:flex-end;z-index:2;background-color:rgba(0,0,0,0.3);color:white;");
@@ -93,6 +94,7 @@ const Dates = /*#__PURE__*/ styled_default()("div", {
 const Item = ({ data  })=>{
     return /*#__PURE__*/ jsx_runtime_.jsx(Inner, {
         children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Aspect, {
+            href: data.slug,
             children: [
                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
                     fill: true,

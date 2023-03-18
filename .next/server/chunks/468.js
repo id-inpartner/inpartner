@@ -1,9 +1,9 @@
 "use strict";
-exports.id = 500;
-exports.ids = [500];
+exports.id = 468;
+exports.ids = [468];
 exports.modules = {
 
-/***/ 6139:
+/***/ 9988:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -16,11 +16,11 @@ exports.modules = {
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4678);
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5256);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(358);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3894);
 /* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fonts_index__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8857);
+/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9920);
 
 
 
@@ -33,7 +33,7 @@ const Root = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default(
 const Aspect = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
     target: "e1h82fg31"
 })("position:relative;padding-top:", 702 / 13.66, "%;@media (min-width:1440px){padding-top:740.017px;}&.short{padding-top:", 465 / 14.4, "%;@media (min-width:1440px){padding-top:465px;}}z-index:1;");
-const Content = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()((react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3___default()), {
+const Content = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__.Container, {
     target: "e1h82fg32"
 })("position:absolute;display:flex;flex-direction:column;align-items:stretch;text-align:center;justify-content:center;height:100%;left:0;right:0;top:0;bottom:0;z-index:2;");
 const Title = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("h1", {
@@ -76,7 +76,7 @@ const Banner = ({ backgroundSrc , title , description , size  })=>{
 
 /***/ }),
 
-/***/ 2042:
+/***/ 9740:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {

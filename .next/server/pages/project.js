@@ -5,17 +5,17 @@ exports.id = 512;
 exports.ids = [512];
 exports.modules = {
 
-/***/ 5242:
+/***/ 3137:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export SectionTitle */
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8857);
+/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9920);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5256);
+/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3894);
 /* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fonts_index__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -28,44 +28,37 @@ const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___
 
 /***/ }),
 
-/***/ 2250:
+/***/ 8026:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ project),
-  "getServerSideProps": () => (/* binding */ getServerSideProps)
+  "Z": () => (/* binding */ containers_Projects)
 });
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__(968);
-var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 // EXTERNAL MODULE: ./src/components/Banner/index.tsx
-var Banner = __webpack_require__(6139);
+var Banner = __webpack_require__(9988);
 ;// CONCATENATED MODULE: ./src/containers/Projects/banner.png
 /* harmony default export */ const banner = ({"src":"/_next/static/media/banner.c5da7d6b.png","height":2000,"width":3000,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAiElEQVR42gF9AIL/AJCampmkpKy5vLjGy7XDyLC9wrHAxq6+xQCJk5N8fHqaoaKntLaotbixv8Sntbmpt7wAg5OganJ9lp6cg4mHfn16p7W4nqerl6GlAFBYX251fYSLjYaOk5WepY+YnZCbo4OOlQBxeX2CjZN0f4Rxen90fYNzeXdcYmJYXl5jF0XnMiawcQAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/Project/index.tsx
-var Project = __webpack_require__(4626);
+var Project = __webpack_require__(4941);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
-var GlobalStyle = __webpack_require__(8857);
+var GlobalStyle = __webpack_require__(9920);
 // EXTERNAL MODULE: ./src/components/SectionTitle/index.tsx
-var SectionTitle = __webpack_require__(5242);
+var SectionTitle = __webpack_require__(3137);
 // EXTERNAL MODULE: external "@emotion/styled"
 var styled_ = __webpack_require__(1480);
 var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
-// EXTERNAL MODULE: external "react-bootstrap/Container"
-var Container_ = __webpack_require__(4678);
-var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
+// EXTERNAL MODULE: external "react-bootstrap"
+var external_react_bootstrap_ = __webpack_require__(358);
 ;// CONCATENATED MODULE: ./src/containers/Projects/styled.ts
 
 
@@ -73,7 +66,7 @@ var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 
 
 
-const Container = /*#__PURE__*/ styled_default()((Container_default()), {
+const Container = /*#__PURE__*/ styled_default()(external_react_bootstrap_.Container, {
     target: "e54vnkr0"
 })("display:flex;flex-wrap:wrap;");
 const SideMenu = /*#__PURE__*/ styled_default()("div", {
@@ -92,12 +85,6 @@ const Queries = /*#__PURE__*/ styled_default()("div", {
     target: "e54vnkr5"
 })("min-width:100%;display:flex;padding-top:32px;padding-bottom:16px;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-top:64px;padding-bottom:32px;}& > .form-control,& > .form-select{width:unset;min-width:134px;margin-left:12px;margin-right:12px;}");
 
-// EXTERNAL MODULE: external "react-bootstrap/Form"
-var Form_ = __webpack_require__(5226);
-var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
-;// CONCATENATED MODULE: external "react-bootstrap/Pagination"
-const Pagination_namespaceObject = require("react-bootstrap/Pagination");
-var Pagination_default = /*#__PURE__*/__webpack_require__.n(Pagination_namespaceObject);
 ;// CONCATENATED MODULE: ./src/components/Pagination/index.tsx
 
 
@@ -116,7 +103,6 @@ const PageItem = ({ href , as , children , tabIndex  })=>{
 };
 
 ;// CONCATENATED MODULE: ./src/containers/Projects/index.tsx
-
 
 
 
@@ -198,7 +184,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                         children: [
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Queries, {
                                 children: [
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Form_default()).Select, {
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_react_bootstrap_.Form.Select, {
                                         "aria-label": "Sector",
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("option", {
@@ -218,7 +204,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                             })
                                         ]
                                     }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
+                                    /*#__PURE__*/ jsx_runtime_.jsx(external_react_bootstrap_.Form.Control, {
                                         type: "date",
                                         name: "date",
                                         placeholder: "Date"
@@ -229,7 +215,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                     data: r
                                 }, r.id)),
                             /*#__PURE__*/ jsx_runtime_.jsx(Project/* Dummy */.vk, {}),
-                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Pagination_default()), {
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_react_bootstrap_.Pagination, {
                                 children: [
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PageItem, {
                                         href: {
@@ -329,13 +315,28 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
 };
 /* harmony default export */ const containers_Projects = (Index);
 
-// EXTERNAL MODULE: ./src/components/Navbar/index.tsx + 1 modules
-var Navbar = __webpack_require__(1387);
-// EXTERNAL MODULE: ./src/components/Footer/index.tsx + 2 modules
-var Footer = __webpack_require__(841);
-// EXTERNAL MODULE: ./src/utils/json.ts
-var json = __webpack_require__(4139);
-;// CONCATENATED MODULE: ./src/pages/project/index.tsx
+
+/***/ }),
+
+/***/ 8493:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
+/* harmony export */ });
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _containers_Projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8026);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
+/* harmony import */ var _utils_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8312);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
+_components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -343,24 +344,24 @@ var json = __webpack_require__(4139);
 
 
 const Page = (props)=>{
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
+            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("title", {
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
                         children: "Project & tender Inpartner"
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         name: "description",
                         content: "Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
                     })
                 ]
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Navbar/* default */.Z, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(containers_Projects, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Projects__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
                 ...props
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Footer/* default */.Z, {})
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
         ]
     });
 };
@@ -422,7 +423,7 @@ const getServerSideProps = async ({ req , query  })=>{
         });
         return {
             props: {
-                rows: JSON.parse(JSON.stringify((0,json/* jsonify */.K)(rows))),
+                rows: JSON.parse(JSON.stringify((0,_utils_json__WEBPACK_IMPORTED_MODULE_5__/* .jsonify */ .K)(rows))),
                 count,
                 page,
                 perPage,
@@ -443,12 +444,14 @@ const getServerSideProps = async ({ req , query  })=>{
         };
     }
 };
-/* harmony default export */ const project = (Page);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
-/***/ 4139:
+/***/ 8312:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -483,13 +486,6 @@ module.exports = require("@emotion/react/jsx-runtime");
 /***/ ((module) => {
 
 module.exports = require("@emotion/styled");
-
-/***/ }),
-
-/***/ 2215:
-/***/ ((module) => {
-
-module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 
 /***/ }),
 
@@ -570,27 +566,6 @@ module.exports = require("next/dist/shared/lib/image-loader");
 
 /***/ }),
 
-/***/ 8524:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/is-plain-object.js");
-
-/***/ }),
-
-/***/ 8020:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/mitt.js");
-
-/***/ }),
-
-/***/ 4406:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
-
-/***/ }),
-
 /***/ 4964:
 /***/ ((module) => {
 
@@ -612,20 +587,6 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js")
 
 /***/ }),
 
-/***/ 6220:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
-
-/***/ }),
-
-/***/ 299:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
-
-/***/ }),
-
 /***/ 3938:
 /***/ ((module) => {
 
@@ -633,31 +594,10 @@ module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
 
-/***/ 9565:
+/***/ 1109:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-route.js");
-
-/***/ }),
-
-/***/ 5789:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
-
-/***/ }),
-
-/***/ 1897:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
-
-/***/ }),
-
-/***/ 1428:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
+module.exports = require("next/dist/shared/lib/router/utils/is-local-url.js");
 
 /***/ }),
 
@@ -668,27 +608,6 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
 
 /***/ }),
 
-/***/ 1292:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.js");
-
-/***/ }),
-
-/***/ 4567:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
-
-/***/ }),
-
-/***/ 979:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
-
-/***/ }),
-
 /***/ 3297:
 /***/ ((module) => {
 
@@ -696,24 +615,10 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 
 /***/ }),
 
-/***/ 6052:
+/***/ 7782:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js");
-
-/***/ }),
-
-/***/ 4226:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
-
-/***/ }),
-
-/***/ 5052:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
+module.exports = require("next/dist/shared/lib/router/utils/resolve-href.js");
 
 /***/ }),
 
@@ -752,6 +657,13 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ 358:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap");
+
+/***/ }),
+
 /***/ 1937:
 /***/ ((module) => {
 
@@ -766,38 +678,10 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
-/***/ 5226:
+/***/ 4563:
 /***/ ((module) => {
 
-module.exports = require("react-bootstrap/Form");
-
-/***/ }),
-
-/***/ 2540:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
-
-/***/ }),
-
-/***/ 4934:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Navbar");
-
-/***/ }),
-
-/***/ 6405:
-/***/ ((module) => {
-
-module.exports = require("react-dom");
+module.exports = import("@fortawesome/free-solid-svg-icons");;
 
 /***/ })
 
@@ -808,7 +692,7 @@ module.exports = require("react-dom");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,94,500,626], () => (__webpack_exec__(2250)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51,468,941], () => (__webpack_exec__(8493)));
 module.exports = __webpack_exports__;
 
 })();

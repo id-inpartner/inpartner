@@ -5,7 +5,7 @@ exports.id = 492;
 exports.ids = [492];
 exports.modules = {
 
-/***/ 7305:
+/***/ 333:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -19,10 +19,9 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
 // EXTERNAL MODULE: ./src/components/Button/index.ts
-var Button = __webpack_require__(6753);
-// EXTERNAL MODULE: external "date-fns/format"
-var format_ = __webpack_require__(4384);
-var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+var Button = __webpack_require__(3900);
+// EXTERNAL MODULE: external "date-fns"
+var external_date_fns_ = __webpack_require__(4146);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
@@ -32,23 +31,22 @@ var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
-var GlobalStyle = __webpack_require__(8857);
+var GlobalStyle = __webpack_require__(9920);
 // EXTERNAL MODULE: external "@emotion/styled"
 var styled_ = __webpack_require__(1480);
 var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 // EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"sans"}
-var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(5256);
+var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(3894);
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_);
-// EXTERNAL MODULE: external "react-bootstrap/Container"
-var Container_ = __webpack_require__(4678);
-var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
+// EXTERNAL MODULE: external "react-bootstrap"
+var external_react_bootstrap_ = __webpack_require__(358);
 ;// CONCATENATED MODULE: ./src/containers/Post/styled.ts
 
 
 
 
 
-const Container = /*#__PURE__*/ styled_default()((Container_default()), {
+const Container = /*#__PURE__*/ styled_default()(external_react_bootstrap_.Container, {
     target: "e1u7fl100"
 })("display:flex;flex-wrap:wrap;padding-bottom:68px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:0;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){flex-wrap:nowrap;}");
 const Article = /*#__PURE__*/ styled_default()("div", {
@@ -98,7 +96,7 @@ const Index = ({ post , categories , related  })=>{
                         }
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Meta, {
-                        children: format_default()(new Date(post.modified), "d MMMM yyyy")
+                        children: (0,external_date_fns_.format)(new Date(post.modified), "d MMMM yyyy")
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Content, {
                         dangerouslySetInnerHTML: {
@@ -178,7 +176,7 @@ const Index = ({ post , categories , related  })=>{
 
 /***/ }),
 
-/***/ 3328:
+/***/ 5777:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
@@ -191,14 +189,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1387);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(841);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9104);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9648);
-/* harmony import */ var _containers_Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7305);
+/* harmony import */ var _containers_Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(333);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_4__]);
-axios__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -343,13 +341,6 @@ module.exports = require("@emotion/styled");
 
 /***/ }),
 
-/***/ 2215:
-/***/ ((module) => {
-
-module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
-
-/***/ }),
-
 /***/ 7197:
 /***/ ((module) => {
 
@@ -357,10 +348,10 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ 4384:
+/***/ 4146:
 /***/ ((module) => {
 
-module.exports = require("date-fns/format");
+module.exports = require("date-fns");
 
 /***/ }),
 
@@ -434,27 +425,6 @@ module.exports = require("next/dist/shared/lib/image-loader");
 
 /***/ }),
 
-/***/ 8524:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/is-plain-object.js");
-
-/***/ }),
-
-/***/ 8020:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/mitt.js");
-
-/***/ }),
-
-/***/ 4406:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
-
-/***/ }),
-
 /***/ 4964:
 /***/ ((module) => {
 
@@ -476,20 +446,6 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js")
 
 /***/ }),
 
-/***/ 6220:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
-
-/***/ }),
-
-/***/ 299:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
-
-/***/ }),
-
 /***/ 3938:
 /***/ ((module) => {
 
@@ -497,31 +453,10 @@ module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
 
-/***/ 9565:
+/***/ 1109:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-route.js");
-
-/***/ }),
-
-/***/ 5789:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
-
-/***/ }),
-
-/***/ 1897:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
-
-/***/ }),
-
-/***/ 1428:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
+module.exports = require("next/dist/shared/lib/router/utils/is-local-url.js");
 
 /***/ }),
 
@@ -532,27 +467,6 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
 
 /***/ }),
 
-/***/ 1292:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.js");
-
-/***/ }),
-
-/***/ 4567:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
-
-/***/ }),
-
-/***/ 979:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
-
-/***/ }),
-
 /***/ 3297:
 /***/ ((module) => {
 
@@ -560,24 +474,10 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 
 /***/ }),
 
-/***/ 6052:
+/***/ 7782:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js");
-
-/***/ }),
-
-/***/ 4226:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
-
-/***/ }),
-
-/***/ 5052:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
+module.exports = require("next/dist/shared/lib/router/utils/resolve-href.js");
 
 /***/ }),
 
@@ -616,6 +516,13 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ 358:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap");
+
+/***/ }),
+
 /***/ 1937:
 /***/ ((module) => {
 
@@ -630,31 +537,10 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
-/***/ 2540:
+/***/ 4563:
 /***/ ((module) => {
 
-module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
-
-/***/ }),
-
-/***/ 4934:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Navbar");
-
-/***/ }),
-
-/***/ 6405:
-/***/ ((module) => {
-
-module.exports = require("react-dom");
+module.exports = import("@fortawesome/free-solid-svg-icons");;
 
 /***/ }),
 
@@ -672,7 +558,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,94], () => (__webpack_exec__(3328)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51], () => (__webpack_exec__(5777)));
 module.exports = __webpack_exports__;
 
 })();

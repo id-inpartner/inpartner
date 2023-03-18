@@ -5,7 +5,7 @@ exports.id = 405;
 exports.ids = [405];
 exports.modules = {
 
-/***/ 2042:
+/***/ 9740:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -30,17 +30,17 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 5242:
+/***/ 3137:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export SectionTitle */
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8857);
+/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9920);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5256);
+/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3894);
 /* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fonts_index__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -53,14 +53,14 @@ const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___
 
 /***/ }),
 
-/***/ 3411:
+/***/ 4243:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export Text */
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8857);
+/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9920);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_1__);
 
@@ -73,7 +73,7 @@ const Text = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default(
 
 /***/ }),
 
-/***/ 5354:
+/***/ 8770:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -85,7 +85,7 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
-var GlobalStyle = __webpack_require__(8857);
+var GlobalStyle = __webpack_require__(9920);
 // EXTERNAL MODULE: external "@emotion/styled"
 var styled_ = __webpack_require__(1480);
 var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
@@ -93,9 +93,9 @@ var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 var Container_ = __webpack_require__(4678);
 var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 // EXTERNAL MODULE: ./src/components/ColumnContainer.ts
-var ColumnContainer = __webpack_require__(3320);
+var ColumnContainer = __webpack_require__(5960);
 // EXTERNAL MODULE: ./src/components/Text/index.tsx
-var Text = __webpack_require__(3411);
+var Text = __webpack_require__(4243);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
@@ -108,7 +108,7 @@ const ViewMore = /*#__PURE__*/ styled_default()((link_default()), {
 })("margin-top:10px;margin-bottom:16px;align-self:center;min-width:140px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:24px;margin-bottom:30px;}& > button{width:100%;}");
 
 // EXTERNAL MODULE: ./src/components/SectionTitle/index.tsx
-var SectionTitle = __webpack_require__(5242);
+var SectionTitle = __webpack_require__(3137);
 ;// CONCATENATED MODULE: ./src/containers/Home/About/styled.ts
 
 
@@ -153,11 +153,11 @@ var Carousel_default = /*#__PURE__*/__webpack_require__.n(Carousel_namespaceObje
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/Image.tsx
-var Image = __webpack_require__(5562);
+var Image = __webpack_require__(471);
 // EXTERNAL MODULE: ./src/components/Button/index.ts
-var Button = __webpack_require__(6753);
+var Button = __webpack_require__(3900);
 // EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"sans"}
-var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(5256);
+var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(3894);
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_);
 ;// CONCATENATED MODULE: ./src/containers/Home/Banner/styled.ts
 
@@ -300,7 +300,7 @@ const Banner = ()=>{
 /* harmony default export */ const Home_Banner = (Banner);
 
 // EXTERNAL MODULE: ./src/components/Project/index.tsx
-var Project = __webpack_require__(4626);
+var Project = __webpack_require__(4941);
 ;// CONCATENATED MODULE: ./src/containers/Home/Blog/styled.ts
 
 
@@ -314,13 +314,13 @@ const Items = /*#__PURE__*/ styled_default()(Project/* ProjectsComponent */.vP, 
 })("@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-width:1134px;min-width:1134px;margin-left:auto;margin-right:auto;}");
 
 // EXTERNAL MODULE: ./src/components/Card/index.ts
-var Card = __webpack_require__(2042);
+var Card = __webpack_require__(9740);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
-// EXTERNAL MODULE: external "date-fns/format"
-var format_ = __webpack_require__(4384);
-var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+;// CONCATENATED MODULE: external "date-fns/format"
+const format_namespaceObject = require("date-fns/format");
+var format_default = /*#__PURE__*/__webpack_require__.n(format_namespaceObject);
 ;// CONCATENATED MODULE: ./src/containers/Home/Blog/Item.tsx
 
 
@@ -460,7 +460,7 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/csu.png
 /* harmony default export */ const csu = ({"src":"/_next/static/media/csu.1445a929.png","height":69,"width":69,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAuElEQVR42m2POwrCQBCG50Q+qoB22cQ8DiFWIZADWFgYEQsrxc4mICKCNoIWQrQzze4R7Gy9hN+iYuPCz3wz/8wwK/bpyGvpUI1NpFI4tUxsv83Yr5H05Pe+Q11UF7pPJvImKEdTE/tD4gDN8Q624WJCddSBW8F9+Im5N4F7hyuhuEVnkgfGlbUL8iUqqN2EyRJjZeLOjPVruMDcoQ0qOdJrMJX9OTLjA81Pohy6c4oJnMAj2BEReQFCuWGLUTUcqQAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/falga.svg
-/* harmony default export */ const falga = ({"src":"/_next/static/media/falga.6e8301d4.svg","height":66,"width":180});
+/* harmony default export */ const falga = ({"src":"/_next/static/media/falga.6e8301d4.svg","height":66,"width":180,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/menn.webp
 /* harmony default export */ const menn = ({"src":"/_next/static/media/menn.8ffda562.webp","height":48,"width":144,"blurDataURL":"data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAMAAkA4JQBOgCHSx68AAP5b2iNfv/VEms3E9JW8h4OBztWzB1wMgAA=","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/raiz.webp
@@ -474,7 +474,7 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bank-indonesia.png
 /* harmony default export */ const bank_indonesia = ({"src":"/_next/static/media/bank-indonesia.20649085.png","height":316,"width":712,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAIAAAA8r+mnAAAAXklEQVR42j2Iuw5AMAAA+/9fYzIIBotXCImgQUWLqhYRcxURLrfcAXk+SCk1w9PtQCn1HqA+dCs0nfhPQCgfmFj3o584ppzyBY8zExtwUxgVTY5IVncJbG/9rIpLdAFKwlbKYJq5dgAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/mandiri-investasi.svg
-/* harmony default export */ const mandiri_investasi = ({"src":"/_next/static/media/mandiri-investasi.958a9e81.svg","height":1017,"width":2113});
+/* harmony default export */ const mandiri_investasi = ({"src":"/_next/static/media/mandiri-investasi.958a9e81.svg","height":1017,"width":2113,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bpkh.png
 /* harmony default export */ const bpkh = ({"src":"/_next/static/media/bpkh.1095d94b.png","height":712,"width":2082,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAYAAACuyE5IAAAAbklEQVR4nAFjAJz/AfzBAELZ2SRsK2Y9qDo89Qvi9AICAgIB5/7///z9/v8GAcyiOce/yhMEdbINDCUV/uv1/ADqAQEBEv///8v/AABKAdehKX+FqS7Hp+kGKCsJAN8DBQXi9/n7KwEAAfz/AP/6SsEvcA7VDckAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/tmj.png
@@ -496,7 +496,7 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasasarana.png
 /* harmony default export */ const jasasarana = ({"src":"/_next/static/media/jasasarana.577953d3.png","height":99,"width":99,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAA00lEQVR42gHIADf/AObn67S4yLvD07rB0bzG17vF1rrA0O7v8wCeobRsmcOhzOycyOqLtNJneotEU2q1t74AoaS2ocHexuf+vN72jZmie3t6d4CIt73HAKCkuaK608Pa6s3m+pCaooaQmIybqbzH2gCztLlna3N+fn2ZoaiUmZ2jqrGNlqDBydgArK+7m5+mgoF9nJ+fub7CoaWno6epy9DdAJWbsq2yxKmqrnp8hn6AiIaGi7y/yLS4yADHydN+h6WqssWVnLSlrMCosMOIkKvR09vj+IHxgQOynwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/giz.gif
-/* harmony default export */ const giz = ({"src":"/_next/static/media/giz.3923c8ea.gif","height":62,"width":236});
+/* harmony default export */ const giz = ({"src":"/_next/static/media/giz.3923c8ea.gif","height":62,"width":236,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/danareksa.png
 /* harmony default export */ const danareksa = ({"src":"/_next/static/media/danareksa.4eda84f4.png","height":78,"width":314,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAYAAABllJ3tAAAATUlEQVR4nGPcvGZFHxs7z2P39g/75KT/M739y/DzLwMDOxMDA8N/BoY/jPt3bOkREZV8out37qiiDafQy9//fzAwMv5n+P+f8R8DAwcAnAkbcgyDxQ8AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/pae.jpeg
@@ -1608,10 +1608,10 @@ const Clients = ()=>{
 /* harmony default export */ const Home_Clients = (Clients);
 
 // EXTERNAL MODULE: ./src/components/TitleDescription/index.tsx
-var TitleDescription = __webpack_require__(3463);
-// EXTERNAL MODULE: external "react-bootstrap/Form"
-var Form_ = __webpack_require__(5226);
-var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
+var TitleDescription = __webpack_require__(4267);
+;// CONCATENATED MODULE: external "react-bootstrap/Form"
+const Form_namespaceObject = require("react-bootstrap/Form");
+var Form_default = /*#__PURE__*/__webpack_require__.n(Form_namespaceObject);
 ;// CONCATENATED MODULE: ./src/containers/Home/Contact/index.tsx
 
 
@@ -1842,9 +1842,9 @@ const Pillars_styled_Items = /*#__PURE__*/ styled_default()("div", {
 })("display:flex;flex-wrap:wrap;justify-content:space-around;margin-bottom:16px;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){min-width:392px;max-width:392px;margin:0 auto 30px auto;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:816px;max-width:816px;margin:0 auto 30px auto;}");
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/funding.svg
-/* harmony default export */ const funding = ({"src":"/_next/static/media/funding.25c0fb0f.svg","height":58,"width":58});
+/* harmony default export */ const funding = ({"src":"/_next/static/media/funding.25c0fb0f.svg","height":58,"width":58,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/capacity-building.svg
-/* harmony default export */ const capacity_building = ({"src":"/_next/static/media/capacity-building.c89c2d71.svg","height":61,"width":61});
+/* harmony default export */ const capacity_building = ({"src":"/_next/static/media/capacity-building.c89c2d71.svg","height":61,"width":61,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/index.tsx
 
 
@@ -2136,9 +2136,9 @@ const Sectors = ()=>{
 };
 /* harmony default export */ const Home_Sectors = (Sectors);
 
-// EXTERNAL MODULE: external "react-bootstrap/Ratio"
-var Ratio_ = __webpack_require__(9378);
-var Ratio_default = /*#__PURE__*/__webpack_require__.n(Ratio_);
+;// CONCATENATED MODULE: external "react-bootstrap/Ratio"
+const Ratio_namespaceObject = require("react-bootstrap/Ratio");
+var Ratio_default = /*#__PURE__*/__webpack_require__.n(Ratio_namespaceObject);
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/styled.ts
 
 
@@ -2356,7 +2356,7 @@ const Index = ({ projects , posts  })=>{
 
 /***/ }),
 
-/***/ 5970:
+/***/ 85:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
@@ -2369,12 +2369,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5354);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1387);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(841);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8770);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_5__]);
-axios__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -2495,24 +2495,10 @@ module.exports = require("@emotion/styled");
 
 /***/ }),
 
-/***/ 2215:
-/***/ ((module) => {
-
-module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
-
-/***/ }),
-
 /***/ 7197:
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 4384:
-/***/ ((module) => {
-
-module.exports = require("date-fns/format");
 
 /***/ }),
 
@@ -2586,27 +2572,6 @@ module.exports = require("next/dist/shared/lib/image-loader");
 
 /***/ }),
 
-/***/ 8524:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/is-plain-object.js");
-
-/***/ }),
-
-/***/ 8020:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/mitt.js");
-
-/***/ }),
-
-/***/ 4406:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
-
-/***/ }),
-
 /***/ 4964:
 /***/ ((module) => {
 
@@ -2628,20 +2593,6 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js")
 
 /***/ }),
 
-/***/ 6220:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
-
-/***/ }),
-
-/***/ 299:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
-
-/***/ }),
-
 /***/ 3938:
 /***/ ((module) => {
 
@@ -2649,31 +2600,10 @@ module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
 
-/***/ 9565:
+/***/ 1109:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-route.js");
-
-/***/ }),
-
-/***/ 5789:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
-
-/***/ }),
-
-/***/ 1897:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
-
-/***/ }),
-
-/***/ 1428:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
+module.exports = require("next/dist/shared/lib/router/utils/is-local-url.js");
 
 /***/ }),
 
@@ -2684,27 +2614,6 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
 
 /***/ }),
 
-/***/ 1292:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.js");
-
-/***/ }),
-
-/***/ 4567:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
-
-/***/ }),
-
-/***/ 979:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
-
-/***/ }),
-
 /***/ 3297:
 /***/ ((module) => {
 
@@ -2712,24 +2621,10 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 
 /***/ }),
 
-/***/ 6052:
+/***/ 7782:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js");
-
-/***/ }),
-
-/***/ 4226:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
-
-/***/ }),
-
-/***/ 5052:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
+module.exports = require("next/dist/shared/lib/router/utils/resolve-href.js");
 
 /***/ }),
 
@@ -2768,6 +2663,13 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ 358:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap");
+
+/***/ }),
+
 /***/ 1937:
 /***/ ((module) => {
 
@@ -2782,52 +2684,17 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
-/***/ 5226:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Form");
-
-/***/ }),
-
-/***/ 2540:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
-
-/***/ }),
-
-/***/ 4934:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Navbar");
-
-/***/ }),
-
-/***/ 9378:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Ratio");
-
-/***/ }),
-
-/***/ 6405:
-/***/ ((module) => {
-
-module.exports = require("react-dom");
-
-/***/ }),
-
 /***/ 8096:
 /***/ ((module) => {
 
 module.exports = require("react-slick");
+
+/***/ }),
+
+/***/ 4563:
+/***/ ((module) => {
+
+module.exports = import("@fortawesome/free-solid-svg-icons");;
 
 /***/ }),
 
@@ -2845,7 +2712,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,505,121,302,94,626,891], () => (__webpack_exec__(5970)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51,941,135], () => (__webpack_exec__(85)));
 module.exports = __webpack_exports__;
 
 })();

@@ -5,7 +5,7 @@ exports.id = 91;
 exports.ids = [91];
 exports.modules = {
 
-/***/ 3592:
+/***/ 4254:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -39,7 +39,7 @@ const handler = async (req, res)=>{
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(3592));
+var __webpack_exports__ = (__webpack_exec__(4254));
 module.exports = __webpack_exports__;
 
 })();

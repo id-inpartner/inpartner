@@ -363,6 +363,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9648);
 /* harmony import */ var _containers_Category__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7736);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_4__]);
 axios__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -371,17 +373,58 @@ axios__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (awa
 
 
 
+
 const Page = (props)=>{
+    const meta = props.category.yoast_head_json;
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
                 children: [
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                        children: "Blog Inpartner"
+                        children: meta.title
                     }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "description",
-                        content: "Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
+                    Object.keys(meta).map((k)=>{
+                        const it = meta[k];
+                        if (k.startsWith("og_")) {
+                            if (k.endsWith("_image")) {
+                                const [i] = it;
+                                return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+                                    children: [
+                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                                            name: "og:image:url",
+                                            content: i.url
+                                        }),
+                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                                            name: "og:image:type",
+                                            content: i.type
+                                        }),
+                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                                            name: "og:image:width",
+                                            content: `${i.width}`
+                                        }),
+                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                                            name: "og:image:height",
+                                            content: `${i.height}`
+                                        }),
+                                        i.alt && /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                                            name: "og:image:alt",
+                                            content: i.alt
+                                        })
+                                    ]
+                                }, k);
+                            }
+                            return /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                                name: k.replace("_", ":"),
+                                content: it
+                            }, k);
+                        }
+                        if (k.startsWith("twitter_")) {
+                            return /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                                name: k.replace("_", ":"),
+                                content: it
+                            }, k);
+                        }
+                        return undefined;
                     })
                 ]
             }),
@@ -398,7 +441,7 @@ const getServerSideProps = async ({ req , query  })=>{
     const res = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
         params: {
             _embed: 1,
-            _fields: "id,name,slug"
+            _fields: "id,name,slug,yoast_head_json"
         },
         headers: {
             accept: "application/json"

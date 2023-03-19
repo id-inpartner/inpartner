@@ -198,10 +198,6 @@ const Page = ({ post , related  })=>{
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
                         children: meta.title
                     }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "description",
-                        content: meta.og_description
-                    }),
                     Object.keys(meta).map((k)=>{
                         if (k.startsWith("og_")) {
                             const it = meta[k];

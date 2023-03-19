@@ -150,8 +150,8 @@ const Footer = ()=>{
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "value",
                                         children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                                            href: "mailto:consultant.customercare@inpartner.id",
-                                            children: "consultant.customercare@inpartner.id"
+                                            href: "mailto:corporatesecretary@inpartner.id",
+                                            children: "corporatesecretary@inpartner.id"
                                         })
                                     })
                                 ]

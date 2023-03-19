@@ -28,21 +28,27 @@ const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___
 
 /***/ }),
 
-/***/ 8026:
+/***/ 9572:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ containers_Projects)
+  "default": () => (/* binding */ project),
+  "getServerSideProps": () => (/* binding */ getServerSideProps)
 });
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
+// EXTERNAL MODULE: external "next/head"
+var head_ = __webpack_require__(968);
+var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 // EXTERNAL MODULE: ./src/components/Banner/index.tsx
 var Banner = __webpack_require__(9988);
 ;// CONCATENATED MODULE: ./src/containers/Projects/banner.png
-/* harmony default export */ const banner = ({"src":"/_next/static/media/banner.c5da7d6b.png","height":2000,"width":3000,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAiElEQVR42gF9AIL/AJCampmkpKy5vLjGy7XDyLC9wrHAxq6+xQCJk5N8fHqaoaKntLaotbixv8Sntbmpt7wAg5OganJ9lp6cg4mHfn16p7W4nqerl6GlAFBYX251fYSLjYaOk5WepY+YnZCbo4OOlQBxeX2CjZN0f4Rxen90fYNzeXdcYmJYXl5jF0XnMiawcQAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const banner = ({"src":"/_next/static/media/banner.c5da7d6b.png","height":2000,"width":3000,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAM1BMVEWwv8RhaGxCSEiLlZmntbl4gIFrdHiRmJmIj4+hrq+3xcp7io9uamaYoqJUXF9PWF86REnq6uVRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nAXBhwEAIAzAoFQ73f9fK9C3jgEwV1ZRypSwpRG8mxbZjeMuLq19F+4BBjynjLMAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/Project/index.tsx
@@ -57,8 +63,9 @@ var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
-// EXTERNAL MODULE: external "react-bootstrap"
-var external_react_bootstrap_ = __webpack_require__(358);
+// EXTERNAL MODULE: external "react-bootstrap/Container"
+var Container_ = __webpack_require__(4678);
+var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 ;// CONCATENATED MODULE: ./src/containers/Projects/styled.ts
 
 
@@ -66,7 +73,7 @@ var external_react_bootstrap_ = __webpack_require__(358);
 
 
 
-const Container = /*#__PURE__*/ styled_default()(external_react_bootstrap_.Container, {
+const Container = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e54vnkr0"
 })("display:flex;flex-wrap:wrap;");
 const SideMenu = /*#__PURE__*/ styled_default()("div", {
@@ -85,6 +92,12 @@ const Queries = /*#__PURE__*/ styled_default()("div", {
     target: "e54vnkr5"
 })("min-width:100%;display:flex;padding-top:32px;padding-bottom:16px;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-top:64px;padding-bottom:32px;}& > .form-control,& > .form-select{width:unset;min-width:134px;margin-left:12px;margin-right:12px;}");
 
+// EXTERNAL MODULE: external "react-bootstrap/Form"
+var Form_ = __webpack_require__(5226);
+var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
+;// CONCATENATED MODULE: external "react-bootstrap/Pagination"
+const Pagination_namespaceObject = require("react-bootstrap/Pagination");
+var Pagination_default = /*#__PURE__*/__webpack_require__.n(Pagination_namespaceObject);
 ;// CONCATENATED MODULE: ./src/components/Pagination/index.tsx
 
 
@@ -103,6 +116,7 @@ const PageItem = ({ href , as , children , tabIndex  })=>{
 };
 
 ;// CONCATENATED MODULE: ./src/containers/Projects/index.tsx
+
 
 
 
@@ -184,7 +198,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                         children: [
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Queries, {
                                 children: [
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_react_bootstrap_.Form.Select, {
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Form_default()).Select, {
                                         "aria-label": "Sector",
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("option", {
@@ -204,7 +218,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                             })
                                         ]
                                     }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx(external_react_bootstrap_.Form.Control, {
+                                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
                                         type: "date",
                                         name: "date",
                                         placeholder: "Date"
@@ -215,7 +229,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                     data: r
                                 }, r.id)),
                             /*#__PURE__*/ jsx_runtime_.jsx(Project/* Dummy */.vk, {}),
-                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_react_bootstrap_.Pagination, {
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Pagination_default()), {
                                 children: [
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PageItem, {
                                         href: {
@@ -315,28 +329,13 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
 };
 /* harmony default export */ const containers_Projects = (Index);
 
-
-/***/ }),
-
-/***/ 8493:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
-/* harmony export */ });
-/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
-/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8026);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
-/* harmony import */ var _utils_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8312);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
-_components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+// EXTERNAL MODULE: ./src/components/Navbar/index.tsx + 1 modules
+var Navbar = __webpack_require__(9355);
+// EXTERNAL MODULE: ./src/components/Footer/index.tsx + 2 modules
+var Footer = __webpack_require__(9154);
+// EXTERNAL MODULE: ./src/utils/json.ts
+var json = __webpack_require__(8312);
+;// CONCATENATED MODULE: ./src/pages/project/index.tsx
 
 
 
@@ -344,24 +343,24 @@ _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies_
 
 
 const Page = (props)=>{
-    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                    /*#__PURE__*/ jsx_runtime_.jsx("title", {
                         children: "Project & tender Inpartner"
                     }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
                         name: "description",
                         content: "Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
                     })
                 ]
             }),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Projects__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+            /*#__PURE__*/ jsx_runtime_.jsx(Navbar/* default */.Z, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(containers_Projects, {
                 ...props
             }),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
+            /*#__PURE__*/ jsx_runtime_.jsx(Footer/* default */.Z, {})
         ]
     });
 };
@@ -423,7 +422,7 @@ const getServerSideProps = async ({ req , query  })=>{
         });
         return {
             props: {
-                rows: JSON.parse(JSON.stringify((0,_utils_json__WEBPACK_IMPORTED_MODULE_5__/* .jsonify */ .K)(rows))),
+                rows: JSON.parse(JSON.stringify((0,json/* jsonify */.K)(rows))),
                 count,
                 page,
                 perPage,
@@ -444,10 +443,8 @@ const getServerSideProps = async ({ req , query  })=>{
         };
     }
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
+/* harmony default export */ const project = (Page);
 
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -486,6 +483,13 @@ module.exports = require("@emotion/react/jsx-runtime");
 /***/ ((module) => {
 
 module.exports = require("@emotion/styled");
+
+/***/ }),
+
+/***/ 2215:
+/***/ ((module) => {
+
+module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 
 /***/ }),
 
@@ -657,13 +661,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ 358:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-
 /***/ 1937:
 /***/ ((module) => {
 
@@ -678,10 +675,31 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
-/***/ 4563:
+/***/ 5226:
 /***/ ((module) => {
 
-module.exports = import("@fortawesome/free-solid-svg-icons");;
+module.exports = require("react-bootstrap/Form");
+
+/***/ }),
+
+/***/ 2540:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Nav");
+
+/***/ }),
+
+/***/ 9070:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/NavDropdown");
+
+/***/ }),
+
+/***/ 4934:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Navbar");
 
 /***/ })
 
@@ -692,7 +710,7 @@ module.exports = import("@fortawesome/free-solid-svg-icons");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51,468,941], () => (__webpack_exec__(8493)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,491,468,941], () => (__webpack_exec__(9572)));
 module.exports = __webpack_exports__;
 
 })();

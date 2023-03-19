@@ -73,7 +73,7 @@ const Text = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default(
 
 /***/ }),
 
-/***/ 8770:
+/***/ 9522:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -145,11 +145,11 @@ const About = ()=>{
 const Carousel_namespaceObject = require("react-bootstrap/Carousel");
 var Carousel_default = /*#__PURE__*/__webpack_require__.n(Carousel_namespaceObject);
 ;// CONCATENATED MODULE: ./src/containers/Home/Banner/1.png
-/* harmony default export */ const _1 = ({"src":"/_next/static/media/1.c2e35b66.png","height":943,"width":1440,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAcklEQVR42g3LsRECMQxE0V1LPsnAMMyQkBAQUgFNkFEgPVEDEREBATb4fPrpn8fj7U4OAAK8hlymz/X82B5Oqm4kogSsIB01YdR/UjEjBkghFJpZixf2WXNxxAhBeiy21vrGfqqTgSEgYIfusu/X8nx/F256G1YtWG72AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const _1 = ({"src":"/_next/static/media/1.c2e35b66.png","height":943,"width":1440,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAKlBMVEUscr0iXageVaApa7UlY61ralpye3orV5E0ZZ56iX0kZbM9dKxia22AdmE+gASXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKElEQVR4nGNgAgF2Vk4GRhAAMVhYWFi4OFjZGJiZmZkZQAww4OblAQANpwCqR/10LQAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Banner/2.png
-/* harmony default export */ const _2 = ({"src":"/_next/static/media/2.6739ea3d.png","height":950,"width":1440,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAiElEQVR42gF9AIL/ABlMoxlLnxlKmyBMmgA9mXuEo3F+oytZpAAjX7YjXrIjXa4pXawATqiGkrCBj7EYTZIALHPJKXHFKXDAJXLCLnG9a3ycUllqCy5ZAESa4Eqd4Uqd4FSTzjh1qDJegkxxmzuEzACHtNWFrMl9o76InKhlmsKAmrGbpq57ocqHMjjjGDjWkwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const _2 = ({"src":"/_next/static/media/2.6739ea3d.png","height":950,"width":1440,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAARVBMVEUjX7NlhK58laJjka8ye8p1osdUcaEaTZ8tc8JDmuJ9sNMZVakSRppEj84uWqQ1a5pynbhOa5IqSmczXIEWLUojRoA2RFn00rTuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nBXBhxEAIAgEsFdUwN73H9UzATNzDqHiS8YcOBGRcTdUtbS5HKLvlsj6BxxJAVLS0WCAAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Banner/3.png
-/* harmony default export */ const _3 = ({"src":"/_next/static/media/3.39a3e5a0.png","height":949,"width":1440,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAcklEQVR42g2LQQ7CIBREAT9UqBhr06Qx0b0bD+MlvZwL05UBZuifebuXZ1/vDztAkE0fXLnN23EoIkNU4dgAdKnP+zeezJgm8WlUQTYHmvaHRvGSBZLOGYTS2UsN7mDX/puDl3zNjToUmIX2UTdHPy3rDml6Q39dINXjAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const _3 = ({"src":"/_next/static/media/3.39a3e5a0.png","height":949,"width":1440,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAMFBMVEUvV6w0YrcpT6FIf9JCYH4/b8c6a8I5VH1iaGpZcYFPb4RubmpHdr1UXWQrTJOHj44JbJh0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nBXGyREAIAgDwCSA4t1/tw77WkCSbu8o8jlAkqhEtEbPBTOzffJ9Db8Aw4acFSAAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/Image.tsx
@@ -318,9 +318,9 @@ var Card = __webpack_require__(9740);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
-;// CONCATENATED MODULE: external "date-fns/format"
-const format_namespaceObject = require("date-fns/format");
-var format_default = /*#__PURE__*/__webpack_require__.n(format_namespaceObject);
+// EXTERNAL MODULE: external "date-fns/format"
+var format_ = __webpack_require__(4384);
+var format_default = /*#__PURE__*/__webpack_require__.n(format_);
 ;// CONCATENATED MODULE: ./src/containers/Home/Blog/Item.tsx
 
 
@@ -436,75 +436,75 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 })("display:flex;flex:0 0 auto;align-items:center;justify-content:center;margin-right:-16px;margin-left:-16px;&.last{margin-bottom:92px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-bottom:120px;}}&:hover{& > div{animation-play-state:paused;}}");
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/ug-mandiri.png
-/* harmony default export */ const ug_mandiri = ({"src":"/_next/static/media/ug-mandiri.ad01ad4f.png","height":94,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAPUlEQVR42gEyAM3/AOXW0PHWw//fwvncxNfX4NfY4c7P2tDR3ADLwsfm2dP07uzv6uvl5evk5Ovg4ejk5esD9ymeF0GpeAAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const ug_mandiri = ({"src":"/_next/static/media/ug-mandiri.ad01ad4f.png","height":94,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAHlBMVEXW2Oa1udP72aK/wtnqy6Lp5eSopLnYy8PSxbzx7OgPN68oAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGElEQVR4nGPgYGFiYmZmZGRgY+dkZQACAAIkADSfh+ZjAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bank-bengkulu.jpg
-/* harmony default export */ const bank_bengkulu = ({"src":"/_next/static/media/bank-bengkulu.e3426a57.jpg","height":94,"width":435,"blurDataURL":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoKCgoKCgsMDAsPEA4QDxYUExMUFiIYGhgaGCIzICUgICUgMy03LCksNy1RQDg4QFFeT0pPXnFlZXGPiI+7u/sBCgoKCgoKCwwMCw8QDhAPFhQTExQWIhgaGBoYIjMgJSAgJSAzLTcsKSw3LVFAODhAUV5PSk9ecWVlcY+Ij7u7+//CABEIAAIACAMBIgACEQEDEQH/xAAnAAEBAAAAAAAAAAAAAAAAAAAABwEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAAooH/xAAYEAACAwAAAAAAAAAAAAAAAAAAAzNywf/aAAgBAQABPwBEKK4f/8QAFxEBAAMAAAAAAAAAAAAAAAAAAQAxcf/aAAgBAgEBPwAoyf/EABgRAAIDAAAAAAAAAAAAAAAAAAABAjJx/9oACAEDAQE/AJWen//Z","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const bank_bengkulu = ({"src":"/_next/static/media/bank-bengkulu.e3426a57.jpg","height":94,"width":435,"blurDataURL":"data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAACAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAbEAACAgMBAAAAAAAAAAAAAAAAAQIRAwQhQf/EABQBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQADAAAAAAAAAAAAAAAAAAAAATH/2gAMAwEAAhEDEQA/AK1zksWvFSdcVX5wAAoCh//Z","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/kimia-farma.png
-/* harmony default export */ const kimia_farma = ({"src":"/_next/static/media/kimia-farma.09e17438.png","height":431,"width":1200,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAYAAACuyE5IAAAAXElEQVR42mOAgU8TmcU+T2JI/TaZIR1IyzAAwYMOQ0YgNZvpyyQGtq+TGew/TWQKeNypGw3kuzzq1OOGaLWsqFW0KS9h0KnOY2Bo8WJgaExk0KhJB4oVMVhWlAMAfykcjaHSe88AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
+/* harmony default export */ const kimia_farma = ({"src":"/_next/static/media/kimia-farma.09e17438.png","height":431,"width":1200,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAJFBMVEXqjgYAMIVMaXGZcSz7lQAFPHUAOXgAJpLnjQXrjwMAANbMgxgCiEvtAAAADHRSTlNaXQASHGpwRUpFAhe0P60fAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIklEQVR4nAXBhwEAMAjDMCeMFv4/GAk7IddsDPwwXXpS9QEErABcQx7N3wAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/plan-international.png
-/* harmony default export */ const plan_international = ({"src":"/_next/static/media/plan-international.15ab5088.png","height":107,"width":395,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAPUlEQVR42gEyAM3/APPh7PHg6+nu+Nvh8sLO6r/M6cLO6sHN6gDj5PHCyefT3PDF0Ouds+CUrN6ftOCetOAKIifWX/PkfQAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const plan_international = ({"src":"/_next/static/media/plan-international.15ab5088.png","height":107,"width":395,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAHlBMVEWKveiVw+pOnNy31fDtzedbot7L1+/Z6feWtuRxr+PcMexyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgYWFnZmBgYGRg42BmZGJi5QQAAdMAOMsxvK8AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/mo-biol.png
-/* harmony default export */ const mo_biol = ({"src":"/_next/static/media/mo-biol.21df1216.png","height":47,"width":130,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAIAAAAhqtkfAAAASklEQVR42mP4jwEOXD90+cU1hievnz15/fzF+9cnT508derUq5evOlf09B2ewnDw/PHNx3btOH1g846tq1et3rZt24TFkz58/QgAW9c7yWINHLsAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
+/* harmony default export */ const mo_biol = ({"src":"/_next/static/media/mo-biol.21df1216.png","height":47,"width":130,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAJFBMVEX///+qq6rU5tyyzL+l2rTf5OKZoZ1ilHBjg2xJsWWKiImYu6nsuJH2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAH0lEQVR4nGNgAAMWFgYmJiZGRlZ2TgZmbmY2LkYOJgAC5wBSfP3i9QAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jnk.png
-/* harmony default export */ const jnk = ({"src":"/_next/static/media/jnk.d41ddfa7.png","height":73,"width":165,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAIAAAA8r+mnAAAAb0lEQVR42gFkAJv/AOfq8ICQsLu/y////+vs8OXn7Ovt8ers8ACPmayjnpxJWoDo6u2fp7xecZlrep7S1d4AkJGd4saCe3yLucHRj5u0eYmpkZ22w8nVANbb58/FtP/tx+nt8+Dj6ubp7+To7uPm7P7cSJA3BwXgAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
+/* harmony default export */ const jnk = ({"src":"/_next/static/media/jnk.d41ddfa7.png","height":73,"width":165,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAOVBMVEXW3ultf4OsvdOSp8Tb4+woU414krBqibLG0eHm6/Dt7eg+YYVXeaZUdqRQc6LLt2f/6qCkr7H9/f+WSm2PAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKUlEQVR4nA3BhwEAIAgDsKJAcY//j9UE9HJDoZDmat0CS5jHZMLZNfA9EF0A3vfBLcoAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/berdikari.png
-/* harmony default export */ const berdikari = ({"src":"/_next/static/media/berdikari.74807edb.png","height":80,"width":164,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAIAAAA8r+mnAAAAaElEQVR42gUA7QqCMHDv/1BB/qj+SDKjhFpUlttd6OEHc8ybJyrF6Ot6tnZNKTjXZtmgNYdZLdQx2PA0ky6YWkaI4Nh7Vdxxr5vyTbv8cyibY4XGjSKiXj+6GvxCXxm4nB/56fZHEpENFT1WoFG9HuwAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":4});
+/* harmony default export */ const berdikari = ({"src":"/_next/static/media/berdikari.74807edb.png","height":80,"width":164,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAKlBMVEX+9fT519X54eDY4u7D1+r////C3fHyvbvCxNeuzumgwuHwsK70xsTHz+Eqcb2eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJ0lEQVR4nAXBhwEAIAzDMKeDDvj/XiSQYbfA9MokiD07cxIPj27PDwj6AJM+TorCAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jsn.png
-/* harmony default export */ const jsn = ({"src":"/_next/static/media/jsn.ce77954b.png","height":74,"width":134,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAIAAAA8r+mnAAAAb0lEQVR42gFkAJv/AOyvrd3GzKmet/Tz9b/A07W2zMfI2MrK2gDqnZrn2tqsssnPz9yoqMOdnbyBgq55eqgA8e7y4OHk2Nnlo6bEw8XXsrTMurzSs7bOAO3j5+TY4N/S2+jc4+nd4+rf5ejd5Ond43oCS/p+GzlAAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
+/* harmony default export */ const jsn = ({"src":"/_next/static/media/jsn.ce77954b.png","height":74,"width":134,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAOVBMVEXUyNiEib14eLGeo8zk3ejP0d3SwMvb0N2ZnMmOlMRnaqzv6e/tgXxVWqLMsb+srdGprNCkqdDukYy/7w7qAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKklEQVR4nAXBhwEAIAgDsIJMF+r/x5rgbZbIOJiWRbw6hirdjAaBwR3+AROGAO5DziyuAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bkpm.png
-/* harmony default export */ const bkpm = ({"src":"/_next/static/media/bkpm.e62173ed.png","height":101,"width":132,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAIAAABxZ0isAAAAhUlEQVR42mP49+/f////X7z8sHrDwS3Htr37+grIBQoyQCTOX7hX0zO/ftr0a08uIkmAway5u+ct2AtkQCWA1I8fv4Doxq0nly7f//X7NxABBUES9x+82rT57JWrj06dvrNn76Vnz96BJD59f//87fN7Tx88fP7oxbsXT149ffX+5afvHwDB3YFxHW8f1QAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":6});
+/* harmony default export */ const bkpm = ({"src":"/_next/static/media/bkpm.e62173ed.png","height":101,"width":132,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAMAAADJ2y/JAAAAM1BMVEX///9Wc5DZ4eJoeLPR1umxudn1+vL09fmFkr+/xd/h6efl8tjN4cGbtqXm7ejS3N6hqtDVTh8SAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nCXGWRYAEAzAwFC0td//tB7yMwGSjcYth9DfqMhXPasCbr4tQakr1jjLARN5AOYwiG8yAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":6});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/kemenkopukm.png
-/* harmony default export */ const kemenkopukm = ({"src":"/_next/static/media/kemenkopukm.dc49750f.png","height":101,"width":131,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAIAAABxZ0isAAAAjklEQVR42k2OvQuCQByGf/8/NEhDe0O51xYNQllRhNFwXR9imtd9eZmIYXGXoosPD+/48oBp0O1qczxhZ719Zzn8O6QZHU+t/rDnIQdEooRSTCZMvKgk9sQejCx028Pc3dTOFu5yt7oEZ8JIEJHvT8MB4Vo/vMcMX0PvKfzm1UDMZUT5gwmu0rwoi0/Z5lRh6n/KvE7DGgAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":6});
+/* harmony default export */ const kemenkopukm = ({"src":"/_next/static/media/kemenkopukm.dc49750f.png","height":101,"width":131,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAMAAADJ2y/JAAAANlBMVEX+///j6NbW4OK3x8nJ1dXU3b3z9vnf5+jl7O6pvcObsrh0knikuLPK1K72+PmLpJaVqn6/zdD31ZD1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nBXFURaAIAhFwYsCD7Sy/a+20/wMAM9c9Y+9+0bSsLODXn358GS2RxhQUmXCBxseAQFSIKzaAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":6});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/batan.png
-/* harmony default export */ const batan = ({"src":"/_next/static/media/batan.81ea7fa9.png","height":110,"width":107,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAsUlEQVR42iXJ6QqCQBQF4Hn/dynqV9gmmZqEOmlquYUxoqiZS7mA6DTagXvhnA8Mw4AxzotagrYo20VRkUpG8AdX017B9R3p8AzxJID8vorSYN1VqP/4DHtMSp+MYCCc3e2n6ZfItZPAs1BmjECu+4Z1qDwQI2q8n6hxgUZomhaT9CVu07yOm67EU8B8tjV0Rzc8mpYdEynQEkWd5y5gvxOYg0St2A3FQXhbLmhShZP6A/tyq34p94ZjAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const batan = ({"src":"/_next/static/media/batan.81ea7fa9.png","height":110,"width":107,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAATlBMVEX////g3+3Ewbuuqrn9/v7Dvtrm8Nb89dyZk7i1s8/x5r/e7MCqpsfLyeDz8/fn37vt6af+7cDN08rY4K3d8M3Uzc2OiK+Lha7x9+S7t9hRagkmAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPUlEQVR4nAXBBwLAIAgAsVNBwNG9/v/SJggpIiEIeW1FANvMSgX249K7C1g7c6+wYFY/wHWOqRG4+xOvjx86DAHunX1VVAAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/csu.png
-/* harmony default export */ const csu = ({"src":"/_next/static/media/csu.1445a929.png","height":69,"width":69,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAuElEQVR42m2POwrCQBCG50Q+qoB22cQ8DiFWIZADWFgYEQsrxc4mICKCNoIWQrQzze4R7Gy9hN+iYuPCz3wz/8wwK/bpyGvpUI1NpFI4tUxsv83Yr5H05Pe+Q11UF7pPJvImKEdTE/tD4gDN8Q624WJCddSBW8F9+Im5N4F7hyuhuEVnkgfGlbUL8iUqqN2EyRJjZeLOjPVruMDcoQ0qOdJrMJX9OTLjA81Pohy6c4oJnMAj2BEReQFCuWGLUTUcqQAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const csu = ({"src":"/_next/static/media/csu.1445a929.png","height":69,"width":69,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAIVBMVEXKSEPLSEPKSEPLSENMaXHLSEPLSUPLR0LKSEPITkjMa2Vcrj3oAAAAC3RSTlNxqzGaAL+C32AFAv0lE5YAAAAJcEhZcwAACxMAAAsTAQCanBgAAAA2SURBVHicNcuxEcAwDAOxp0hJdvYfOJciHRqQAqhQJ0lOoZkZbFrNahtp2/YHy5YobvJQ/P0FHQYAxKfaHLwAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/falga.svg
 /* harmony default export */ const falga = ({"src":"/_next/static/media/falga.6e8301d4.svg","height":66,"width":180,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/menn.webp
-/* harmony default export */ const menn = ({"src":"/_next/static/media/menn.8ffda562.webp","height":48,"width":144,"blurDataURL":"data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAMAAkA4JQBOgCHSx68AAP5b2iNfv/VEms3E9JW8h4OBztWzB1wMgAA=","blurWidth":8,"blurHeight":3});
+/* harmony default export */ const menn = ({"src":"/_next/static/media/menn.8ffda562.webp","height":48,"width":144,"blurDataURL":"data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoIAAMAAkA4JagCdAEO/gLsAP7kaffNJo7fouyTKaflV4IpuEooPCf/BNaR+6P2/7d9vIjDOsAAAA==","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/raiz.webp
-/* harmony default export */ const raiz = ({"src":"/_next/static/media/raiz.1ebd7e10.webp","height":174,"width":608,"blurDataURL":"data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoIAAIAAkA4JZQCdH8AFco5GoAA/vj5rGabZ2rn5F8iPsCXe9Vr0CEfhlgAAA==","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const raiz = ({"src":"/_next/static/media/raiz.1ebd7e10.webp","height":174,"width":608,"blurDataURL":"data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACQAQCdASoIAAIAAkA4JYwAAv9CiUAA/vKRuHPL/j60E5veiUgcLXiEF34g/b2A5kvRkAAA","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/IFGF.jpg
-/* harmony default export */ const IFGF = ({"src":"/_next/static/media/IFGF.fdae05b4.jpg","height":146,"width":367,"blurDataURL":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoKCgoKCgsMDAsPEA4QDxYUExMUFiIYGhgaGCIzICUgICUgMy03LCksNy1RQDg4QFFeT0pPXnFlZXGPiI+7u/sBCgoKCgoKCwwMCw8QDhAPFhQTExQWIhgaGBoYIjMgJSAgJSAzLTcsKSw3LVFAODhAUV5PSk9ecWVlcY+Ij7u7+//CABEIAAMACAMBIgACEQEDEQH/xAAnAAEBAAAAAAAAAAAAAAAAAAAABwEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAAoIUv/8QAGhAAAwEAAwAAAAAAAAAAAAAAAQIDIQAEEf/aAAgBAQABPwCMJNboqRjli+nfH5//xAAXEQADAQAAAAAAAAAAAAAAAAAAASED/9oACAECAQE/ANG5T//EABcRAAMBAAAAAAAAAAAAAAAAAAABIQP/2gAIAQMBAT8AzSsP/9k=","blurWidth":8,"blurHeight":3});
+/* harmony default export */ const IFGF = ({"src":"/_next/static/media/IFGF.fdae05b4.jpg","height":146,"width":367,"blurDataURL":"data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAADAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAbEAADAQADAQAAAAAAAAAAAAABAgMABAUiQf/EABQBAQAAAAAAAAAAAAAAAAAAAAT/xAAcEQEAAgEFAAAAAAAAAAAAAAABAhEAAwRRsfD/2gAMAwEAAhEDEQA/ALKHGk1+umykrdmNAWPsin3MzJ1pIlPrwm3jFGzjrP/Z","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bumiyasa.png
-/* harmony default export */ const bumiyasa = ({"src":"/_next/static/media/bumiyasa.b4c152f3.png","height":95,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAM0lEQVR42iXIQQoAIAgEwP7/vwJJVsEV8xcFzXGGcHpaMrs7IurUN5bohr1yd5KqChiACyXBKkpKTEmhAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const bumiyasa = ({"src":"/_next/static/media/bumiyasa.b4c152f3.png","height":95,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAFVBMVEXPz8/Z2dnFys/a39nK09fI3L3T1NPAo4GUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgZWZgZGNkZGZgYmFgYGRiYgAAAWIAIPtzN3sAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamarga-semarang-batang.png
-/* harmony default export */ const jasamarga_semarang_batang = ({"src":"/_next/static/media/jasamarga-semarang-batang.18959c38.png","height":66,"width":225,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAO0lEQVR42gVAwQ2AIAxkbx+isxijrCRIS9srgSVIeFOKcYN3wawNJF7IxEa47uc8djXPjK/qz8ikhbEArjsm1RyNtYEAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const jasamarga_semarang_batang = ({"src":"/_next/static/media/jasamarga-semarang-batang.18959c38.png","height":66,"width":225,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAElBMVEXP1d/Ey9qQlpmDipdpb3NiaXLXf5K5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFklEQVR4nGNgYmFgYGRkZGBgZmUAAwAA0wASHHgGKAAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bank-indonesia.png
-/* harmony default export */ const bank_indonesia = ({"src":"/_next/static/media/bank-indonesia.20649085.png","height":316,"width":712,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAIAAAA8r+mnAAAAXklEQVR42j2Iuw5AMAAA+/9fYzIIBotXCImgQUWLqhYRcxURLrfcAXk+SCk1w9PtQCn1HqA+dCs0nfhPQCgfmFj3o584ppzyBY8zExtwUxgVTY5IVncJbG/9rIpLdAFKwlbKYJq5dgAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":4});
+/* harmony default export */ const bank_indonesia = ({"src":"/_next/static/media/bank-indonesia.20649085.png","height":316,"width":712,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAGFBMVEX+/v+6x9fF0N7V3ebe5exzi7Dg5uyuwM8V9uEAAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNgYGBkZWIAAyiDmYWNiZmZmYWBkYmJkZGRnQkAA5UAPqfQxCYAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/mandiri-investasi.svg
 /* harmony default export */ const mandiri_investasi = ({"src":"/_next/static/media/mandiri-investasi.958a9e81.svg","height":1017,"width":2113,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bpkh.png
-/* harmony default export */ const bpkh = ({"src":"/_next/static/media/bpkh.1095d94b.png","height":712,"width":2082,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAYAAACuyE5IAAAAbklEQVR4nAFjAJz/AfzBAELZ2SRsK2Y9qDo89Qvi9AICAgIB5/7///z9/v8GAcyiOce/yhMEdbINDCUV/uv1/ADqAQEBEv///8v/AABKAdehKX+FqS7Hp+kGKCsJAN8DBQXi9/n7KwEAAfz/AP/6SsEvcA7VDckAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
+/* harmony default export */ const bpkh = ({"src":"/_next/static/media/bpkh.1095d94b.png","height":712,"width":2082,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAIVBMVEUaMFgbL1gYL1oYLlYYLlcgNVwYLlcdMlqFajeKczbkpQNoqys0AAAAC3RSTlNDZVDQoTS3WUfBqIjffpIAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAiSURBVHicBcGBAQAgCMOwjg1B/z/YhKdRAVw7Tg4rdU/xAQSjAFcWOgw5AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/tmj.png
-/* harmony default export */ const tmj = ({"src":"/_next/static/media/tmj.4c90cac4.png","height":124,"width":285,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAIAAAAhqtkfAAAAVklEQVR42gFLALT/AOnt5fPtztXZ4bq7xcTEytra3tPT183O0wBvpHH13nrq2K3T0tKqq7SQkZ6+vsW+v8UAxdHOy8zC6Nm43dnP1NXa1tfawsLJ1dXZVdY4maDORf0AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
+/* harmony default export */ const tmj = ({"src":"/_next/static/media/tmj.4c90cac4.png","height":124,"width":285,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAM1BMVEWfpb2OkrHOw3vDwK2KuqiMlLJKUoGFjK2prcW2utHt5TPp7JdweJ02oU3byHqhspLE4MOSaZXuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGMQ4OZkZ2dgYGDg5WJi4GFjZGVg4edj5uBg5wQACNgAqKBITaEAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamarga-pandaan.png
-/* harmony default export */ const jasamarga_pandaan = ({"src":"/_next/static/media/jasamarga-pandaan.fed15506.png","height":83,"width":350,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAYAAABllJ3tAAAAS0lEQVR4nGNM6d4R48RywM5U8tAO1YgAVkX3H9r3/zB+ZWBgYAXiL4yNk7dt1/uxXEyAlSXZcbYqj4zUL4Unfxl/M/z794iBkUkAAButGERxbyyqAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const jasamarga_pandaan = ({"src":"/_next/static/media/jasamarga-pandaan.fed15506.png","height":83,"width":350,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAIVBMVEUAPYEBQoABQX0AQYF2elOIgUYANoyziiRGf4gmep5yYTxm6oQvAAAAC3RSTlM1ek5woiVfPrpavPTmrQAAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAaSURBVHicY+BkYWdjZGRkZuDgYmVgYmJgAAACnAA83JsE6wAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/kemenpora.png
-/* harmony default export */ const kemenpora = ({"src":"/_next/static/media/kemenpora.8005cd22.png","height":90,"width":78,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAIAAAC6ZnJRAAAAu0lEQVR42gGwAE//AP////v7/OLp89nk8eXt9fn5+////wD7+/zY4O3St8TUjZrTtcHZ4e37+/wA4+v0zbHA4CsA7pFI4T8A0bC+5Oz1ANDc69eCi81eYNjIms1pY9d6g9Hb6wDV2eft6O2zqMLDjaitnbvt6OzW2ugA4+Xu7PH34+PrTkqY4ODo8PT54uTtAPn6+9PX5s7S4oWSvMnO4NHV5fj4+gD////39/rZ3OnZ3enW2uf19vn////yiYnOxQdHLgAAAABJRU5ErkJggg==","blurWidth":7,"blurHeight":8});
+/* harmony default export */ const kemenpora = ({"src":"/_next/static/media/kemenpora.8005cd22.png","height":90,"width":78,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAMAAAAC2hU0AAAAQlBMVEX19vrr8fjGWFjImKfN0+bg3unJzuLa6PfM2Oz////kPi3Lk6LUanC1wNy3wd1SXZyYlbq4gZrwiE5sg7rIxY+Rh7AdIS/UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOElEQVR4nAXBBwKAIAwAsSt0Am79/1dNKCKCguxrJkQf95hBrva2lrid12eJiR8uBr4/m0OhqlI/M5QBmDIQzcMAAAAASUVORK5CYII=","blurWidth":7,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jerbasukimawabeya.png
-/* harmony default export */ const jerbasukimawabeya = ({"src":"/_next/static/media/jerbasukimawabeya.497e5b4c.png","height":99,"width":73,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAo0lEQVR42gGYAGf/AP78+sXO2cXHxcTFw8PM2P37+AC/ydYGkdfCys7Fy8sDkte3w9MAp7zTXJ3OtMPVu8XRZJitm7TPALnCyGCi0qWyxai0yXGftLG4sAC1wMV6nLC1saWrqaWFmYuyuKkAyc7Pm6qAq7avq7Sqq6skx8vIAOfm5pGdmnOKiHuNhZ2kmefm5wD19fXc2tu+vLS8urTb2tz29vbJ02dTXQjN8gAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const jerbasukimawabeya = ({"src":"/_next/static/media/jerbasukimawabeya.497e5b4c.png","height":99,"width":73,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAATlBMVEX29PNel52esrmSqp5lhnWsrpyPrsWmvc6zubGzwcCftsg5lNTg3d3Szc9Xn8mHn7SYlY2GlH+cmYre3d5/nm12i4FapM6aoz3QzdKjsaMSTk+2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOElEQVR4nAXBCQKAIAgAwUVRQCu7j/9/tBkwd4PWI3qjLmZSSfeo8pFkX7UQZ86PM12q2wFzKS8/LHwBt0DHBbsAAAAASUVORK5CYII=","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/kazuhiro.png
-/* harmony default export */ const kazuhiro = ({"src":"/_next/static/media/kazuhiro.175a468e.png","height":84,"width":96,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAIAAAC6O5sJAAAAuklEQVR42gGvAFD/APX19ff4+OHOzsqUk8qWlePT0/j6+fb19QD+///gxsW2Kh+4NS27QTu5OTHkzs39//8AwMLCq6alqKKhure2qKWkpJ6dl5GQt7m5AMXAwK6amrOhobelpauXl7OhoauYl8G9vQDy6em7OjO8My28OjS/RUC8Lia+Tkr17+8A+Pv7062sqwAAswAAswAArQAA1ra2+Pv7APf39/f4+Nu/vsN6ecN+fN3Ew/f5+ff398GBcU+kcHjSAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":7});
+/* harmony default export */ const kazuhiro = ({"src":"/_next/static/media/kazuhiro.175a468e.png","height":84,"width":96,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAMAAAACh/xsAAAAQlBMVEX3+PikoJ/ENCr15+eGfn3dqKXFPDP7/v6wGQ+6LiWamJiKa2mZeHeScnHLd3HhtrPSj4zOhH7EYVrEX1hxamniv7xTJLHZAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOUlEQVR4nAXBBwLAIAgAsUNRwN31/682AfZaH2AlImIbotpU34bMOfroQq4p1VQzdrm7HwPKcxf4ATXKAabkDLGcAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":7});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/adiyasa.png
-/* harmony default export */ const adiyasa = ({"src":"/_next/static/media/adiyasa.ec03d734.png","height":103,"width":103,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAwElEQVR42hWNSwuCQBhF5/8v27VtHUQEEUUPVHpHVtSi6aGjTtNYmvhIG6evaXXhcLgHAUAp5eLCtT3VTDLdOqX8KojUDI6MhonLXxcaOfeko2OlopUb2EGslNqYVhpTgACTcGbaSLe4olnkN1utSaeaxb566uoYGRaXKpM+NwutPrnmJUgpe8YJzciDx2/Pdec7vN4d2M3x7pGxtFAuyv6RecwWKRXpjZBzW8N5IdA/UAgd+6M9G5jecOVk+QcAfsudqsK58JQpAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const adiyasa = ({"src":"/_next/static/media/adiyasa.ec03d734.png","height":103,"width":103,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAS1BMVEX////b7vTV4e/a39+y1ui63+yfu9n3/P70+fy0yuP89OPD4e3w8/nC0unK4++rvd318eK9ytbj5OGVwejIyrKFr8ektKb//+K2uI+rduJrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQElEQVR4nAXBCQLAEAwAwUVIgha9///SzoA28c1AJcQ9FqMFzvvdnMx8vmmDrPUqaoMW0lpHdExSral06FncOz9PDgIz77MCWAAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/transoptimaluhur.png
-/* harmony default export */ const transoptimaluhur = ({"src":"/_next/static/media/transoptimaluhur.2d2bcb47.png","height":110,"width":136,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAIAAABxZ0isAAAAgElEQVR42j2MTwuDMAzF+/2/0g67DjYYg8F20DnYapO2WvXgv5jW6MFA8viF955KKcUY5U7E7UAHKt4Fqv72xuunznUnKE8lMi98ero6tJHG8wN9M2wJ8ctkfry/im+Jl7whWvYqlpxsKn6Q/S1tRmFWIQS0ttTaOwfGWEQDAAArShmINT8vnHIAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":6});
+/* harmony default export */ const transoptimaluhur = ({"src":"/_next/static/media/transoptimaluhur.2d2bcb47.png","height":110,"width":136,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAMAAADJ2y/JAAAAJFBMVEX////j5OX3/P6szem+2u/k8Pje39/q7O3S3ufS5/bJ1d749fTLbZcPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nB3IyQ0AMAgDQZsb0n+/EexnpAUAd1ytZqtoPr3XQ5NbVWuSESQ/DPwAhL9gdOwAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":6});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/lmj.png
-/* harmony default export */ const lmj = ({"src":"/_next/static/media/lmj.af1f3c25.png","height":103,"width":105,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAA00lEQVR42gHIADf/AP367aiqor3I27/G0ImYrpCcsIeTp/b3+AD29Onj0Xn28eD////y8/WwuMSDjqHx8vQA4OTsa3Nz2cl81dG/s7vKzM/UyMzT7u/xAObo6wA3ej1TbLCkYHZ0VwAAQ1VlfPb29wDk5+omTHUAPHMOQm+lnXaMiGtDV3X19fYA5ufoSktIfG01XVY7AAA3YF04hIFo9PT2AO3t77q6t728try7tbK0tqOptMTEv/v7+QDr6+vs7e7m5+np6uvj4+Ps7Ovo6Oni4uOgHYP3c1TawAAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const lmj = ({"src":"/_next/static/media/lmj.af1f3c25.png","height":103,"width":105,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAZlBMVEXp6OnH0+Dm5eTe4OIaQ2uitcZlhabo7O/f5eqYop5YZVEwSlEsUW6IobuClpz59+kPP3VRa2XZy2prgp0KLVCgp6FCVEiGi2NseF8ALF9QcpOYmFrN1NjCxaj////v7tr489Ket9cO8XwaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARUlEQVR4nAXBBwKAIAwEsGO2IFvFvf7/SRPk9BlrLeFp701xZ4jarmgMQ5Rw1C0QhC56WTXjHHyfumco51wa5wxJgATUD38jAx824FC2AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasasarana.png
-/* harmony default export */ const jasasarana = ({"src":"/_next/static/media/jasasarana.577953d3.png","height":99,"width":99,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAA00lEQVR42gHIADf/AObn67S4yLvD07rB0bzG17vF1rrA0O7v8wCeobRsmcOhzOycyOqLtNJneotEU2q1t74AoaS2ocHexuf+vN72jZmie3t6d4CIt73HAKCkuaK608Pa6s3m+pCaooaQmIybqbzH2gCztLlna3N+fn2ZoaiUmZ2jqrGNlqDBydgArK+7m5+mgoF9nJ+fub7CoaWno6epy9DdAJWbsq2yxKmqrnp8hn6AiIaGi7y/yLS4yADHydN+h6WqssWVnLSlrMCosMOIkKvR09vj+IHxgQOynwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const jasasarana = ({"src":"/_next/static/media/jasasarana.577953d3.png","height":99,"width":99,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAY1BMVEWTocF1hrB9jrfO6/2ktdSPlaRaV1NUWGFze4CCg4V+jbPA2uydrMppbnexu9Rzc3JoeqeZnqnY3OiJpMeLrNFagbdISVChy+uZxOqbqsh8n71iZmgzOknm6vWdpbS9xNd9jbVmFU+pAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARElEQVR4nAXBBwKAIAwEsEMKbdm4t///pQlGpIMoPTDLtp98O4TZRvH8YpiilUsIbvVSNRNc9rWrFphBmbkDpSEA7fsBbx8C1I7I7uwAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/giz.gif
 /* harmony default export */ const giz = ({"src":"/_next/static/media/giz.3923c8ea.gif","height":62,"width":236,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/danareksa.png
-/* harmony default export */ const danareksa = ({"src":"/_next/static/media/danareksa.4eda84f4.png","height":78,"width":314,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAYAAABllJ3tAAAATUlEQVR4nGPcvGZFHxs7z2P39g/75KT/M739y/DzLwMDOxMDA8N/BoY/jPt3bOkREZV8out37qiiDafQy9//fzAwMv5n+P+f8R8DAwcAnAkbcgyDxQ8AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const danareksa = ({"src":"/_next/static/media/danareksa.4eda84f4.png","height":78,"width":314,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAElBMVEUFUKMFUKMGUqO6sq7Nys2zsbQ5LfFeAAAABnRSTlM5MCiBYmkKJs/NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFklEQVR4nGNgZmVkZGJkZGJgZmEAAwABKwAY/c+PmwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/pae.jpeg
-/* harmony default export */ const pae = ({"src":"/_next/static/media/pae.20fe4948.jpeg","height":161,"width":118,"blurDataURL":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoKCgoKCgsMDAsPEA4QDxYUExMUFiIYGhgaGCIzICUgICUgMy03LCksNy1RQDg4QFFeT0pPXnFlZXGPiI+7u/sBCgoKCgoKCwwMCw8QDhAPFhQTExQWIhgaGBoYIjMgJSAgJSAzLTcsKSw3LVFAODhAUV5PSk9ecWVlcY+Ij7u7+//CABEIAAgABgMBIgACEQEDEQH/xAAoAAEBAAAAAAAAAAAAAAAAAAAABQEBAQAAAAAAAAAAAAAAAAAABQb/2gAMAwEAAhADEAAAAKooRP/EABwQAAICAgMAAAAAAAAAAAAAAAEDAgQSIQBCgf/aAAgBAQABPwC6UOoVVLlEOUIRzy6iOx6d8//EABgRAQEAAwAAAAAAAAAAAAAAAAECABFR/9oACAECAQE/AIWDR3P/xAAYEQEBAAMAAAAAAAAAAAAAAAABAgAxUf/aAAgBAwEBPwC4m0Xhpz//2Q==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const pae = ({"src":"/_next/static/media/pae.20fe4948.jpeg","height":161,"width":118,"blurDataURL":"data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAYDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAdEAABBAIDAAAAAAAAAAAAAAABAAIDBBETBSFx/8QAFQEBAQAAAAAAAAAAAAAAAAAABQb/xAAXEQEAAwAAAAAAAAAAAAAAAAABABEx/9oADAMBAAIRAxEAPwCtZs1rHGQ1wyPZGGDYXd4a0gjwk5REVCFZBFvZ/9k=","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/tamansafarisolo.png
-/* harmony default export */ const tamansafarisolo = ({"src":"/_next/static/media/tamansafarisolo.75e7e36f.png","height":225,"width":225,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAdVBMVEX////+/v7u8O/s7+3h5eLf4uDO5brM5LbR1tPH4q7Q1NPP1NDM0s7A36PB3qXL0M3G0sO93Z7G0cPEy8bEyce/zbm+y7nAx8G4wLq4v7y2v7m3vru1vLmzvLWyu7StvqisvqawubOxuLWttrCsta6msamhraXyWimzAAAAQElEQVR42g3FxREAIRAAwdlzd+FcIf8QofrRCHwniPPn9eMi1GACoPfAL4BEHauagWzZt3cAumuc7gaIyiptY7FjhwMCCUO4DwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const tamansafarisolo = ({"src":"/_next/static/media/tamansafarisolo.75e7e36f.png","height":225,"width":225,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAMFBMVEX///+FppR3nYiSsJ+ZuZd/opCqwrW734fH5Jylva7M2NDd5d/W4NmxxLeHrYaIroRMfw/MAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAN0lEQVR4nB3GyRHAMAjAQHEZfCTuv9sM0UcLEMKfjqn9paALmBvOAwwxMWuEhDT8db8OVGZl8QEZFQDf9Osz4QAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/wiucycling.png
-/* harmony default export */ const wiucycling = ({"src":"/_next/static/media/wiucycling.ec56ce9d.png","height":86,"width":611,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAABCAQAAABJCSfIAAAAGklEQVR42mP4FfIr/FfQT4efnj9sfwb+9AYAWcgKKnB5V7EAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":1});
+/* harmony default export */ const wiucycling = ({"src":"/_next/static/media/wiucycling.ec56ce9d.png","height":86,"width":611,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAABCAMAAADU3h9xAAAABlBMVEX4+Pj29vbAQRkfAAAAAnRSTlNMPXI3gSAAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAOSURBVHicY2BgYGAEQQAAEgAEojrX9gAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":1});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/index.tsx
 
 
@@ -1609,9 +1609,9 @@ const Clients = ()=>{
 
 // EXTERNAL MODULE: ./src/components/TitleDescription/index.tsx
 var TitleDescription = __webpack_require__(4267);
-;// CONCATENATED MODULE: external "react-bootstrap/Form"
-const Form_namespaceObject = require("react-bootstrap/Form");
-var Form_default = /*#__PURE__*/__webpack_require__.n(Form_namespaceObject);
+// EXTERNAL MODULE: external "react-bootstrap/Form"
+var Form_ = __webpack_require__(5226);
+var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
 ;// CONCATENATED MODULE: ./src/containers/Home/Contact/index.tsx
 
 
@@ -1943,29 +1943,29 @@ const Arrow = /*#__PURE__*/ styled_default()("div", {
 })("display:flex;align-items:center;justify-content:center;background-color:white;& svg path{fill:", GlobalStyle/* color.primary.normal */.$_.primary.normal, ";}border-radius:50%;width:36px;height:36px;&:before{display:none;}&.slick-prev{transform:translate(8px,-50%);z-index:2;@media (min-width:1100px){transform:translate(-36px,-50%);}}&.slick-next{transform:translate(-8px,-50%);@media (min-width:1100px){transform:translate(36px,-50%);}}");
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/restructuring.png
-/* harmony default export */ const restructuring = ({"src":"/_next/static/media/restructuring.3ab74dd4.png","height":275,"width":201,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAo0lEQVR42gGYAGf/AKiBfq6os73Ay6Wqt66zweXm7QCgtL+dy9G3x9Kqsr+Il6Xd4usAjKKrrsXFvdLeiJ+sWX2NytfjAKi1woSZoamgpKadmXOnqVp7hgB/j5VeamiOdnCKhIJ/hIBuZGMAPVlXV2VsXXyDWnF5gG9xmIB6ABZGTyBKVQNMWEk/QoFdWaVtZACan6+VmqmWm6qQlqOvoa+tnqeuHlIN0vkeXwAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const restructuring = ({"src":"/_next/static/media/restructuring.3ab74dd4.png","height":275,"width":201,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAYFBMVEV8iZefgYGit8B1kp16ZWJTcHhBTlAqTVh2f4VfZmekrLrh4+ucamOiqLVSYGalkZ2PqrelnqiflZaBlqGuws25vcqUyNBXdXXR2uY1aXRanKDB1eFDXF6DdnJZf42Wk48/XQntAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOklEQVR4nAXBBwKAIAwAsWO2gIp7j///0gQzLG0u9OucKUz2cu+OdeN3Hmjyut3ELoT0ICLRNwBazQ9HUgJC0ZHXywAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/investment.png
-/* harmony default export */ const investment = ({"src":"/_next/static/media/investment.c23b9754.png","height":1278,"width":939,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAAA00lEQVR4nAHIADf/ATY7Of8DAAEA7wD9ACzF4QAvbmMA5/DyAAFBRUL/AgUFAPzv8wAw+xAAG09GAN3V0gABITI5/xAGBgAJEvkAMS9CABHy+AC6r58AAYWCcf/7AAMAgLS5AGQ/SwAc+/AA8e/tAAHBnn7/Ji8rAOzp7wB0eYkA4QQcAEA4NQABnH1r//Hs9QAh8s0A9StOAMPs8wDMtKQAAVhHQf/q4ucAOjAiAG1+cQAPCP8AwbK4AAFlcHL+PC8qAFA9GQAOEREA7cm4ANPZ5wCsh0361+lA1gAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const investment = ({"src":"/_next/static/media/investment.c23b9754.png","height":1278,"width":939,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAWlBMVEU/SUiDZlStd040OjhtbmuvWjLvuoHew6FzTDv86ME9QEEmHx5lamI6HzMmNDARDhJWTlA7Nzg0DiBANUdgVmazgmATKyZaQVRKP0o0Rke8noKVblIfDw5ZLiIqua5BAAAACnRSTlP+/vn/+f75/f787NyUXAAAAAlwSFlzAAALEwAACxMBAJqcGAAAADlJREFUeJwFwQcCgCAMALFT1ELLdM//f9ME59x8LCgtrQklcxZi3K+qbHKbVbwfu1yw95PwwCBh6n9BSgJJteAcAgAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/financial.png
-/* harmony default export */ const financial = ({"src":"/_next/static/media/financial.965b3d01.png","height":275,"width":202,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAoklEQVR42mMAgqrC6ZV50xnYlNQNnaWs9UBCTTVzuhrWMHDpK+s5ybuYgoQio+pK85cq6vpKKdsKurow6Fs4NsRETa+aZqBhC5SO8fBmmN857fj8qQeXb+nvXVldOaGnooFhz66zh49cO3TyyYmL767f+3zrwQeGvaeebt15ZsuWQ7fvvrh3/9XxE1cZLp6+eO3SjWuXb1+6cPvsuTu79pwGANc8SRhcOGn2AAAAAElFTkSuQmCC","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const financial = ({"src":"/_next/static/media/financial.965b3d01.png","height":275,"width":202,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAWlBMVEXS0Nq3wuF0cplJR1ne4OrZ4PW4tcYaITcLEhkhLEJoZIQUOi0XQzTAwc0XQD6FaW5oaXikprjDpq+jp8HY1NrH0vOUeZS+wNXKnI+CeqhuZIuZgowaISduVVT0p1ydAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOUlEQVR4nAXBBQLAIAwAsUPbMheY//+bS9Byi3VoucR6NHiTkfdrooHnXP08kQ9XU8JtS4wD7ED+AT8cAhKqgc4YAAAAAElFTkSuQmCC","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/health.png
-/* harmony default export */ const health = ({"src":"/_next/static/media/health.d745bb13.png","height":2383,"width":1746,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAAAtklEQVR42g3KXYsBUQCA4fccZzfbHM2MpW3tR2NKUoif4FqI8s+Vj7kgLiiOr5miMMzt+z6iOxjGx70R48mIsvfPu3aRUiIfgDGGft2jVS1xT+JbSqLS6Q9qBZtczmZzEfz+/CVDoTrtHnFomAYzxC2moDXayaK0ZfHl+2yjKxwM2XweK+MgrUQIoNlsUCz6ICVCCNSn63A6nVktFuznAVuzI4qfqDCMcB2b5TXksg749iqkMjYvDyg3ShQf9+0AAAAASUVORK5CYII=","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const health = ({"src":"/_next/static/media/health.d745bb13.png","height":2383,"width":1746,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAV1BMVEVDRkaVnqVhXFsfHRqdoahWWVuDiYtMT1JiaGtyW1BuU0VpbXSzuMCqrraRkZV5a2hNRUG7v8fHy9I5ODZzeHxeYGFWPzOOhIKJkJUyLSqKlJhmXlyBdnFDzmY/AAAAEXRSTlP89f7+/vr1+/r+/v7+/v7++iN6h14AAAAJcEhZcwAACxMAAAsTAQCanBgAAAA6SURBVHicBcGHEYAwDACxD6TScnYqZf85kQhlLUC4eyLg+ra0iB0tVs8pe52GQ+18DCpXfh2iI33+Bz69An3Il9VzAAAAAElFTkSuQmCC","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/environmental.png
-/* harmony default export */ const environmental = ({"src":"/_next/static/media/environmental.f9a6332d.png","height":2850,"width":2079,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAo0lEQVR42gGYAGf/AFhYQAAvHI9pUn9JAHyAmEp+pQDauJ5MTxelcFnIi3OHUyxtiZoA4Lqo3by+2KKYz5N/pXppp7TIALGYiea2waaNequZftWgl510agCzkpLXo6aTg23SnZPNnJylf3cAvZqd1qmy26eo1Kauv6CwxaW3AHZwaMuoqAAAAL6isI55hQAAAAC+opOafFgAAACXfoPCn68AAADLkkwoCQ24twAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const environmental = ({"src":"/_next/static/media/environmental.f9a6332d.png","height":2850,"width":2079,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAY1BMVEVsaFnSn5ZkSSxidHmmkZOXi5AAGgTLnpx8blHFl4oMLhx6ZEqHfm7ds7ZIW0i/m51CcIO5kIfHp6UbNBe3n4d0e1e/i3GVlGyFhmCGnKeplqBZX1vkv6PJi3E9Ti3ZsZU1UTUrFdUYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOklEQVR4nAXBhQGAMBAAsaP2VYq77T8lCV9MSndcT7qV5i3N4ndy2dYAWebQg6ki5qAdRntGJu+w7gdKpgJy3w0UmgAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/information.png
-/* harmony default export */ const information = ({"src":"/_next/static/media/information.87175948.png","height":2741,"width":2008,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAo0lEQVR42gGYAGf/AJucnpmfoJ2koX+ChX6BhH+DhACbnJ6eo6OboJ+XmJiZmZiWlpgAfoWHdnl7bG9wbW9tXl9gX19jAGQzAHl6eldgVBkrDy0zMaeoqQCimZJ2d3czRz4AGQhlYF/X2doAmo6DUlRWgnFsnpKOuIp+17aoAK2ekId3b6t7Z8WYgIt8faaBcADHva+ym4SGa1aSdmbBtKa6qphWqUjGcof8kgAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const information = ({"src":"/_next/static/media/information.87175948.png","height":2741,"width":2008,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAUVBMVEWVmJmynoqugW7LtaUQGBKan55GR0iBg4ZRU1Q1ODZ+ZVRdX2JZOx1CQ0VjWlVvdXihe2iKgX2JdnclLye5rJ6+kHXMz9GklYZ9dW57bmSZjYBZiSXUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOElEQVR4nAXBBwKAIAwAsQMKbXGg4P7/Q00AVBVyBmiTWTHm4iLKtwzxi8fXPSbuN559I4Vaj/ADJtQBunzDOngAAAAASUVORK5CYII=","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/infrastructure.png
-/* harmony default export */ const infrastructure = ({"src":"/_next/static/media/infrastructure.2ae3f28b.png","height":1321,"width":968,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAAAu0lEQVR42hXJTWrCQBiA4febmZgK1Qq1Uih0UyhCKXTRU3gQz+FlvImCJxBEUPxFFyomksQkM6MuntUjvf7Iew+eO+dQSqODAFMPHY8QrVA65JqlxLspplF1iCjSJOa0mHCZDVksVxgf7zlsZ6zHA14/2pyilL9OF90KL73oHJGqGp/tf+bLDa3mG/Lz++WVeSKQHGc1z1XhmFQwUvsmLwtyW5C4kiK7ciwUpvLy7rW1WFvS8I4yz2jWhRs1SlI41z06KAAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const infrastructure = ({"src":"/_next/static/media/infrastructure.2ae3f28b.png","height":1321,"width":968,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAQlBMVEUgJCCNq8QjMDpQUkooO05/pMhPSzstRV0rLSMqQFcdKC+DjJGhuMhyd3KXoaSUtdGQr8qSprKErNI6OC1sfIRmZFrR5Bk+AAAACnRSTlP+////+///+/778uK37gAAAAlwSFlzAAALEwAACxMBAJqcGAAAADZJREFUeJwVwQkWgCAIQMEPGCpott7/qr1m2H4XIseShzHO6Tf79NcTN0tLoNFAVSOCWnsv5QMtbQF5kS15jQAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/ev.png
-/* harmony default export */ const ev = ({"src":"/_next/static/media/ev.3f1b7aad.png","height":2592,"width":1899,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAmElEQVR42gUAOwuCQPhefmdUYEJD4RQSPYf6/3MtBU2XNJVRmA/sRD3tUAMfxXWxnKtaNW1nMKZ1Q4K7750upMV9gPwrB4xSZtln8eDW2BOiSpK165JPKjHgOI4yjbb7XVWVFOwJ4z2DdFkUaPnSKqRxrgtVYoRGQ/P99CkDslnNoKulTBHj0Q8Ot5AibqqyKDIJwKeOAxz+nuRK9ZwU3kMAAAAASUVORK5CYII=","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const ev = ({"src":"/_next/static/media/ev.3f1b7aad.png","height":2592,"width":1899,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAS1BMVEUMHyM8VV2uw8z6//+JoqwRKS5QZWpacXnl9vTq+vgZNT8uRk5GYmzz9/ZYaWpngIhvh4ySmJ+wr7Xg6euZn5XIx7Geqa2Jk4vO3dznxw+/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAN0lEQVR4nAXBBwLAIAgAsVNRwNnd/v+lTYjJzY39MP8GRaM8idBFzkHtS98bapjzIuemRQHa2n4y5AHIX6y93wAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/property.png
-/* harmony default export */ const property = ({"src":"/_next/static/media/property.72f3b8d1.png","height":1280,"width":938,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAo0lEQVR42gGYAGf/AEZSdDc9WDU7VTQ6UDxDXU9XegA/Tl1GV2tkbYljbIlsd5h1gaQAZ29/TElDWWJ3uMDdytTyrrjVAHJ8jIByY3hubWNgYqesv7u/zABzWEmMhX+5qpa8oYHPvKCulHMAhF86jH9xxbCJzqx+xKyMpodhAAApGxEoByE+FSlNGDJEE01TNwAaLxsPLBwGLhsLNh0TPyAGPRf3cDq9YIclXQAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const property = ({"src":"/_next/static/media/property.72f3b8d1.png","height":1280,"width":938,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAWlBMVEUMLBm3nXensc4vNEhqdJM7SyQ0OU4SPBxcZHpMU2cZMx50Z2BCR0tgV1QrRiKYdU+jpbU9PyqliWfAmGO6p5LJ1fMzNTdMOjNAUFyLjp8+S2dmRCyggmWklINQ9uuKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOUlEQVR4nAXBBQLAIAwAsUNLkTH3/f+bS7idi1GpZ0reo7vazZJaq9fIUb53nXmKWUwn5yGECUBEfj6zAifrr+QVAAAAAElFTkSuQmCC","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/waste.png
-/* harmony default export */ const waste = ({"src":"/_next/static/media/waste.f7befb6a.png","height":1301,"width":953,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAAAx0lEQVR42g3OP28BYQDA4Z97r9FTSdOLoZcYWtqopWlSEgODlcHgc/kEPopgMJrERGKREBfOfy/ee+/wBZ48kXL952bFLbYrSeBLuMQIrwLjrA4cdz62/Y6399gwYjidYqZevwmfLDZyTTFXIWMnkdk1xkfcIJCay+6Mr04MFy798RKz9OaSdzXt7C/R+RfV/y6ipjBfRIFEUjNxHBKTPz4zK6x0E0PtH5Q3Q6stx8NjZ54Y9FJEOq1G6DynkfoKgSAW9dGh4A7mpVJLF+5+fwAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const waste = ({"src":"/_next/static/media/waste.f7befb6a.png","height":1301,"width":953,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAYFBMVEXPt5lON5rWoDDQxQS5sXm7qqW7s5uvYje6RTVCeGAyPxxJUDVBQjRBVCg5SCVBTjQoKyFSXUCffBQpOBllUUeajBtxaVKcYRxfWTOOPCChRj21Jh1TP1vAqCdBdFI+Kaw7mpFxAAAACnRSTlP9/v7+/f39/v7+FEJdFgAAAAlwSFlzAAALEwAACxMBAJqcGAAAADlJREFUeJwFwQUCgDAMALHDoe0U9///cgnOiUjE+zBLRDWkbeFQUzP2Mz15ZRinqm647u9/My19BwVM0gKlRx/fpAAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/renewable_energy.png
-/* harmony default export */ const renewable_energy = ({"src":"/_next/static/media/renewable_energy.d07cbf16.png","height":1280,"width":938,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAIAAABVpBlvAAAAoElEQVR42mPYef7xjvOPgGj7+Udbzz3cePo+w83HL4Doyr3HEHTx7iOGhw+uPH168979S/cfXX3x5t7TV7cZnp9Y+eTgklu7513evfDxqfW3D69kWFJWOauwbFZRYX9G9vTssu7kQgYGdRsGZoMwH+8gL18GFVs5Y1cGQ0MbQUWTpOCAaD9fQWVzLV0rBjU1XQZxlTgXq2BbEwZecQ15GQD8Ek5e/IASAQAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const renewable_energy = ({"src":"/_next/static/media/renewable_energy.d07cbf16.png","height":1280,"width":938,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAOVBMVEW40OM4Nj3c5enn7N2NbHMXGBvf3tHV3+IiKTgoLj8oJSfdvKHpyqw+PkbMsJfZ2c2bdXh8YWbqwqTNjag3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nCXFSRIAEBAEsGZ2O/9/rCpyCfDlbGYG1alEaKeOVrGYNzPCe4p4uaNIKiIXIAcBS5Sg72QAAAAASUVORK5CYII=","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/biotechnology.png
-/* harmony default export */ const biotechnology = ({"src":"/_next/static/media/biotechnology.eca77576.png","height":1921,"width":1408,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAYAAADaxo44AAAA00lEQVR4nAHIADf/AbOvrv/b4eYA9AHyABwfKQAZGB0ACxEZAAGYkpL/8NbKAOC7pAARIy0ADTZFAOELBwABamVn/x366gAdM0YA5s28AO8MDQDC6bMAAX9iZv8MEh4AJDInANaynwAhRE4A7wYBAAGgkIH/+e/6APX9CQD7+/kAOEpDABMVGwABwred//Lv/ADa2+oA9O/qACk0MgASGB8AAcG4r//MycsApaetAFtbVAAB/vkA4d/mAAGhmZH+yMbFAAACCAAlIx4AGh0fANfY3wD/6FCw2l7+/gAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
+/* harmony default export */ const biotechnology = ({"src":"/_next/static/media/biotechnology.eca77576.png","height":1921,"width":1408,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAYFBMVEVWTUlvX1SUc3a51N5VUldMY0Ktvbulm5GwpZvBs5mYoJmAgoV+fHN2WV99VEVuZWKMc2ylnZ26uLeMdoF8a2N9RTg2MS+OfnK+tKuAk4LQ0tl7XnmIgYKZhHpoJyRggGXdqmLeAAAADHRSTlP+/v7+/v7+/v7+/v7WzDArAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAO0lEQVR4nAXBBwKAIAwAsXOC2rJxj///0gS7yDx23O6t5aN3rWsG9Ir1OQghazqZbNaY2Msqm8eAGP8DT2ICzDC/4McAAAAASUVORK5CYII=","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/Item/index.tsx
 
 
@@ -2136,9 +2136,9 @@ const Sectors = ()=>{
 };
 /* harmony default export */ const Home_Sectors = (Sectors);
 
-;// CONCATENATED MODULE: external "react-bootstrap/Ratio"
-const Ratio_namespaceObject = require("react-bootstrap/Ratio");
-var Ratio_default = /*#__PURE__*/__webpack_require__.n(Ratio_namespaceObject);
+// EXTERNAL MODULE: external "react-bootstrap/Ratio"
+var Ratio_ = __webpack_require__(9378);
+var Ratio_default = /*#__PURE__*/__webpack_require__.n(Ratio_);
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/styled.ts
 
 
@@ -2162,11 +2162,11 @@ const styled_Label = /*#__PURE__*/ styled_default()(Text/* default */.Z, {
 })("color:white;/* max-width:260px;*/\n  font-weight:500;text-align:left;position:absolute;left:18px;top:18px;right:18px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){left:32px;top:32px;right:32px;}");
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/business.png
-/* harmony default export */ const business = ({"src":"/_next/static/media/business.8c500a01.png","height":1280,"width":1920,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAiElEQVR42gF9AIL/ALu7u66urbm4t8zNzc3O0Ly9vrO3uMfOzwC+v8CLgH2snJjO0dHN0dKVjImWk5HFzdAAoaGjkpGYlJGXt7e5jpGSWkpHUE5PmZyhAIeHioaHjoqChZaFg0JFS2JSTwAAAHBwdAC/u7a6ta7Gw8HPzM3Ix8m8t7OkoZuzs6/2j0obcEf5ZwAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const business = ({"src":"/_next/static/media/business.8c500a01.png","height":1280,"width":1920,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAOVBMVEW1srN4dnWXl5fR1tfL0NGopKHBwcGdnZ4vLS6FhIl+bmuwrqyGeXM6LiujjYcAAABgYGQeHiDFyMpUT9pkAAAACXRSTlP+/////////v4HKoILAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALUlEQVR4nAXBhQEAIAwDsE5hgv3/LAmcTbVM4blFuhUjArQmI4LyrXNRBocRfxgPAROfN8SmAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/capacity.png
-/* harmony default export */ const capacity = ({"src":"/_next/static/media/capacity.ecfaee05.png","height":1000,"width":1500,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAh0lEQVR42mPg0VDVNTJnEJWT8dSWsNE102KIcRRl4BNmcIuQDcsx9yozWjC1pLs6elZ1SllaoIgcA0PhBMPqRW5FE8PmdHW3VkQvXzjjyLGTfkHuDFpWhmHZHnHJ/oGefhPzovJDXFdsPZBeVsLg4uqQmBRbWJCXEp8gy8CQHx9VWNls6eEFAA1+KT1FsEQaAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const capacity = ({"src":"/_next/static/media/capacity.ecfaee05.png","height":1000,"width":1500,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAUVBMVEVVXkyPhX5tWkISGRMfNiYvNxdEQThRRD0YJR1BWyx0cVIlPiw3OjVTT1FcgSBkZWFxojMjHRtqh0xCZCqfrrlMOh9iaHEmKhCFblWRj2a+v8KSDZVAAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nAXBhQEAIAwDsALD3eX/Q0lgjPAkp4C0/brDN1JpzLGnQBaK6wEE5Fj18h8keQGi/DTryAAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/investment.png
-/* harmony default export */ const Services_investment = ({"src":"/_next/static/media/investment.89348a66.png","height":136,"width":543,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAIAAADq9gq6AAAAO0lEQVR42mMI9PEK8PFydnTJSw7aMSdnx4K8VZPTQr3tGfy8PJwd7HikDJtrU56e6T6wJD/Cx8zY2AgAzkUSnoF4SNoAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
+/* harmony default export */ const Services_investment = ({"src":"/_next/static/media/investment.89348a66.png","height":136,"width":543,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAHlBMVEVNSUhBOzNgXFCrkmSdhl01MzEuLzS1m2lHQjzly4m6i+WWAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgYGBgYmZn4WBgYGRj4mRmZAUAAY4ANOa9OrEAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Services/index.tsx
 
 
@@ -2369,12 +2369,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8770);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9522);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9355);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__]);
-([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_5__]);
+axios__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -2495,10 +2495,24 @@ module.exports = require("@emotion/styled");
 
 /***/ }),
 
+/***/ 2215:
+/***/ ((module) => {
+
+module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
+
+/***/ }),
+
 /***/ 7197:
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
+
+/***/ }),
+
+/***/ 4384:
+/***/ ((module) => {
+
+module.exports = require("date-fns/format");
 
 /***/ }),
 
@@ -2663,13 +2677,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ 358:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-
 /***/ 1937:
 /***/ ((module) => {
 
@@ -2684,17 +2691,45 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
+/***/ 5226:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Form");
+
+/***/ }),
+
+/***/ 2540:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Nav");
+
+/***/ }),
+
+/***/ 9070:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/NavDropdown");
+
+/***/ }),
+
+/***/ 4934:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Navbar");
+
+/***/ }),
+
+/***/ 9378:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Ratio");
+
+/***/ }),
+
 /***/ 8096:
 /***/ ((module) => {
 
 module.exports = require("react-slick");
-
-/***/ }),
-
-/***/ 4563:
-/***/ ((module) => {
-
-module.exports = import("@fortawesome/free-solid-svg-icons");;
 
 /***/ }),
 
@@ -2712,7 +2747,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51,941,135], () => (__webpack_exec__(85)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,491,941,135], () => (__webpack_exec__(85)));
 module.exports = __webpack_exports__;
 
 })();

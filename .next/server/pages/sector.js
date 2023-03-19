@@ -5,23 +5,30 @@ exports.id = 688;
 exports.ids = [688];
 exports.modules = {
 
-/***/ 525:
+/***/ 572:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ Sectors)
+  "default": () => (/* binding */ sector),
+  "getServerSideProps": () => (/* binding */ getServerSideProps)
 });
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
+// EXTERNAL MODULE: external "next/head"
+var head_ = __webpack_require__(968);
+var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 // EXTERNAL MODULE: ./src/components/Banner/index.tsx
 var Banner = __webpack_require__(9988);
-// EXTERNAL MODULE: external "react-bootstrap"
-var external_react_bootstrap_ = __webpack_require__(358);
+// EXTERNAL MODULE: external "react-bootstrap/Container"
+var Container_ = __webpack_require__(4678);
+var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 ;// CONCATENATED MODULE: ./src/containers/Sectors/banner.png
-/* harmony default export */ const banner = ({"src":"/_next/static/media/banner.46216b9d.png","height":902,"width":1600,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAIAAAD38zoCAAAAiElEQVR42gF9AIL/APv///r//+zx9MjU4OT0/9bq/sHb+LHR8wD8//3FyM97hqRTZY66y9vg8//I4v6zzewA1s3JW2OMACp+dICetcTV5vf/w9XrgIupAJKQn1Vhi66tt8K+waaot8PP4YeSrVZYbACUjZizqqq2q6qXhoe4usamssxtdI1cV2OHJVSvZwv1jAAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const banner = ({"src":"/_next/static/media/banner.46216b9d.png","height":902,"width":1600,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAVFBMVEWps8aek5mpnqAcPH6KmrgxNVJJUnGNiZVLYIyVgoNhcpjY7PzL5P51haTk9f9bcJmowODK3Oz3/P292few0PK5xNiurbamoak4P1zF0d41TYPO0dec/8tKAAAACnRSTlP79/f+9/f39/73WCvYqQAAAAlwSFlzAAALEwAACxMBAJqcGAAAADVJREFUeJxjEBKSFOTjERZhkObi4ufm5hFg4GLm4BXkE+BnkOIVE2cQ5ZJgYGfiZGRgYWMFADUDAg2e/5UlAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
 var GlobalStyle = __webpack_require__(9920);
 // EXTERNAL MODULE: external "@emotion/styled"
@@ -101,7 +108,7 @@ const Index = ({ data  })=>{
                 description: "Here are access that we can provide",
                 backgroundSrc: banner
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(external_react_bootstrap_.Container, {
+            /*#__PURE__*/ jsx_runtime_.jsx((Container_default()), {
                 children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Items, {
                     children: [
                         data.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
@@ -116,28 +123,13 @@ const Index = ({ data  })=>{
 };
 /* harmony default export */ const Sectors = (Index);
 
-
-/***/ }),
-
-/***/ 9119:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
-/* harmony export */ });
-/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
-/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Sectors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(525);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
-/* harmony import */ var _utils_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8312);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
-_components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+// EXTERNAL MODULE: ./src/components/Navbar/index.tsx + 1 modules
+var Navbar = __webpack_require__(9355);
+// EXTERNAL MODULE: ./src/components/Footer/index.tsx + 2 modules
+var Footer = __webpack_require__(9154);
+// EXTERNAL MODULE: ./src/utils/json.ts
+var json = __webpack_require__(8312);
+;// CONCATENATED MODULE: ./src/pages/sector/index.tsx
 
 
 
@@ -145,24 +137,24 @@ _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies_
 
 
 const Page = ({ data  })=>{
-    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                    /*#__PURE__*/ jsx_runtime_.jsx("title", {
                         children: "Inpartner sector coverage"
                     }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
                         name: "description",
                         content: "Restructuring, Pre-IPO, IPO, and Right Issue, Alternative Investment, Financial Services, Biotechnology, Information Technology and ESG"
                     })
                 ]
             }),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Sectors__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+            /*#__PURE__*/ jsx_runtime_.jsx(Navbar/* default */.Z, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(Sectors, {
                 data: data
             }),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
+            /*#__PURE__*/ jsx_runtime_.jsx(Footer/* default */.Z, {})
         ]
     });
 };
@@ -172,14 +164,12 @@ const getServerSideProps = async ({ req  })=>{
     const data = await Sector.findAll();
     return {
         props: {
-            data: JSON.parse(JSON.stringify((0,_utils_json__WEBPACK_IMPORTED_MODULE_5__/* .jsonify */ .K)(data)))
+            data: JSON.parse(JSON.stringify((0,json/* jsonify */.K)(data)))
         }
     };
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
+/* harmony default export */ const sector = (Page);
 
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -218,6 +208,13 @@ module.exports = require("@emotion/react/jsx-runtime");
 /***/ ((module) => {
 
 module.exports = require("@emotion/styled");
+
+/***/ }),
+
+/***/ 2215:
+/***/ ((module) => {
+
+module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 
 /***/ }),
 
@@ -389,13 +386,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ 358:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-
 /***/ 1937:
 /***/ ((module) => {
 
@@ -410,10 +400,24 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
-/***/ 4563:
+/***/ 2540:
 /***/ ((module) => {
 
-module.exports = import("@fortawesome/free-solid-svg-icons");;
+module.exports = require("react-bootstrap/Nav");
+
+/***/ }),
+
+/***/ 9070:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/NavDropdown");
+
+/***/ }),
+
+/***/ 4934:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Navbar");
 
 /***/ })
 
@@ -424,7 +428,7 @@ module.exports = import("@fortawesome/free-solid-svg-icons");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51,468], () => (__webpack_exec__(9119)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,491,468], () => (__webpack_exec__(572)));
 module.exports = __webpack_exports__;
 
 })();

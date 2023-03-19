@@ -52,43 +52,50 @@ const color = {
 
 /***/ }),
 
-/***/ 9212:
+/***/ 5108:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
-/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2805);
-/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _sass_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4352);
-/* harmony import */ var _sass_index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_sass_index_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9920);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(358);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ _app)
+});
+
+// EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(5193);
+// EXTERNAL MODULE: external "@emotion/react"
+var react_ = __webpack_require__(2805);
+// EXTERNAL MODULE: ./src/sass/index.scss
+var sass = __webpack_require__(4352);
+// EXTERNAL MODULE: ./src/components/GlobalStyle.ts
+var GlobalStyle = __webpack_require__(9920);
+;// CONCATENATED MODULE: external "react-bootstrap/SSRProvider"
+const SSRProvider_namespaceObject = require("react-bootstrap/SSRProvider");
+var SSRProvider_default = /*#__PURE__*/__webpack_require__.n(SSRProvider_namespaceObject);
+;// CONCATENATED MODULE: ./src/pages/_app.tsx
 
 
 
 
 
 const MyApp = ({ Component , pageProps  })=>{
-    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.SSRProvider, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)((SSRProvider_default()), {
         children: [
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
+            /*#__PURE__*/ jsx_runtime_.jsx(Component, {
                 ...pageProps
             }),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_emotion_react__WEBPACK_IMPORTED_MODULE_1__.Global, {
+            /*#__PURE__*/ jsx_runtime_.jsx(react_.Global, {
                 styles: [
-                    _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_3__/* .globalStyles */ .W0
+                    GlobalStyle/* globalStyles */.W0
                 ]
             })
         ]
     });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);
+/* harmony default export */ const _app = (MyApp);
 
 
 /***/ }),
@@ -114,14 +121,6 @@ module.exports = require("@emotion/react");
 "use strict";
 module.exports = require("@emotion/react/jsx-runtime");
 
-/***/ }),
-
-/***/ 358:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("react-bootstrap");
-
 /***/ })
 
 };
@@ -131,7 +130,7 @@ module.exports = require("react-bootstrap");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(9212));
+var __webpack_exports__ = (__webpack_exec__(5108));
 module.exports = __webpack_exports__;
 
 })();

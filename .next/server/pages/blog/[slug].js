@@ -18,16 +18,12 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
-// EXTERNAL MODULE: ./src/components/Button/index.ts
-var Button = __webpack_require__(3900);
-// EXTERNAL MODULE: external "date-fns"
-var external_date_fns_ = __webpack_require__(4146);
+// EXTERNAL MODULE: external "date-fns/format"
+var format_ = __webpack_require__(4384);
+var format_default = /*#__PURE__*/__webpack_require__.n(format_);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
-// EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(1664);
-var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
@@ -38,41 +34,45 @@ var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 // EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"sans"}
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(3894);
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_);
-// EXTERNAL MODULE: external "react-bootstrap"
-var external_react_bootstrap_ = __webpack_require__(358);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
+// EXTERNAL MODULE: external "react-bootstrap/Container"
+var Container_ = __webpack_require__(4678);
+var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 ;// CONCATENATED MODULE: ./src/containers/Post/styled.ts
 
 
 
 
 
-const Container = /*#__PURE__*/ styled_default()(external_react_bootstrap_.Container, {
+const Container = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e1u7fl100"
 })("display:flex;flex-wrap:wrap;padding-bottom:68px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:0;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){flex-wrap:nowrap;}");
 const Article = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl101"
-})("flex:1;max-width:100%;padding-bottom:0;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:120px;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){max-width:875px;}");
+})("flex:1;max-width:100%;padding-bottom:0;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:120px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-height:100vh;overflow:scroll;padding-right:20px;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){max-width:875px;}");
 const Divider = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl102"
-})("display:none;@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){display:block;margin-left:20px;margin-right:16px;min-width:1px;align-self:stretch;background-color:#b4b4b4;}");
+})("display:none;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){display:block;margin-right:16px;min-width:1px;align-self:stretch;background-color:#b4b4b4;}");
 const Sidebar = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl103"
-})("display:flex;flex-direction:column;min-width:320px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:384px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-width:384px;min-width:384px;}& > .title{font-weight:bold;font-size:20px;text-align:center;width:100%;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:26px;}margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}}");
-const Title = /*#__PURE__*/ styled_default()("h1", {
+})("display:flex;flex-direction:column;min-width:320px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:320px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-width:320px;min-width:320px;}& > .title{font-weight:bold;font-size:20px;text-align:center;width:100%;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:26px;}margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}}");
+const Empty = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl104"
+})("align-self:stretch;padding:32px 0;color:gray;text-align:center;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding:48px 0;}");
+const Title = /*#__PURE__*/ styled_default()("h1", {
+    target: "e1u7fl105"
 })("font-weight:bold;font-family:", (index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default()).style.fontFamily, ";font-size:22px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:32px;}margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}");
 const Content = /*#__PURE__*/ styled_default()("div", {
-    target: "e1u7fl105"
+    target: "e1u7fl106"
 })("font-size:20px;& table{border:1px solid black;margin-bottom:2rem;& > thead{& > tr{& > th{color:white;background-color:#80304c;border-bottom:1px solid black;border-left:1px solid white;border-right:1px solid white;padding:0.5em;&:first-child{border-left-color:black;}&:last-child{border-right-color:black;}}}}& > tbody{& > tr{& > td{border-left:1px solid black;border-right:1px solid black;padding:0.5em;}}}}& .has-text-align-center{text-align:center;}& .size-full{width:100%;}& .wp-block-image{& img{max-width:100%;height:auto;vertical-align:bottom;}}& p{margin-bottom:2rem;}& h2{margin-bottom:2rem;margin-top:3rem;font-weight:700;font-size:20px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:28px;}}");
 const Meta = /*#__PURE__*/ styled_default()("div", {
-    target: "e1u7fl106"
+    target: "e1u7fl107"
 })("color:black;margin-bottom:12px;margin-top:12px;font-size:18px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:20px;margin-top:24px;}");
 const Chips = /*#__PURE__*/ styled_default()("div", {
-    target: "e1u7fl107"
-})("display:flex;flex-wrap:wrap;margin-left:-4px;margin-right:-4px;& > div{margin-left:4px;margin-right:4px;margin-bottom:8px;background-color:#80304c;color:#664d03;color:#fff3cd;border-radius:4px;padding:4px 16px;}font-size:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:14px;}");
-const Categories = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl108"
-})("display:flex;flex-wrap:wrap;margin:0 -4px;& > a{margin:4px;flex:1;& > button{background-color:white;color:black;border:none;font-weight:400;text-align:center;white-space:nowrap;width:100%;}}");
+})("display:flex;flex-wrap:wrap;margin-left:-4px;margin-right:-4px;& > div{margin-left:4px;margin-right:4px;margin-bottom:8px;background-color:#80304c;color:#664d03;color:#fff3cd;border-radius:4px;padding:4px 16px;}font-size:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:14px;}");
 const Item = /*#__PURE__*/ styled_default()((link_default()), {
     target: "e1u7fl109"
 })("display:flex;margin-top:32px;&:hover{& > .content{& > .title{text-decoration:underline;}}}& img{object-fit:cover;border-radius:12px;}& > .content{flex:1;margin-left:16px;& > .category{font-size:14px;}& > .title{font-weight:700;font-size:16px;}}");
@@ -83,9 +83,7 @@ const Item = /*#__PURE__*/ styled_default()((link_default()), {
 
 
 
-
-
-const Index = ({ post , categories , related  })=>{
+const Index = ({ post , related  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Article, {
@@ -96,7 +94,7 @@ const Index = ({ post , categories , related  })=>{
                         }
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Meta, {
-                        children: (0,external_date_fns_.format)(new Date(post.modified), "d MMMM yyyy")
+                        children: format_default()(new Date(post.modified), "d MMMM yyyy")
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Content, {
                         dangerouslySetInnerHTML: {
@@ -115,24 +113,9 @@ const Index = ({ post , categories , related  })=>{
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                         className: "title",
-                        children: "Discover More"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Categories, {
-                        children: categories.map((it)=>it.slug !== "others" && /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                passHref: true,
-                                href: {
-                                    pathname: "/blog"
-                                },
-                                children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
-                                    children: it.name
-                                })
-                            }, it.id))
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                        className: "title",
                         children: "Related Articles"
                     }),
-                    related.map((it)=>{
+                    related && related.length ? related.map((it)=>{
                         const m = it._embedded["wp:featuredmedia"].length ? it._embedded["wp:featuredmedia"][0] : {
                             alt_text: "",
                             source_url: "/images/default_post_img.png"
@@ -142,8 +125,8 @@ const Index = ({ post , categories , related  })=>{
                             href: `/blog/${it.slug}`,
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
-                                    width: 127,
-                                    height: 96,
+                                    width: 127 * 0.8,
+                                    height: 96 * 0.8,
                                     quality: 100,
                                     alt: m.alt_text,
                                     src: m.source_url
@@ -165,6 +148,8 @@ const Index = ({ post , categories , related  })=>{
                                 })
                             ]
                         }, it.id);
+                    }) : /*#__PURE__*/ jsx_runtime_.jsx(Empty, {
+                        children: "No related articles"
                     })
                 ]
             })
@@ -189,14 +174,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9104);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9355);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9648);
 /* harmony import */ var _containers_Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(333);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__]);
-([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_4__]);
+axios__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -204,7 +189,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 
-const Page = ({ post , categories , related  })=>{
+const Page = ({ post , related  })=>{
     const meta = post.yoast_head_json;
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
@@ -259,7 +244,6 @@ const Page = ({ post , categories , related  })=>{
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Post__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
                 post: post,
-                categories: categories,
                 related: related
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {})
@@ -268,27 +252,16 @@ const Page = ({ post , categories , related  })=>{
 };
 const getServerSideProps = async ({ req , query  })=>{
     const { slug  } = query;
-    const [posts, categories] = await Promise.all([
-        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
-            params: {
-                slug,
-                related: 3,
-                _embed: 1
-            },
-            headers: {
-                accept: "application/json"
-            }
-        }),
-        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
-            params: {
-                _embed: 1,
-                _fields: "id,name,slug"
-            },
-            headers: {
-                accept: "application/json"
-            }
-        })
-    ]);
+    const posts = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+        params: {
+            slug,
+            related: 3,
+            _embed: 1
+        },
+        headers: {
+            accept: "application/json"
+        }
+    });
     if (Array.isArray(posts.data) && posts.data.length == 0) {
         return {
             notFound: true
@@ -308,7 +281,6 @@ const getServerSideProps = async ({ req , query  })=>{
     return {
         props: {
             post,
-            categories: categories.data,
             related: related.data
         }
     };
@@ -341,6 +313,13 @@ module.exports = require("@emotion/styled");
 
 /***/ }),
 
+/***/ 2215:
+/***/ ((module) => {
+
+module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
+
+/***/ }),
+
 /***/ 7197:
 /***/ ((module) => {
 
@@ -348,10 +327,10 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ 4146:
+/***/ 4384:
 /***/ ((module) => {
 
-module.exports = require("date-fns");
+module.exports = require("date-fns/format");
 
 /***/ }),
 
@@ -516,13 +495,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ 358:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-
 /***/ 1937:
 /***/ ((module) => {
 
@@ -537,10 +509,24 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
-/***/ 4563:
+/***/ 2540:
 /***/ ((module) => {
 
-module.exports = import("@fortawesome/free-solid-svg-icons");;
+module.exports = require("react-bootstrap/Nav");
+
+/***/ }),
+
+/***/ 9070:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/NavDropdown");
+
+/***/ }),
+
+/***/ 4934:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Navbar");
 
 /***/ }),
 
@@ -558,7 +544,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51], () => (__webpack_exec__(5777)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,491], () => (__webpack_exec__(5777)));
 module.exports = __webpack_exports__;
 
 })();

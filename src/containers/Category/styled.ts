@@ -10,6 +10,21 @@ export const Container = styled(C)`
   }
 `
 
+export const Title = styled.div`
+  font-weight: 700;
+  font-size: 20px;
+  min-width: 100%;
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 26px;
+  }
+  margin-bottom: 16px;
+  @media (min-width: ${breakpoints.md}) {
+    margin-bottom: 32px;
+  }
+  margin-left: 8px;
+  margin-right: 8px;
+`
+
 export const Banner = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -82,31 +97,47 @@ export const Banner = styled.div`
 export const PostRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-left: -8px;
-  margin-right: -8px;
+  margin-left: -16px;
+  margin-right: -16px;
   align-items: stretch;
+  @media (min-width: ${breakpoints.md}) {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  @media (min-width: ${breakpoints.lg}) {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  & > div,
   & > a {
-    margin-left: 8px;
-    margin-right: 8px;
-    margin-top: 16px;
-    min-width: calc(100% - 8px - 8px);
+    margin-left: 16px;
+    margin-right: 16px;
+    min-width: calc(100% - 16px - 16px);
+    flex: 1;
     @media (min-width: ${breakpoints.md}) {
-      flex: 1;
-      min-width: 0;
+      margin-left: 8px;
+      margin-right: 8px;
+      min-width: calc((100% - (8px * 4)) / 2);
+    }
+    @media (min-width: ${breakpoints.lg}) {
+      margin-left: 24px;
+      margin-right: 24px;
+      min-width: calc((100% - (24px * 4)) / 2);
     }
     @media (min-width: ${breakpoints.xl}) {
-      &:first-child {
-        flex: 8;
-      }
-      &:last-child {
-        flex: 18;
-        & > .aspect {
-          padding-top: 0;
-          min-height: 100%;
-        }
-      }
+      min-width: calc((100% - (24px * 6)) / 3);
     }
   }
+  & > a {
+    margin-top: 16px;
+  }
+  @media (min-width: ${breakpoints.lg}) {
+    margin-top: 80px;
+  }
+`
+
+export const Dummy = styled.div`
+  height: 0;
 `
 
 export const Item = styled(Link)`
@@ -135,15 +166,24 @@ export const Item = styled(Link)`
     color: white;
     padding: 16px;
     & > .term {
-      font-size: 20px;
+      font-size: 14px;
       font-weight: bold;
+      @media (min-width: ${breakpoints.md}) {
+        font-size: 20px;
+      }
     }
     & > .title {
-      font-size: 24px;
+      font-size: 16px;
       font-weight: bold;
+      @media (min-width: ${breakpoints.md}) {
+        font-size: 24px;
+      }
     }
     & > .date {
-      font-size: 14px;
+      font-size: 12px;
+      @media (min-width: ${breakpoints.md}) {
+        font-size: 14px;
+      }
     }
   }
   @media (min-width: ${breakpoints.md}) {
@@ -160,6 +200,28 @@ export const Item = styled(Link)`
           font-size: 28px;
         }
       }
+    }
+  }
+`
+
+export const Categories = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+  margin-top: 32px;
+  @media (min-width: ${breakpoints.md}) {
+    margin-top: 64px;
+  }
+  & > a {
+    margin: 0 8px 8px 8px;
+    & > button {
+      background-color: white;
+      color: black;
+      border: none;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      width: 100%;
     }
   }
 `

@@ -54,7 +54,7 @@ const Dates = styled.div`
 export const Item: FC<ItemProps> = ({ data }) => {
   return (
     <Inner>
-      <Aspect href={data.slug}>
+      <Aspect href={`/blog/${data.slug}`}>
         <Image
           fill
           src={data._embedded['wp:featuredmedia'][0].source_url}

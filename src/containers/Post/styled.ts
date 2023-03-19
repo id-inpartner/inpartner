@@ -23,6 +23,11 @@ export const Article = styled.div`
   @media (min-width: ${breakpoints.md}) {
     padding-bottom: 120px;
   }
+  @media (min-width: ${breakpoints.lg}) {
+    max-height: 100vh;
+    overflow: scroll;
+    padding-right: 20px;
+  }
   @media (min-width: ${breakpoints.xl}) {
     max-width: 875px;
   }
@@ -30,9 +35,8 @@ export const Article = styled.div`
 
 export const Divider = styled.div`
   display: none;
-  @media (min-width: ${breakpoints.xl}) {
+  @media (min-width: ${breakpoints.lg}) {
     display: block;
-    margin-left: 20px;
     margin-right: 16px;
     min-width: 1px;
     align-self: stretch;
@@ -45,11 +49,11 @@ export const Sidebar = styled.div`
   flex-direction: column;
   min-width: 320px;
   @media (min-width: ${breakpoints.md}) {
-    min-width: 384px;
+    min-width: 320px;
   }
   @media (min-width: ${breakpoints.lg}) {
-    max-width: 384px;
-    min-width: 384px;
+    max-width: 320px;
+    min-width: 320px;
   }
   & > .title {
     font-weight: bold;
@@ -63,6 +67,16 @@ export const Sidebar = styled.div`
     @media (min-width: ${breakpoints.md}) {
       margin-top: 90px;
     }
+  }
+`
+
+export const Empty = styled.div`
+  align-self: stretch;
+  padding: 32px 0;
+  color: gray;
+  text-align: center;
+  @media (min-width: ${breakpoints.md}) {
+    padding: 48px 0;
   }
 `
 
@@ -168,25 +182,6 @@ export const Chips = styled.div`
   font-size: 12px;
   @media (min-width: ${breakpoints.md}) {
     font-size: 14px;
-  }
-`
-
-export const Categories = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -4px;
-  & > a {
-    margin: 4px;
-    flex: 1;
-    & > button {
-      background-color: white;
-      color: black;
-      border: none;
-      font-weight: 400;
-      text-align: center;
-      white-space: nowrap;
-      width: 100%;
-    }
   }
 `
 

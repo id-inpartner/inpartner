@@ -34,12 +34,19 @@ export const Header = styled.div`
     min-height: 40px;
     align-self: center;
     margin: 8px 0 8px 8px;
+    @media (min-width: ${breakpoints.md}) {
+      margin: 8px 0 8px 16px;
+    }
   }
 `
 
 export const Title = styled(Link)`
   position: relative;
   z-index: 1;
+  margin-right: 8px;
+  @media (min-width: ${breakpoints.md}) {
+    margin-right: 16px;
+  }
   & > .btn {
     border-bottom-right-radius: 0;
     @media (min-width: ${breakpoints.sm}) {

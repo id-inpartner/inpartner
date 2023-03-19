@@ -52,7 +52,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   ])
   const categories = await Promise.all(
     c.data
-      .filter((it) => it.slug !== 'other')
+      .filter((it) => it.slug !== 'others')
       .map(async (it: Category) => {
         const posts = await axios.get<ReadonlyArray<Post>>(
           `${process.env.BLOG_URL}wp-json/wp/v2/posts`,

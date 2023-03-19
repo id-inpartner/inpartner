@@ -4,6 +4,18 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  modularizeImports: {
+    'react-bootstrap': {
+      transform: 'react-bootstrap/{{member}}',
+    },
+    'date-fns': {
+      transform: 'date-fns/{{member}}',
+    },
+    '@fortawesome/free-solid-svg-icons': {
+      transform: '@fortawesome/free-solid-svg-icons/{{member}}',
+      skipDefaultConversion: true,
+    },
+  },
   images: {
     domains: [
       'dev.inpartner.id',
@@ -16,20 +28,6 @@ const nextConfig = {
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',
-  },
-  experimental: {
-    modularizeImports: {
-      'react-bootstrap': {
-        transform: 'react-bootstrap/{{member}}',
-      },
-      'date-fns': {
-        transform: 'date-fns/{{member}}',
-      },
-      '@fortawesome/free-solid-svg-icons': {
-        transform: '@fortawesome/free-solid-svg-icons/{{member}}',
-        skipDefaultConversion: true,
-      },
-    },
   },
 }
 

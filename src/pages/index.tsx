@@ -5,7 +5,7 @@ import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
 import axios from 'axios'
 
-const Page: NextPage<IndexProps> = ({ projects, posts }) => {
+const Page: NextPage<IndexProps> = (props) => {
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ const Page: NextPage<IndexProps> = ({ projects, posts }) => {
         />
       </Head>
       <Navbar />
-      <Container projects={projects} posts={posts} />
+      <Container {...props} />
       <Footer />
     </>
   )
@@ -26,11 +26,11 @@ const Page: NextPage<IndexProps> = ({ projects, posts }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const { sequelize } = req.ctx
-  const { Project } = sequelize.models
+  const { Project, Sector } = sequelize.models
 
   const transaction = await sequelize.transaction()
   try {
-    const [projects, posts] = await Promise.all([
+    const [projects, sectors, posts] = await Promise.all([
       Project.findAll({
         transaction,
         limit: 3,
@@ -45,6 +45,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
             attributes: ['id', 'title', 'name'],
           },
         ],
+      }),
+      Sector.findAll({
+        transaction,
       }),
       axios.get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
         params: {
@@ -61,13 +64,14 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     return {
       props: {
         projects: JSON.parse(JSON.stringify(projects.map((d) => d.toJSON()))),
+        sectors: JSON.parse(JSON.stringify(sectors.map((d) => d.toJSON()))),
         posts: posts.data,
       },
     }
   } catch (e) {
     await transaction.rollback()
     return {
-      props: { projects: [], posts: [] },
+      props: { projects: [], sectors: [], posts: [] },
     }
   }
 }

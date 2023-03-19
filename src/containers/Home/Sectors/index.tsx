@@ -16,10 +16,35 @@ import waste from './waste.png'
 import renewable_energy from './renewable_energy.png'
 import biotechnology from './biotechnology.png'
 import Item from './Item'
-import Link from 'next/link'
 import Button from '@components/Button'
 
-export const Sectors: FC = () => {
+export interface Sector {
+  readonly id: number
+  readonly title: string
+  readonly slug: string
+  readonly image: string
+}
+
+export interface SectorsProps {
+  readonly data: ReadonlyArray<Sector>
+}
+
+const images = {
+  1: restructuring,
+  2: investment,
+  3: financial,
+  4: health,
+  5: biotechnology,
+  6: renewable_energy,
+  7: waste,
+  8: property,
+  9: ev,
+  10: infrastructure,
+  11: information,
+  12: environmental,
+}
+
+export const Sectors: FC<SectorsProps> = ({ data }) => {
   return (
     <ColumnContainer>
       <TitleDescription title="Sectors & Themes Coverage">
@@ -70,24 +95,14 @@ export const Sectors: FC = () => {
           },
         ]}
       >
-        <Item
-          image={restructuring}
-          label="Restructuring, Pre-IPO, IPO, and Right Issue"
-        />
-        <Item image={investment} label="Alternative Investment" />
-        <Item image={financial} label="Financial Services" />
-        <Item image={health} label="Health and Pharmaceutical" />
-        <Item
-          image={environmental}
-          label="Environmental, Social, and Governance"
-        />
-        <Item image={information} label="Information Technology" />
-        <Item image={infrastructure} label="Infrastructure" />
-        <Item image={ev} label="Electric Vehicle" />
-        <Item image={property} label="Property Investment and Development" />
-        <Item image={waste} label="Wate Solution" />
-        <Item image={renewable_energy} label="Renewable Energy" />
-        <Item image={biotechnology} label="Biotechnology" />
+        {data.map((it) => (
+          <Item
+            key={it.id}
+            image={images[it.id] || it.image}
+            label={it.title}
+            href={`/sector/${it.slug}`}
+          />
+        ))}
       </Items>
       <ViewMore href="/project">
         <Button>View All</Button>

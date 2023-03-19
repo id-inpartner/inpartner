@@ -14,6 +14,7 @@ export interface Image {
   readonly height: number
   readonly url: string
   readonly type: string
+  readonly alt?: string
 }
 
 export interface Media {
@@ -49,6 +50,7 @@ export interface Category {
   readonly name: string
   readonly slug: string
   readonly taxonomy: 'tag' | 'category'
+  readonly yoast_head_json: YoastHead
 }
 
 export interface Post {

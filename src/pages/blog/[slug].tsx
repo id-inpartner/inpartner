@@ -13,7 +13,6 @@ const Page: NextPage<IndexProps> = ({ post, related }) => {
     <>
       <Head>
         <title>{meta.title}</title>
-        <meta name="description" content={meta.og_description} />
         {Object.keys(meta).map((k) => {
           if (k.startsWith('og_')) {
             const it = meta[k]

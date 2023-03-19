@@ -5,23 +5,17 @@ exports.id = 688;
 exports.ids = [688];
 exports.modules = {
 
-/***/ 572:
+/***/ 525:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ sector),
-  "getServerSideProps": () => (/* binding */ getServerSideProps)
+  "Z": () => (/* binding */ Sectors)
 });
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__(968);
-var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 // EXTERNAL MODULE: ./src/components/Banner/index.tsx
 var Banner = __webpack_require__(9988);
 // EXTERNAL MODULE: external "react-bootstrap/Container"
@@ -123,13 +117,28 @@ const Index = ({ data  })=>{
 };
 /* harmony default export */ const Sectors = (Index);
 
-// EXTERNAL MODULE: ./src/components/Navbar/index.tsx + 1 modules
-var Navbar = __webpack_require__(9355);
-// EXTERNAL MODULE: ./src/components/Footer/index.tsx + 2 modules
-var Footer = __webpack_require__(9154);
-// EXTERNAL MODULE: ./src/utils/json.ts
-var json = __webpack_require__(8312);
-;// CONCATENATED MODULE: ./src/pages/sector/index.tsx
+
+/***/ }),
+
+/***/ 9119:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
+/* harmony export */ });
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _containers_Sectors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(525);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
+/* harmony import */ var _utils_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8312);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
+_components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -137,24 +146,24 @@ var json = __webpack_require__(8312);
 
 
 const Page = ({ data  })=>{
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
+            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
                 children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("title", {
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
                         children: "Inpartner sector coverage"
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         name: "description",
                         content: "Restructuring, Pre-IPO, IPO, and Right Issue, Alternative Investment, Financial Services, Biotechnology, Information Technology and ESG"
                     })
                 ]
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Navbar/* default */.Z, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(Sectors, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Sectors__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
                 data: data
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Footer/* default */.Z, {})
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
         ]
     });
 };
@@ -164,12 +173,14 @@ const getServerSideProps = async ({ req  })=>{
     const data = await Sector.findAll();
     return {
         props: {
-            data: JSON.parse(JSON.stringify((0,json/* jsonify */.K)(data)))
+            data: JSON.parse(JSON.stringify((0,_utils_json__WEBPACK_IMPORTED_MODULE_5__/* .jsonify */ .K)(data)))
         }
     };
 };
-/* harmony default export */ const sector = (Page);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -419,6 +430,13 @@ module.exports = require("react-bootstrap/NavDropdown");
 
 module.exports = require("react-bootstrap/Navbar");
 
+/***/ }),
+
+/***/ 9648:
+/***/ ((module) => {
+
+module.exports = import("axios");;
+
 /***/ })
 
 };
@@ -428,7 +446,7 @@ module.exports = require("react-bootstrap/Navbar");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,491,468], () => (__webpack_exec__(572)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51,468], () => (__webpack_exec__(9119)));
 module.exports = __webpack_exports__;
 
 })();

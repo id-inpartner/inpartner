@@ -1970,17 +1970,19 @@ const Arrow = /*#__PURE__*/ styled_default()("div", {
 
 
 
-const Inner = /*#__PURE__*/ styled_default()("div", {
+
+const Inner = /*#__PURE__*/ styled_default()((link_default()), {
     target: "esrzdtx0"
-})("margin-left:14px;margin-right:14px;width:calc(100% - 28px);border-radius:8px;overflow:hidden;");
+})("margin-left:14px;margin-right:14px;width:calc(100% - 28px);border-radius:8px;overflow:hidden;display:block;&:hover{& > * > img{transform:scale(1.1);}}");
 const Item_Aspect = /*#__PURE__*/ styled_default()("div", {
     target: "esrzdtx1"
-})("position:relative;width:100%;padding-top:", 275 / 202 * 100, "%;");
+})("position:relative;width:100%;padding-top:", 275 / 202 * 100, "%;& > img{object-fit:cover;transition:transform 0.3s ease-in-out;}");
 const Item_Label = /*#__PURE__*/ styled_default()("div", {
     target: "esrzdtx2"
 })("font-size:16px;color:white;text-align:center;width:100%;padding-left:12px;padding-right:12px;bottom:12px;z-index:2;position:absolute;font-weight:500;");
-const Sectors_Item_Item = ({ image , label  })=>{
+const Sectors_Item_Item = ({ href , image , label  })=>{
     return /*#__PURE__*/ jsx_runtime_.jsx(Inner, {
+        href: href,
         children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Item_Aspect, {
             children: [
                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
@@ -1988,7 +1990,8 @@ const Sectors_Item_Item = ({ image , label  })=>{
                     src: image,
                     alt: label,
                     quality: 100,
-                    sizes: "(min-width: 1002px) 210px, (min-width: 992px) 276px, (min-width: 768px) 196px, (min-width: 746px) 25vw, (min-width: 488px) 50vw, 100vw"
+                    sizes: "(min-width: 1002px) 210px, (min-width: 992px) 276px, (min-width: 768px) 196px, (min-width: 746px) 25vw, (min-width: 488px) 50vw, 100vw",
+                    placeholder: typeof image === "string" ? "empty" : "blur"
                 }),
                 /*#__PURE__*/ jsx_runtime_.jsx(Item_Label, {
                     children: label
@@ -2019,14 +2022,28 @@ const Sectors_Item_Item = ({ image , label  })=>{
 
 
 
-const Sectors = ()=>{
+const Sectors_images = {
+    1: restructuring,
+    2: investment,
+    3: financial,
+    4: health,
+    5: biotechnology,
+    6: renewable_energy,
+    7: waste,
+    8: property,
+    9: ev,
+    10: infrastructure,
+    11: information,
+    12: environmental
+};
+const Sectors = ({ data  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(TitleDescription/* default */.ZP, {
                 title: "Sectors & Themes Coverage",
                 children: "Here are access that we can provide"
             }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Sectors_styled_Items, {
+            /*#__PURE__*/ jsx_runtime_.jsx(Sectors_styled_Items, {
                 arrows: true,
                 nextArrow: /*#__PURE__*/ jsx_runtime_.jsx(Arrow, {
                     children: /*#__PURE__*/ jsx_runtime_.jsx("svg", {
@@ -2074,56 +2091,11 @@ const Sectors = ()=>{
                         }
                     }
                 ],
-                children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: restructuring,
-                        label: "Restructuring, Pre-IPO, IPO, and Right Issue"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: investment,
-                        label: "Alternative Investment"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: financial,
-                        label: "Financial Services"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: health,
-                        label: "Health and Pharmaceutical"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: environmental,
-                        label: "Environmental, Social, and Governance"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: information,
-                        label: "Information Technology"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: infrastructure,
-                        label: "Infrastructure"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: ev,
-                        label: "Electric Vehicle"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: property,
-                        label: "Property Investment and Development"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: waste,
-                        label: "Wate Solution"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: renewable_energy,
-                        label: "Renewable Energy"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
-                        image: biotechnology,
-                        label: "Biotechnology"
-                    })
-                ]
+                children: data.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
+                        image: Sectors_images[it.id] || it.image,
+                        label: it.title,
+                        href: `/sector/${it.slug}`
+                    }, it.id))
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
                 href: "/project",
@@ -2325,14 +2297,16 @@ const Background = /*#__PURE__*/ styled_default()("div", {
 const Home_C = /*#__PURE__*/ styled_default()((Container_default()), {
     target: "e1meulra1"
 })("display:flex;align-items:stretch;flex-wrap:wrap;");
-const Index = ({ projects , posts  })=>{
+const Index = ({ projects , posts , sectors  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Banner, {}),
             /*#__PURE__*/ jsx_runtime_.jsx(Home_About, {}),
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Pillars, {}),
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Services, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(Home_Sectors, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(Home_Sectors, {
+                data: sectors
+            }),
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Project, {
                 data: projects
             }),
@@ -2370,18 +2344,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9522);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9355);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_5__]);
-axios__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
 
 
 
-const Page = ({ projects , posts  })=>{
+const Page = (props)=>{
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
@@ -2397,8 +2371,7 @@ const Page = ({ projects , posts  })=>{
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Home__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
-                projects: projects,
-                posts: posts
+                ...props
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
         ]
@@ -2406,10 +2379,10 @@ const Page = ({ projects , posts  })=>{
 };
 const getServerSideProps = async ({ req  })=>{
     const { sequelize  } = req.ctx;
-    const { Project  } = sequelize.models;
+    const { Project , Sector  } = sequelize.models;
     const transaction = await sequelize.transaction();
     try {
-        const [projects, posts] = await Promise.all([
+        const [projects, sectors, posts] = await Promise.all([
             Project.findAll({
                 transaction,
                 limit: 3,
@@ -2438,6 +2411,9 @@ const getServerSideProps = async ({ req  })=>{
                     }
                 ]
             }),
+            Sector.findAll({
+                transaction
+            }),
             axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
                 params: {
                     _embed: 1,
@@ -2454,6 +2430,7 @@ const getServerSideProps = async ({ req  })=>{
         return {
             props: {
                 projects: JSON.parse(JSON.stringify(projects.map((d)=>d.toJSON()))),
+                sectors: JSON.parse(JSON.stringify(sectors.map((d)=>d.toJSON()))),
                 posts: posts.data
             }
         };
@@ -2462,6 +2439,7 @@ const getServerSideProps = async ({ req  })=>{
         return {
             props: {
                 projects: [],
+                sectors: [],
                 posts: []
             }
         };
@@ -2747,7 +2725,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,491,941,135], () => (__webpack_exec__(85)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,524,51,941,135], () => (__webpack_exec__(85)));
 module.exports = __webpack_exports__;
 
 })();

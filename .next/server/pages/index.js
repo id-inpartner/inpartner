@@ -30,50 +30,7 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 3137:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* unused harmony export SectionTitle */
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9920);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1480);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3894);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fonts_index__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default()("h5", {
-    target: "e3y0cv0"
-})("font-weight:600;font-family:", (_fonts_index__WEBPACK_IMPORTED_MODULE_2___default().style.fontFamily), ";font-size:20px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.md */ .AV.md, "){font-size:28px;}");
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionTitle);
-
-
-/***/ }),
-
-/***/ 4243:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* unused harmony export Text */
-/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9920);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1480);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const Text = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default()("div", {
-    target: "ehekjoj0"
-})("font-size:16px;text-align:justify;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.md */ .AV.md, "){font-size:20px;}");
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Text);
-
-
-/***/ }),
-
-/***/ 9522:
+/***/ 8110:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -1607,196 +1564,6 @@ const Clients = ()=>{
 };
 /* harmony default export */ const Home_Clients = (Clients);
 
-// EXTERNAL MODULE: ./src/components/TitleDescription/index.tsx
-var TitleDescription = __webpack_require__(4267);
-// EXTERNAL MODULE: external "react-bootstrap/Form"
-var Form_ = __webpack_require__(5226);
-var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
-;// CONCATENATED MODULE: ./src/containers/Home/Contact/index.tsx
-
-
-
-
-
-
-
-const Contact_Root = /*#__PURE__*/ styled_default()("div", {
-    target: "e1rfrusq0"
-})("display:flex;flex-direction:column;flex:1;align-items:stretch;min-width:100%;@media (min-width:404px){min-width:380px;}");
-const F = /*#__PURE__*/ styled_default()((Form_default()), {
-    target: "e1rfrusq1"
-})("display:flex;flex-direction:column;align-items:stretch;margin-right:auto;margin-left:auto;& input,textarea{padding-top:11px;padding-bottom:11px;box-shadow:0px 4px 4px rgba(0,0,0,0.35);}min-width:100%;@media (min-width:404px){min-width:380px;}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:300px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:380px;}");
-const reducer = (state, action)=>{
-    switch(action.type){
-        case "submit":
-            return {
-                ...state,
-                status: "progress"
-            };
-        case "success":
-            return {
-                ...state,
-                status: "success"
-            };
-        case "failed":
-            return {
-                ...state,
-                status: "idle",
-                error: action.error
-            };
-        case "reset":
-            return {
-                ...state,
-                status: "idle",
-                error: undefined
-            };
-        default:
-            return state;
-    }
-};
-const Contact = ()=>{
-    const [state, dispatch] = (0,external_react_.useReducer)(reducer, {
-        status: "idle"
-    });
-    const [values, setValues] = (0,external_react_.useState)({
-        email: "",
-        name: "",
-        subject: "",
-        message: ""
-    });
-    (0,external_react_.useEffect)(()=>{
-        if (state.error) {
-            alert(state.error);
-            dispatch({
-                type: "reset"
-            });
-        } else if (state.status === "success") {
-            alert("Message recorded!");
-            dispatch({
-                type: "reset"
-            });
-        }
-    }, [
-        state.status,
-        state.error
-    ]);
-    const onChange = (e)=>{
-        setValues({
-            ...values,
-            [e.target.name]: e.target.value
-        });
-    };
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Contact_Root, {
-        children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(TitleDescription/* default */.ZP, {
-                title: "Contact Us",
-                children: "Please enter your details"
-            }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(F, {
-                onSubmit: (a)=>{
-                    a.preventDefault();
-                    dispatch({
-                        type: "submit",
-                        values
-                    });
-                    fetch("/api/contact", {
-                        method: "POST",
-                        headers: {
-                            "content-type": "application/json"
-                        },
-                        body: JSON.stringify(values)
-                    }).then((res)=>{
-                        if (res.ok) {
-                            dispatch({
-                                type: "success"
-                            });
-                        } else {
-                            dispatch({
-                                type: "failed",
-                                error: "Internal Server Error"
-                            });
-                        }
-                    }).catch((e)=>{
-                        dispatch({
-                            type: "failed",
-                            error: e.message
-                        });
-                    });
-                },
-                children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Group, {
-                        className: "mb-4",
-                        controlId: "name",
-                        children: /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
-                            name: "name",
-                            required: true,
-                            type: "name",
-                            placeholder: "Enter your full name",
-                            disabled: state.status === "progress",
-                            value: values.name,
-                            onChange: onChange
-                        })
-                    }),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Form_default()).Group, {
-                        className: "mb-4",
-                        controlId: "email",
-                        children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
-                                name: "email",
-                                required: true,
-                                type: "email",
-                                placeholder: "Enter your email",
-                                disabled: state.status === "progress",
-                                value: values.email,
-                                onChange: onChange
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control.Feedback, {
-                                type: "invalid",
-                                children: `We'll never share your email with anyone else.`
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Group, {
-                        className: "mb-4",
-                        controlId: "subject",
-                        children: /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
-                            name: "subject",
-                            required: true,
-                            type: "text",
-                            placeholder: "Enter your subject",
-                            disabled: state.status === "progress",
-                            value: values.subject,
-                            onChange: onChange
-                        })
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Group, {
-                        className: "mb-4",
-                        controlId: "message",
-                        children: /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
-                            name: "message",
-                            required: true,
-                            type: "text",
-                            as: "textarea",
-                            rows: 3,
-                            placeholder: "Enter your subject",
-                            disabled: state.status === "progress",
-                            value: values.message,
-                            onChange: onChange
-                        })
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
-                        className: "mt-3",
-                        type: "submit",
-                        disabled: state.status === "progress",
-                        children: "Submit"
-                    })
-                ]
-            })
-        ]
-    });
-};
-/* harmony default export */ const Home_Contact = (Contact);
-
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/Item/styled.ts
 
 
@@ -1845,6 +1612,8 @@ const Pillars_styled_Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const funding = ({"src":"/_next/static/media/funding.25c0fb0f.svg","height":58,"width":58,"blurWidth":0,"blurHeight":0});
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/capacity-building.svg
 /* harmony default export */ const capacity_building = ({"src":"/_next/static/media/capacity-building.c89c2d71.svg","height":61,"width":61,"blurWidth":0,"blurHeight":0});
+// EXTERNAL MODULE: ./src/components/TitleDescription/index.tsx
+var TitleDescription = __webpack_require__(4267);
 ;// CONCATENATED MODULE: ./src/containers/Home/Pillars/index.tsx
 
 
@@ -2240,45 +2009,7 @@ const Services = ()=>{
 };
 /* harmony default export */ const Home_Services = (Services);
 
-;// CONCATENATED MODULE: ./src/containers/Home/Sitemap/index.tsx
-
-
-
-
-
-const Sitemap_Root = /*#__PURE__*/ styled_default()("div", {
-    target: "e1dxnf330"
-})("display:flex;flex-direction:column;flex:1;align-items:stretch;");
-const Sitemap_Title = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
-    target: "e1dxnf331"
-})("text-align:center;margin-top:50px;margin-bottom:32px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;margin-bottom:60px;}");
-const Sitemap = ()=>{
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Sitemap_Root, {
-        children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(Sitemap_Title, {
-                children: "Site Map"
-            }),
-            /*#__PURE__*/ jsx_runtime_.jsx((Ratio_default()), {
-                aspectRatio: 450 / 600,
-                children: /*#__PURE__*/ jsx_runtime_.jsx("iframe", {
-                    src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.672129927412!2d106.8392733!3d-6.2084639!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f381f9f1b899%3A0xcf6bf4193c4d2ace!2sPT%20Inpartner%20Optima%20Integra%20(INPARTNER)!5e0!3m2!1sen!2sid!4v1671699893441!5m2!1sen!2sid",
-                    style: {
-                        border: 0
-                    },
-                    allowFullScreen: true,
-                    loading: "lazy",
-                    referrerPolicy: "no-referrer-when-downgrade",
-                    title: "PT Inpartner Optima Integra"
-                })
-            })
-        ]
-    });
-};
-/* harmony default export */ const Home_Sitemap = (Sitemap);
-
 ;// CONCATENATED MODULE: ./src/containers/Home/index.tsx
-
-
 
 
 
@@ -2294,9 +2025,9 @@ const Sitemap = ()=>{
 const Background = /*#__PURE__*/ styled_default()("div", {
     target: "e1meulra0"
 })("background-color:#d9d9d9;padding-bottom:40px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding-bottom:120px;}");
-const Home_C = /*#__PURE__*/ styled_default()((Container_default()), {
+const Home_C = /*#__PURE__*/ (/* unused pure expression or super */ null && (styled(Container, {
     target: "e1meulra1"
-})("display:flex;align-items:stretch;flex-wrap:wrap;");
+})("display:flex;align-items:stretch;flex-wrap:wrap;")));
 const Index = ({ projects , posts , sectors  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
@@ -2313,15 +2044,7 @@ const Index = ({ projects , posts , sectors  })=>{
             /*#__PURE__*/ jsx_runtime_.jsx(Home_Blog, {
                 data: posts
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Home_Clients, {}),
-            /*#__PURE__*/ jsx_runtime_.jsx(Background, {
-                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Home_C, {
-                    children: [
-                        /*#__PURE__*/ jsx_runtime_.jsx(Home_Sitemap, {}),
-                        /*#__PURE__*/ jsx_runtime_.jsx(Home_Contact, {})
-                    ]
-                })
-            })
+            /*#__PURE__*/ jsx_runtime_.jsx(Home_Clients, {})
         ]
     });
 };
@@ -2343,7 +2066,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9522);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8110);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
@@ -2666,13 +2389,6 @@ module.exports = require("react-bootstrap/Button");
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap/Container");
-
-/***/ }),
-
-/***/ 5226:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/Form");
 
 /***/ }),
 

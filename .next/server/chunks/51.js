@@ -628,8 +628,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _styled__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3853);
 /* harmony import */ var _DropTitle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(213);
 /* harmony import */ var _Sectors__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1472);
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3900);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_Sectors__WEBPACK_IMPORTED_MODULE_10__]);
 _Sectors__WEBPACK_IMPORTED_MODULE_10__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
@@ -801,8 +803,10 @@ const Navbar = ()=>{
                                     children: "Blog"
                                 }),
                                 /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_8__/* .GetInTouch */ .Rs, {
-                                    href: "https://wa.me/6281389285475",
-                                    children: "Get in Touch"
+                                    href: "/contact",
+                                    children: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                                        children: "Get in Touch"
+                                    })
                                 })
                             ]
                         })
@@ -872,7 +876,7 @@ const Brand = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default
 const Space = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
     target: "e1mq74u55"
 })("flex:1;");
-const GetInTouch = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()(_components_Button__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+const GetInTouch = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
     target: "e1mq74u56"
 })("margin-top:var(--bs-nav-link-padding-y);@media (min-width:992px){margin-left:2rem;align-self:center;margin-top:0;}");
 const ItemLink = ({ href , children  })=>{

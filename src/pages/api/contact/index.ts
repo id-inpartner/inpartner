@@ -3,6 +3,7 @@ import type { RequestHandler } from 'express'
 interface Body {
   readonly name: string
   readonly email: string
+  readonly company: string
   readonly subject: string
   readonly message: string
 }

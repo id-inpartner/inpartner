@@ -4,19 +4,10 @@ import { NavDropdown, Navbar as NavBar } from 'react-bootstrap'
 import logo from '@images/logo.png'
 import Image from '@components/Image'
 import { breakpoints } from '@components/GlobalStyle'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import {
-  Brand,
-  Container,
-  DropButton,
-  GetInTouch,
-  ItemLink,
-  N,
-  Nav,
-  Space,
-} from './styled'
+import { Brand, Container, GetInTouch, ItemLink, N, Nav, Space } from './styled'
 import DropTitle from './DropTitle'
 import { Sectors } from './Sectors'
+import Button from '@components/Button'
 
 export const Navbar: FC = () => {
   const [menu, setMenu] = useState('')
@@ -136,8 +127,8 @@ export const Navbar: FC = () => {
             <Link className="nav-link" href="/blog">
               Blog
             </Link>
-            <GetInTouch href="https://wa.me/6281389285475">
-              Get in Touch
+            <GetInTouch href="/contact">
+              <Button>Get in Touch</Button>
             </GetInTouch>
           </Nav>
         </NavBar.Collapse>

@@ -21,6 +21,9 @@ const init = (sequelize) => {
       email: {
         type: DataTypes.CHAR,
       },
+      company: {
+        type: DataTypes.CHAR,
+      },
       subject: {
         type: DataTypes.CHAR,
       },

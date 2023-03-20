@@ -15,6 +15,9 @@ module.exports = {
       email: {
         type: Sequelize.CHAR,
       },
+      company: {
+        type: Sequelize.CHAR,
+      },
       subject: {
         type: Sequelize.CHAR,
       },

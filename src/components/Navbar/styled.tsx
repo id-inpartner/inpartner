@@ -117,7 +117,7 @@ export const Space = styled.div`
   flex: 1;
 `
 
-export const GetInTouch = styled(Button)`
+export const GetInTouch = styled(Link)`
   margin-top: var(--bs-nav-link-padding-y);
   @media (min-width: 992px) {
     margin-left: 2rem;

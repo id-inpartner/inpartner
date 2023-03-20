@@ -44,12 +44,12 @@ const Index: FC<IndexProps> = ({ projects, posts, sectors }) => {
       <Project data={projects} />
       <Blog data={posts} />
       <Clients />
-      <Background>
+      {/* <Background>
         <C>
           <Sitemap />
           <Contact />
         </C>
-      </Background>
+      </Background> */}
     </>
   )
 }

@@ -13,14 +13,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const handler = async (req, res)=>{
+    const { renderMail , sendMail  } = req.ctx;
     if (req.method == "POST") {
         const body = req.body;
         const { sequelize  } = req.ctx;
         const { Contact  } = sequelize.models;
+        const transaction = await sequelize.transaction();
         try {
-            const contact = await Contact.create(body);
+            const contact = await Contact.create(body, {
+                transaction
+            });
+            const [html, text] = await Promise.all([
+                renderMail("./get-in-touch.html.ejs", {
+                    contact
+                }),
+                renderMail("./get-in-touch.txt.ejs", {
+                    contact
+                })
+            ]);
+            await sendMail({
+                to: "corporatesecretary@inpartner.id",
+                subject: "Get in Touch",
+                html,
+                text
+            });
+            await transaction.commit();
             res.json(contact.toJSON());
         } catch (e) {
+            await transaction.rollback();
             res.status(500).end();
         }
     } else {

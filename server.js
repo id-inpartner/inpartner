@@ -2,6 +2,7 @@ const express = require('express')
 const next = require('next')
 const { createDb } = require('./api/db')
 const { createContentMiddleware } = require('./api/middleware/context')
+const { createMailMiddleware } = require('./api/middleware/mail')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -13,6 +14,7 @@ const handle = app.getRequestHandler()
   const db = await createDb()
   const server = express()
   server.use(createContentMiddleware(db))
+  server.use(createMailMiddleware())
   server.get('/Team.html', (_, res) => {
     return res.redirect(301, '/about#team')
   })

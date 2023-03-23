@@ -7,7 +7,12 @@ const { Op } = require('sequelize')
  */
 
 const createContentMiddleware = (sequelize) => (req, res, next) => {
-  req.ctx = { sequelize, Op }
+  if (req.ctx) {
+    req.ctx.Op = Op
+    req.ctx.sequelize = sequelize
+  } else {
+    req.ctx = { sequelize, Op }
+  }
   next()
 }
 

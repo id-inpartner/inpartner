@@ -6,6 +6,7 @@ import team from './team.png'
 import { Container, Root } from './styled'
 import Target from '@components/Target'
 import Button from '@components/Button'
+import Link from 'next/link'
 
 export const Team: FC = () => {
   return (
@@ -27,7 +28,9 @@ export const Team: FC = () => {
           long-term strategic plans
         </Card>
       </Root>
-      <Button>Meet our Team</Button>
+      <Link href="/team" passHref>
+        <Button>Meet our Team</Button>
+      </Link>
     </Container>
   )
 }

@@ -32,8 +32,8 @@ export const TitleDescription: FC<TitleDescriptionProps> = ({
 }) => {
   return (
     <>
-      <Title>{title}</Title>
-      <Description>{children}</Description>
+      <Title className="title">{title}</Title>
+      <Description className="description">{children}</Description>
     </>
   )
 }

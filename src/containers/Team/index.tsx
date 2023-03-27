@@ -2,12 +2,14 @@ import Banner from '@components/Banner'
 import { FC } from 'react'
 import banner from './banner.png'
 import { OurTeam } from './styled'
-import TitleDescription from '@components/TitleDescription'
+import TitleDescription, { Title } from '@components/TitleDescription'
 import Team from './Team'
 import team1 from './team-1.png'
 import team2 from './team-2.png'
 import team3 from './team-3.png'
 import cdit from './cd-it.png'
+import { Employee } from './Employee'
+import ColumnContainer from '@components/ColumnContainer'
 
 export const Index: FC = () => {
   return (
@@ -45,6 +47,10 @@ export const Index: FC = () => {
         description="INPARTNER (PT Inpartrner Optima Integra) is a transformation of management consulting services established in 2009. We started as a consultant to help increase accessibility to market, financing, technology, and productivity and provide capacity building for the MSME sector in East Java. Our purpose is also to give a change for a better through continuous improvement. And now, we come up as consultant services in business and management to the middle and large corporations."
         image={cdit}
       />
+      <ColumnContainer>
+        <Title>Our People</Title>
+        <Employee />
+      </ColumnContainer>
     </>
   )
 }

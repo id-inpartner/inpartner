@@ -5,10 +5,8 @@ import { Container as C } from 'react-bootstrap'
 export const OurTeam = styled(C)`
   & > .root {
     margin-top: 16px;
-    margin-bottom: 16px;
     @media (min-width: ${breakpoints.xl}) {
       margin-top: 72px;
-      margin-bottom: 72px;
     }
     display: flex;
     flex-wrap: wrap;

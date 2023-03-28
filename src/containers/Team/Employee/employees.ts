@@ -113,6 +113,7 @@ export const employees = [
     src: kk,
     name: 'Kukuh Yoni Atmoko',
     pos: 'Web Programming & IT Solution',
+    h: true,
   },
 ]
 

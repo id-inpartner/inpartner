@@ -6,7 +6,7 @@ export const Employee = () => {
   return (
     <Container>
       {employees.map((it, i) => (
-        <Card key={i}>
+        <Card key={i} aria-hidden={it.h}>
           <Aspect>
             <Image src={it.src} fill quality={100} alt="" />
           </Aspect>
@@ -14,8 +14,8 @@ export const Employee = () => {
           <Pos>{it.pos}</Pos>
         </Card>
       ))}
-      <Dummy />
-      <Dummy />
+      <Dummy aria-hidden />
+      <Dummy aria-hidden />
     </Container>
   )
 }

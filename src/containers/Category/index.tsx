@@ -186,7 +186,7 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
                 </div>
               </Item>
             ) : (
-              <Dummy />
+              <Dummy aria-hidden />
             )}
           </div>
         )}
@@ -215,8 +215,8 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
               </div>
             </Item>
           ))}
-          <Dummy />
-          <Dummy />
+          <Dummy aria-hidden />
+          <Dummy aria-hidden />
         </PostRow>
       )}
       <Categories>

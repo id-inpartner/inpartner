@@ -96,7 +96,7 @@ const Index: FC<IndexProps> = ({
           {rows.map((r) => (
             <ProjectComponent key={r.id} data={r} />
           ))}
-          <Dummy />
+          <Dummy aria-hidden />
           <Pagination>
             <PageItem
               href={{

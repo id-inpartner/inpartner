@@ -278,7 +278,9 @@ const Index = ({ category , posts , categories  })=>{
                                         ]
                                     })
                                 ]
-                            }) : /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {})
+                            }) : /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {
+                                "aria-hidden": true
+                            })
                         ]
                     })
                 ]
@@ -318,8 +320,12 @@ const Index = ({ category , posts , categories  })=>{
                                 })
                             ]
                         }, it.id)),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {}),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {})
+                    /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {
+                        "aria-hidden": true
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {
+                        "aria-hidden": true
+                    })
                 ]
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Categories, {

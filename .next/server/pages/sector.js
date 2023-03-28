@@ -108,7 +108,9 @@ const Index = ({ data  })=>{
                         data.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
                                 ...it
                             }, it.id)),
-                        /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {})
+                        /*#__PURE__*/ jsx_runtime_.jsx(Dummy, {
+                            "aria-hidden": true
+                        })
                     ]
                 })
             })

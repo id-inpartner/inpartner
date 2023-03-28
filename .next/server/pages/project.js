@@ -222,7 +222,9 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                             rows.map((r)=>/*#__PURE__*/ jsx_runtime_.jsx(Project/* default */.ZP, {
                                     data: r
                                 }, r.id)),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Project/* Dummy */.vk, {}),
+                            /*#__PURE__*/ jsx_runtime_.jsx(Project/* Dummy */.vk, {
+                                "aria-hidden": true
+                            }),
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Pagination_default()), {
                                 children: [
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PageItem, {

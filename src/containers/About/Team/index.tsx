@@ -28,7 +28,7 @@ export const Team: FC = () => {
           long-term strategic plans
         </Card>
       </Root>
-      <Link href="/team" passHref>
+      <Link href="" passHref>
         <Button>Meet our Team</Button>
       </Link>
     </Container>

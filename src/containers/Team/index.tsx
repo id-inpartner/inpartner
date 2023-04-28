@@ -18,10 +18,20 @@ export const Index: FC = () => {
       <OurTeam>
         <div className="root">
           <TitleDescription title="Our Team">
-            At EY, we empower our people with the right mindsets and skills to
-            navigate what&apos;s next, become the transformative leaders the
-            world needs, pursue careers as unique as they are, and build their
-            own exceptional EY experiences.
+            Meet our powerhouse team - dedicated, collaborative, and driven to
+            deliver excellence every step of the way.
+            <br />
+            Our team is a diverse mix of talent, expertise, and personality, all
+            coming together to create magic for our clients.
+            <br />
+            Behind every great company is a great team. Meet ours, who are
+            committed to achieving nothing but the best for our clients.
+            <br />
+            At the heart of our success is our team, who work tirelessly to
+            exceed expectations and push boundaries.
+            <br />
+            Our team is more than just a group of individuals - we&apos;re a
+            family united by our passion for innovation and success.
           </TitleDescription>
         </div>
       </OurTeam>

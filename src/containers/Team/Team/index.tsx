@@ -1,12 +1,7 @@
-import Card from '@components/CardTitleDescription'
 import Image, { ImageProps } from '@components/Image'
 import { FC } from 'react'
-import { Ratio } from 'react-bootstrap'
-import team from './team.png'
 import { Container, Aspect, Text } from './styled'
-import Target from '@components/Target'
-import Button from '@components/Button'
-import TitleDescription from '@components/TitleDescription'
+import TitleDescription, { Description } from '@components/TitleDescription'
 
 export interface TeamProps {
   readonly title: string
@@ -25,7 +20,8 @@ export const Team: FC<TeamProps> = ({ title, image, description, reverse }) => {
           </div>
         </Aspect>
         <Text>
-          <TitleDescription title={title}>{description}</TitleDescription>
+          {/* <TitleDescription title={title}>{description}</TitleDescription> */}
+          <Description className="description">{description}</Description>
         </Text>
       </div>
     </Container>

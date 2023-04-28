@@ -2,7 +2,7 @@ import { breakpoints } from '@components/GlobalStyle'
 import SectionTitle from '@components/SectionTitle'
 import Text from '@components/Text'
 import styled from '@emotion/styled'
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 export const Title = styled(SectionTitle)`
   text-align: center;
@@ -23,7 +23,7 @@ export const Description = styled(Text)`
 
 export interface TitleDescriptionProps {
   readonly title: string
-  readonly children: string
+  readonly children: ReactNode
 }
 
 export const TitleDescription: FC<TitleDescriptionProps> = ({

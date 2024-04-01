@@ -293,9 +293,9 @@ export const Index = () => {
         quality={100}
         width={263}
         height={260}
-        alt="https://wa.me/6281389285475"
+        alt="https://wa.me/6289628310192"
       />
-      <WaLink href="https://wa.me/6281389285475">+62 813-8928-5475</WaLink>
+      <WaLink href="https://wa.me/6289628310192">+62 896-2831-0192</WaLink>
     </ColumnContainer>
   )
 }

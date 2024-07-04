@@ -8,17 +8,17 @@ export default function Document() {
         {/* Google tag (gtag.js) */}
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-G4HV4BTRT4"
+          src="https://www.googletagmanager.com/gtag/js?id=G-70DY47TGF7"
         />
         <Script
-          id="G-G4HV4BTRT4"
+          id="G-70DY47TGF7"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-G4HV4BTRT4');
+              gtag('config', 'G-70DY47TGF7');
             `,
           }}
         />

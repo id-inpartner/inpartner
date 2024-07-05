@@ -27,17 +27,17 @@ function Document() {
                 children: [
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_2___default()), {
                         async: true,
-                        src: "https://www.googletagmanager.com/gtag/js?id=G-G4HV4BTRT4"
+                        src: "https://www.googletagmanager.com/gtag/js?id=G-70DY47TGF7"
                     }),
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_2___default()), {
-                        id: "G-G4HV4BTRT4",
+                        id: "G-70DY47TGF7",
                         dangerouslySetInnerHTML: {
                             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-G4HV4BTRT4');
+              gtag('config', 'G-70DY47TGF7');
             `
                         }
                     }),

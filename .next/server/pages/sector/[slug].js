@@ -35,13 +35,13 @@ var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 
 
 const Title = /*#__PURE__*/ styled_default()("h1", {
-    target: "e1rl3vet0"
+    target: "e9mois80"
 })("text-align:center;width:100%;font-weight:600;font-size:20px;margin-top:40px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:28px;margin-top:64px;}");
 const Projects = /*#__PURE__*/ styled_default()(Project/* ProjectsComponent */.vP, {
-    target: "e1rl3vet1"
+    target: "e9mois81"
 })("margin-top:28px;margin-bottom:28px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:52px;margin-bottom:52px;}");
 const Description = /*#__PURE__*/ styled_default()("div", {
-    target: "e1rl3vet2"
+    target: "e9mois82"
 })("padding-top:1rem;& p{margin-bottom:1rem;}& li{margin-bottom:1rem;}");
 
 ;// CONCATENATED MODULE: ./src/containers/Sector/index.tsx

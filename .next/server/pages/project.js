@@ -21,7 +21,7 @@ exports.modules = {
 
 
 const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default()("h5", {
-    target: "e3y0cv0"
+    target: "e1uix0280"
 })("font-weight:600;font-family:", (_fonts_index__WEBPACK_IMPORTED_MODULE_2___default().style.fontFamily), ";font-size:20px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.md */ .AV.md, "){font-size:28px;}");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionTitle);
 
@@ -68,22 +68,22 @@ var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
 
 
 const Container = /*#__PURE__*/ styled_default()((Container_default()), {
-    target: "e54vnkr0"
+    target: "eu7cf9f0"
 })("display:flex;flex-wrap:wrap;");
 const SideMenu = /*#__PURE__*/ styled_default()("div", {
-    target: "e54vnkr1"
+    target: "eu7cf9f1"
 })("display:flex;flex-direction:column;min-width:90%;flex:1;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:330px;max-width:330px;border-right:1px solid #d9d9d9;margin-right:32px;}");
 const MenuTitle = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
-    target: "e54vnkr2"
+    target: "eu7cf9f2"
 })("padding-top:32px;padding-bottom:16px;border-bottom:1px solid #d9d9d9;margin-bottom:0;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-top:64px;padding-bottom:32px;}");
 const MenuItem = /*#__PURE__*/ styled_default()((link_default()), {
-    target: "e54vnkr3"
+    target: "eu7cf9f3"
 })("padding:8px;display:flex;align-items:center;min-height:48px;font-weight:600;font-size:16px;border-bottom:1px solid #d9d9d9;&.selected{background:#f2f2f2;box-shadow:inset 0px 4px 4px rgba(0,0,0,0.12);}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){font-size:20px;min-height:96px;}");
 const Projects = /*#__PURE__*/ styled_default()(Project/* ProjectsComponent */.vP, {
-    target: "e54vnkr4"
+    target: "eu7cf9f4"
 })("flex:1;padding-bottom:15px;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-bottom:42px;}& > .pagination{min-width:100%;margin-left:12px;margin-right:12px;margin-top:20px;}");
 const Queries = /*#__PURE__*/ styled_default()("div", {
-    target: "e54vnkr5"
+    target: "eu7cf9f5"
 })("min-width:100%;display:flex;padding-top:32px;padding-bottom:16px;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-top:64px;padding-bottom:32px;}& > .form-control,& > .form-select{width:unset;min-width:134px;margin-left:12px;margin-right:12px;}");
 
 // EXTERNAL MODULE: external "react-bootstrap/Form"

@@ -66,35 +66,55 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(6689);
+// EXTERNAL MODULE: external "next/router"
+var router_ = __webpack_require__(1853);
 // EXTERNAL MODULE: external "@emotion/react"
 var react_ = __webpack_require__(2805);
+;// CONCATENATED MODULE: external "react-bootstrap/SSRProvider"
+const SSRProvider_namespaceObject = require("react-bootstrap/SSRProvider");
+var SSRProvider_default = /*#__PURE__*/__webpack_require__.n(SSRProvider_namespaceObject);
 // EXTERNAL MODULE: ./src/sass/index.scss
 var sass = __webpack_require__(4352);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
 var GlobalStyle = __webpack_require__(9920);
-;// CONCATENATED MODULE: external "react-bootstrap/SSRProvider"
-const SSRProvider_namespaceObject = require("react-bootstrap/SSRProvider");
-var SSRProvider_default = /*#__PURE__*/__webpack_require__.n(SSRProvider_namespaceObject);
 ;// CONCATENATED MODULE: ./src/pages/_app.tsx
 
 
 
 
 
-const MyApp = ({ Component , pageProps  })=>{
+
+
+function MyApp({ Component , pageProps  }) {
+    const router = (0,router_.useRouter)();
+    (0,external_react_.useEffect)(()=>{
+        const handleRouteChange = (url)=>{
+            window.gtag?.("config", "UA-248151888-1", {
+                page_path: url
+            });
+        };
+        router.events.on("routeChangeComplete", handleRouteChange);
+        return ()=>{
+            router.events.off("routeChangeComplete", handleRouteChange);
+        };
+    }, [
+        router.events
+    ]);
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)((SSRProvider_default()), {
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(Component, {
-                ...pageProps
-            }),
             /*#__PURE__*/ jsx_runtime_.jsx(react_.Global, {
                 styles: [
                     GlobalStyle/* globalStyles */.W0
                 ]
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(Component, {
+                ...pageProps
             })
         ]
     });
-};
+}
 /* harmony default export */ const _app = (MyApp);
 
 
@@ -120,6 +140,22 @@ module.exports = require("@emotion/react");
 
 "use strict";
 module.exports = require("@emotion/react/jsx-runtime");
+
+/***/ }),
+
+/***/ 1853:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ 6689:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("react");
 
 /***/ })
 

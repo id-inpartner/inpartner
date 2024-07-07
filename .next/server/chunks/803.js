@@ -425,7 +425,7 @@ __webpack_unused_export__ = ({
 });
 exports.Html = Html;
 exports.Main = Main;
-__webpack_unused_export__ = void 0;
+exports["default"] = void 0;
 var _react = _interopRequireWildcard(__webpack_require__(6689));
 var _constants = __webpack_require__(6724);
 var _getPageFiles = __webpack_require__(4140);
@@ -443,7 +443,7 @@ class Document extends _react.default.Component {
         return /*#__PURE__*/ _react.default.createElement(Html, null, /*#__PURE__*/ _react.default.createElement(Head, null), /*#__PURE__*/ _react.default.createElement("body", null, /*#__PURE__*/ _react.default.createElement(Main, null), /*#__PURE__*/ _react.default.createElement(NextScript, null)));
     }
 }
-__webpack_unused_export__ = Document;
+exports["default"] = Document;
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         default: obj

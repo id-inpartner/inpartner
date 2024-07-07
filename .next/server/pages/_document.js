@@ -52,47 +52,35 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1__["default"] {
                 }),
                 /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("body", {
                     children: [
-                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("noscript", {
-                            children: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("iframe", {
-                                src: "https://www.googletagmanager.com/ns.html?id=G-70DY47TGF7",
-                                height: "0",
-                                width: "0",
-                                style: {
-                                    display: "none",
-                                    visibility: "hidden"
-                                }
-                            })
-                        }),
                         /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_document__WEBPACK_IMPORTED_MODULE_1__.Main, {}),
                         /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_document__WEBPACK_IMPORTED_MODULE_1__.NextScript, {}),
-                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_2___default()), {
-                            id: "gtm-script",
-                            strategy: "afterInteractive",
-                            dangerouslySetInnerHTML: {
-                                __html: `
-                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','G-70DY47TGF7');
-              `
-                            }
-                        }),
                         /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_2___default()), {
                             src: "https://www.googletagmanager.com/gtag/js?id=UA-248151888-1",
                             strategy: "afterInteractive"
                         }),
                         /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_2___default()), {
-                            id: "ga-script",
+                            id: "google-analytics",
                             strategy: "afterInteractive",
-                            dangerouslySetInnerHTML: {
-                                __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'UA-248151888-1');
-              `
-                            }
+                            children: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-248151888-1');
+            `
+                        }),
+                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_2___default()), {
+                            src: "https://www.googletagmanager.com/gtag/js?id=G-70DY47TGF7",
+                            strategy: "afterInteractive"
+                        }),
+                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_2___default()), {
+                            id: "google-tag-manager",
+                            strategy: "afterInteractive",
+                            children: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-70DY47TGF7');
+            `
                         })
                     ]
                 })

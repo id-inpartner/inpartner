@@ -12,9 +12,18 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      window.gtag?.('config', 'UA-248151888-1', {
-        page_path: url,
-      })
+      // Google Analytics (UA) page view tracking
+      if (typeof window.gtag === 'function') {
+        window.gtag('config', 'UA-248151888-1', {
+          page_path: url,
+        })
+      }
+      // Google Tag Manager (GTM) page view tracking
+      if (typeof window.gtag === 'function') {
+        window.gtag('config', 'G-70DY47TGF7', {
+          page_path: url,
+        })
+      }
     }
 
     router.events.on('routeChangeComplete', handleRouteChange)
@@ -25,6 +34,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SSRProvider>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>INPARTNER CONSULTANT</title>
+      </Head>
       <Global styles={globalStyles} />
       <Component {...pageProps} />
     </SSRProvider>

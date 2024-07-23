@@ -19,6 +19,9 @@ import falga from './falga.svg'
 import menn from './menn.webp'
 import raiz from './raiz.webp'
 import ifgf from './IFGF.jpg'
+import gtaconstruction from './gtaconstruction.png'
+import jbl from './jbl.png'
+import briinvestasi from './briinvestasi.png'
 
 import bumiyasa from './bumiyasa.png'
 import jasamargaSemarangBatang from './jasamarga-semarang-batang.png'
@@ -39,6 +42,9 @@ import danareksa from './danareksa.png'
 import pae from './pae.jpeg'
 import tamansafarisolo from './tamansafarisolo.png'
 import wiucycling from './united-bike.png'
+import bsi from './bsi.svg'
+import tamansafariindonesia from './taman_safari_indonesia.webp'
+import kmnc from './kmnc.webp'
 
 export const Clients: FC = () => {
   return (
@@ -137,6 +143,27 @@ export const Clients: FC = () => {
                 width={256 * 0.6}
                 height={102 * 0.6}
                 src={ifgf}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={380 * 0.45}
+                height={148 * 0.45}
+                src={gtaconstruction}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={1500 * 0.07}
+                height={1500 * 0.07}
+                src={jbl}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={799 * 0.4}
+                height={186 * 0.4}
+                src={briinvestasi}
                 alt=""
                 quality={100}
               />
@@ -245,8 +272,8 @@ export const Clients: FC = () => {
                 quality={100}
               />
               <Image
-                width={96}
-                height={96}
+                width={213 / 2.3}
+                height={271 / 2.3}
                 src={tamansafarisolo}
                 alt=""
                 quality={100}
@@ -255,6 +282,28 @@ export const Clients: FC = () => {
                 width={600 / 5}
                 height={419 / 5}
                 src={wiucycling}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={280 / 3}
+                height={242 / 3}
+                src={bsi}
+                alt=""
+                quality={100}
+                placeholder="empty"
+              />
+              <Image
+                width={785 / 10}
+                height={1113 / 10}
+                src={tamansafariindonesia}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={477 / 5.5}
+                height={640 / 5.5}
+                src={kmnc}
                 alt=""
                 quality={100}
               />

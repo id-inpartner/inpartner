@@ -30,7 +30,7 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 6378:
+/***/ 2430:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -424,6 +424,12 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const raiz = ({"src":"/_next/static/media/raiz.1ebd7e10.webp","height":174,"width":608,"blurDataURL":"data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACQAQCdASoIAAIAAkA4JYwAAv9CiUAA/vKRuHPL/j60E5veiUgcLXiEF34g/b2A5kvRkAAA","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/IFGF.jpg
 /* harmony default export */ const IFGF = ({"src":"/_next/static/media/IFGF.fdae05b4.jpg","height":146,"width":367,"blurDataURL":"data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAADAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAbEAADAQADAQAAAAAAAAAAAAABAgMABAUiQf/EABQBAQAAAAAAAAAAAAAAAAAAAAT/xAAcEQEAAgEFAAAAAAAAAAAAAAABAhEAAwRRsfD/2gAMAwEAAhEDEQA/ALKHGk1+umykrdmNAWPsin3MzJ1pIlPrwm3jFGzjrP/Z","blurWidth":8,"blurHeight":3});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/gtaconstruction.png
+/* harmony default export */ const gtaconstruction = ({"src":"/_next/static/media/gtaconstruction.a3e6ab62.png","height":148,"width":380,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAJ1BMVEUBg8k0dJgAg8sDgsdBcYw/co4Bg8kFgcVSbXwAg8sHgcJoaGcAg8pMft2bAAAADXRSTlOrhGmdc2THYFV+Q0GDbUWhLwAAAAlwSFlzAAAOwgAADsIBFShKgAAAACJJREFUeJwFwYcBADAIwzBDGB38fy8S7nOhoB4tBGlxLH8sBTQAZHIwYf0AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/jbl.png
+/* harmony default export */ const jbl = ({"src":"/_next/static/media/jbl.84d680be.png","height":1500,"width":1500,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAM1BMVEVMaXEBAQECAQECAAECBQQBAQMDAgIUIwsCAQIkTiYBAAEAAAAtjy8AAQQAAAAqgiwRKBDYRHSrAAAAEXRSTlMA4s5ga1HDC64Gu5CchJRJnbxT63gAAAAJcEhZcwAALEsAACxLAaU9lqkAAAA7SURBVHicJYxLEsAgDIVQE1+itvb+p+2PDTMsAO3kJdf6jC6b3hxUo/RxgHqUCPtL7QNkflqbghT5DG4t8gFK6PEV7wAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/briinvestasi.png
+/* harmony default export */ const briinvestasi = ({"src":"/_next/static/media/briinvestasi.f445753c.png","height":186,"width":799,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAFVBMVEXwZwTMYxsAUZwBUZsCUpoAUpvrZwaocQ/xAAAAB3RSTlMiHn5rWlwI56G+pgAAAAlwSFlzAAALEwAACxMBAJqcGAAAABpJREFUeJxjYGJlYmZkYGBgYGJhZmFkYGQDAAE3ACNsSxIOAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bumiyasa.png
 /* harmony default export */ const bumiyasa = ({"src":"/_next/static/media/bumiyasa.b4c152f3.png","height":95,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAFVBMVEXPz8/Z2dnFys/a39nK09fI3L3T1NPAo4GUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgZWZgZGNkZGZgYmFgYGRiYgAAAWIAIPtzN3sAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamarga-semarang-batang.png
@@ -459,10 +465,22 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/pae.jpeg
 /* harmony default export */ const pae = ({"src":"/_next/static/media/pae.20fe4948.jpeg","height":161,"width":118,"blurDataURL":"data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAYDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAdEAABBAIDAAAAAAAAAAAAAAABAAIDBBETBSFx/8QAFQEBAQAAAAAAAAAAAAAAAAAABQb/xAAXEQEAAwAAAAAAAAAAAAAAAAABABEx/9oADAMBAAIRAxEAPwCtZs1rHGQ1wyPZGGDYXd4a0gjwk5REVCFZBFvZ/9k=","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/tamansafarisolo.png
-/* harmony default export */ const tamansafarisolo = ({"src":"/_next/static/media/tamansafarisolo.75e7e36f.png","height":225,"width":225,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAMFBMVEX///+FppR3nYiSsJ+ZuZd/opCqwrW734fH5Jylva7M2NDd5d/W4NmxxLeHrYaIroRMfw/MAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAN0lEQVR4nB3GyRHAMAjAQHEZfCTuv9sM0UcLEMKfjqn9paALmBvOAwwxMWuEhDT8db8OVGZl8QEZFQDf9Osz4QAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const tamansafarisolo = ({"src":"/_next/static/media/tamansafarisolo.2eb27198.png","height":271,"width":213,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAARVBMVEWDfDqWxzt+eDqGvESTxkpMaXGFfjyFpXaFjDWEgjmUxEeCkz9TpIRSkFxIt5BTpX1pwIaNwkJoxYmPxEaMw0Jzoz2Nw0TUKI9tAAAAFnRSTlN7PD5uqwBxEiJnKppmQoHdpPFjd+GvTwVp9AAAAAlwSFlzAAALEwAACxMBAJqcGAAAADhJREFUeJwVxUkSwCAIAMFRQUCzL/z/qan0pbFjX2xwbWvxGy2SKYwzU5SW7XmVOmtMwyHir3f8AzkTAciG1mWlAAAAAElFTkSuQmCC","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/united-bike.png
 /* harmony default export */ const united_bike = ({"src":"/_next/static/media/united-bike.3bc9ca48.png","height":419,"width":600,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAMAAADJ2y/JAAAAPFBMVEVMaXH66gn/7wiBcxwSEQgODQv76gkMDAr52Q0HBwr/3QL/3QQAAAr//w/82wUcHB3/+AcTExH+3QARDwjllgshAAAAFHRSTlMAPkUNU4JRaCY+yKAfF64qXabweEbQ7IEAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAzSURBVHicFchJDgAgCATBQdRBcf//Yw196aQAwF83RN4txXVJDZlVTgALM8mNltvgLfoBGX0BEgXTA48AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":6});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/bsi.svg
+/* harmony default export */ const bsi = ({"src":"/_next/static/media/bsi.41e030cb.svg","height":242,"width":280,"blurWidth":0,"blurHeight":0});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/taman_safari_indonesia.webp
+/* harmony default export */ const taman_safari_indonesia = ({"src":"/_next/static/media/taman_safari_indonesia.e76b370f.webp","height":1113,"width":785,"blurDataURL":"data:image/webp;base64,UklGRpgAAABXRUJQVlA4WAoAAAAQAAAABQAABwAAQUxQSDEAAAAAAHJze2oANLQBArotZiIAACdigzUoKzdyT6eYlISwgoR7hHSHjZyJhpeXn5CkhJ2vAFZQOCBAAAAAEAIAnQEqBgAIAAJAOCWoAnS6AALJMJ1XgAD+94VK/29ID/H/P3yU+tUV4i9m2MBBlrDmmQ8FeAP8jfHuRPQAAA==","blurWidth":6,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/kmnc.webp
+/* harmony default export */ const kmnc = ({"src":"/_next/static/media/kmnc.03fab3eb.webp","height":640,"width":477,"blurDataURL":"data:image/webp;base64,UklGRoYAAABXRUJQVlA4WAoAAAAQAAAABQAABwAAQUxQSDEAAAAAAABpagAAADD4+DQAAs3/zM0DR589RfpKdhSiZCJ8TQUqamRUJQsGCzgGZKCOmqM8AFZQOCAuAAAA0AEAnQEqBgAIAAJAOCWgAnS6AAKzQAAA7oqbvhYN1i8rH1Od/89M/rb+P/GQAA==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/index.tsx
+
+
+
+
+
+
 
 
 
@@ -639,6 +657,27 @@ const Clients = ()=>{
                                     src: IFGF,
                                     alt: "",
                                     quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 380 * 0.45,
+                                    height: 148 * 0.45,
+                                    src: gtaconstruction,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 1500 * 0.07,
+                                    height: 1500 * 0.07,
+                                    src: jbl,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 799 * 0.4,
+                                    height: 186 * 0.4,
+                                    src: briinvestasi,
+                                    alt: "",
+                                    quality: 100
                                 })
                             ]
                         }, v))
@@ -771,8 +810,8 @@ const Clients = ()=>{
                                     quality: 100
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 96,
-                                    height: 96,
+                                    width: 213 / 2.3,
+                                    height: 271 / 2.3,
                                     src: tamansafarisolo,
                                     alt: "",
                                     quality: 100
@@ -781,6 +820,28 @@ const Clients = ()=>{
                                     width: 600 / 5,
                                     height: 419 / 5,
                                     src: united_bike,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 280 / 3,
+                                    height: 242 / 3,
+                                    src: bsi,
+                                    alt: "",
+                                    quality: 100,
+                                    placeholder: "empty"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 785 / 10,
+                                    height: 1113 / 10,
+                                    src: taman_safari_indonesia,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 477 / 5.5,
+                                    height: 640 / 5.5,
+                                    src: kmnc,
                                     alt: "",
                                     quality: 100
                                 })
@@ -1295,7 +1356,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6378);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2430);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);

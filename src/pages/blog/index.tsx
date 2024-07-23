@@ -10,7 +10,7 @@ const Page: NextPage<IndexProps> = (props) => {
   return (
     <>
       <Head>
-        <title>Blog Inpartner</title>
+        <title>Insight & Update</title>
         <meta
           name="description"
           content="Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"

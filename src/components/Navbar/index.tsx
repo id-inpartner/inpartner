@@ -125,7 +125,7 @@ export const Navbar: FC = () => {
               Career
             </Link>
             <Link className="nav-link" href="/blog">
-              Blog
+              Insight & Update
             </Link>
             <GetInTouch href="/contact">
               <Button>Get in Touch</Button>

@@ -15,7 +15,7 @@ export interface BlogProps {
 export const Blog: FC<BlogProps> = ({ data }) => {
   return (
     <ColumnContainer>
-      <Title>Blog</Title>
+      <Title>Insight & Update</Title>
       <Items>
         {data.map((it) => (
           <Item key={it.id} data={it} />

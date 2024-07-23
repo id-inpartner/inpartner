@@ -57,7 +57,7 @@ const Divider = /*#__PURE__*/ styled_default()("div", {
 })("display:none;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){display:block;margin-right:16px;min-width:1px;align-self:stretch;background-color:#b4b4b4;}");
 const Sidebar = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl103"
-})("display:flex;flex-direction:column;min-width:320px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:320px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-width:320px;min-width:320px;}& > .title{font-weight:bold;font-size:20px;text-align:center;width:100%;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:26px;}margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}}");
+})("display:flex;flex-direction:column;min-width:320px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:320px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){max-width:200px;min-width:200px;}& > .title{font-weight:bold;font-size:14px;text-align:center;width:100%;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:20px;}margin-top:50px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;}}");
 const Empty = /*#__PURE__*/ styled_default()("div", {
     target: "e1u7fl104"
 })("align-self:stretch;padding:32px 0;color:gray;text-align:center;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){padding:48px 0;}");
@@ -75,7 +75,7 @@ const Chips = /*#__PURE__*/ styled_default()("div", {
 })("display:flex;flex-wrap:wrap;margin-left:-4px;margin-right:-4px;& > div{margin-left:4px;margin-right:4px;margin-bottom:8px;background-color:#80304c;color:#664d03;color:#fff3cd;border-radius:4px;padding:4px 16px;}font-size:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:14px;}");
 const Item = /*#__PURE__*/ styled_default()((link_default()), {
     target: "e1u7fl109"
-})("display:flex;margin-top:32px;&:hover{& > .content{& > .title{text-decoration:underline;}}}& img{object-fit:cover;border-radius:12px;}& > .content{flex:1;margin-left:16px;& > .category{font-size:14px;}& > .title{font-weight:700;font-size:16px;}}");
+})("display:flex;margin-top:32px;flex-direction:column;&:hover{& > .content{& > .title{text-decoration:underline;}}}& img{object-fit:cover;border-radius:12px;}& > .content{flex:1;margin-top:8px;& > .category{font-size:14px;}& > .title{font-weight:700;font-size:16px;}}");
 
 ;// CONCATENATED MODULE: ./src/containers/Post/index.tsx
 
@@ -125,8 +125,8 @@ const Index = ({ post , related  })=>{
                             href: `/blog/${it.slug}`,
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
-                                    width: 127 * 0.8,
-                                    height: 96 * 0.8,
+                                    width: 127 * (200 / 127),
+                                    height: 96 * (200 / 127),
                                     quality: 100,
                                     alt: m.alt_text,
                                     src: m.source_url

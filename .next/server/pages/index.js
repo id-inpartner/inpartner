@@ -30,7 +30,7 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 2430:
+/***/ 7936:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -430,6 +430,12 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const jbl = ({"src":"/_next/static/media/jbl.84d680be.png","height":1500,"width":1500,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAM1BMVEVMaXEBAQECAQECAAECBQQBAQMDAgIUIwsCAQIkTiYBAAEAAAAtjy8AAQQAAAAqgiwRKBDYRHSrAAAAEXRSTlMA4s5ga1HDC64Gu5CchJRJnbxT63gAAAAJcEhZcwAALEsAACxLAaU9lqkAAAA7SURBVHicJYxLEsAgDIVQE1+itvb+p+2PDTMsAO3kJdf6jC6b3hxUo/RxgHqUCPtL7QNkflqbghT5DG4t8gFK6PEV7wAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/briinvestasi.png
 /* harmony default export */ const briinvestasi = ({"src":"/_next/static/media/briinvestasi.f445753c.png","height":186,"width":799,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAFVBMVEXwZwTMYxsAUZwBUZsCUpoAUpvrZwaocQ/xAAAAB3RSTlMiHn5rWlwI56G+pgAAAAlwSFlzAAALEwAACxMBAJqcGAAAABpJREFUeJxjYGJlYmZkYGBgYGJhZmFkYGQDAAE3ACNsSxIOAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/sepedabersamaindonesia.png
+/* harmony default export */ const sepedabersamaindonesia = ({"src":"/_next/static/media/sepedabersamaindonesia.73e53242.png","height":151,"width":300,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAP1BMVEVJSUvGVh9aX1gBbXdsXFhXVllAQmRaVVZXV1lXV1gIRHx9YScFPnO1o3BOosWBbX//FwAgl8oBer3/Zg0vWF2ZMcbdAAAAFXRSTlMBSykUP2UzHVFyipq0kDyDG5uaiwvW4enlAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKUlEQVR4nA3BhQEAIAwDsA6muPz/KyQoTZO4A6eShgRj9EvZzMB7LnwPEYMA7qFiK8EAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":4});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/hanwha.png
+/* harmony default export */ const hanwha = ({"src":"/_next/static/media/hanwha.bda41923.png","height":349,"width":1280,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAG1BMVEUAAACZWzQDAgEEAgD5iD/ziEQAAAAAAAD/qHQL5KCGAAAACXRSTlMmLiwfPVQZPGHTgadGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgYWFkYGZjZmBg5WBkYmJiYAcAAboAMeq4+FsAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/jabartel.png
+/* harmony default export */ const jabartel = ({"src":"/_next/static/media/jabartel.db201eb7.png","height":134,"width":233,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAALVBMVEX+/v79/fvy9Pzi/N/x+/KDk/Tq7Pupt/fV2vCr7bKU/4PAytedqvW7xfbv8PtL++06AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVR4nBXKSRIAIAgEsR5AwfX/z7XMOZSQQCyZWYTI3bKN6ZxbvYc7BvrpAQ4iAKCpwan6AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bumiyasa.png
 /* harmony default export */ const bumiyasa = ({"src":"/_next/static/media/bumiyasa.b4c152f3.png","height":95,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAFVBMVEXPz8/Z2dnFys/a39nK09fI3L3T1NPAo4GUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgZWZgZGNkZGZgYmFgYGRiYgAAAWIAIPtzN3sAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamarga-semarang-batang.png
@@ -474,7 +480,16 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const taman_safari_indonesia = ({"src":"/_next/static/media/taman_safari_indonesia.e76b370f.webp","height":1113,"width":785,"blurDataURL":"data:image/webp;base64,UklGRpgAAABXRUJQVlA4WAoAAAAQAAAABQAABwAAQUxQSDEAAAAAAHJze2oANLQBArotZiIAACdigzUoKzdyT6eYlISwgoR7hHSHjZyJhpeXn5CkhJ2vAFZQOCBAAAAAEAIAnQEqBgAIAAJAOCWoAnS6AALJMJ1XgAD+94VK/29ID/H/P3yU+tUV4i9m2MBBlrDmmQ8FeAP8jfHuRPQAAA==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/kmnc.webp
 /* harmony default export */ const kmnc = ({"src":"/_next/static/media/kmnc.03fab3eb.webp","height":640,"width":477,"blurDataURL":"data:image/webp;base64,UklGRoYAAABXRUJQVlA4WAoAAAAQAAAABQAABwAAQUxQSDEAAAAAAABpagAAADD4+DQAAs3/zM0DR589RfpKdhSiZCJ8TQUqamRUJQsGCzgGZKCOmqM8AFZQOCAuAAAA0AEAnQEqBgAIAAJAOCWgAnS6AAKzQAAA7oqbvhYN1i8rH1Od/89M/rb+P/GQAA==","blurWidth":6,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/nayakapratama.webp
+/* harmony default export */ const nayakapratama = ({"src":"/_next/static/media/nayakapratama.be43e25f.webp","height":650,"width":1920,"blurDataURL":"data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoIAAMAAkA4JYwCdEcAAeh52mIA/vwanv2YX/XmqyACEmvWz8s2Mu0awXe/ta/DaAA=","blurWidth":8,"blurHeight":3});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/adlight.png
+/* harmony default export */ const adlight = ({"src":"/_next/static/media/adlight.86c756d2.png","height":122,"width":383,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAHlBMVEXh7uD4+uza56fw9unh7cj8/fbX5aGt0LClyofV6sYl2vxjAAAACXBIWXMAAAsSAAALEgHS3X78AAAAIElEQVR4nGPgZGZkZGVkZGbgYGFjYmNjYmFgZ2UAAWYABL8AToTqCjwAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/index.tsx
+
+
+
+
+
 
 
 
@@ -678,6 +693,27 @@ const Clients = ()=>{
                                     src: briinvestasi,
                                     alt: "",
                                     quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 300 * 0.6,
+                                    height: 151 * 0.6,
+                                    src: sepedabersamaindonesia,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 1280 * 0.2,
+                                    height: 349 * 0.2,
+                                    src: hanwha,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 233 * 0.9,
+                                    height: 134 * 0.9,
+                                    src: jabartel,
+                                    alt: "",
+                                    quality: 100
                                 })
                             ]
                         }, v))
@@ -824,8 +860,8 @@ const Clients = ()=>{
                                     quality: 100
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 280 / 3,
-                                    height: 242 / 3,
+                                    width: 280 / 2.6,
+                                    height: 242 / 2.6,
                                     src: bsi,
                                     alt: "",
                                     quality: 100,
@@ -842,6 +878,20 @@ const Clients = ()=>{
                                     width: 477 / 5.5,
                                     height: 640 / 5.5,
                                     src: kmnc,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 1920 / 8,
+                                    height: 650 / 8,
+                                    src: nayakapratama,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 383 / 1.4,
+                                    height: 122 / 1.4,
+                                    src: adlight,
                                     alt: "",
                                     quality: 100
                                 })
@@ -1356,7 +1406,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2430);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7936);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);

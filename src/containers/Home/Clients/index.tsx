@@ -22,6 +22,9 @@ import ifgf from './IFGF.jpg'
 import gtaconstruction from './gtaconstruction.png'
 import jbl from './jbl.png'
 import briinvestasi from './briinvestasi.png'
+import sepedabersamaindonesia from './sepedabersamaindonesia.png'
+import hanwha from './hanwha.png'
+import jabartel from './jabartel.png'
 
 import bumiyasa from './bumiyasa.png'
 import jasamargaSemarangBatang from './jasamarga-semarang-batang.png'
@@ -45,6 +48,8 @@ import wiucycling from './united-bike.png'
 import bsi from './bsi.svg'
 import tamansafariindonesia from './taman_safari_indonesia.webp'
 import kmnc from './kmnc.webp'
+import nayakapratama from './nayakapratama.webp'
+import adlight from './adlight.png'
 
 export const Clients: FC = () => {
   return (
@@ -167,6 +172,27 @@ export const Clients: FC = () => {
                 alt=""
                 quality={100}
               />
+              <Image
+                width={300 * 0.6}
+                height={151 * 0.6}
+                src={sepedabersamaindonesia}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={1280 * 0.2}
+                height={349 * 0.2}
+                src={hanwha}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={233 * 0.9}
+                height={134 * 0.9}
+                src={jabartel}
+                alt=""
+                quality={100}
+              />
             </Row>
           ))}
         </Items>
@@ -286,8 +312,8 @@ export const Clients: FC = () => {
                 quality={100}
               />
               <Image
-                width={280 / 3}
-                height={242 / 3}
+                width={280 / 2.6}
+                height={242 / 2.6}
                 src={bsi}
                 alt=""
                 quality={100}
@@ -304,6 +330,20 @@ export const Clients: FC = () => {
                 width={477 / 5.5}
                 height={640 / 5.5}
                 src={kmnc}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={1920 / 8}
+                height={650 / 8}
+                src={nayakapratama}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={383 / 1.4}
+                height={122 / 1.4}
+                src={adlight}
                 alt=""
                 quality={100}
               />

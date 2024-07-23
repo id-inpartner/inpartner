@@ -390,7 +390,7 @@ const Footer = ()=>{
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
                                         href: "/blog",
-                                        children: "Blog"
+                                        children: "Insight\xa0&\xa0Update"
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
                                         href: "https://btf.inpartner.id/public",
@@ -800,7 +800,7 @@ const Navbar = ()=>{
                                 /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                                     className: "nav-link",
                                     href: "/blog",
-                                    children: "Blog"
+                                    children: "Insight\xa0&\xa0Update"
                                 }),
                                 /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_8__/* .GetInTouch */ .Rs, {
                                     href: "/contact",

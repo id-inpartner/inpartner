@@ -357,7 +357,7 @@ const Blog = ({ data  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Blog_styled_Title, {
-                children: "Blog"
+                children: "Insight\xa0&\xa0Update"
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Items, {
                 children: data.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx(Blog_Item, {

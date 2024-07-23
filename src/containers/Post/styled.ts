@@ -52,16 +52,16 @@ export const Sidebar = styled.div`
     min-width: 320px;
   }
   @media (min-width: ${breakpoints.lg}) {
-    max-width: 320px;
-    min-width: 320px;
+    max-width: 200px;
+    min-width: 200px;
   }
   & > .title {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
     width: 100%;
     @media (min-width: ${breakpoints.md}) {
-      font-size: 26px;
+      font-size: 20px;
     }
     margin-top: 50px;
     @media (min-width: ${breakpoints.md}) {
@@ -188,6 +188,7 @@ export const Chips = styled.div`
 export const Item = styled(Link)`
   display: flex;
   margin-top: 32px;
+  flex-direction: column;
   &:hover {
     & > .content {
       & > .title {
@@ -201,7 +202,7 @@ export const Item = styled(Link)`
   }
   & > .content {
     flex: 1;
-    margin-left: 16px;
+    margin-top: 8px;
     & > .category {
       font-size: 14px;
     }

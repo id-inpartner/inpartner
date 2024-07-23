@@ -52,8 +52,8 @@ export const Index: FC<IndexProps> = ({ post, related }) => {
             return (
               <Item key={it.id} href={`/blog/${it.slug}`}>
                 <Image
-                  width={127 * 0.8}
-                  height={96 * 0.8}
+                  width={127 * (200 / 127)}
+                  height={96 * (200 / 127)}
                   quality={100}
                   alt={m.alt_text}
                   src={m.source_url}

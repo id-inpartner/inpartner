@@ -30,7 +30,7 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 7936:
+/***/ 2333:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -484,7 +484,43 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const nayakapratama = ({"src":"/_next/static/media/nayakapratama.be43e25f.webp","height":650,"width":1920,"blurDataURL":"data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoIAAMAAkA4JYwCdEcAAeh52mIA/vwanv2YX/XmqyACEmvWz8s2Mu0awXe/ta/DaAA=","blurWidth":8,"blurHeight":3});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/adlight.png
 /* harmony default export */ const adlight = ({"src":"/_next/static/media/adlight.86c756d2.png","height":122,"width":383,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAHlBMVEXh7uD4+uza56fw9unh7cj8/fbX5aGt0LClyofV6sYl2vxjAAAACXBIWXMAAAsSAAALEgHS3X78AAAAIElEQVR4nGPgZGZkZGVkZGbgYGFjYmNjYmFgZ2UAAWYABL8AToTqCjwAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":3});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/banksumut.png
+/* harmony default export */ const banksumut = ({"src":"/_next/static/media/banksumut.09093ca3.png","height":524,"width":1600,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAMAAACZFr56AAAAG1BMVEUeGU8fGk84JUpMaXGLTjgZF1DufyOzYTD0gSPFAnrqAAAACXRSTlMtNSUAOUZERCp6AQ6qAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAH0lEQVR4nGPgYGQGAwZ2FiYGBkYGJgY2NhZWBlZGJgAEGgBJ1RbukgAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":3});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/praisindo.png
+/* harmony default export */ const praisindo = ({"src":"/_next/static/media/praisindo.783452af.png","height":3991,"width":3922,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAM1BMVEVMaXEvvvMAq+86wfMCr/AArO8HsfBBw/QArfAAleuI2fiI2fgAr/Ck4vkEr/C66ft31PebUxcNAAAADnRSTlMAbjN8hHU7+g4Yj4BsdVOzOOIAAAAJcEhZcwAALEsAACxLAaU9lqkAAAA2SURBVHicRctJAsAgCATBVkEgy5j/vzY3rXvB1s3H6IBLWi/wRMTXgLZCcmBet9kEsiorT/4BKDQBJdC+8PwAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/mitraberlianunggas.png
+/* harmony default export */ const mitraberlianunggas = ({"src":"/_next/static/media/mitraberlianunggas.d01f731b.png","height":596,"width":672,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAMAAAACh/xsAAAAOVBMVEV2qNfJwaHoyX7203xqo91zp9p2qNdMaXGPsMZyp9qyqYnUu4rfyZPx0ZT71HDOu5F3l7RsotvQwpZMVLApAAAAE3RSTlMmRnR9FmUyAAZKZPoeCkLhVXaQlJUn4AAAAAlwSFlzAAALEgAACxIB0t1+/AAAADdJREFUeJwdyckRACEMBLEBbNqGvfMPlmL1lYirtnYi+OY9CyL9fcaB6Jmjsqu7F1CEZVqETD9bN5EBgiLl2C4AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":7});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/fortisgroup.png
+/* harmony default export */ const fortisgroup = ({"src":"/_next/static/media/fortisgroup.0cf91907.png","height":168,"width":261,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAIVBMVEX+/v7Lysqpp6idnJzY2Njy8vD29vW4t7aHh4Z+e33g394+KXEhAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAKUlEQVR4nCXGQRIAIAjDwJQiqP9/sMOYywYgLKa1T/8JeywUlwIpU8oHB0kAWmwpbysAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/fira.png
+/* harmony default export */ const fira = ({"src":"/_next/static/media/fira.13ed5f1e.png","height":167,"width":317,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAANlBMVEU0MzVbPDVGNzSUk5UxMjRJNzQAAAAwLi88NTVxZ2YqMDRUOzWbTDU3NDRZWFmZmZqVlZecnJ0Srj+CAAAAEnRSTlM2SXWLIhoBRGQOWJFzrUAxWLKNM/o3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKUlEQVR4nAXBhwEAIAgDsLLBhf7/rAnqniQrg7zkuRdDOmIkAeWAhvoHEhEA3xGHWscAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":4});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/tirtajabar.png
+/* harmony default export */ const tirtajabar = ({"src":"/_next/static/media/tirtajabar.3175e3d2.png","height":150,"width":336,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAJ1BMVEX////e6fXo7/fq8Pf1+PvF2OvM3O7ByMq7s5Dy9fjYv4W/0+j22Z4Fzsj2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAHklEQVR4nGNggAEOHkZuRjZWZgYudk5GZiYmFrgMAAaSAFYqr50sAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/kaltimex.png
+/* harmony default export */ const kaltimex = ({"src":"/_next/static/media/kaltimex.fe67ecbb.png","height":256,"width":256,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAASFBMVEX///9+PDjR19GHbWOud3a7ysDd49/59fX6/fzH0cl2SUHx/PmIXVfm1dWlaGfDiIpqNi2HTEhtUUWPiHzk6ubUqarPoKHev7+B/usOAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPElEQVR4nB3GWxaAIAhAwauCQFn2bv877dh8DVBzVAf8SG3LwDzd7x5/+pNG/GylXCMaqgaYiKwLY2bmfEAgAbImoj+GAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/HLI.png
+/* harmony default export */ const HLI = ({"src":"/_next/static/media/HLI.e91cff68.png","height":96,"width":162,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAP1BMVEX9/fzN5snL2+LR2N7r7/LSiJrUrKn3+PfK7NLc5OnWl6e75rXs++uon3fq4tvAvqnBdnjswNG+pJ+n47melXu+uwE3AAAACXBIWXMAAA7FAAAOxQFHbOz/AAAAMElEQVR4nAXBBwLAIAwDsYMG7HQAHf9/ayWwXVzE+/XVx3Xg525tnyfKmrkFECEJfh6VATVkzk5CAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamedivest.png
+/* harmony default export */ const jasamedivest = ({"src":"/_next/static/media/jasamedivest.4b50a436.png","height":280,"width":274,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAFVBMVEU6TkxMaXElYl8camYicWw6PDo6OjlZdaGzAAAAB3RSTlMMAB9INTQoguuM2wAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAC1JREFUeJwtiQkKADAMwrzq/5881i2gSAQ/uNki5eAOWNEax8ZeWaO2M1MQjwMOCQB0eQQGIgAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/lxinternational.png
+/* harmony default export */ const lxinternational = ({"src":"/_next/static/media/lxinternational.4f22c95b.png","height":89,"width":647,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAABCAMAAADU3h9xAAAADFBMVEXf3Nvj4uHcycfaqacD5qAUAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAADklEQVR4nGNgZmJkAAEAADUAB1qErm0AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":1});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/posko.png
+/* harmony default export */ const posko = ({"src":"/_next/static/media/posko.2079fc3d.png","height":93,"width":344,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAD1BMVEUAV4kAV4kAV4kAV4kAV4lYMwzAAAAABXRSTlMyZlo7f5rkbXsAAAAJcEhZcwAAIdUAACHVAQSctJ0AAAAZSURBVHicBcEBAQAAAIIgrf5vDtBsMQgtcAEXABkMVwKxAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/hyundai.png
+/* harmony default export */ const hyundai = ({"src":"/_next/static/media/hyundai.8b9132a0.png","height":78,"width":308,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAElBMVEUbVI4aVo1DrE4YVIxxtEcTp1P2SBHkAAAABnRSTlM6SFNXJ5LXS+imAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAGklEQVR4nGNgYWJgYGBkZmRgYmVgYGRkZgAAAO0AGNIScR8AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/index.tsx
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -714,6 +750,48 @@ const Clients = ()=>{
                                     src: jabartel,
                                     alt: "",
                                     quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 1600 / 5.4,
+                                    height: 524 / 5.4,
+                                    src: banksumut,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 261 / 1.7,
+                                    height: 168 / 1.7,
+                                    src: fortisgroup,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 336 / 1.2,
+                                    height: 150 / 1.2,
+                                    src: tirtajabar,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 162 / 1.0,
+                                    height: 96 / 1.0,
+                                    src: HLI,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 647 / 1.4,
+                                    height: 89 / 1.4,
+                                    src: lxinternational,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 308 / 1.2,
+                                    height: 78 / 1.2,
+                                    src: hyundai,
+                                    alt: "",
+                                    quality: 100
                                 })
                             ]
                         }, v))
@@ -892,6 +970,48 @@ const Clients = ()=>{
                                     width: 383 / 1.4,
                                     height: 122 / 1.4,
                                     src: adlight,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 3991 / 23.4,
+                                    height: 3992 / 23.4,
+                                    src: praisindo,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 596 / 4,
+                                    height: 572 / 4,
+                                    src: mitraberlianunggas,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 317 / 2.0,
+                                    height: 167 / 2.0,
+                                    src: fira,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 256 / 1.7,
+                                    height: 256 / 1.7,
+                                    src: kaltimex,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 274 / 1.7,
+                                    height: 280 / 1.7,
+                                    src: jasamedivest,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 344 / 1.7,
+                                    height: 93 / 1.7,
+                                    src: posko,
                                     alt: "",
                                     quality: 100
                                 })
@@ -1406,7 +1526,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7936);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2333);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);

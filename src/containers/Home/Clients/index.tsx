@@ -50,6 +50,18 @@ import tamansafariindonesia from './taman_safari_indonesia.webp'
 import kmnc from './kmnc.webp'
 import nayakapratama from './nayakapratama.webp'
 import adlight from './adlight.png'
+import banksumut from './banksumut.png'
+import praisindo from './praisindo.png'
+import mitraberlianunggas from './mitraberlianunggas.png'
+import fortisgroup from './fortisgroup.png'
+import fira from './fira.png'
+import tirtajabar from './tirtajabar.png'
+import kaltimex from './kaltimex.png'
+import hli from './HLI.png'
+import jasamedivest from './jasamedivest.png'
+import lxinternational from './lxinternational.png'
+import posko from './posko.png'
+import hyundai from './hyundai.png'
 
 export const Clients: FC = () => {
   return (
@@ -190,6 +202,48 @@ export const Clients: FC = () => {
                 width={233 * 0.9}
                 height={134 * 0.9}
                 src={jabartel}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={1600 / 5.4}
+                height={524 / 5.4}
+                src={banksumut}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={261 / 1.7}
+                height={168 / 1.7}
+                src={fortisgroup}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={336 / 1.2}
+                height={150 / 1.2}
+                src={tirtajabar}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={162 / 1.0}
+                height={96 / 1.0}
+                src={hli}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={647 / 1.4}
+                height={89 / 1.4}
+                src={lxinternational}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={308 / 1.2}
+                height={78 / 1.2}
+                src={hyundai}
                 alt=""
                 quality={100}
               />
@@ -344,6 +398,48 @@ export const Clients: FC = () => {
                 width={383 / 1.4}
                 height={122 / 1.4}
                 src={adlight}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={3991 / 23.4}
+                height={3992 / 23.4}
+                src={praisindo}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={596 / 4}
+                height={572 / 4}
+                src={mitraberlianunggas}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={317 / 2.0}
+                height={167 / 2.0}
+                src={fira}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={256 / 1.7}
+                height={256 / 1.7}
+                src={kaltimex}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={274 / 1.7}
+                height={280 / 1.7}
+                src={jasamedivest}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={344 / 1.7}
+                height={93 / 1.7}
+                src={posko}
                 alt=""
                 quality={100}
               />

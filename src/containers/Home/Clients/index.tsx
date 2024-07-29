@@ -62,6 +62,7 @@ import jasamedivest from './jasamedivest.png'
 import lxinternational from './lxinternational.png'
 import posko from './posko.png'
 import hyundai from './hyundai.png'
+import bci from './bci.png'
 
 export const Clients: FC = () => {
   return (
@@ -440,6 +441,13 @@ export const Clients: FC = () => {
                 width={344 / 1.7}
                 height={93 / 1.7}
                 src={posko}
+                alt=""
+                quality={100}
+              />
+              <Image
+                width={626 / 3.8}
+                height={327 / 3.8}
+                src={bci}
                 alt=""
                 quality={100}
               />

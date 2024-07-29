@@ -8,11 +8,8 @@ const Page: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Career | INPARTNER CONSULTANT</title>
-        <meta
-          name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
-        />
+        <title>Lowongan Kerja Inpartner</title>
+        <meta name="description" content="Lowongan kerja terdekat" />
       </Head>
       <Navbar />
       <Container />

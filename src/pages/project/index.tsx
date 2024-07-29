@@ -3,15 +3,16 @@ import Head from 'next/head'
 import Container, { IndexProps } from '@containers/Projects'
 import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
+import { jsonify } from '@utils/json'
 
 const Page: NextPage<IndexProps> = (props) => {
   return (
     <>
       <Head>
-        <title>Project & Tender | INPARTNER CONSULTANT</title>
+        <title>Project & tender Inpartner</title>
         <meta
           name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+          content="Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
         />
       </Head>
       <Navbar />
@@ -58,7 +59,7 @@ export const getServerSideProps: GetServerSideProps = async ({
         {
           association: 'category',
           where: categoryId ? { id: categoryId } : undefined,
-          attributes: ['id', 'title'],
+          attributes: ['id', 'title', 'name'],
           required: !!categoryId,
         },
         {
@@ -71,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     })
     return {
       props: {
-        rows: JSON.parse(JSON.stringify(rows.map((d) => d.toJSON()))),
+        rows: JSON.parse(JSON.stringify(jsonify(rows))),
         count,
         page,
         perPage,

@@ -31,7 +31,7 @@ const Index: FC<IndexProps> = ({ data }) => {
           {data.map((it) => (
             <Item key={it.id} {...it} />
           ))}
-          <Dummy />
+          <Dummy aria-hidden />
         </Items>
       </Container>
     </>

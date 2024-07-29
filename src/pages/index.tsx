@@ -3,19 +3,22 @@ import Head from 'next/head'
 import Container, { IndexProps } from '@containers/Home'
 import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
+import axios from 'axios'
 
-const Page: NextPage<IndexProps> = ({ projects }) => {
+const Page: NextPage<IndexProps> = (props) => {
   return (
     <>
       <Head>
-        <title>INPARTNER CONSULTANT</title>
+        <title>
+          Business Consultant Company, Jakarta, Indonesia | Inpartner
+        </title>
         <meta
           name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
+          content="Inpartner are The Most Trusted Consulting Partner To help create positive and endure changes in Local and Global Coverage"
         />
       </Head>
       <Navbar />
-      <Container projects={projects} />
+      <Container {...props} />
       <Footer />
     </>
   )
@@ -23,35 +26,52 @@ const Page: NextPage<IndexProps> = ({ projects }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const { sequelize } = req.ctx
-  const { Project } = sequelize.models
+  const { Project, Sector } = sequelize.models
 
   const transaction = await sequelize.transaction()
   try {
-    const projects = await Project.findAll({
-      transaction,
-      limit: 3,
-      order: [['id', 'ASC']],
-      include: [
-        {
-          association: 'category',
-          attributes: ['id', 'title'],
+    const [projects, sectors, posts] = await Promise.all([
+      Project.findAll({
+        transaction,
+        limit: 3,
+        order: [['promotedWeight', 'DESC']],
+        include: [
+          {
+            association: 'category',
+            attributes: ['id', 'title', 'name'],
+          },
+          {
+            association: 'sector',
+            attributes: ['id', 'title', 'name'],
+          },
+        ],
+      }),
+      Sector.findAll({
+        transaction,
+      }),
+      axios.get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+        params: {
+          _embed: 1,
+          per_page: 3,
+          page: 1,
+          _fields:
+            'id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term',
         },
-        {
-          association: 'sector',
-          attributes: ['id', 'title', 'name'],
-        },
-      ],
-    })
+        headers: { accept: 'application/json' },
+      }),
+    ])
     await transaction.commit()
     return {
       props: {
         projects: JSON.parse(JSON.stringify(projects.map((d) => d.toJSON()))),
+        sectors: JSON.parse(JSON.stringify(sectors.map((d) => d.toJSON()))),
+        posts: posts.data,
       },
     }
   } catch (e) {
     await transaction.rollback()
     return {
-      props: { projects: [] },
+      props: { projects: [], sectors: [], posts: [] },
     }
   }
 }

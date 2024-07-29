@@ -35,6 +35,12 @@ const init = (sequelize) => {
       image: {
         type: DataTypes.STRING,
       },
+      metaTitle: {
+        type: DataTypes.STRING,
+      },
+      metaDescription: {
+        type: DataTypes.TEXT,
+      },
     },
     { sequelize, modelName: 'Sector' }
   )

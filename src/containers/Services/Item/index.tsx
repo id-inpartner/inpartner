@@ -3,7 +3,7 @@ import Ratio from '@components/Ratio'
 import Target from '@components/Target'
 import Image, { ImageProps } from 'next/image'
 import type { LinkProps } from 'next/link'
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Container, Content, Images } from './styled'
 
 export interface ItemProps {
@@ -11,7 +11,7 @@ export interface ItemProps {
   readonly largImage?: ImageProps['src']
   readonly smallImage?: ImageProps['src']
   readonly title?: string
-  readonly description?: string
+  readonly description?: ReactNode
   readonly href: LinkProps['href']
   readonly hrefLabel: string
 }

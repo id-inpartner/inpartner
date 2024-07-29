@@ -8,11 +8,8 @@ const Page: NextPage<Sector> = (props) => {
   return (
     <>
       <Head>
-        <title>Sectors & Themes Coverage | INPARTNER CONSULTANT</title>
-        <meta
-          name="description"
-          content="Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run."
-        />
+        <title>{props.metaTitle}</title>
+        <meta name="description" content={props.metaDescription} />
       </Head>
       <Navbar />
       <Container data={props} />

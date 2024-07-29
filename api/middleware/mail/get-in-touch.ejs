@@ -1,0 +1,64 @@
+<mjml>
+  <mj-head>
+    <mj-font
+      name="Istok Web"
+      href="https://fonts.googleapis.com/css?family=Istok+Web"
+    />
+    <mj-attributes>
+      <mj-all font-family="Istok Web" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column border-bottom="4px solid #1976d2">
+        <mj-text font-size="24px" color="#1976d2" align="center"
+          >INPARTNER</mj-text
+        >
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text font-size="20px">Hello INPARTNER,</mj-text>
+        <mj-text>There is a new get in touch message</mj-text>
+        <mj-table>
+          <tr>
+            <td width="80px">Name</td>
+            <td>:</td>
+            <td>
+              <mj-raw> <%= contact.name %> </mj-raw>
+            </td>
+          </tr>
+          <tr>
+            <td width="80px">Email</td>
+            <td>:</td>
+            <td>
+              <mj-raw> <%= contact.email %> </mj-raw>
+            </td>
+          </tr>
+          <tr>
+            <td width="80px">Company</td>
+            <td>:</td>
+            <td>
+              <mj-raw> <%= contact.company %> </mj-raw>
+            </td>
+          </tr>
+          <tr>
+            <td width="80px">Subject</td>
+            <td>:</td>
+            <td>
+              <mj-raw> <%= contact.subject %> </mj-raw>
+            </td>
+          </tr>
+        </mj-table>
+        <mj-text>
+          <mj-raw> <%= contact.message %> </mj-raw>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#1976d2">
+      <mj-column>
+        <mj-text color="#ffffff" align="center">Inpartner Web Team</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

@@ -22,6 +22,7 @@ export interface Project {
     readonly title: string
   }
   readonly category: {
+    readonly name: string
     readonly title: string
   }
 }
@@ -29,6 +30,8 @@ export interface Project {
 export interface Sector {
   readonly id: number
   readonly slug: string
+  readonly metaTitle: string
+  readonly metaDescription: string
   readonly name: string
   readonly title: string
   readonly description: string
@@ -44,19 +47,21 @@ export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
   return (
     <C>
       <Aspect>
-        <Image
-          fill
-          quality={100}
-          src={data.image}
-          alt=""
-          sizes={`(min-width: ${breakpoints.xxl}) 414px, (min-width: ${breakpoints.xl}) 354px, (min-width: ${breakpoints.lg}) 454px, (min-width: ${breakpoints.md}) 334px, (min-width: ${breakpoints.sm}) 514px, 400px`}
-        />
+        <div className="aspect">
+          <Image
+            fill
+            quality={100}
+            src={data.image}
+            alt=""
+            sizes={`(min-width: ${breakpoints.xxl}) 414px, (min-width: ${breakpoints.xl}) 354px, (min-width: ${breakpoints.lg}) 454px, (min-width: ${breakpoints.md}) 334px, (min-width: ${breakpoints.sm}) 514px, 400px`}
+          />
+        </div>
       </Aspect>
       <Title>{data.title}</Title>
       <Subtitle>
-        {data.category.title} | {data.sector.title}
+        {data.category.name} | {data.sector.title}
       </Subtitle>
-      <Dates>
+      {/* <Dates>
         <tr>
           <td>Project Started</td>
           <td>:</td>
@@ -67,7 +72,7 @@ export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
           <td>:</td>
           <td>{format(new Date(data.endAt), 'MMM yyyy')}</td>
         </tr>
-      </Dates>
+      </Dates> */}
     </C>
   )
 }
@@ -93,10 +98,13 @@ const C = styled(Card)`
 `
 
 const Aspect = styled.div`
-  padding-top: ${235 / 3.57}%;
   position: relative;
-  & img {
-    object-fit: cover;
+  margin: 24px 24px 0 24px;
+  & > .aspect {
+    padding-top: ${235 / 3.57}%;
+    & > img {
+      object-fit: contain;
+    }
   }
 `
 
@@ -106,7 +114,7 @@ const Title = styled.h2`
 `
 
 const Subtitle = styled.div`
-  margin: 0 24px;
+  margin: 12px 24px 24px 24px;
 `
 
 const Dates = styled.table`

@@ -34,8 +34,6 @@ export const Footer: FC = () => {
             <div className="name">Phone</div>
             <div className="c">:</div>
             <div className="value">
-              <a href="tel:+6281398285475">0813 9828 5475</a>
-              {' | '}
               <a href="tel:+6289628310192">0896 2831 0192</a>
             </div>
           </div>
@@ -43,8 +41,8 @@ export const Footer: FC = () => {
             <div className="name">Email</div>
             <div className="c">:</div>
             <div className="value">
-              <a href="mailto:consultant.customercare@inpartner.id">
-                consultant.customercare@inpartner.id
+              <a href="mailto:corporatesecretary@inpartner.id">
+                corporatesecretary@inpartner.id
               </a>
             </div>
           </div>
@@ -133,37 +131,22 @@ export const Footer: FC = () => {
             <Menu
               href={{ pathname: '/services', hash: 'business-and-management' }}
             >
-              Business and
-              <br />
-              Management Consulting
+              Business and Management Consulting
             </Menu>
             <Menu href={{ pathname: '/services', hash: 'investment' }}>
               Investment
             </Menu>
             <Menu href={{ pathname: '/services', hash: 'capacity-building' }}>
               Capacity Building
-              <br />
-              (Inpartner Academy)
             </Menu>
-            <MenuTitle href={{ pathname: '/project', hash: 'missions' }}>
-              Project & Tender
-            </MenuTitle>
           </Col>
           <Col>
+            <MenuTitle href="/project">Projects</MenuTitle>
             <MenuTitle href="/sector">Sectors</MenuTitle>
-            <Menu href={{ pathname: '/sector', hash: 'missions' }}>
-              Business Development
-            </Menu>
-            <Menu href={{ pathname: '/sector', hash: 'missions' }}>
-              Fund Raising
-              <br />& Investment Advisory
-            </Menu>
-            <Menu href={{ pathname: '/sector', hash: 'missions' }}>
-              Research & Development
-            </Menu>
             <MenuTitle href="/career">Career</MenuTitle>
-            <MenuTitle href={{ pathname: '/about', hash: 'missions' }}>
-              Blog
+            <MenuTitle href="/blog">Insight & Update</MenuTitle>
+            <MenuTitle href="https://btf.inpartner.id/public">
+              ICT-BTF
             </MenuTitle>
           </Col>
         </Menus>

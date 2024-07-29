@@ -5,24 +5,33 @@ on:
     branches:
       # - master
       - development
+      - production
   # pull_request:
   #   branches: [ master ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     environment: development
     strategy:
       matrix:
-        node-version: [16.17.1]
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v3
       - name: Get npm cache directory
         id: npm-cache-dir
         shell: bash
-        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+        run: |
+          echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+          if [[ "${{github.base_ref}}" == "development" || "${{github.ref}}" == "refs/heads/development" ]]; then
+            echo "APP_DIR=${{ secrets.APP_DIR_DEV }}" >> ${GITHUB_OUTPUT}
+            echo "VENV=${{ secrets.VENV_DEV }}" >> ${GITHUB_OUTPUT}
+          fi
+          if [[ "${{github.base_ref}}" == "production" || "${{github.ref}}" == "refs/heads/production" ]]; then
+            echo "APP_DIR=${{ secrets.APP_DIR_PROD }}" >> ${GITHUB_OUTPUT}
+            echo "VENV=${{ secrets.VENV_PROD }}" >> ${GITHUB_OUTPUT}
+          fi
       - uses: dorny/paths-filter@v2
         id: filter
         with:
@@ -31,15 +40,35 @@ jobs:
             dependency:
               - 'package.json'
               - 'package-lock.json'
+            build:
+              - 'package.json'
+              - 'package-lock.json'
+              - 'src/**'
+              - 'next.config.js'
+              - 'tsconfig.json'
+              - 'public/**'
+              - '.env.*'
+            deploy:
+              - 'package.json'
+              - 'package-lock.json'
+              - 'src/**'
+              - 'next.config.js'
+              - 'tsconfig.json'
+              - 'api/**'
+              - 'public/**'
+              - 'server.js'
+              - '.env.*'
       - name: NPM Cache
+        if: steps.filter.outputs.build == 'true'
         id: npm-cache
         uses: actions/cache@v3
         with:
-          path:  ${{ steps.npm-cache-dir.outputs.dir }}
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-npm-
       - name: Build Cache
+        if: steps.filter.outputs.build == 'true'
         id: build-cache
         uses: actions/cache@v3
         with:
@@ -48,21 +77,25 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-
       - name: Use Node.js ${{ matrix.node-version }}
+        if: steps.filter.outputs.build == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - name: install dependencies
-        run: npm ci
+        if: steps.filter.outputs.build == 'true'
+        run: npm i
       - name: build
+        if: steps.filter.outputs.build == 'true'
         run: npm run build --if-present
       - name: commit build
+        if: steps.filter.outputs.build == 'true'
         run: |
           git config --global user.name 'Inpartner'
           git config --global user.email 'inpartner@users.noreply.github.com'
           git add -f .next
           git rm -r --cached .next/cache
-          git commit -m "Automated Build"
+          git commit -m "Automated Build" --no-verify
           git push
       # - name: Archive production artifacts
       #   uses: actions/upload-artifact@v3
@@ -78,9 +111,10 @@ jobs:
       #     USER: ${{ secrets.SSH_USERNAME }}
       #     KEY: ${{ secrets.SSH_KEY }}
       #     SOURCE: ${{ github.workspace }}/.next/
-      #     TARGET: ${{ secrets.APP_DIR }}/.next/
+      #     TARGET: ${{ steps.npm-cache-dir.outputs.APP_DIR }}/.next/
       #     ARGS: -avz --delete
       - name: pull code on server
+        if: steps.filter.outputs.deploy == 'true'
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -89,11 +123,11 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
           script: |
-            cd ${{ secrets.APP_DIR }}
+            cd ${{ steps.npm-cache-dir.outputs.APP_DIR }}
             git pull
 
       - name: install dependencies on server
-        if: steps.filter.outputs.dependency == 'true'
+        if: steps.filter.outputs.dependency == 'true' && steps.filter.outputs.deploy == 'true'
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -102,10 +136,11 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
           script: |
-            source ${{ secrets.VENV }} && cd ${{ secrets.APP_DIR }}
-            npm ci
+            source ${{ steps.npm-cache-dir.outputs.VENV }} && cd ${{ steps.npm-cache-dir.outputs.APP_DIR }}
+            npm i
 
       - name: restart app on server
+        if: steps.filter.outputs.deploy == 'true'
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -116,10 +151,10 @@ jobs:
           script: |
             /usr/sbin/cloudlinux-selector stop --json --interpreter nodejs \
               --user ${{ secrets.SSH_USERNAME }} \
-              --app-root ${{ secrets.APP_DIR }}
+              --app-root ${{ steps.npm-cache-dir.outputs.APP_DIR }}
             /usr/sbin/cloudlinux-selector start --json --interpreter nodejs \
               --user ${{ secrets.SSH_USERNAME }} \
-              --app-root ${{ secrets.APP_DIR }}
+              --app-root ${{ steps.npm-cache-dir.outputs.APP_DIR }}
       # - name: copy build to server
       #   uses: appleboy/scp-action@master
       #   with:
@@ -128,6 +163,6 @@ jobs:
       #     key: ${{ secrets.SSH_KEY }}
       #     port: ${{ secrets.SSH_PORT }}
       #     source: ${{ github.workspace }}/.next/*
-      #     target: ${{ secrets.APP_DIR }}/.next
+      #     target: ${{ steps.npm-cache-dir.outputs.APP_DIR }}/.next
       #     rm: true
       #     strip_components: 3

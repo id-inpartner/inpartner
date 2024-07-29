@@ -22,3 +22,13 @@ export const Projects = styled(ProjectsComponent)`
     margin-bottom: 52px;
   }
 `
+
+export const Description = styled.div`
+  padding-top: 1rem;
+  & p {
+    margin-bottom: 1rem;
+  }
+  & li {
+    margin-bottom: 1rem;
+  }
+`

@@ -1,8 +1,8 @@
-import Button from '@components/Button'
 import { breakpoints } from '@components/GlobalStyle'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 
-export const ViewMore = styled(Button)`
+export const ViewMore = styled(Link)`
   margin-top: 10px;
   margin-bottom: 16px;
   align-self: center;
@@ -10,5 +10,8 @@ export const ViewMore = styled(Button)`
   @media (min-width: ${breakpoints.md}) {
     margin-top: 24px;
     margin-bottom: 30px;
+  }
+  & > button {
+    width: 100%;
   }
 `

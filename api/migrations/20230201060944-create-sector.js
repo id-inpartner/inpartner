@@ -25,16 +25,24 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
+      metaTitle: {
+        type: Sequelize.STRING,
+      },
+      metaDescription: {
+        type: Sequelize.TEXT,
+      },
       image: {
         type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
     })
   },

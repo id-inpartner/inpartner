@@ -10,6 +10,7 @@ class Category extends Model {
       foreignKey: 'categoryId',
       onDelete: 'cascade',
       onUpdate: 'cascade',
+      as: 'projects',
     })
   }
 }

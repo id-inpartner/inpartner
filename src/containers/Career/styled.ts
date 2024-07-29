@@ -37,19 +37,21 @@ export const Inner = styled(Card)`
 
 export const SearchForm = styled(F)`
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
-  & > .form-select {
-    width: unset;
-    flex: 1;
-    margin: 12px;
-    min-width: 200px;
+  flex-direction: column;
+  overflow-x: visible;
+  & .form-row > td {
+    border-block-width: 0;
+    & > .form-select {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+    & > .btn {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
   }
-  & > .btn {
-    margin: 12px;
-    min-width: 120px;
+  & tr > td > h5 {
+    text-align: center;
   }
 `
 
@@ -62,6 +64,7 @@ export const Table = styled(T)`
       & > td {
         padding: 1rem 0.5rem;
         vertical-align: middle;
+        white-space: nowrap;
         &:first-child {
           min-width: 160px;
         }

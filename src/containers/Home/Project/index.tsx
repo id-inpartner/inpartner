@@ -2,12 +2,8 @@ import ColumnContainer from '@components/ColumnContainer'
 import { FC } from 'react'
 import { Items, Title } from './styled'
 import { ViewMore } from '../styled'
-import dummy from './dummy.png'
-import Item from './Item'
-import ProjectComponent, {
-  ProjectsComponent,
-  Project as Data,
-} from '@components/Project'
+import ProjectComponent, { Project as Data } from '@components/Project'
+import Button from '@components/Button'
 
 export type { Data }
 
@@ -18,13 +14,15 @@ export interface ProjectProps {
 export const Project: FC<ProjectProps> = ({ data }) => {
   return (
     <ColumnContainer>
-      <Title>Project & Tender</Title>
+      <Title>Projects</Title>
       <Items>
         {data.map((r) => (
           <ProjectComponent key={r.id} data={r} />
         ))}
       </Items>
-      <ViewMore>View All</ViewMore>
+      <ViewMore href="/project">
+        <Button>View All</Button>
+      </ViewMore>
     </ColumnContainer>
   )
 }

@@ -6,6 +6,7 @@ import team from './team.png'
 import { Container, Root } from './styled'
 import Target from '@components/Target'
 import Button from '@components/Button'
+import Link from 'next/link'
 
 export const Team: FC = () => {
   return (
@@ -22,13 +23,14 @@ export const Team: FC = () => {
           />
         </Ratio>
         <Card title="Team" className="team">
-          In Inpartners, it is important to pay attention to sustainability.
-          This is because sustainable business can basically be the continuity
-          of a company. That way, the company will have a sustainable system and
-          be able to have a positive impact in the short and long term.
+          INPARTNER team are diverse with strong analytic, great insight ,
+          excellent idea as well as fun that focus on goals and developing
+          long-term strategic plans
         </Card>
       </Root>
-      <Button>Meet our Team</Button>
+      <Link href="" passHref>
+        <Button>Meet our Team</Button>
+      </Link>
     </Container>
   )
 }

@@ -1,5 +1,8 @@
 const { Model, DataTypes } = require('sequelize')
 
+/**
+ * @class
+ */
 class Project extends Model {
   /**
    * @param {import('sequelize').Sequelize} sequelize

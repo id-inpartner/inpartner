@@ -1,13 +1,13 @@
 import Container from 'react-bootstrap/Container'
 import styled from '@emotion/styled'
 import { breakpoints, color } from '@components/GlobalStyle'
-import { sans, serif } from '@fonts/index'
+import { sans } from '@fonts/index'
 import Link from 'next/link'
 
 export const Root = styled.div`
   background-color: ${color.primary.normal};
   color: white;
-  font-family: ${serif.style.fontFamily};
+  font-family: ${sans.style.fontFamily};
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
   & a:hover {
     cursor: pointer;
@@ -70,7 +70,7 @@ export const Menu = styled(Link)`
   overflow-wrap: break-word;
   @media (min-width: ${breakpoints.md}) {
     font-size: 16px;
-    max-width: 260px;
+    max-width: 289px;
   }
 `
 

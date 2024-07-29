@@ -1,3 +1,66 @@
+# INPARTNER
+
+## Deploy to production (automatic)
+
+- commit changes to git
+  ```sh
+  git commit
+  ```
+- push commit to github
+  ```sh
+  git push
+  ```
+- merge request to branch `production`
+- accept and merge the merge request
+
+git will build and deploy the app automatically
+
+## Deploy to production (manual)
+
+- build app
+  ```sh
+  npm run build
+  ```
+- commit changes to git
+  ```sh
+  git commit
+  ```
+- push commit to github
+  ```sh
+  git push
+  ```
+- merge request to branch `production`
+- accept and merge the merge request
+- ssh to server and pull changes from github
+  - cd to app directory
+    ```sh
+    cd /home/inpd9273/inpartner.id/code/inpartner
+    ```
+  - pull the changes
+    ```sh
+    git pull origin production
+    ```
+- restart the nodejs app on cpanel:
+
+  `Setup NodeJS App -> inpartner.id -> restart`
+
+## Edit data on database (`projects`, `sectors`, `categories`)
+
+- login to cpanel
+- open phpMyAdmin
+- select `inpd9273_web_dev`
+
+## Github Action Variables
+
+- APP_DIR_PROD: `/home/inpd9273/inpartner.id/code/inpartner`
+- SSH_HOST
+- SSH_KEY
+- SSH_PORT
+- SSH_USERNAME
+- VENV_PROD: `/home/inpd9273/nodevenv/inpartner.id/code/inpartner/16/bin/activate`
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

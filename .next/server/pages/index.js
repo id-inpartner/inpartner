@@ -30,7 +30,7 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 2333:
+/***/ 2292:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -508,7 +508,10 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const posko = ({"src":"/_next/static/media/posko.2079fc3d.png","height":93,"width":344,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAD1BMVEUAV4kAV4kAV4kAV4kAV4lYMwzAAAAABXRSTlMyZlo7f5rkbXsAAAAJcEhZcwAAIdUAACHVAQSctJ0AAAAZSURBVHicBcEBAQAAAIIgrf5vDtBsMQgtcAEXABkMVwKxAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/hyundai.png
 /* harmony default export */ const hyundai = ({"src":"/_next/static/media/hyundai.8b9132a0.png","height":78,"width":308,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAElBMVEUbVI4aVo1DrE4YVIxxtEcTp1P2SBHkAAAABnRSTlM6SFNXJ5LXS+imAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAGklEQVR4nGNgYWJgYGBkZmRgYmVgYGRkZgAAAO0AGNIScR8AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/bci.png
+/* harmony default export */ const bci = ({"src":"/_next/static/media/bci.f88f36f2.png","height":327,"width":626,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAIVBMVEUbZKsSX7ETXrITX7EYY64haKcWYa8XYq4TX7H//QJCfZApf8LwAAAAC3RSTlMqghpqPl+ZQ0oaAhwDmXIAAAAJcEhZcwAAFxEAABcRAcom8z8AAAAlSURBVHicFcGHDQAwDAMgj+z/D64K4Gnx0dxkBqrK4xTUE4jWAwg+AH3JmAOeAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/index.tsx
+
 
 
 
@@ -1012,6 +1015,13 @@ const Clients = ()=>{
                                     width: 344 / 1.7,
                                     height: 93 / 1.7,
                                     src: posko,
+                                    alt: "",
+                                    quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 626 / 3.8,
+                                    height: 327 / 3.8,
+                                    src: bci,
                                     alt: "",
                                     quality: 100
                                 })
@@ -1526,7 +1536,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2333);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2292);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);

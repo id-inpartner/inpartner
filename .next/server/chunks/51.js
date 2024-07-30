@@ -281,7 +281,7 @@ const Footer = ()=>{
                                                 })
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                                                href: "https://www.facebook.com/inpartnerconsultant",
+                                                href: "https://www.facebook.com/profile.php?id=100092037564577",
                                                 target: "_blank",
                                                 rel: "noreferrer",
                                                 children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("svg", {

@@ -107,7 +107,7 @@ export const Footer: FC = () => {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com/inpartnerconsultant"
+                href="https://www.facebook.com/profile.php?id=100092037564577"
                 target="_blank"
                 rel="noreferrer"
               >

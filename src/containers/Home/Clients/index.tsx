@@ -25,6 +25,7 @@ import briinvestasi from './briinvestasi.png'
 import sepedabersamaindonesia from './sepedabersamaindonesia.png'
 import hanwha from './hanwha.png'
 import jabartel from './jabartel.png'
+import muamalat from './muamalat.png'
 
 import bumiyasa from './bumiyasa.png'
 import jasamargaSemarangBatang from './jasamarga-semarang-batang.png'
@@ -248,6 +249,13 @@ export const Clients: FC = () => {
                 alt=""
                 quality={100}
               />
+              <Image
+                width={1090 / 4}
+                height={333 / 4}
+                src={muamalat}
+                alt=""
+                quality={100}
+              />
             </Row>
           ))}
         </Items>
@@ -424,8 +432,8 @@ export const Clients: FC = () => {
                 quality={100}
               />
               <Image
-                width={256 / 1.7}
-                height={256 / 1.7}
+                width={146 / 1.5}
+                height={206 / 1.5}
                 src={kaltimex}
                 alt=""
                 quality={100}

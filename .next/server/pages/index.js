@@ -30,7 +30,7 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 2292:
+/***/ 7807:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -436,6 +436,8 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 /* harmony default export */ const hanwha = ({"src":"/_next/static/media/hanwha.bda41923.png","height":349,"width":1280,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAG1BMVEUAAACZWzQDAgEEAgD5iD/ziEQAAAAAAAD/qHQL5KCGAAAACXRSTlMmLiwfPVQZPGHTgadGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgYWFkYGZjZmBg5WBkYmJiYAcAAboAMeq4+FsAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jabartel.png
 /* harmony default export */ const jabartel = ({"src":"/_next/static/media/jabartel.db201eb7.png","height":134,"width":233,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAALVBMVEX+/v79/fvy9Pzi/N/x+/KDk/Tq7Pupt/fV2vCr7bKU/4PAytedqvW7xfbv8PtL++06AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVR4nBXKSRIAIAgEsR5AwfX/z7XMOZSQQCyZWYTI3bKN6ZxbvYc7BvrpAQ4iAKCpwan6AAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
+;// CONCATENATED MODULE: ./src/containers/Home/Clients/muamalat.png
+/* harmony default export */ const muamalat = ({"src":"/_next/static/media/muamalat.c836443b.png","height":333,"width":1090,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAGFBMVEVpAXd3bU5oAn17gUODwCWFyiF5dEaEyCLiH9F8AAAACHRSTlM6By1NY081g/nJK7YAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAXSURBVHicY2BkZWNiYmRkZGBhZ2YAAQABhwAiYbBs1QAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bumiyasa.png
 /* harmony default export */ const bumiyasa = ({"src":"/_next/static/media/bumiyasa.b4c152f3.png","height":95,"width":369,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAAFVBMVEXPz8/Z2dnFys/a39nK09fI3L3T1NPAo4GUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGklEQVR4nGNgZWZgZGNkZGZgYmFgYGRiYgAAAWIAIPtzN3sAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":2});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamarga-semarang-batang.png
@@ -497,7 +499,7 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/tirtajabar.png
 /* harmony default export */ const tirtajabar = ({"src":"/_next/static/media/tirtajabar.3175e3d2.png","height":150,"width":336,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAJ1BMVEX////e6fXo7/fq8Pf1+PvF2OvM3O7ByMq7s5Dy9fjYv4W/0+j22Z4Fzsj2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAHklEQVR4nGNggAEOHkZuRjZWZgYudk5GZiYmFrgMAAaSAFYqr50sAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/kaltimex.png
-/* harmony default export */ const kaltimex = ({"src":"/_next/static/media/kaltimex.fe67ecbb.png","height":256,"width":256,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAASFBMVEX///9+PDjR19GHbWOud3a7ysDd49/59fX6/fzH0cl2SUHx/PmIXVfm1dWlaGfDiIpqNi2HTEhtUUWPiHzk6ubUqarPoKHev7+B/usOAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAPElEQVR4nB3GWxaAIAhAwauCQFn2bv877dh8DVBzVAf8SG3LwDzd7x5/+pNG/GylXCMaqgaYiKwLY2bmfEAgAbImoj+GAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":8});
+/* harmony default export */ const kaltimex = ({"src":"/_next/static/media/kaltimex.9620d747.png","height":206,"width":149,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAASFBMVEWIhHfR2dNtBQWkrKGLSUbjy8uvuq+qaGh8cWV3Zlqyd3imsqaeVFW9xb19d2rDysPawsHFzMWeX16Ej4BkEg1dEgubTEy8h4hjpHhBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAN0lEQVR4nAXBiQHAIAgAsUNRRLT27/6bNqG6ewtI1lODs+zWQEt5N65H9QaJnENY85hV+IbZ6D8qmwGk49qFaQAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/HLI.png
 /* harmony default export */ const HLI = ({"src":"/_next/static/media/HLI.e91cff68.png","height":96,"width":162,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAP1BMVEX9/fzN5snL2+LR2N7r7/LSiJrUrKn3+PfK7NLc5OnWl6e75rXs++uon3fq4tvAvqnBdnjswNG+pJ+n47melXu+uwE3AAAACXBIWXMAAA7FAAAOxQFHbOz/AAAAMElEQVR4nAXBBwLAIAwDsYMG7HQAHf9/ayWwXVzE+/XVx3Xg525tnyfKmrkFECEJfh6VATVkzk5CAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":5});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/jasamedivest.png
@@ -511,6 +513,7 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/bci.png
 /* harmony default export */ const bci = ({"src":"/_next/static/media/bci.f88f36f2.png","height":327,"width":626,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAMAAACEE47CAAAAIVBMVEUbZKsSX7ETXrITX7EYY64haKcWYa8XYq4TX7H//QJCfZApf8LwAAAAC3RSTlMqghpqPl+ZQ0oaAhwDmXIAAAAJcEhZcwAAFxEAABcRAcom8z8AAAAlSURBVHicFcGHDQAwDAMgj+z/D64K4Gnx0dxkBqrK4xTUE4jWAwg+AH3JmAOeAAAAAElFTkSuQmCC","blurWidth":8,"blurHeight":4});
 ;// CONCATENATED MODULE: ./src/containers/Home/Clients/index.tsx
+
 
 
 
@@ -795,6 +798,13 @@ const Clients = ()=>{
                                     src: hyundai,
                                     alt: "",
                                     quality: 100
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
+                                    width: 1090 / 4,
+                                    height: 333 / 4,
+                                    src: muamalat,
+                                    alt: "",
+                                    quality: 100
                                 })
                             ]
                         }, v))
@@ -998,8 +1008,8 @@ const Clients = ()=>{
                                     quality: 100
                                 }),
                                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
-                                    width: 256 / 1.7,
-                                    height: 256 / 1.7,
+                                    width: 146 / 1.5,
+                                    height: 206 / 1.5,
                                     src: kaltimex,
                                     alt: "",
                                     quality: 100
@@ -1536,7 +1546,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2292);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7807);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);

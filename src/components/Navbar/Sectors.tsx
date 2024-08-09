@@ -5,12 +5,9 @@ import { FC, useEffect, useState } from 'react'
 import { NavDropdown, NavDropdownProps } from 'react-bootstrap'
 import DropTitle, { DropTitleProps } from './DropTitle'
 import { ItemLink } from './styled'
+import { useSectors, Sector } from '../../hooks/useSectors'
 
-export interface Sector {
-  readonly id: string
-  readonly slug: string
-  readonly title: string
-}
+export type { Sector }
 
 export interface SectorsProps {
   readonly id: string
@@ -27,17 +24,7 @@ export const Sectors: FC<SectorsProps> = ({
   onMouseLeave,
   show,
 }) => {
-  const [sectors, setSectors] = useState<ReadonlyArray<Sector>>([])
-  useEffect(() => {
-    axios
-      .get('/api/sector')
-      .then(({ data }) => {
-        setSectors(data)
-      })
-      .catch((e) => {
-        //
-      })
-  }, [])
+  const sectors = useSectors()
   return (
     <Dropdown
       title={

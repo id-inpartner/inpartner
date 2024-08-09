@@ -12,6 +12,8 @@ import {
 } from './styled'
 import { Form, Pagination } from 'react-bootstrap'
 import { PageItem } from '@components/Pagination'
+import { useSectors } from '../../hooks/useSectors'
+import { useRouter } from 'next/router'
 
 export interface IndexProps {
   readonly page: number
@@ -30,6 +32,8 @@ const Index: FC<IndexProps> = ({
   sectorId,
   perPage,
 }) => {
+  const sectors = useSectors()
+  const router = useRouter()
   const pageCount = Math.ceil(count / perPage)
   const pages = useMemo(() => {
     const pp: number[] = []
@@ -66,9 +70,9 @@ const Index: FC<IndexProps> = ({
             href={{
               pathname: '/project',
               hash: 'content',
-              query: { categoryId: 2 },
+              query: { categoryId: 3 },
             }}
-            className={categoryId === 2 ? 'selected' : ''}
+            className={categoryId === 3 ? 'selected' : ''}
           >
             Investment
           </MenuItem>
@@ -76,22 +80,42 @@ const Index: FC<IndexProps> = ({
             href={{
               pathname: '/project',
               hash: 'content',
-              query: { categoryId: 3 },
+              query: { categoryId: 2 },
             }}
-            className={categoryId === 3 ? 'selected' : ''}
+            className={categoryId === 2 ? 'selected' : ''}
           >
             Capacity Building (The Executive Business Program)
           </MenuItem>
         </SideMenu>
         <Projects>
           <Queries>
-            <Form.Select aria-label="Sector">
+            <Form.Select
+              aria-label="Sector"
+              onChange={(e) => {
+                const sectorId = e.currentTarget.value
+                if (sectorId) {
+                  router.replace({
+                    pathname: '/project',
+                    hash: 'content',
+                    query: { ...query, page: 1, sectorId },
+                  })
+                } else {
+                  router.replace({
+                    pathname: '/project',
+                    hash: 'content',
+                    query: { ...query, page: 1, sectorId: undefined },
+                  })
+                }
+              }}
+            >
               <option>Sector</option>
-              <option value={1}>One</option>
-              <option value={2}>Two</option>
-              <option value={3}>Three</option>
+              {sectors.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.title}
+                </option>
+              ))}
             </Form.Select>
-            <Form.Control type="date" name="date" placeholder="Date" />
+            {/* <Form.Control type="date" name="date" placeholder="Date" /> */}
           </Queries>
           {rows.map((r) => (
             <ProjectComponent key={r.id} data={r} />

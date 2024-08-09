@@ -59,7 +59,7 @@ export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
       </Aspect>
       <Title>{data.title}</Title>
       <Subtitle>
-        {data.category.name} | {data.sector.title}
+        {data.category.title} | {data.sector.title}
       </Subtitle>
       {/* <Dates>
         <tr>

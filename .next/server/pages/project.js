@@ -209,7 +209,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                         }),
                                         sectors.map((s)=>/*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("option", {
                                                 value: s.id,
-                                                children: s.title
+                                                children: s.name
                                             }, s.id))
                                     ]
                                 })

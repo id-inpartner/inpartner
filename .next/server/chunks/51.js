@@ -597,7 +597,7 @@ const Sectors = ({ id , onButtonClick , onMouseEnter , onMouseLeave , show  })=>
             className: "items",
             children: sectors.map((it)=>/*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_5__/* .ItemLink */ .FB, {
                     href: `/sector/${it.slug}`,
-                    children: it.title
+                    children: it.name
                 }, it.id))
         })
     });

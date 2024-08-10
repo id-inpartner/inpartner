@@ -31,8 +31,8 @@ export const getServerSideProps: GetServerSideProps = async ({
       {
         association: 'projects',
         include: [
-          { association: 'sector', attributes: ['id', 'title'] },
-          { association: 'category', attributes: ['id', 'title'] },
+          { association: 'sector', attributes: ['id', 'title', 'name'] },
+          { association: 'category', attributes: ['id', 'title', 'name'] },
         ],
         limit: 3,
       },

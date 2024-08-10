@@ -19,6 +19,7 @@ export interface Project {
   readonly startAt: string
   readonly endAt: string
   readonly sector: {
+    readonly name: string
     readonly title: string
   }
   readonly category: {
@@ -59,7 +60,7 @@ export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
       </Aspect>
       <Title>{data.title}</Title>
       <Subtitle>
-        {data.category.title} | {data.sector.title}
+        {data.category.name} | {data.sector.name}
       </Subtitle>
       {/* <Dates>
         <tr>

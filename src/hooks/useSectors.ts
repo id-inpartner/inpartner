@@ -18,6 +18,7 @@ export const useSectors = () => {
       .get('/api/sector')
       .then(({ data }) => {
         setSectors(data)
+        localStorage.setItem(key, JSON.stringify(data))
       })
       .catch((e) => {
         //

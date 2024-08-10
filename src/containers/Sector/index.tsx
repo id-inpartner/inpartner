@@ -1,8 +1,9 @@
 import Banner from '@components/Banner'
-import { FC, useMemo } from 'react'
+import { FC } from 'react'
 import { Container } from 'react-bootstrap'
 import ProjectComponent, { Dummy, Project, Sector } from '@components/Project'
 import { Description, Projects, Title } from './styled'
+import Infographic from './TrainingEducation/Infographic'
 
 export type { Project, Sector }
 
@@ -11,10 +12,6 @@ export interface IndexProps {
 }
 
 const Index: FC<IndexProps> = ({ data }) => {
-  const descs = useMemo(
-    () => data.description.split(/[\r\n]+/),
-    [data.description]
-  )
   return (
     <>
       <Banner backgroundSrc={data.image} size="short" />
@@ -24,6 +21,7 @@ const Index: FC<IndexProps> = ({ data }) => {
         {/* {descs.map((d, i) => (
           <p key={i}>{d}</p>
         ))} */}
+        {data.slug == 'education-training' && <Infographic />}
         <Projects>
           {data.projects.map((p, i) => (
             <ProjectComponent key={i} data={p} />

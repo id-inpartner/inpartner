@@ -39,7 +39,7 @@ const Title = /*#__PURE__*/ styled_default()("h1", {
 })("text-align:center;width:100%;font-weight:600;font-size:20px;margin-top:40px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:28px;margin-top:64px;}");
 const Projects = /*#__PURE__*/ styled_default()(Project/* ProjectsComponent */.vP, {
     target: "e9mois81"
-})("margin-top:28px;margin-bottom:28px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:52px;margin-bottom:52px;}");
+})("margin-top:28px;margin-bottom:28px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:52px;margin-bottom:52px;}& .project-component-root{@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){min-width:350px;}}");
 const Description = /*#__PURE__*/ styled_default()("div", {
     target: "e9mois82"
 })("padding-top:1rem;& p{margin-bottom:1rem;}& li{margin-bottom:1rem;}");

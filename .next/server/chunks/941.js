@@ -30,6 +30,7 @@ const ProjectsComponent = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE
 })("display:flex;flex-wrap:wrap;margin-left:-12px;margin-right:-12px;");
 const ProjectComponent = ({ data  })=>{
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(C, {
+        className: "project-component-root",
         children: [
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Aspect, {
                 children: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {

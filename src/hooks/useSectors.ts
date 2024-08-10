@@ -4,7 +4,7 @@ import axios from 'axios'
 export interface Sector {
   readonly id: string
   readonly slug: string
-  readonly title: string
+  readonly name: string
 }
 
 const key = `sector-list-${new Date()}`

@@ -43,7 +43,7 @@ export const Sectors: FC<SectorsProps> = ({
       <div className="items">
         {sectors.map((it) => (
           <ItemLink key={it.id} href={`/sector/${it.slug}`}>
-            {it.title}
+            {it.name}
           </ItemLink>
         ))}
       </div>

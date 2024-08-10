@@ -111,7 +111,7 @@ const Index: FC<IndexProps> = ({
               <option>Sector</option>
               {sectors.map((s) => (
                 <option key={s.id} value={s.id}>
-                  {s.title}
+                  {s.name}
                 </option>
               ))}
             </Form.Select>

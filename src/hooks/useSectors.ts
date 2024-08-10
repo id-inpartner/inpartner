@@ -11,14 +11,18 @@ const key = `sector-list-${new Date()}`
 
 export const useSectors = () => {
   const [sectors, setSectors] = useState<ReadonlyArray<Sector>>(
-    JSON.parse(localStorage.getItem(key) || '[]')
+    typeof window !== 'undefined'
+      ? JSON.parse(localStorage.getItem(key) || '[]')
+      : []
   )
   useEffect(() => {
     axios
       .get('/api/sector')
       .then(({ data }) => {
         setSectors(data)
-        localStorage.setItem(key, JSON.stringify(data))
+        if (typeof window !== 'undefined') {
+          localStorage.setItem(key, JSON.stringify(data))
+        }
       })
       .catch((e) => {
         //

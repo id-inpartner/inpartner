@@ -50,7 +50,7 @@ const ProjectComponent = ({ data  })=>{
                 children: [
                     data.category.name,
                     " | ",
-                    data.sector.title
+                    data.sector.name
                 ]
             })
         ]

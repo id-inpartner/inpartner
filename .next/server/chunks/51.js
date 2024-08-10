@@ -566,16 +566,13 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9920);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9648);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9070);
-/* harmony import */ var react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _DropTitle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(213);
-/* harmony import */ var _styled__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3853);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_3__]);
-axios__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
+/* harmony import */ var react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9070);
+/* harmony import */ var react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _DropTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(213);
+/* harmony import */ var _styled__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3853);
+/* harmony import */ var _hooks_useSectors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6925);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_hooks_useSectors__WEBPACK_IMPORTED_MODULE_6__]);
+_hooks_useSectors__WEBPACK_IMPORTED_MODULE_6__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -584,16 +581,9 @@ axios__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (awa
 
 
 const Sectors = ({ id , onButtonClick , onMouseEnter , onMouseLeave , show  })=>{
-    const [sectors, setSectors] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]);
-    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
-        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get("/api/sector").then(({ data  })=>{
-            setSectors(data);
-        }).catch((e)=>{
-        //
-        });
-    }, []);
+    const sectors = (0,_hooks_useSectors__WEBPACK_IMPORTED_MODULE_6__/* .useSectors */ .x)();
     return /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Dropdown, {
-        title: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_DropTitle__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+        title: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_DropTitle__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
             href: "/sector",
             title: "Sectors",
             onButtonClick: onButtonClick
@@ -605,14 +595,14 @@ const Sectors = ({ id , onButtonClick , onMouseEnter , onMouseLeave , show  })=>
         align: "end",
         children: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
             className: "items",
-            children: sectors.map((it)=>/*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_7__/* .ItemLink */ .FB, {
+            children: sectors.map((it)=>/*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_5__/* .ItemLink */ .FB, {
                     href: `/sector/${it.slug}`,
                     children: it.title
                 }, it.id))
         })
     });
 };
-const Dropdown = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()((react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_5___default()), {
+const Dropdown = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()((react_bootstrap_NavDropdown__WEBPACK_IMPORTED_MODULE_3___default()), {
     target: "e1tt47cm0"
 })("& > .dropdown-menu.show > .items{display:flex;flex-direction:column;align-items:stretch;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__/* .breakpoints.lg */ .AV.lg, "){flex-direction:row;flex-wrap:wrap;min-width:726px;}& > .dropdown-item{white-space:normal;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__/* .breakpoints.lg */ .AV.lg, "){flex:1;min-width:363px;white-space:nowrap;}}}");
 
@@ -906,6 +896,39 @@ const ItemLink = ({ href , children  })=>{
     });
 };
 
+
+/***/ }),
+
+/***/ 6925:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "x": () => (/* binding */ useSectors)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9648);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_1__]);
+axios__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+const key = `sector-list-${new Date()}`;
+const useSectors = ()=>{
+    const [sectors, setSectors] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)( false ? 0 : []);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
+        axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("/api/sector").then(({ data  })=>{
+            setSectors(data);
+            if (false) {}
+        }).catch((e)=>{
+        //
+        });
+    }, []);
+    return sectors;
+};
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ })
 

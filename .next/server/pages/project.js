@@ -5,6 +5,45 @@ exports.id = 512;
 exports.ids = [512];
 exports.modules = {
 
+/***/ 3005:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"src":"/_next/static/media/banner.c5da7d6b.png","height":2000,"width":3000,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAM1BMVEWwv8RhaGxCSEiLlZmntbl4gIFrdHiRmJmIj4+hrq+3xcp7io9uamaYoqJUXF9PWF86REnq6uVRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nAXBhwEAIAzAoFQ73f9fK9C3jgEwV1ZRypSwpRG8mxbZjeMuLq19F+4BBjynjLMAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
+
+/***/ }),
+
+/***/ 4170:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "J": () => (/* binding */ PageItem)
+/* harmony export */ });
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const PageItem = ({ href , as , children , tabIndex  })=>{
+    return /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
+        className: "page-item",
+        children: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+            href: href,
+            as: as,
+            className: "page-link",
+            role: "button",
+            tabIndex: tabIndex,
+            children: children
+        })
+    });
+};
+
+
+/***/ }),
+
 /***/ 3137:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -28,88 +67,33 @@ const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___
 
 /***/ }),
 
-/***/ 297:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 8842:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
+/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9988);
+/* harmony import */ var _banner_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3005);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Project__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4941);
+/* harmony import */ var _styled__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7017);
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5226);
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_bootstrap_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4883);
+/* harmony import */ var react_bootstrap_Pagination__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Pagination__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4170);
+/* harmony import */ var _hooks_useSectors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6925);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_hooks_useSectors__WEBPACK_IMPORTED_MODULE_9__]);
+_hooks_useSectors__WEBPACK_IMPORTED_MODULE_9__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ containers_Projects)
-});
-
-// EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__(5193);
-// EXTERNAL MODULE: ./src/components/Banner/index.tsx
-var Banner = __webpack_require__(9988);
-;// CONCATENATED MODULE: ./src/containers/Projects/banner.png
-/* harmony default export */ const banner = ({"src":"/_next/static/media/banner.c5da7d6b.png","height":2000,"width":3000,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAM1BMVEWwv8RhaGxCSEiLlZmntbl4gIFrdHiRmJmIj4+hrq+3xcp7io9uamaYoqJUXF9PWF86REnq6uVRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nAXBhwEAIAzAoFQ73f9fK9C3jgEwV1ZRypSwpRG8mxbZjeMuLq19F+4BBjynjLMAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: ./src/components/Project/index.tsx
-var Project = __webpack_require__(4941);
-// EXTERNAL MODULE: ./src/components/GlobalStyle.ts
-var GlobalStyle = __webpack_require__(9920);
-// EXTERNAL MODULE: ./src/components/SectionTitle/index.tsx
-var SectionTitle = __webpack_require__(3137);
-// EXTERNAL MODULE: external "@emotion/styled"
-var styled_ = __webpack_require__(1480);
-var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
-// EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(1664);
-var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
-// EXTERNAL MODULE: external "react-bootstrap/Container"
-var Container_ = __webpack_require__(4678);
-var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
-;// CONCATENATED MODULE: ./src/containers/Projects/styled.ts
-
-
-
-
-
-
-const Container = /*#__PURE__*/ styled_default()((Container_default()), {
-    target: "e54vnkr0"
-})("display:flex;flex-wrap:wrap;");
-const SideMenu = /*#__PURE__*/ styled_default()("div", {
-    target: "e54vnkr1"
-})("display:flex;flex-direction:column;min-width:90%;flex:1;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:330px;max-width:330px;border-right:1px solid #d9d9d9;margin-right:32px;}");
-const MenuTitle = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
-    target: "e54vnkr2"
-})("padding-top:32px;padding-bottom:16px;border-bottom:1px solid #d9d9d9;margin-bottom:0;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-top:64px;padding-bottom:32px;}");
-const MenuItem = /*#__PURE__*/ styled_default()((link_default()), {
-    target: "e54vnkr3"
-})("padding:8px;display:flex;align-items:center;min-height:48px;font-weight:600;font-size:16px;border-bottom:1px solid #d9d9d9;&.selected{background:#f2f2f2;box-shadow:inset 0px 4px 4px rgba(0,0,0,0.12);}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){font-size:20px;min-height:96px;}");
-const Projects = /*#__PURE__*/ styled_default()(Project/* ProjectsComponent */.vP, {
-    target: "e54vnkr4"
-})("flex:1;padding-bottom:15px;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-bottom:42px;}& > .pagination{min-width:100%;margin-left:12px;margin-right:12px;margin-top:20px;}");
-const Queries = /*#__PURE__*/ styled_default()("div", {
-    target: "e54vnkr5"
-})("min-width:100%;display:flex;padding-top:32px;padding-bottom:16px;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){padding-top:64px;padding-bottom:32px;}& > .form-control,& > .form-select{width:unset;min-width:134px;margin-left:12px;margin-right:12px;}");
-
-// EXTERNAL MODULE: external "react-bootstrap/Form"
-var Form_ = __webpack_require__(5226);
-var Form_default = /*#__PURE__*/__webpack_require__.n(Form_);
-;// CONCATENATED MODULE: external "react-bootstrap/Pagination"
-const Pagination_namespaceObject = require("react-bootstrap/Pagination");
-var Pagination_default = /*#__PURE__*/__webpack_require__.n(Pagination_namespaceObject);
-;// CONCATENATED MODULE: ./src/components/Pagination/index.tsx
-
-
-const PageItem = ({ href , as , children , tabIndex  })=>{
-    return /*#__PURE__*/ jsx_runtime_.jsx("li", {
-        className: "page-item",
-        children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-            href: href,
-            as: as,
-            className: "page-link",
-            role: "button",
-            tabIndex: tabIndex,
-            children: children
-        })
-    });
-};
-
-;// CONCATENATED MODULE: ./src/containers/Projects/index.tsx
 
 
 
@@ -120,8 +104,10 @@ const PageItem = ({ href , as , children , tabIndex  })=>{
 
 
 const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
+    const sectors = (0,_hooks_useSectors__WEBPACK_IMPORTED_MODULE_9__/* .useSectors */ .x)();
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_10__.useRouter)();
     const pageCount = Math.ceil(count / perPage);
-    const pages = (0,external_react_.useMemo)(()=>{
+    const pages = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(()=>{
         const pp = [];
         for(let i = page - 3; i <= page + 3; i++){
             if (i >= 1 && i <= pageCount) {
@@ -139,21 +125,21 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
         categoryId,
         sectorId: sectorId ? sectorId : undefined
     };
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(Banner/* default */.ZP, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Banner__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .ZP, {
                 title: "Projects",
-                backgroundSrc: banner
+                backgroundSrc: _banner_png__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z
             }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
+            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_styled__WEBPACK_IMPORTED_MODULE_5__/* .Container */ .W2, {
                 id: "content",
                 children: [
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(SideMenu, {
+                    /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_styled__WEBPACK_IMPORTED_MODULE_5__/* .SideMenu */ .fv, {
                         children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx(MenuTitle, {
+                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_5__/* .MenuTitle */ .yU, {
                                 children: "Projects"
                             }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(MenuItem, {
+                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_5__/* .MenuItem */ .sN, {
                                 href: {
                                     pathname: "/project",
                                     hash: "content",
@@ -164,18 +150,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                 className: categoryId === 1 ? "selected" : "",
                                 children: "Business and Management Consulting"
                             }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(MenuItem, {
-                                href: {
-                                    pathname: "/project",
-                                    hash: "content",
-                                    query: {
-                                        categoryId: 2
-                                    }
-                                },
-                                className: categoryId === 2 ? "selected" : "",
-                                children: "Investment"
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx(MenuItem, {
+                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_5__/* .MenuItem */ .sN, {
                                 href: {
                                     pathname: "/project",
                                     hash: "content",
@@ -184,50 +159,70 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                     }
                                 },
                                 className: categoryId === 3 ? "selected" : "",
+                                children: "Investment"
+                            }),
+                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_5__/* .MenuItem */ .sN, {
+                                href: {
+                                    pathname: "/project",
+                                    hash: "content",
+                                    query: {
+                                        categoryId: 2
+                                    }
+                                },
+                                className: categoryId === 2 ? "selected" : "",
                                 children: "Capacity Building (The Executive Business Program)"
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Projects, {
+                    /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_styled__WEBPACK_IMPORTED_MODULE_5__/* .Projects */ .pj, {
                         children: [
-                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Queries, {
-                                children: [
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Form_default()).Select, {
-                                        "aria-label": "Sector",
-                                        children: [
-                                            /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                children: "Sector"
-                                            }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                value: 1,
-                                                children: "One"
-                                            }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                value: 2,
-                                                children: "Two"
-                                            }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("option", {
-                                                value: 3,
-                                                children: "Three"
-                                            })
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
-                                        type: "date",
-                                        name: "date",
-                                        placeholder: "Date"
-                                    })
-                                ]
+                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_styled__WEBPACK_IMPORTED_MODULE_5__/* .Queries */ .HQ, {
+                                children: /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_6___default().Select), {
+                                    "aria-label": "Sector",
+                                    onChange: (e)=>{
+                                        const sectorId = e.currentTarget.value;
+                                        if (sectorId) {
+                                            router.replace({
+                                                pathname: "/project",
+                                                hash: "content",
+                                                query: {
+                                                    ...query,
+                                                    page: 1,
+                                                    sectorId
+                                                }
+                                            });
+                                        } else {
+                                            router.replace({
+                                                pathname: "/project",
+                                                hash: "content",
+                                                query: {
+                                                    ...query,
+                                                    page: 1,
+                                                    sectorId: undefined
+                                                }
+                                            });
+                                        }
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("option", {
+                                            children: "Sector"
+                                        }),
+                                        sectors.map((s)=>/*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("option", {
+                                                value: s.id,
+                                                children: s.title
+                                            }, s.id))
+                                    ]
+                                })
                             }),
-                            rows.map((r)=>/*#__PURE__*/ jsx_runtime_.jsx(Project/* default */.ZP, {
+                            rows.map((r)=>/*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Project__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .ZP, {
                                     data: r
                                 }, r.id)),
-                            /*#__PURE__*/ jsx_runtime_.jsx(Project/* Dummy */.vk, {
+                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Project__WEBPACK_IMPORTED_MODULE_4__/* .Dummy */ .vk, {
                                 "aria-hidden": true
                             }),
-                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Pagination_default()), {
+                            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((react_bootstrap_Pagination__WEBPACK_IMPORTED_MODULE_7___default()), {
                                 children: [
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PageItem, {
+                                    /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_Pagination__WEBPACK_IMPORTED_MODULE_8__/* .PageItem */ .J, {
                                         href: {
                                             pathname: "/project",
                                             hash: "content",
@@ -237,16 +232,16 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                             }
                                         },
                                         children: [
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 children: "\xab"
                                             }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 className: "visually-hidden",
                                                 children: "First"
                                             })
                                         ]
                                     }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PageItem, {
+                                    /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_Pagination__WEBPACK_IMPORTED_MODULE_8__/* .PageItem */ .J, {
                                         href: {
                                             pathname: "/project",
                                             hash: "content",
@@ -256,16 +251,16 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                             }
                                         },
                                         children: [
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 children: "‹"
                                             }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 className: "visually-hidden",
                                                 children: "Prev"
                                             })
                                         ]
                                     }),
-                                    pages.map((p)=>/*#__PURE__*/ jsx_runtime_.jsx(PageItem, {
+                                    pages.map((p)=>/*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Pagination__WEBPACK_IMPORTED_MODULE_8__/* .PageItem */ .J, {
                                             href: {
                                                 pathname: "/project",
                                                 hash: "content",
@@ -276,7 +271,7 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                             },
                                             children: p
                                         }, p)),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PageItem, {
+                                    /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_Pagination__WEBPACK_IMPORTED_MODULE_8__/* .PageItem */ .J, {
                                         href: {
                                             pathname: "/project",
                                             hash: "content",
@@ -286,16 +281,16 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                             }
                                         },
                                         children: [
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 children: "›"
                                             }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 className: "visually-hidden",
                                                 children: "Next"
                                             })
                                         ]
                                     }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PageItem, {
+                                    /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_Pagination__WEBPACK_IMPORTED_MODULE_8__/* .PageItem */ .J, {
                                         href: {
                                             pathname: "/project",
                                             hash: "content",
@@ -305,10 +300,10 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
                                             }
                                         },
                                         children: [
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 children: "\xbb"
                                             }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                                 className: "visually-hidden",
                                                 children: "Last"
                                             })
@@ -323,7 +318,57 @@ const Index = ({ rows , page , count , categoryId , sectorId , perPage  })=>{
         ]
     });
 };
-/* harmony default export */ const containers_Projects = (Index);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 7017:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HQ": () => (/* binding */ Queries),
+/* harmony export */   "W2": () => (/* binding */ Container),
+/* harmony export */   "fv": () => (/* binding */ SideMenu),
+/* harmony export */   "pj": () => (/* binding */ Projects),
+/* harmony export */   "sN": () => (/* binding */ MenuItem),
+/* harmony export */   "yU": () => (/* binding */ MenuTitle)
+/* harmony export */ });
+/* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9920);
+/* harmony import */ var _components_Project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4941);
+/* harmony import */ var _components_SectionTitle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3137);
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1480);
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4678);
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const Container = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()((react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_5___default()), {
+    target: "e54vnkr0"
+})("display:flex;flex-wrap:wrap;");
+const SideMenu = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()("div", {
+    target: "e54vnkr1"
+})("display:flex;flex-direction:column;min-width:90%;flex:1;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){min-width:330px;max-width:330px;border-right:1px solid #d9d9d9;margin-right:32px;}");
+const MenuTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()(_components_SectionTitle__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+    target: "e54vnkr2"
+})("padding-top:32px;padding-bottom:16px;border-bottom:1px solid #d9d9d9;margin-bottom:0;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){padding-top:64px;padding-bottom:32px;}");
+const MenuItem = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
+    target: "e54vnkr3"
+})("padding:8px;display:flex;align-items:center;min-height:48px;font-weight:600;font-size:16px;border-bottom:1px solid #d9d9d9;&.selected{background:#f2f2f2;box-shadow:inset 0px 4px 4px rgba(0,0,0,0.12);}@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){font-size:20px;min-height:96px;}");
+const Projects = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()(_components_Project__WEBPACK_IMPORTED_MODULE_1__/* .ProjectsComponent */ .vP, {
+    target: "e54vnkr4"
+})("flex:1;padding-bottom:15px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){padding-bottom:42px;}& > .pagination{min-width:100%;margin-left:12px;margin-right:12px;margin-top:20px;}");
+const Queries = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()("div", {
+    target: "e54vnkr5"
+})("min-width:100%;display:flex;padding-top:32px;padding-bottom:16px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){padding-top:64px;padding-bottom:32px;}& > .form-control,& > .form-select{width:unset;min-width:134px;margin-left:12px;margin-right:12px;}");
 
 
 /***/ }),
@@ -341,12 +386,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(297);
+/* harmony import */ var _containers_Projects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8842);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var _utils_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8312);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
-_components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_containers_Projects__WEBPACK_IMPORTED_MODULE_2__, _components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
+([_containers_Projects__WEBPACK_IMPORTED_MODULE_2__, _components_Navbar__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -667,6 +712,13 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ 1853:
+/***/ ((module) => {
+
+module.exports = require("next/router");
+
+/***/ }),
+
 /***/ 6689:
 /***/ ((module) => {
 
@@ -713,6 +765,13 @@ module.exports = require("react-bootstrap/NavDropdown");
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap/Navbar");
+
+/***/ }),
+
+/***/ 4883:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Pagination");
 
 /***/ }),
 

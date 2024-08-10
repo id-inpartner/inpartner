@@ -71,10 +71,18 @@ const Index = ({ data  })=>{
                             __html: data.description
                         }
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx(Projects, {
-                        children: data.projects.map((p, i)=>/*#__PURE__*/ jsx_runtime_.jsx(Project/* default */.ZP, {
-                                data: p
-                            }, i))
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Projects, {
+                        children: [
+                            data.projects.map((p, i)=>/*#__PURE__*/ jsx_runtime_.jsx(Project/* default */.ZP, {
+                                    data: p
+                                }, i)),
+                            /*#__PURE__*/ jsx_runtime_.jsx(Project/* Dummy */.vk, {
+                                "aria-hidden": true
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx(Project/* Dummy */.vk, {
+                                "aria-hidden": true
+                            })
+                        ]
                     })
                 ]
             })
@@ -149,14 +157,16 @@ const getServerSideProps = async ({ req , query  })=>{
                         association: "sector",
                         attributes: [
                             "id",
-                            "title"
+                            "title",
+                            "name"
                         ]
                     },
                     {
                         association: "category",
                         attributes: [
                             "id",
-                            "title"
+                            "title",
+                            "name"
                         ]
                     }
                 ],

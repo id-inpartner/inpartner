@@ -1,7 +1,7 @@
 import Banner from '@components/Banner'
 import { FC, useMemo } from 'react'
 import { Container } from 'react-bootstrap'
-import ProjectComponent, { Project, Sector } from '@components/Project'
+import ProjectComponent, { Dummy, Project, Sector } from '@components/Project'
 import { Description, Projects, Title } from './styled'
 
 export type { Project, Sector }
@@ -28,6 +28,8 @@ const Index: FC<IndexProps> = ({ data }) => {
           {data.projects.map((p, i) => (
             <ProjectComponent key={i} data={p} />
           ))}
+          <Dummy aria-hidden />
+          <Dummy aria-hidden />
         </Projects>
       </Container>
     </>

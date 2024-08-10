@@ -21,6 +21,11 @@ export const Projects = styled(ProjectsComponent)`
     margin-top: 52px;
     margin-bottom: 52px;
   }
+  & .project-component-root {
+    @media (min-width: ${breakpoints.md}) {
+      min-width: 350px;
+    }
+  }
 `
 
 export const Description = styled.div`

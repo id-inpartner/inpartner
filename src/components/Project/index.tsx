@@ -2,7 +2,6 @@ import Card from '@components/Card'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { FC } from 'react'
-import format from 'date-fns/format'
 import { breakpoints } from '@components/GlobalStyle'
 
 export const ProjectsComponent = styled.div`
@@ -46,7 +45,7 @@ export interface ProjectComponentProps {
 
 export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
   return (
-    <C>
+    <C className="project-component-root">
       <Aspect>
         <div className="aspect">
           <Image

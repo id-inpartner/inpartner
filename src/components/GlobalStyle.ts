@@ -9,6 +9,9 @@ export const globalStyles = css`
     font-family: ${sans.style.fontFamily};
     scroll-behavior: smooth;
   }
+  body > div.skiptranslate {
+    display: none;
+  }
   a {
     color: inherit;
     text-decoration: none;

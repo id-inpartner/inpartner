@@ -8,6 +8,7 @@ import { Brand, Container, GetInTouch, ItemLink, N, Nav, Space } from './styled'
 import DropTitle from './DropTitle'
 import { Sectors } from './Sectors'
 import Button from '@components/Button'
+import { AutoTranslate } from '@components/AutoTranslate'
 
 export const Navbar: FC = () => {
   const [menu, setMenu] = useState('')
@@ -125,11 +126,12 @@ export const Navbar: FC = () => {
               Career
             </Link>
             <Link className="nav-link" href="/blog">
-              Insight & Update
+              Insight &amp; Update
             </Link>
             <GetInTouch href="/contact">
               <Button>Get in Touch</Button>
             </GetInTouch>
+            <AutoTranslate />
           </Nav>
         </NavBar.Collapse>
       </Container>

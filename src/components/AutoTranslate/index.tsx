@@ -75,11 +75,19 @@ export const AutoTranslate: FC = () => {
         }}
       />
       <RadioGroup className="notranslate">
-        <Item className="notranslate" onClick={() => onSelect(LANGS[0])}>
+        <Item
+          disabled={lang === LANGS[0]}
+          className="notranslate"
+          onClick={() => onSelect(LANGS[0])}
+        >
           EN
         </Item>
         <Divider />
-        <Item className="notranslate" onClick={() => onSelect(LANGS[1])}>
+        <Item
+          disabled={lang === LANGS[1]}
+          className="notranslate"
+          onClick={() => onSelect(LANGS[1])}
+        >
           KR
         </Item>
       </RadioGroup>

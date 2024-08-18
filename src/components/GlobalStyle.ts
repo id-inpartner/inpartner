@@ -4,6 +4,7 @@ import { sans } from '@fonts/index'
 export const globalStyles = css`
   html,
   body {
+    top: 0px !important;
     padding: 0;
     margin: 0;
     font-family: ${sans.style.fontFamily};

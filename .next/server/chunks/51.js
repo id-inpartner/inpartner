@@ -104,12 +104,14 @@ const AutoTranslate = ()=>{
                 className: "notranslate",
                 children: [
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
+                        disabled: lang === LANGS[0],
                         className: "notranslate",
                         onClick: ()=>onSelect(LANGS[0]),
                         children: "EN"
                     }),
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Divider, {}),
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
+                        disabled: lang === LANGS[1],
                         className: "notranslate",
                         onClick: ()=>onSelect(LANGS[1]),
                         children: "KR"

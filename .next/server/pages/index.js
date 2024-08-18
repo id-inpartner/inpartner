@@ -1912,6 +1912,13 @@ module.exports = require("react-slick");
 
 module.exports = import("axios");;
 
+/***/ }),
+
+/***/ 4874:
+/***/ ((module) => {
+
+module.exports = import("react-cookie");;
+
 /***/ })
 
 };

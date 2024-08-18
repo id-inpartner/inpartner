@@ -780,6 +780,13 @@ module.exports = require("react-bootstrap/Pagination");
 
 module.exports = import("axios");;
 
+/***/ }),
+
+/***/ 4874:
+/***/ ((module) => {
+
+module.exports = import("react-cookie");;
+
 /***/ })
 
 };

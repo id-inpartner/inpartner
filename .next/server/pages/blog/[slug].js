@@ -531,6 +531,13 @@ module.exports = require("react-bootstrap/Navbar");
 
 module.exports = import("axios");;
 
+/***/ }),
+
+/***/ 4874:
+/***/ ((module) => {
+
+module.exports = import("react-cookie");;
+
 /***/ })
 
 };

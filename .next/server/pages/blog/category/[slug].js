@@ -521,6 +521,13 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
+/***/ 8982:
+/***/ ((module) => {
+
+module.exports = require("cookies-next");
+
+/***/ }),
+
 /***/ 4384:
 /***/ ((module) => {
 
@@ -735,13 +742,6 @@ module.exports = require("react-bootstrap/Navbar");
 /***/ ((module) => {
 
 module.exports = import("axios");;
-
-/***/ }),
-
-/***/ 4874:
-/***/ ((module) => {
-
-module.exports = import("react-cookie");;
 
 /***/ })
 

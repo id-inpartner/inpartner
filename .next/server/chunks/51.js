@@ -14,9 +14,8 @@ exports.modules = {
 /***/ }),
 
 /***/ 6474:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "l": () => (/* binding */ AutoTranslate)
 /* harmony export */ });
@@ -27,9 +26,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4874);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_cookie__WEBPACK_IMPORTED_MODULE_4__]);
-react_cookie__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var cookies_next__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8982);
+/* harmony import */ var cookies_next__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(cookies_next__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -55,9 +53,7 @@ const LANGS = [
 ];
 const AutoTranslate = ()=>{
     const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(LANGS[0]);
-    const [cookie, setCookie, removeCookie] = (0,react_cookie__WEBPACK_IMPORTED_MODULE_4__.useCookies)([
-        "googtrans"
-    ]);
+    const cookie = (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.getCookie)("googtrans");
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
         const ss = document.body.querySelector("#googleTranslateElementInit");
         if (!ss) {
@@ -67,22 +63,22 @@ const AutoTranslate = ()=>{
             document.body.appendChild(addScript);
             window.googleTranslateElementInit = googleTranslateElementInit;
         }
-        if (cookie.googtrans === "/auto/ko") {
+        if (cookie === "/auto/ko") {
             setLang(LANGS[1]);
         } else {
             setLang(LANGS[0]);
         }
     }, [
-        cookie.googtrans
+        cookie
     ]);
     const onSelect = (l)=>{
         if (l.value === lang.value) {
             return;
         }
         if (l.value === "/auto/ko") {
-            setCookie("googtrans", decodeURI(l.value));
+            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", decodeURI(l.value));
         } else {
-            setCookie("googtrans", "");
+            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.deleteCookie)("googtrans");
         }
         window.location.reload();
     };
@@ -131,8 +127,6 @@ const Divider = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___defau
     target: "ey4gp5r2"
 })("width:1px;background-color:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__/* .color.primary.dark */ .$_.primary.dark, ";");
 
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -760,8 +754,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _Sectors__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1472);
 /* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3900);
 /* harmony import */ var _components_AutoTranslate__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(6474);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_Sectors__WEBPACK_IMPORTED_MODULE_10__, _components_AutoTranslate__WEBPACK_IMPORTED_MODULE_12__]);
-([_Sectors__WEBPACK_IMPORTED_MODULE_10__, _components_AutoTranslate__WEBPACK_IMPORTED_MODULE_12__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_Sectors__WEBPACK_IMPORTED_MODULE_10__]);
+_Sectors__WEBPACK_IMPORTED_MODULE_10__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 

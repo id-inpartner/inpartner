@@ -90,7 +90,7 @@ const AutoTranslate = ()=>{
             });
             window.googleTranslateElementInit = undefined;
         }
-        window.location.reload();
+        setTimeout(()=>window.location.reload());
     };
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
         console.log(cookie);

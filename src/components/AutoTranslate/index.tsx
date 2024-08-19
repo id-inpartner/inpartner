@@ -20,20 +20,19 @@ const googleTranslateElementInit = () => {
   )
 }
 
-const LANGS: ReadonlyArray<Lang> = [
-  { label: 'EN', value: '/auto/en' },
-  { label: 'KR', value: '/auto/ko' },
-]
+const LANGS = {
+  '/auto/en': { label: 'EN', value: '/auto/en' },
+  '/auto/ko': { label: 'KR', value: '/auto/ko' },
+} as const
 
 export const AutoTranslate: FC = () => {
-  const [lang, setLang] = useState<Lang>(LANGS[0])
   const cookie = getCookie('googtrans')
-  console.log(cookie)
+  const [lang, setLang] = useState<Lang>(LANGS[cookie] || LANGS['/auto/en'])
 
   useEffect(() => {
     const ss = document.body.querySelector('#googleTranslateElementInit')
     if (cookie === '/auto/ko') {
-      setLang(LANGS[1])
+      setLang(LANGS['/auto/ko'])
       if (!ss) {
         var addScript = document.createElement('script')
         addScript.setAttribute(
@@ -45,7 +44,7 @@ export const AutoTranslate: FC = () => {
       }
       window.googleTranslateElementInit = googleTranslateElementInit
     } else {
-      setLang(LANGS[0])
+      setLang(LANGS['/auto/en'])
       window.googleTranslateElementInit = undefined
       if (ss) {
         document.body.removeChild(ss)
@@ -54,9 +53,6 @@ export const AutoTranslate: FC = () => {
   }, [cookie])
 
   const onSelect = (l: Lang) => {
-    if (l.value === lang.value) {
-      return
-    }
     if (l.value === '/auto/ko') {
       setCookie('googtrans', l.value)
       window.googleTranslateElementInit = googleTranslateElementInit
@@ -88,17 +84,17 @@ export const AutoTranslate: FC = () => {
       />
       <RadioGroup className="notranslate">
         <Item
-          disabled={lang === LANGS[0]}
+          disabled={lang === LANGS['/auto/en']}
           className="notranslate"
-          onClick={() => onSelect(LANGS[0])}
+          onClick={() => onSelect(LANGS['/auto/en'])}
         >
           EN
         </Item>
         <Divider />
         <Item
-          disabled={lang === LANGS[1]}
+          disabled={lang === LANGS['/auto/ko']}
           className="notranslate"
-          onClick={() => onSelect(LANGS[1])}
+          onClick={() => onSelect(LANGS['/auto/ko'])}
         >
           KR
         </Item>

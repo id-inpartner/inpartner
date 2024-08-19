@@ -37,7 +37,7 @@ export const AutoTranslate: FC = () => {
         var addScript = document.createElement('script')
         addScript.setAttribute(
           'src',
-          '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+          'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
         )
         addScript.setAttribute('id', 'googleTranslateElementInit')
         document.body.appendChild(addScript)
@@ -54,7 +54,7 @@ export const AutoTranslate: FC = () => {
 
   const onSelect = (l: Lang) => {
     if (l.value === '/auto/ko') {
-      setCookie('googtrans', l.value)
+      setCookie('googtrans', l.value, { sameSite: true, secure: false })
       window.googleTranslateElementInit = googleTranslateElementInit
     } else {
       deleteCookie('googtrans')
@@ -88,7 +88,7 @@ export const AutoTranslate: FC = () => {
           className="notranslate"
           onClick={() => onSelect(LANGS['/auto/en'])}
         >
-          EN
+          {LANGS['/auto/en'].label}
         </Item>
         <Divider />
         <Item
@@ -96,7 +96,7 @@ export const AutoTranslate: FC = () => {
           className="notranslate"
           onClick={() => onSelect(LANGS['/auto/ko'])}
         >
-          KR
+          {LANGS['/auto/ko'].label}
         </Item>
       </RadioGroup>
     </>

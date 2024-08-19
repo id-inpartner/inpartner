@@ -76,7 +76,7 @@ const AutoTranslate = ()=>{
             return;
         }
         if (l.value === "/auto/ko") {
-            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", decodeURI(l.value));
+            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", l.value);
         } else {
             (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.deleteCookie)("googtrans");
         }

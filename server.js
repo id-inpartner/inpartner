@@ -27,6 +27,7 @@ const handle = app.getRequestHandler()
   server.all('*', (req, res) => {
     return handle(req, res)
   })
+  server.use(express.static('storage-path'))
   server.listen(port, (err) => {
     if (err) throw err
     // eslint-disable-next-line no-console

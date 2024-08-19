@@ -41,3 +41,6 @@ next-env.d.ts
 .ftpquota
 .ssh
 .ssh.pub
+
+#storage
+/storage-path

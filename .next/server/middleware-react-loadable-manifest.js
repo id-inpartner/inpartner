@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={};
+self.__REACT_LOADABLE_MANIFEST={"../components/Navbar/index.tsx -> @components/AutoTranslate":{id:6474,files:["static/chunks/474.5fbc3a263966dcb2.js"]}};

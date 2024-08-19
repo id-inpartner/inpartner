@@ -44,11 +44,15 @@ const LANGS = {
     }
 };
 const AutoTranslate = ()=>{
-    const cookie = (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.getCookie)("googtrans");
-    const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(LANGS[cookie] || LANGS["/auto/en"]);
+    const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(LANGS["/auto/en"]);
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+        const cookie = typeof window.localStorage !== "undefined" && localStorage.getItem("googtrans");
         const ss = document.body.querySelector("#googleTranslateElementInit");
         if (cookie === "/auto/ko") {
+            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", cookie, {
+                sameSite: true,
+                secure: false
+            });
             setLang(LANGS["/auto/ko"]);
             if (!ss) {
                 var addScript = document.createElement("script");
@@ -58,23 +62,28 @@ const AutoTranslate = ()=>{
             }
             window.googleTranslateElementInit = googleTranslateElementInit;
         } else {
+            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", "", {
+                sameSite: true,
+                secure: false,
+                maxAge: 0
+            });
             setLang(LANGS["/auto/en"]);
             window.googleTranslateElementInit = undefined;
             if (ss) {
                 document.body.removeChild(ss);
             }
         }
-    }, [
-        cookie
-    ]);
+    }, []);
     const onSelect = (l)=>{
         if (l.value === "/auto/ko") {
+            localStorage.setItem("googtrans", l.value);
             (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", l.value, {
                 sameSite: true,
                 secure: false
             });
             window.googleTranslateElementInit = googleTranslateElementInit;
         } else {
+            localStorage.removeItem("googtrans");
             (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", "", {
                 sameSite: true,
                 secure: false,
@@ -85,10 +94,8 @@ const AutoTranslate = ()=>{
         setTimeout(()=>window.location.reload());
     };
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
-        console.log(cookie);
         console.log(lang);
     }, [
-        cookie,
         lang
     ]);
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {

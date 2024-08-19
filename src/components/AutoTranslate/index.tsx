@@ -57,7 +57,7 @@ export const AutoTranslate: FC = () => {
       setCookie('googtrans', l.value, { sameSite: true, secure: false })
       window.googleTranslateElementInit = googleTranslateElementInit
     } else {
-      deleteCookie('googtrans')
+      setCookie('googtrans', '', { sameSite: true, secure: false, maxAge: 0 })
       window.googleTranslateElementInit = undefined
     }
     window.location.reload()

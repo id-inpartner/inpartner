@@ -136,8 +136,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
           script: |
-            source ${{ steps.npm-cache-dir.outputs.VENV }} && cd ${{ steps.npm-cache-dir.outputs.APP_DIR }}
-            npm i
+            source ${{ steps.npm-cache-dir.outputs.VENV }} && cd ${{ steps.npm-cache-dir.outputs.APP_DIR }} && npm i
 
       - name: restart app on server
         if: steps.filter.outputs.deploy == 'true'

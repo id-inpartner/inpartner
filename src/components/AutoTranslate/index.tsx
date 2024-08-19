@@ -53,7 +53,7 @@ export const AutoTranslate: FC = () => {
       return
     }
     if (l.value === '/auto/ko') {
-      setCookie('googtrans', decodeURI(l.value))
+      setCookie('googtrans', l.value)
     } else {
       deleteCookie('googtrans')
     }

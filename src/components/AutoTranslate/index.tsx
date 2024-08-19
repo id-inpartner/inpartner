@@ -26,12 +26,13 @@ const LANGS = {
 } as const
 
 export const AutoTranslate: FC = () => {
-  const cookie = getCookie('googtrans')
+  const cookie = localStorage.getItem('googtrans')
   const [lang, setLang] = useState<Lang>(LANGS[cookie] || LANGS['/auto/en'])
 
   useEffect(() => {
     const ss = document.body.querySelector('#googleTranslateElementInit')
     if (cookie === '/auto/ko') {
+      setCookie('googtrans', cookie, { sameSite: true, secure: false })
       setLang(LANGS['/auto/ko'])
       if (!ss) {
         var addScript = document.createElement('script')
@@ -44,6 +45,7 @@ export const AutoTranslate: FC = () => {
       }
       window.googleTranslateElementInit = googleTranslateElementInit
     } else {
+      setCookie('googtrans', '', { sameSite: true, secure: false, maxAge: 0 })
       setLang(LANGS['/auto/en'])
       window.googleTranslateElementInit = undefined
       if (ss) {
@@ -54,9 +56,11 @@ export const AutoTranslate: FC = () => {
 
   const onSelect = (l: Lang) => {
     if (l.value === '/auto/ko') {
+      localStorage.setItem('googtrans', l.value)
       setCookie('googtrans', l.value, { sameSite: true, secure: false })
       window.googleTranslateElementInit = googleTranslateElementInit
     } else {
+      localStorage.removeItem('googtrans')
       setCookie('googtrans', '', { sameSite: true, secure: false, maxAge: 0 })
       window.googleTranslateElementInit = undefined
     }

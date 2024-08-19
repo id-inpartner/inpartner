@@ -28,23 +28,28 @@ const LANGS: ReadonlyArray<Lang> = [
 export const AutoTranslate: FC = () => {
   const [lang, setLang] = useState<Lang>(LANGS[0])
   const cookie = getCookie('googtrans')
+  console.log(cookie)
 
   useEffect(() => {
     const ss = document.body.querySelector('#googleTranslateElementInit')
-    if (!ss) {
-      var addScript = document.createElement('script')
-      addScript.setAttribute(
-        'src',
-        '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-      )
-      addScript.setAttribute('id', 'googleTranslateElementInit')
-      document.body.appendChild(addScript)
-      window.googleTranslateElementInit = googleTranslateElementInit
-    }
     if (cookie === '/auto/ko') {
       setLang(LANGS[1])
+      if (!ss) {
+        var addScript = document.createElement('script')
+        addScript.setAttribute(
+          'src',
+          '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+        )
+        addScript.setAttribute('id', 'googleTranslateElementInit')
+        document.body.appendChild(addScript)
+      }
+      window.googleTranslateElementInit = googleTranslateElementInit
     } else {
       setLang(LANGS[0])
+      window.googleTranslateElementInit = undefined
+      if (ss) {
+        document.body.removeChild(ss)
+      }
     }
   }, [cookie])
 
@@ -54,11 +59,18 @@ export const AutoTranslate: FC = () => {
     }
     if (l.value === '/auto/ko') {
       setCookie('googtrans', l.value)
+      window.googleTranslateElementInit = googleTranslateElementInit
     } else {
       deleteCookie('googtrans')
+      window.googleTranslateElementInit = undefined
     }
     window.location.reload()
   }
+
+  useEffect(() => {
+    console.log(cookie)
+    console.log(lang)
+  }, [cookie, lang])
 
   return (
     <>

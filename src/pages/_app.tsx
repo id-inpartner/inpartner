@@ -6,7 +6,6 @@ import { Global } from '@emotion/react'
 import { SSRProvider } from 'react-bootstrap'
 import '@sass/index.scss'
 import { globalStyles } from '@components/GlobalStyle'
-import { CookiesProvider } from 'react-cookie'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -35,14 +34,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SSRProvider>
-      <CookiesProvider>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>INPARTNER CONSULTANT</title>
-        </Head>
-        <Global styles={globalStyles} />
-        <Component {...pageProps} />
-      </CookiesProvider>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>INPARTNER CONSULTANT</title>
+      </Head>
+      <Global styles={globalStyles} />
+      <Component {...pageProps} />
     </SSRProvider>
   )
 }

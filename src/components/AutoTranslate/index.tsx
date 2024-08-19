@@ -1,7 +1,7 @@
 import { color } from '@components/GlobalStyle'
 import styled from '@emotion/styled'
 import { FC, useEffect, useState } from 'react'
-import { useCookies } from 'react-cookie'
+import { getCookie, setCookie, deleteCookie } from 'cookies-next'
 
 interface Lang {
   readonly label: string
@@ -27,7 +27,7 @@ const LANGS: ReadonlyArray<Lang> = [
 
 export const AutoTranslate: FC = () => {
   const [lang, setLang] = useState<Lang>(LANGS[0])
-  const [cookie, setCookie, removeCookie] = useCookies(['googtrans'])
+  const cookie = getCookie('googtrans')
 
   useEffect(() => {
     const ss = document.body.querySelector('#googleTranslateElementInit')
@@ -41,12 +41,12 @@ export const AutoTranslate: FC = () => {
       document.body.appendChild(addScript)
       window.googleTranslateElementInit = googleTranslateElementInit
     }
-    if (cookie.googtrans === '/auto/ko') {
+    if (cookie === '/auto/ko') {
       setLang(LANGS[1])
     } else {
       setLang(LANGS[0])
     }
-  }, [cookie.googtrans])
+  }, [cookie])
 
   const onSelect = (l: Lang) => {
     if (l.value === lang.value) {
@@ -55,7 +55,7 @@ export const AutoTranslate: FC = () => {
     if (l.value === '/auto/ko') {
       setCookie('googtrans', decodeURI(l.value))
     } else {
-      setCookie('googtrans', '')
+      deleteCookie('googtrans')
     }
     window.location.reload()
   }

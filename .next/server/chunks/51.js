@@ -41,24 +41,23 @@ const googleTranslateElementInit = ()=>{
         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
     }, "google_translate_element");
 };
-const LANGS = [
-    {
+const LANGS = {
+    "/auto/en": {
         label: "EN",
         value: "/auto/en"
     },
-    {
+    "/auto/ko": {
         label: "KR",
         value: "/auto/ko"
     }
-];
+};
 const AutoTranslate = ()=>{
-    const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(LANGS[0]);
     const cookie = (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.getCookie)("googtrans");
-    console.log(cookie);
+    const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(LANGS[cookie] || LANGS["/auto/en"]);
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
         const ss = document.body.querySelector("#googleTranslateElementInit");
         if (cookie === "/auto/ko") {
-            setLang(LANGS[1]);
+            setLang(LANGS["/auto/ko"]);
             if (!ss) {
                 var addScript = document.createElement("script");
                 addScript.setAttribute("src", "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
@@ -67,7 +66,7 @@ const AutoTranslate = ()=>{
             }
             window.googleTranslateElementInit = googleTranslateElementInit;
         } else {
-            setLang(LANGS[0]);
+            setLang(LANGS["/auto/en"]);
             window.googleTranslateElementInit = undefined;
             if (ss) {
                 document.body.removeChild(ss);
@@ -77,9 +76,6 @@ const AutoTranslate = ()=>{
         cookie
     ]);
     const onSelect = (l)=>{
-        if (l.value === lang.value) {
-            return;
-        }
         if (l.value === "/auto/ko") {
             (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", l.value);
             window.googleTranslateElementInit = googleTranslateElementInit;
@@ -114,16 +110,16 @@ const AutoTranslate = ()=>{
                 className: "notranslate",
                 children: [
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
-                        disabled: lang === LANGS[0],
+                        disabled: lang === LANGS["/auto/en"],
                         className: "notranslate",
-                        onClick: ()=>onSelect(LANGS[0]),
+                        onClick: ()=>onSelect(LANGS["/auto/en"]),
                         children: "EN"
                     }),
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Divider, {}),
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
-                        disabled: lang === LANGS[1],
+                        disabled: lang === LANGS["/auto/ko"],
                         className: "notranslate",
-                        onClick: ()=>onSelect(LANGS[1]),
+                        onClick: ()=>onSelect(LANGS["/auto/ko"]),
                         children: "KR"
                     })
                 ]

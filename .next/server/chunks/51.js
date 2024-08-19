@@ -54,19 +54,24 @@ const LANGS = [
 const AutoTranslate = ()=>{
     const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(LANGS[0]);
     const cookie = (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.getCookie)("googtrans");
+    console.log(cookie);
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
         const ss = document.body.querySelector("#googleTranslateElementInit");
-        if (!ss) {
-            var addScript = document.createElement("script");
-            addScript.setAttribute("src", "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
-            addScript.setAttribute("id", "googleTranslateElementInit");
-            document.body.appendChild(addScript);
-            window.googleTranslateElementInit = googleTranslateElementInit;
-        }
         if (cookie === "/auto/ko") {
             setLang(LANGS[1]);
+            if (!ss) {
+                var addScript = document.createElement("script");
+                addScript.setAttribute("src", "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+                addScript.setAttribute("id", "googleTranslateElementInit");
+                document.body.appendChild(addScript);
+            }
+            window.googleTranslateElementInit = googleTranslateElementInit;
         } else {
             setLang(LANGS[0]);
+            window.googleTranslateElementInit = undefined;
+            if (ss) {
+                document.body.removeChild(ss);
+            }
         }
     }, [
         cookie
@@ -77,11 +82,20 @@ const AutoTranslate = ()=>{
         }
         if (l.value === "/auto/ko") {
             (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", l.value);
+            window.googleTranslateElementInit = googleTranslateElementInit;
         } else {
             (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.deleteCookie)("googtrans");
+            window.googleTranslateElementInit = undefined;
         }
         window.location.reload();
     };
+    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+        console.log(cookie);
+        console.log(lang);
+    }, [
+        cookie,
+        lang
+    ]);
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {

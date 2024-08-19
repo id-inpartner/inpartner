@@ -83,7 +83,11 @@ const AutoTranslate = ()=>{
             });
             window.googleTranslateElementInit = googleTranslateElementInit;
         } else {
-            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.deleteCookie)("googtrans");
+            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", "", {
+                sameSite: true,
+                secure: false,
+                maxAge: 0
+            });
             window.googleTranslateElementInit = undefined;
         }
         window.location.reload();

@@ -119,3 +119,5 @@ const Divider = styled.div`
   width: 1px;
   background-color: ${color.primary.dark};
 `
+
+export default AutoTranslate

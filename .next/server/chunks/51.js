@@ -60,7 +60,7 @@ const AutoTranslate = ()=>{
             setLang(LANGS["/auto/ko"]);
             if (!ss) {
                 var addScript = document.createElement("script");
-                addScript.setAttribute("src", "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+                addScript.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
                 addScript.setAttribute("id", "googleTranslateElementInit");
                 document.body.appendChild(addScript);
             }
@@ -77,7 +77,10 @@ const AutoTranslate = ()=>{
     ]);
     const onSelect = (l)=>{
         if (l.value === "/auto/ko") {
-            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", l.value);
+            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", l.value, {
+                sameSite: true,
+                secure: false
+            });
             window.googleTranslateElementInit = googleTranslateElementInit;
         } else {
             (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.deleteCookie)("googtrans");
@@ -113,14 +116,14 @@ const AutoTranslate = ()=>{
                         disabled: lang === LANGS["/auto/en"],
                         className: "notranslate",
                         onClick: ()=>onSelect(LANGS["/auto/en"]),
-                        children: "EN"
+                        children: LANGS["/auto/en"].label
                     }),
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Divider, {}),
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
                         disabled: lang === LANGS["/auto/ko"],
                         className: "notranslate",
                         onClick: ()=>onSelect(LANGS["/auto/ko"]),
-                        children: "KR"
+                        children: LANGS["/auto/ko"].label
                     })
                 ]
             })

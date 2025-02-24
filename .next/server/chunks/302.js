@@ -7,8 +7,8 @@ exports.modules = {
 
 // Exports
 module.exports = {
-	"style": {"fontFamily":"'__Inter_d9825c', '__Inter_Fallback_d9825c'","fontStyle":"normal"},
-	"className": "__className_d9825c"
+	"style": {"fontFamily":"'__Inter_cc7fef', '__Inter_Fallback_cc7fef'","fontStyle":"normal"},
+	"className": "__className_cc7fef"
 };
 
 

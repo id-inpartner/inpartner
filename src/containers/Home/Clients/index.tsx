@@ -16,7 +16,7 @@ import kemenkopukm from './kemenkopukm.png'
 import batan from './batan.png'
 import csu from './csu.png'
 import falga from './falga.svg'
-import menn from './menn.webp'
+//import menn from './menn.webp'
 import raiz from './raiz.webp'
 import ifgf from './IFGF.jpg'
 import gtaconstruction from './gtaconstruction.png'
@@ -143,13 +143,6 @@ export const Clients: FC = () => {
                 alt=""
                 quality={100}
                 placeholder="empty"
-              />
-              <Image
-                width={144 * 1.1}
-                height={48 * 1.1}
-                src={menn}
-                alt=""
-                quality={100}
               />
               <Image
                 width={128 * 1.5}

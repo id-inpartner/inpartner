@@ -28,22 +28,22 @@ exports.modules = {
 
 
 const Root = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
-    target: "e1h82fg30"
+    target: "e1mgp9gf0"
 })("position:relative;width:100%;color:white;");
 const Aspect = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
-    target: "e1h82fg31"
+    target: "e1mgp9gf1"
 })("position:relative;padding-top:", 702 / 13.66, "%;@media (min-width:1440px){padding-top:740.017px;}&.short{padding-top:", 465 / 14.4, "%;@media (min-width:1440px){padding-top:465px;}}z-index:1;");
 const Content = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()((react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3___default()), {
-    target: "e1h82fg32"
+    target: "e1mgp9gf2"
 })("position:absolute;display:flex;flex-direction:column;align-items:stretch;text-align:center;justify-content:center;height:100%;left:0;right:0;top:0;bottom:0;z-index:2;");
 const Title = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("h1", {
-    target: "e1h82fg33"
+    target: "e1mgp9gf3"
 })("font-family:", (_fonts_index__WEBPACK_IMPORTED_MODULE_5___default().style.fontFamily), ";font-weight:600;font-size:16px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_4__/* .breakpoints.md */ .AV.md, "){font-size:38px;}text-shadow:3px 3px 3px rgba(0,0,0,0.4);");
 const Description = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
-    target: "e1h82fg34"
+    target: "e1mgp9gf4"
 })("font-size:10px;margin-top:0;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_4__/* .breakpoints.md */ .AV.md, "){margin-top:24px;font-size:20px;}text-shadow:3px 3px 3px rgba(0,0,0,0.4);");
 const Img = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()((next_image__WEBPACK_IMPORTED_MODULE_1___default()), {
-    target: "e1h82fg35"
+    target: "e1mgp9gf5"
 })("object-fit:cover;");
 const Banner = ({ backgroundSrc , title , description , size  })=>{
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(Root, {
@@ -91,10 +91,10 @@ const Banner = ({ backgroundSrc , title , description , size  })=>{
 
 
 const Card = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()("div", {
-    target: "ev7rpqc0"
+    target: "euv1ab20"
 })("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
 const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-    target: "ev7rpqc1"
+    target: "euv1ab21"
 })("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
 

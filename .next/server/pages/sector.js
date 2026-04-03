@@ -32,7 +32,7 @@ var styled_default = /*#__PURE__*/__webpack_require__.n(styled_);
 
 
 const Items = /*#__PURE__*/ styled_default()("div", {
-    target: "e7xehun0"
+    target: "ellul670"
 })("display:flex;flex-wrap:wrap;margin-left:-12px;margin-right:-12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-left:-20px;margin-right:-20px;}margin-bottom:12px;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){margin-bottom:24px;}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-bottom:40px;}");
 
 // EXTERNAL MODULE: ./src/components/Card/index.ts
@@ -51,16 +51,16 @@ var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 
 
 const Dummy = /*#__PURE__*/ styled_default()("div", {
-    target: "eof710"
+    target: "eh4s5l60"
 })("margin-left:12px;margin-right:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-left:20px;margin-right:20px;}flex:1;min-width:320px;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){min-width:220px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:320px;}");
 const C = /*#__PURE__*/ styled_default()(Card/* default */.ZP, {
-    target: "eof711"
+    target: "eh4s5l61"
 })("min-width:320px;margin-left:12px;margin-right:12px;flex:1;margin-top:12px;position:relative;@media (min-width:", GlobalStyle/* breakpoints.sm */.AV.sm, "){margin-top:24px;min-width:220px;}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-left:20px;margin-right:20px;margin-top:40px;}@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){min-width:320px;}display:flex;flex-direction:column;align-items:stretch;& > .img{padding-top:", 164 / 3.4, "%;position:relative;border-radius:8px 8px 0 0;overflow:hidden;& > img{object-fit:cover;}}");
 const Title = /*#__PURE__*/ styled_default()("div", {
-    target: "eof712"
+    target: "eh4s5l62"
 })("text-align:center;font-weight:500;font-size:16px;margin-top:8px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:20px;margin-top:12px;}");
 const L = /*#__PURE__*/ styled_default()((link_default()), {
-    target: "eof713"
+    target: "eh4s5l63"
 })("color:", GlobalStyle/* color.primary.normal */.$_.primary.normal, ";text-align:center;padding:12px;text-decoration:underline;font-weight:700;font-size:14px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:16px;}");
 const Item = ({ image , title , slug  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(C, {

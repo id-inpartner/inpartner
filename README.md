@@ -2,7 +2,7 @@
 
 ## Deploy to production (automatic)
 
-- commit changes to git
+-  commit changes to git
   ```sh
   git commit
   ```

@@ -30,18 +30,18 @@ export interface SectorsProps {
 }
 
 const images = {
-  1: restructuring,
-  2: investment,
-  3: financial,
-  4: health,
-  5: biotechnology,
-  6: renewable_energy,
-  7: waste,
-  8: property,
-  9: ev,
-  10: infrastructure,
-  11: information,
-  12: environmental,
+  // 1: restructuring,
+  1: investment,
+  2: financial,
+  3: health,
+  4: biotechnology,
+  5: renewable_energy,
+  6: waste,
+  7: property,
+  8: ev,
+  9: infrastructure,
+  10: information,
+  11: environmental,
 }
 
 export const Sectors: FC<SectorsProps> = ({ data }) => {

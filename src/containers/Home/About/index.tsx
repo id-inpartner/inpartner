@@ -5,7 +5,6 @@ import { ViewMore } from '../styled'
 import { Title } from './styled'
 import Button from '@components/Button'
 
-
 export const About: FC = () => {
   return (
     <ColumnContainer>

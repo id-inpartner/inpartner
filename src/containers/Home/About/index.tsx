@@ -3,6 +3,8 @@ import Text from '@components/Text'
 import { FC } from 'react'
 import { ViewMore } from '../styled'
 import { Title } from './styled'
+import Button from '@components/Button'
+
 
 export const About: FC = () => {
   return (
@@ -17,7 +19,9 @@ export const About: FC = () => {
         improvement. Now, we come up as a consultation service in business and
         management to middle and large corporation.
       </Text>
-      <ViewMore href="/about">Learn More</ViewMore>
+      <ViewMore href="/about">
+        <Button>Learn More</Button>
+      </ViewMore>
     </ColumnContainer>
   )
 }

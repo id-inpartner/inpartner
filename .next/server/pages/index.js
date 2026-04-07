@@ -30,7 +30,7 @@ const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___defa
 
 /***/ }),
 
-/***/ 5321:
+/***/ 9413:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -74,7 +74,10 @@ const Title = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
     target: "e8hmkci0"
 })("text-align:center;margin-top:50px;margin-bottom:10px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:90px;margin-bottom:24px;}");
 
+// EXTERNAL MODULE: ./src/components/Button/index.ts
+var Button = __webpack_require__(3900);
 ;// CONCATENATED MODULE: ./src/containers/Home/About/index.tsx
+
 
 
 
@@ -91,7 +94,9 @@ const About = ()=>{
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
                 href: "/about",
-                children: "Learn More"
+                children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                    children: "Learn More"
+                })
             })
         ]
     });
@@ -111,8 +116,6 @@ var Carousel_default = /*#__PURE__*/__webpack_require__.n(Carousel_namespaceObje
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./src/components/Image.tsx
 var Image = __webpack_require__(471);
-// EXTERNAL MODULE: ./src/components/Button/index.ts
-var Button = __webpack_require__(3900);
 // EXTERNAL MODULE: ./node_modules/@next/font/google/target.css?{"path":"src/fonts/index.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"sans"}
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_ = __webpack_require__(3894);
 var index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_default = /*#__PURE__*/__webpack_require__.n(index_tsx_import_Inter_arguments_subsets_latin_variableName_sans_);
@@ -1184,8 +1187,6 @@ const Arrow = /*#__PURE__*/ styled_default()("div", {
 
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/investment.png
 /* harmony default export */ const investment = ({"src":"/_next/static/media/investment.c23b9754.png","height":1278,"width":939,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAWlBMVEU/SUiDZlStd040OjhtbmuvWjLvuoHew6FzTDv86ME9QEEmHx5lamI6HzMmNDARDhJWTlA7Nzg0DiBANUdgVmazgmATKyZaQVRKP0o0Rke8noKVblIfDw5ZLiIqua5BAAAACnRSTlP+/vn/+f75/f787NyUXAAAAAlwSFlzAAALEwAACxMBAJqcGAAAADlJREFUeJwFwQcCgCAMALFT1ELLdM//f9ME59x8LCgtrQklcxZi3K+qbHKbVbwfu1yw95PwwCBh6n9BSgJJteAcAgAAAABJRU5ErkJggg==","blurWidth":6,"blurHeight":8});
-;// CONCATENATED MODULE: ./src/containers/Home/Sectors/financial.png
-/* harmony default export */ const financial = ({"src":"/_next/static/media/financial.965b3d01.png","height":275,"width":202,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAWlBMVEXS0Nq3wuF0cplJR1ne4OrZ4PW4tcYaITcLEhkhLEJoZIQUOi0XQzTAwc0XQD6FaW5oaXikprjDpq+jp8HY1NrH0vOUeZS+wNXKnI+CeqhuZIuZgowaISduVVT0p1ydAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAOUlEQVR4nAXBBQLAIAwAsUPbMheY//+bS9Byi3VoucR6NHiTkfdrooHnXP08kQ9XU8JtS4wD7ED+AT8cAhKqgc4YAAAAAElFTkSuQmCC","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/health.png
 /* harmony default export */ const health = ({"src":"/_next/static/media/health.d745bb13.png","height":2383,"width":1746,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAICAMAAADtGH4KAAAAV1BMVEVDRkaVnqVhXFsfHRqdoahWWVuDiYtMT1JiaGtyW1BuU0VpbXSzuMCqrraRkZV5a2hNRUG7v8fHy9I5ODZzeHxeYGFWPzOOhIKJkJUyLSqKlJhmXlyBdnFDzmY/AAAAEXRSTlP89f7+/vr1+/r+/v7+/v7++iN6h14AAAAJcEhZcwAACxMAAAsTAQCanBgAAAA6SURBVHicBcGHEYAwDACxD6TScnYqZf85kQhlLUC4eyLg+ra0iB0tVs8pe52GQ+18DCpXfh2iI33+Bz69An3Il9VzAAAAAElFTkSuQmCC","blurWidth":6,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/environmental.png
@@ -1258,20 +1259,19 @@ const Sectors_Item_Item = ({ href , image , label  })=>{
 
 
 
-
 const Sectors_images = {
     // 1: restructuring,
     1: investment,
-    2: financial,
-    3: health,
-    4: biotechnology,
-    5: renewable_energy,
-    6: waste,
-    7: property,
-    8: ev,
-    9: infrastructure,
-    10: information,
-    11: environmental
+    // 2: financial,
+    2: health,
+    3: biotechnology,
+    4: renewable_energy,
+    5: waste,
+    6: property,
+    7: ev,
+    8: infrastructure,
+    9: information,
+    10: environmental
 };
 const Sectors = ({ data  })=>{
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
@@ -1534,7 +1534,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5321);
+/* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9413);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);

@@ -11,7 +11,7 @@ exports.modules = {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"src":"/_next/static/media/banner.c5da7d6b.png","height":2000,"width":3000,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAM1BMVEWwv8RhaGxCSEiLlZmntbl4gIFrdHiRmJmIj4+hrq+3xcp7io9uamaYoqJUXF9PWF86REnq6uVRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nAXBhwEAIAzAoFQ73f9fK9C3jgEwV1ZRypSwpRG8mxbZjeMuLq19F+4BBjynjLMAAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"src":"/_next/static/media/banner.c5da7d6b.png","height":2000,"width":3000,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAM1BMVEWwv8RhaGxCSEiLlZl4gIGIj49rdHiRmJmntbmhrq+3xcpuamZ7io9PWF9UXF86REmYoqL6rOLjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALElEQVR4nAXBhwEAIAzAoFQ73f9fK9BfjgGwplVRyZLQmRHcbRrWleMuLq19GMwBBsxf2L4AAAAASUVORK5CYII=","blurWidth":8,"blurHeight":5});
 
 /***/ }),
 
@@ -54,13 +54,13 @@ const PageItem = ({ href , as , children , tabIndex  })=>{
 /* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9920);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3894);
+/* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7533);
 /* harmony import */ var _fonts_index__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fonts_index__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default()("h5", {
-    target: "e3y0cv0"
+    target: "e1uxknnn0"
 })("font-weight:600;font-family:", (_fonts_index__WEBPACK_IMPORTED_MODULE_2___default().style.fontFamily), ";font-size:20px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.md */ .AV.md, "){font-size:28px;}");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionTitle);
 
@@ -352,22 +352,22 @@ __webpack_async_result__();
 
 
 const Container = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()((react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_5___default()), {
-    target: "e54vnkr0"
+    target: "e1dprq1e0"
 })("display:flex;flex-wrap:wrap;");
 const SideMenu = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()("div", {
-    target: "e54vnkr1"
+    target: "e1dprq1e1"
 })("display:flex;flex-direction:column;min-width:90%;flex:1;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){min-width:330px;max-width:330px;border-right:1px solid #d9d9d9;margin-right:32px;}");
 const MenuTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()(_components_SectionTitle__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
-    target: "e54vnkr2"
+    target: "e1dprq1e2"
 })("padding-top:32px;padding-bottom:16px;border-bottom:1px solid #d9d9d9;margin-bottom:0;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){padding-top:64px;padding-bottom:32px;}");
 const MenuItem = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
-    target: "e54vnkr3"
+    target: "e1dprq1e3"
 })("padding:8px;display:flex;align-items:center;min-height:48px;font-weight:600;font-size:16px;border-bottom:1px solid #d9d9d9;&.selected{background:#f2f2f2;box-shadow:inset 0px 4px 4px rgba(0,0,0,0.12);}@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){font-size:20px;min-height:96px;}");
 const Projects = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()(_components_Project__WEBPACK_IMPORTED_MODULE_1__/* .ProjectsComponent */ .vP, {
-    target: "e54vnkr4"
+    target: "e1dprq1e4"
 })("flex:1;padding-bottom:15px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){padding-bottom:42px;}& > .pagination{min-width:100%;margin-left:12px;margin-right:12px;margin-top:20px;}");
 const Queries = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_3___default()("div", {
-    target: "e54vnkr5"
+    target: "e1dprq1e5"
 })("min-width:100%;display:flex;padding-top:32px;padding-bottom:16px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.lg */ .AV.lg, "){padding-top:64px;padding-bottom:32px;}& > .form-control,& > .form-select{width:unset;min-width:134px;margin-left:12px;margin-right:12px;}");
 
 
@@ -803,7 +803,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,51,468,941], () => (__webpack_exec__(8493)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,252,51,468,941], () => (__webpack_exec__(8493)));
 module.exports = __webpack_exports__;
 
 })();

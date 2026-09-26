@@ -34,7 +34,7 @@ export const Footer: FC = () => {
             <div className="name">Phone</div>
             <div className="c">:</div>
             <div className="value">
-              <a href="tel:+6289628310192">0896 2831 0192</a>
+              <a href="tel:+6285934548202">0859 3454 8202</a>
             </div>
           </div>
           <div>

@@ -58,8 +58,9 @@ export const Item: FC<ItemProps> = ({ data }) => {
         <Image
           fill
           src={data._embedded['wp:featuredmedia'][0].source_url}
-          alt={data._embedded['wp:featuredmedia'][0].alt_text}
+          alt={data._embedded['wp:featuredmedia'][0].alt_text || ''}
           quality={100}
+          sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
           placeholder="empty"
         />
         <Content>

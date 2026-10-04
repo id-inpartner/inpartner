@@ -45,7 +45,7 @@ const createMailMiddleware = () => {
       req.ctx.sendMail = sendMail
       req.ctx.renderMail = renderMail
     } else {
-      req.ctx = { mail, renderMail, sendMail }
+      req.ctx = { mail: transport, renderMail, sendMail }
     }
     next()
   }

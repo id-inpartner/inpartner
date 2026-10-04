@@ -24,7 +24,7 @@ const Cat: FC<{
     <>
       <Header className={`index-${index}`}>
         <div className="underline" />
-        <Title href={`/blog/category/${category.slug}`} passHref>
+        <Title href={`/blog/category/${category.slug}`} passHref legacyBehavior>
           <Button>{category.name}</Button>
         </Title>
         <Button onClick={() => slider.current.slickPrev()}>

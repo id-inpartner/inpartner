@@ -63,7 +63,7 @@ export const Card: FC<CardProps> = ({
       <Title className="card-title">{title}</Title>
       <Description>{children}</Description>
       {!!href && (
-        <Link href={href} passHref>
+        <Link href={href} passHref legacyBehavior>
           <Href>{hrefLabel}</Href>
         </Link>
       )}

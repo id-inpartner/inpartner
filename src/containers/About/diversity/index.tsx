@@ -6,8 +6,11 @@ import diversity2 from './2.png'
 import diversity3 from './3.png'
 import Target from '@components/Target'
 import { Images } from './styled'
+import useTranslation from '../../../locales/useTranslation'
 
 export const Diversity: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Target id="diversity" />
@@ -44,17 +47,9 @@ export const Diversity: FC = () => {
           </div>
         </Images>
       </div>
-      <Card title="Diversity" className="content">
-        We will always be committed to advancing diversity in the company. At
-        INPARTNER, of course, we have different backgrounds. Starting from
-        ethnicity, culture, education level, and way of thinking. However, this
-        diversity can unite and raise a sense of cooperation to help our clients
-        improve performance in various sectors.
-        <br />
-        With this diversity, we aim to be able to develop and retain people with
-        extraordinary backgrounds. Diversity is not a barrier to continuing to
-        develop our insights, especially in partnering and serving clients to
-        make a real change.
+      <Card title={t.aboutPage.diversityTitle} className="content">
+        <p>{t.aboutPage.diversityText1}</p>
+        <p>{t.aboutPage.diversityText2}</p>
       </Card>
     </>
   )

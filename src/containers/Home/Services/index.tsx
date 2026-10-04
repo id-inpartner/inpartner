@@ -6,11 +6,14 @@ import { Col, Item, Items, Label, Title } from './styled'
 import business from './business.png'
 import capacity from './capacity.png'
 import investment from './investment.png'
+import useTranslation from '../../../locales/useTranslation'
 
 export const Services: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <ColumnContainer>
-      <Title>Our Service & Scope</Title>
+      <Title>{t.home.services.title}</Title>
       <Items>
         <Col>
           <Item
@@ -20,16 +23,12 @@ export const Services: FC = () => {
               <Image
                 fill
                 src={business}
-                alt="Business and Management Consulting"
+                alt={t.home.services.business}
                 quality={100}
                 sizes="(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
               />
             </Ratio>
-            <Label>
-              Business and
-              <br />
-              Management Consulting
-            </Label>
+            <Label>{t.home.services.business}</Label>
           </Item>
         </Col>
         <Col>
@@ -38,28 +37,24 @@ export const Services: FC = () => {
               <Image
                 fill
                 src={capacity}
-                alt="Capacity Building (The Executive Business Program)"
+                alt={t.home.services.capacity}
                 quality={100}
                 sizes="(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
               />
             </Ratio>
-            <Label>
-              Capacity Building
-              <br />
-              (The Executive Business Program)
-            </Label>
+            <Label>{t.home.services.capacity}</Label>
           </Item>
           <Item href={{ pathname: '/services', hash: 'investment' }}>
             <Ratio aspectRatio={127 / 543}>
               <Image
                 fill
                 src={investment}
-                alt="Investment"
+                alt={t.home.services.investment}
                 quality={100}
                 sizes="(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
               />
             </Ratio>
-            <Label>Investment</Label>
+            <Label>{t.home.services.investment}</Label>
           </Item>
         </Col>
       </Items>

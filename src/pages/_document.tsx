@@ -3,8 +3,9 @@ import Script from 'next/script'
 
 class MyDocument extends Document {
   render() {
+    const locale = (this.props as any).__NEXT_DATA__?.locale || 'en'
     return (
-      <Html lang="en">
+      <Html lang={locale}>
         <Head>
           <link
             rel="apple-touch-icon"

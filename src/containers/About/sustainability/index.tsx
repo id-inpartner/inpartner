@@ -6,8 +6,11 @@ import sustainability2 from './2.png'
 import sustainability3 from './3.png'
 import Target from '@components/Target'
 import { Images } from './styled'
+import useTranslation from '../../../locales/useTranslation'
 
 export const Sustainability: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Target id="sustainability" />
@@ -44,16 +47,9 @@ export const Sustainability: FC = () => {
           </div>
         </Images>
       </div>
-      <Card title="Sustainability" className="content">
-        In Inpartners, it is important to pay attention to sustainability. This
-        is because sustainable business can basically be the continuity of a
-        company. That way, the company will have a sustainable system and be
-        able to have a positive impact in the short and long term.
-        <br />
-        The goal is to ensure the continuity of the company&apos;s operations.
-        So that there are several ways that can be taken to have a big impact.
-        Such as being able to reduce unnecessary expenses, and on the one hand,
-        the negative impact on the environment will also be reduced.
+      <Card title={t.aboutPage.sustainabilityTitle} className="content">
+        <p>{t.aboutPage.sustainabilityText1}</p>
+        <p>{t.aboutPage.sustainabilityText2}</p>
       </Card>
     </>
   )

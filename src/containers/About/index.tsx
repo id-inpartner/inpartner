@@ -14,24 +14,29 @@ import Diversity from './diversity'
 import Sustainability from './sustainability'
 import Team from './Team'
 import GrayBackground from '@components/Graybackground'
+import useTranslation from '../../locales/useTranslation'
 
 export const Index: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Banner
-        title="About Us"
-        description="INPARTNER is one of Indonesia Consultant services, located in Jakarta Selatan. Founded by professionals since 2019, we take a holistic approach to identifying the problem and give you a home run. INPARTNER also has clear guides to unleash the power of your business for a brighter future."
+        title={t.aboutPage.bannerTitle}
+        description={t.aboutPage.bannerDesc}
         backgroundSrc={banner}
       />
       <Container className="vm">
         <VisionMissions>
-          <Card title="Vision" className="item" id="vision">
-            The Most Trusted Consulting Partner To help create positive and
-            endure changes in Local and Global Coverage.
+          <Card title={t.aboutPage.visionTitle} className="item" id="vision">
+            {t.aboutPage.visionText}
           </Card>
-          <Card title="Missions" className="item" id="missions">
-            Our mission is to combine knowledge, technology, information, and
-            network to unlock solution and reach client&apos;s goals.
+          <Card
+            title={t.aboutPage.missionsTitle}
+            className="item"
+            id="missions"
+          >
+            {t.aboutPage.missionsText}
           </Card>
         </VisionMissions>
       </Container>
@@ -43,13 +48,17 @@ export const Index: FC = () => {
       <Values>
         <Target id="values" className="low" />
         <ColumnContainer>
-          <TitleDescription title="Values">
-            With our value, Go Beyond than Just Consultancy, we are committed to
-            opening up to all access that our clients need it. Such as
-            financing, business development, and also people development through
+          <TitleDescription title={t.aboutPage.valuesTitle}>
+            {t.aboutPage.valuesDesc}
           </TitleDescription>
           <Ratio className="image" aspectRatio={521 / 1120}>
-            <Image src={values} alt="" fill quality={100} />
+            <Image
+              src={values}
+              alt="Inpartner Core Values"
+              fill
+              quality={100}
+              sizes="(min-width: 1200px) 1120px, (min-width: 768px) 90vw, 100vw"
+            />
           </Ratio>
         </ColumnContainer>
       </Values>

@@ -26,8 +26,23 @@ const nextConfig = {
     ],
   },
   i18n: {
-    locales: ['en'],
+    locales: ['en', 'ko'],
     defaultLocale: 'en',
+    localeDetection: false,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/services/business-and-management',
+        destination: '/services/business-management-consulting',
+        permanent: true,
+      },
+      {
+        source: '/projects',
+        destination: '/project',
+        permanent: true,
+      },
+    ]
   },
 }
 

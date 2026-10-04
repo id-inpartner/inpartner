@@ -14,6 +14,7 @@ import {
   Title,
 } from './styled'
 import type { Category, PlainPost, Post } from './types'
+import useTranslation from '../../locales/useTranslation'
 
 export interface IndexProps {
   readonly post: Post
@@ -21,6 +22,7 @@ export interface IndexProps {
 }
 
 export const Index: FC<IndexProps> = ({ post, related }) => {
+  const { t } = useTranslation()
   return (
     <Container>
       <Article>
@@ -28,27 +30,30 @@ export const Index: FC<IndexProps> = ({ post, related }) => {
         <Meta>{format(new Date(post.modified), 'd MMMM yyyy')}</Meta>
         <Content dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         <Chips>
-          {post._embedded['wp:term'].map((its) =>
-            its.map((it) =>
-              it && it.id ? <div key={it.id}>{it.name}</div> : undefined
-            )
-          )}
+          {post._embedded?.['wp:term']
+            ? post._embedded['wp:term'].map((its) =>
+                its.map((it) =>
+                  it && it.id ? <div key={it.id}>{it.name}</div> : undefined
+                )
+              )
+            : null}
         </Chips>
       </Article>
       <Divider />
       <Sidebar>
-        <div className="title">Related Articles</div>
+        <div className="title">{t.blogPage.relatedArticles}</div>
         {related && related.length ? (
           related.map((it) => {
-            const m = it._embedded['wp:featuredmedia'].length
+            const m = it._embedded?.['wp:featuredmedia']?.length
               ? it._embedded['wp:featuredmedia'][0]
               : {
                   alt_text: '',
                   source_url: '/images/default_post_img.png',
                 }
-            const [c] = it._embedded['wp:term'].find((i) =>
+            const catGroup = it._embedded?.['wp:term']?.find((i) =>
               i.find((ii) => ii.taxonomy === 'category')
             )
+            const c = catGroup && catGroup[0]
             return (
               <Item key={it.id} href={`/blog/${it.slug}`}>
                 <Image
@@ -69,7 +74,7 @@ export const Index: FC<IndexProps> = ({ post, related }) => {
             )
           })
         ) : (
-          <Empty>No related articles</Empty>
+          <Empty>{t.blogPage.noRelatedArticles}</Empty>
         )}
       </Sidebar>
     </Container>

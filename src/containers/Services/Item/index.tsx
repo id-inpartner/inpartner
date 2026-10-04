@@ -36,7 +36,7 @@ export const Item: FC<ItemProps> = ({
           <Image
             fill
             src={smallImage}
-            alt=""
+            alt={title || 'Inpartner Service'}
             quality={100}
             sizes={`(min-width: ${breakpoints.xxl}) 294px, (min-width: ${breakpoints.xl}) 247px, (min-width: ${breakpoints.lg}) 202px, (min-width: ${breakpoints.md}) 143px, (min-width: ${breakpoints.sm}) 247px, 50vw`}
           />
@@ -45,7 +45,7 @@ export const Item: FC<ItemProps> = ({
           <Image
             fill
             src={largImage}
-            alt=""
+            alt={title || 'Inpartner Service'}
             quality={100}
             sizes={`(min-width: ${breakpoints.xxl}) 294px, (min-width: ${breakpoints.xl}) 247px, (min-width: ${breakpoints.lg}) 202px, (min-width: ${breakpoints.md}) 143px, (min-width: ${breakpoints.sm}) 247px, 50vw`}
           />

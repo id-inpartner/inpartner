@@ -1,6 +1,7 @@
 import { FC, useState } from 'react'
 import Link from 'next/link'
-import { NavDropdown, Navbar as NavBar } from 'react-bootstrap'
+import { Navbar as NavBar } from 'react-bootstrap'
+import NavDropdown from './NavDropdown'
 import logo from '@images/logo.png'
 import Image from '@components/Image'
 import { breakpoints } from '@components/GlobalStyle'
@@ -9,10 +10,12 @@ import DropTitle from './DropTitle'
 import { Sectors } from './Sectors'
 import Button from '@components/Button'
 import dynamic from 'next/dynamic'
+import useTranslation from '../../locales/useTranslation'
 
 const AutoTranslate = dynamic(() => import('@components/AutoTranslate'))
 
 export const Navbar: FC = () => {
+  const { t } = useTranslation()
   const [menu, setMenu] = useState('')
   const mouseEnter = (id: string) => () => setMenu(id)
   const mouseLeave = (id: string) => () => {
@@ -50,7 +53,7 @@ export const Navbar: FC = () => {
               title={
                 <DropTitle
                   href="/about"
-                  title="About Us"
+                  title={t.navbar.about}
                   onButtonClick={click('nav-about-dropdown')}
                 />
               }
@@ -60,32 +63,32 @@ export const Navbar: FC = () => {
               onMouseEnter={mouseEnter('nav-about-dropdown')}
             >
               <ItemLink href={{ pathname: '/about', hash: 'vision' }}>
-                Vision
+                {t.navbar.vision}
               </ItemLink>
               <ItemLink href={{ pathname: '/about', hash: 'missions' }}>
-                Missions
+                {t.footer.missions}
               </ItemLink>
               <ItemLink href={{ pathname: '/about', hash: 'history' }}>
-                History
+                {t.navbar.history}
               </ItemLink>
               <ItemLink href={{ pathname: '/about', hash: 'values' }}>
-                Values
+                {t.footer.values}
               </ItemLink>
               <ItemLink href={{ pathname: '/about', hash: 'diversity' }}>
-                Diversity
+                {t.footer.diversity}
               </ItemLink>
               <ItemLink href={{ pathname: '/about', hash: 'sustainability' }}>
-                Sustainability
+                {t.footer.sustainability}
               </ItemLink>
               <ItemLink href={{ pathname: '/about', hash: 'team' }}>
-                Team
+                {t.navbar.team}
               </ItemLink>
             </NavDropdown>
             <NavDropdown
               title={
                 <DropTitle
                   href="/services"
-                  title="Services"
+                  title={t.navbar.services}
                   onButtonClick={click('nav-services-dropdown')}
                 />
               }
@@ -100,15 +103,15 @@ export const Navbar: FC = () => {
                   hash: 'business-and-management',
                 }}
               >
-                Business and Management
+                {t.navbar.business}
               </ItemLink>
               <ItemLink href={{ pathname: '/services', hash: 'investment' }}>
-                Investment
+                {t.navbar.investment}
               </ItemLink>
               <ItemLink
                 href={{ pathname: '/services', hash: 'capacity-building' }}
               >
-                Capacity Building
+                {t.navbar.capacity}
               </ItemLink>
             </NavDropdown>
             <Sectors
@@ -122,16 +125,16 @@ export const Navbar: FC = () => {
               Sectors
             </Link> */}
             <Link className="nav-link" href="/project">
-              Projects
+              {t.navbar.projects}
             </Link>
             <Link className="nav-link" href="/career">
-              Career
+              {t.navbar.career}
             </Link>
             <Link className="nav-link" href="/blog">
-              Insight &amp; Update
+              {t.navbar.blog}
             </Link>
             <GetInTouch href="/contact">
-              <Button>Get in Touch</Button>
+              <Button as="span">{t.navbar.getInTouch}</Button>
             </GetInTouch>
             <AutoTranslate />
           </Nav>

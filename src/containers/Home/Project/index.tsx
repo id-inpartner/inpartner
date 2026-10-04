@@ -4,6 +4,7 @@ import { Items, Title } from './styled'
 import { ViewMore } from '../styled'
 import ProjectComponent, { Project as Data } from '@components/Project'
 import Button from '@components/Button'
+import useTranslation from '../../../locales/useTranslation'
 
 export type { Data }
 
@@ -12,16 +13,18 @@ export interface ProjectProps {
 }
 
 export const Project: FC<ProjectProps> = ({ data }) => {
+  const { t } = useTranslation()
+
   return (
     <ColumnContainer>
-      <Title>Projects</Title>
+      <Title>{t.home.projects.title}</Title>
       <Items>
         {data.map((r) => (
           <ProjectComponent key={r.id} data={r} />
         ))}
       </Items>
       <ViewMore href="/project">
-        <Button>View All</Button>
+        <Button as="span">{t.home.projects.viewAll}</Button>
       </ViewMore>
     </ColumnContainer>
   )

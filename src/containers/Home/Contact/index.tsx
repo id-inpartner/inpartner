@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { useReducer, useState, useEffect } from 'react'
 import { FormControlProps } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
+import useTranslation from '../../../locales/useTranslation'
 
 const Root = styled.div`
   display: flex;
@@ -90,6 +91,7 @@ const reducer = (
 }
 
 export const Contact = () => {
+  const { t } = useTranslation()
   const [state, dispatch] = useReducer(reducer, { status: 'idle' })
   const [values, setValues] = useState<Values>({
     email: '',
@@ -100,21 +102,21 @@ export const Contact = () => {
 
   useEffect(() => {
     if (state.error) {
-      alert(state.error)
+      alert(t.home.contact.failed)
       dispatch({ type: 'reset' })
     } else if (state.status === 'success') {
-      alert('Message recorded!')
+      alert(t.home.contact.success)
       dispatch({ type: 'reset' })
     }
-  }, [state.status, state.error])
+  }, [state.status, state.error, t])
 
   const onChange: FormControlProps['onChange'] = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
   return (
     <Root>
-      <TitleDescription title="Contact Us">
-        Please enter your details
+      <TitleDescription title={t.home.contact.title}>
+        {t.home.contact.description}
       </TitleDescription>
       <F
         onSubmit={(a) => {
@@ -144,7 +146,7 @@ export const Contact = () => {
             name="name"
             required
             type="name"
-            placeholder="Enter your full name"
+            placeholder={t.home.contact.namePlaceholder}
             disabled={state.status === 'progress'}
             value={values.name}
             onChange={onChange}
@@ -155,13 +157,13 @@ export const Contact = () => {
             name="email"
             required
             type="email"
-            placeholder="Enter your email"
+            placeholder={t.home.contact.emailPlaceholder}
             disabled={state.status === 'progress'}
             value={values.email}
             onChange={onChange}
           />
           <Form.Control.Feedback type="invalid">
-            {`We'll never share your email with anyone else.`}
+            {t.home.contact.emailFeedback}
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="mb-4" controlId="subject">
@@ -169,7 +171,7 @@ export const Contact = () => {
             name="subject"
             required
             type="text"
-            placeholder="Enter your subject"
+            placeholder={t.home.contact.subjectPlaceholder}
             disabled={state.status === 'progress'}
             value={values.subject}
             onChange={onChange}
@@ -182,7 +184,7 @@ export const Contact = () => {
             type="text"
             as="textarea"
             rows={3}
-            placeholder="Enter your subject"
+            placeholder={t.home.contact.messagePlaceholder}
             disabled={state.status === 'progress'}
             value={values.message}
             onChange={onChange}
@@ -193,7 +195,9 @@ export const Contact = () => {
           type="submit"
           disabled={state.status === 'progress'}
         >
-          Submit
+          {state.status === 'progress'
+            ? t.home.contact.submitting
+            : t.home.contact.submit}
         </Button>
       </F>
     </Root>

@@ -19,8 +19,10 @@ import {
   LearnMore,
 } from './styled'
 import { useEffect } from 'react'
+import useTranslation from '../../../locales/useTranslation'
 
 export const Banner: FC = () => {
+  const { t } = useTranslation()
   const [index, setIndex] = useState(0)
   const [interval, setInterval] = useState<number | null>(null)
   useEffect(() => {
@@ -43,21 +45,40 @@ export const Banner: FC = () => {
         <Carousel.Item>
           <Item>
             <ItemInner>
-              <BI fill quality={100} alt="" src={a} priority />
+              <BI
+                fill
+                quality={100}
+                alt="Inpartner Advisory Banner 1"
+                src={a}
+                priority
+                sizes="100vw"
+              />
             </ItemInner>
           </Item>
         </Carousel.Item>
         <Carousel.Item>
           <Item>
             <ItemInner>
-              <BI fill quality={100} alt="" src={b} />
+              <BI
+                fill
+                quality={100}
+                alt="Inpartner Advisory Banner 2"
+                src={b}
+                sizes="100vw"
+              />
             </ItemInner>
           </Item>
         </Carousel.Item>
         <Carousel.Item>
           <Item>
             <ItemInner>
-              <BI fill quality={100} alt="" src={c} />
+              <BI
+                fill
+                quality={100}
+                alt="Inpartner Advisory Banner 3"
+                src={c}
+                sizes="100vw"
+              />
             </ItemInner>
           </Item>
         </Carousel.Item>
@@ -65,15 +86,11 @@ export const Banner: FC = () => {
       <RootInner>
         <ContentContainer>
           <Content>
-            <Title>UNLEASH THE POWER OF YOUR BUSINESS</Title>
-            <Subtitle>Go Beyond Than Just Consultancy</Subtitle>
-            <Description>
-              Through our Consultation Services, we take a holistic approach to
-              identify the problem and give you a home run. We have clear guides
-              to unleash the power of your business for brighter future.
-            </Description>
+            <Title>{t.home.banner.title}</Title>
+            <Subtitle>{t.home.banner.subtitle}</Subtitle>
+            <Description>{t.home.banner.description}</Description>
             <LearnMore href="/about" variant="secondary">
-              Learn More
+              {t.home.banner.learnMore}
             </LearnMore>
           </Content>
         </ContentContainer>

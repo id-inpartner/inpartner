@@ -1,5 +1,4 @@
 import { GetServerSideProps } from 'next'
-import { format } from 'date-fns'
 
 const Page = () => {
   // getServerSideProps will do the heavy lifting

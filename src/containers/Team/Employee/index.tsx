@@ -8,7 +8,13 @@ export const Employee = () => {
       {employees.map((it, i) => (
         <Card key={i} aria-hidden={it.h}>
           <Aspect>
-            <Image src={it.src} fill quality={100} alt="" />
+            <Image
+              src={it.src}
+              fill
+              quality={100}
+              alt={it.name || 'Inpartner Team Member'}
+              sizes="(min-width: 1200px) 250px, (min-width: 768px) 33vw, 50vw"
+            />
           </Aspect>
           <Name>{it.name}</Name>
           <Pos>{it.pos}</Pos>

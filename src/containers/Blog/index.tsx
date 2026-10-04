@@ -9,6 +9,7 @@ import { Form } from 'react-bootstrap'
 import Categories from './Categories'
 import { Banner, Container, Item, PostRow } from './styled'
 import type { Category, Post } from './types'
+import useTranslation from '../../locales/useTranslation'
 
 export interface IndexProps {
   readonly posts: ReadonlyArray<Post>
@@ -18,8 +19,25 @@ export interface IndexProps {
   }>
 }
 
-export const Index: FC<IndexProps> = ({ posts, categories }) => {
+const getMedia = (post?: Post) => {
+  const media = post?._embedded?.['wp:featuredmedia']?.[0]
+  return {
+    source_url: media?.source_url || '/images/default_post_img.png',
+    alt_text: media?.alt_text || '',
+  }
+}
+
+const getTerm = (post?: Post) => {
+  const terms = post?._embedded?.['wp:term']
+  if (Array.isArray(terms) && terms[0] && terms[0][0]) {
+    return terms[0][0].name
+  }
+  return ''
+}
+
+export const Index: FC<IndexProps> = ({ posts = [], categories = [] }) => {
   const router = useRouter()
+  const { t, locale } = useTranslation()
   const { c, q }: { c: Record<string, boolean | undefined>; q: string } =
     useMemo(() => {
       let c = {}
@@ -61,6 +79,9 @@ export const Index: FC<IndexProps> = ({ posts, categories }) => {
   }, [router.events])
 
   const [first, second, third, fourth, fifth] = useMemo(() => {
+    if (!posts || posts.length === 0) {
+      return []
+    }
     if (posts.length === 1) {
       return [...posts, ...posts, ...posts, ...posts, ...posts]
     }
@@ -81,12 +102,15 @@ export const Index: FC<IndexProps> = ({ posts, categories }) => {
       <Banner>
         <div className="search">
           <Form.Control
-            placeholder="Search article ..."
-            aria-label="Search"
+            id="blog-search"
+            name="q"
+            placeholder={t.blogPage.searchPlaceholder}
+            aria-label={t.blogPage.searchPlaceholder}
             value={search}
             onChange={(e) => setSearch(e.target.value.toLowerCase())}
           />
           <Button
+            aria-label={locale === 'ko' ? '검색' : 'Search'}
             disabled={loading}
             onClick={() => {
               router.push(
@@ -108,116 +132,161 @@ export const Index: FC<IndexProps> = ({ posts, categories }) => {
             />
           </Button>
         </div>
-        <Item href={`/blog/${first.slug}`} className="main">
-          <div className="aspect">
-            <Image
-              fill
-              quality={100}
-              src={first._embedded['wp:featuredmedia'][0].source_url}
-              alt={first._embedded['wp:featuredmedia'][0].alt_text}
-            />
+        {!first ? (
+          <div
+            style={{
+              textAlign: 'center',
+              width: '100%',
+              padding: '64px 16px',
+              color: '#666',
+              fontSize: '18px',
+            }}
+          >
+            {t.blogPage.noArticles}
           </div>
-          <div className="content">
-            <div className="term">{first._embedded['wp:term'][0][0].name}</div>
-            <div
-              className="title"
-              dangerouslySetInnerHTML={{ __html: first.title.rendered }}
-            />
-            <div className="dste">
-              {format(new Date(first.modified), 'd MMMM yyyy')}
-            </div>
-          </div>
-        </Item>
-        <div className="side">
-          <Item href={`/blog/${second.slug}`}>
-            <div className="aspect">
-              <Image
-                fill
-                quality={100}
-                src={second._embedded['wp:featuredmedia'][0].source_url}
-                alt={second._embedded['wp:featuredmedia'][0].alt_text}
-              />
-            </div>
-            <div className="content">
-              <div className="term">
-                {second._embedded['wp:term'][0][0].name}
+        ) : (
+          <>
+            <Item href={`/blog/${first.slug}`} className="main">
+              <div className="aspect">
+                <Image
+                  fill
+                  quality={100}
+                  src={getMedia(first).source_url}
+                  alt={getMedia(first).alt_text}
+                  sizes="(min-width: 1200px) 760px, (min-width: 768px) 60vw, 100vw"
+                />
               </div>
-              <div
-                className="title"
-                dangerouslySetInnerHTML={{ __html: second.title.rendered }}
-              />
-              <div className="dste">
-                {format(new Date(second.modified), 'd MMMM yyyy')}
+              <div className="content">
+                <div className="term">{getTerm(first)}</div>
+                <div
+                  className="title"
+                  dangerouslySetInnerHTML={{
+                    __html: first.title?.rendered || '',
+                  }}
+                />
+                <div className="dste">
+                  {first.modified
+                    ? format(new Date(first.modified), 'd MMMM yyyy')
+                    : ''}
+                </div>
               </div>
-            </div>
-          </Item>
-          <Item href={`/blog/${third.slug}`}>
-            <div className="aspect">
-              <Image
-                fill
-                quality={100}
-                src={third._embedded['wp:featuredmedia'][0].source_url}
-                alt={third._embedded['wp:featuredmedia'][0].alt_text}
-              />
-            </div>
-            <div className="content">
-              <div className="term">
-                {third._embedded['wp:term'][0][0].name}
+            </Item>
+            {second && (
+              <div className="side">
+                <Item href={`/blog/${second.slug}`}>
+                  <div className="aspect">
+                    <Image
+                      fill
+                      quality={100}
+                      src={getMedia(second).source_url}
+                      alt={getMedia(second).alt_text}
+                      sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="term">{getTerm(second)}</div>
+                    <div
+                      className="title"
+                      dangerouslySetInnerHTML={{
+                        __html: second.title?.rendered || '',
+                      }}
+                    />
+                    <div className="dste">
+                      {second.modified
+                        ? format(new Date(second.modified), 'd MMMM yyyy')
+                        : ''}
+                    </div>
+                  </div>
+                </Item>
+                {third && (
+                  <Item href={`/blog/${third.slug}`}>
+                    <div className="aspect">
+                      <Image
+                        fill
+                        quality={100}
+                        src={getMedia(third).source_url}
+                        alt={getMedia(third).alt_text}
+                        sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
+                      />
+                    </div>
+                    <div className="content">
+                      <div className="term">{getTerm(third)}</div>
+                      <div
+                        className="title"
+                        dangerouslySetInnerHTML={{
+                          __html: third.title?.rendered || '',
+                        }}
+                      />
+                      <div className="dste">
+                        {third.modified
+                          ? format(new Date(third.modified), 'd MMMM yyyy')
+                          : ''}
+                      </div>
+                    </div>
+                  </Item>
+                )}
               </div>
-              <div
-                className="title"
-                dangerouslySetInnerHTML={{ __html: third.title.rendered }}
-              />
-              <div className="dste">
-                {format(new Date(third.modified), 'd MMMM yyyy')}
-              </div>
-            </div>
-          </Item>
-        </div>
+            )}
+          </>
+        )}
       </Banner>
-      <PostRow>
-        <Item href={`/blog/${fourth.slug}`}>
-          <div className="aspect">
-            <Image
-              fill
-              quality={100}
-              src={fourth._embedded['wp:featuredmedia'][0].source_url}
-              alt={fourth._embedded['wp:featuredmedia'][0].alt_text}
-            />
-          </div>
-          <div className="content">
-            <div className="term">{fourth._embedded['wp:term'][0][0].name}</div>
-            <div
-              className="title"
-              dangerouslySetInnerHTML={{ __html: fourth.title.rendered }}
-            />
-            <div className="dste">
-              {format(new Date(fourth.modified), 'd MMMM yyyy')}
+      {fourth && (
+        <PostRow>
+          <Item href={`/blog/${fourth.slug}`}>
+            <div className="aspect">
+              <Image
+                fill
+                quality={100}
+                src={getMedia(fourth).source_url}
+                alt={getMedia(fourth).alt_text}
+                sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
+              />
             </div>
-          </div>
-        </Item>
-        <Item href={`/blog/${fifth.slug}`}>
-          <div className="aspect">
-            <Image
-              fill
-              quality={100}
-              src={fifth._embedded['wp:featuredmedia'][0].source_url}
-              alt={fifth._embedded['wp:featuredmedia'][0].alt_text}
-            />
-          </div>
-          <div className="content">
-            <div className="term">{fifth._embedded['wp:term'][0][0].name}</div>
-            <div
-              className="title"
-              dangerouslySetInnerHTML={{ __html: fifth.title.rendered }}
-            />
-            <div className="dste">
-              {format(new Date(fifth.modified), 'd MMMM yyyy')}
+            <div className="content">
+              <div className="term">{getTerm(fourth)}</div>
+              <div
+                className="title"
+                dangerouslySetInnerHTML={{
+                  __html: fourth.title?.rendered || '',
+                }}
+              />
+              <div className="dste">
+                {fourth.modified
+                  ? format(new Date(fourth.modified), 'd MMMM yyyy')
+                  : ''}
+              </div>
             </div>
-          </div>
-        </Item>
-      </PostRow>
-      <Categories data={categories} />
+          </Item>
+          {fifth && (
+            <Item href={`/blog/${fifth.slug}`}>
+              <div className="aspect">
+                <Image
+                  fill
+                  quality={100}
+                  src={getMedia(fifth).source_url}
+                  alt={getMedia(fifth).alt_text}
+                  sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
+                />
+              </div>
+              <div className="content">
+                <div className="term">{getTerm(fifth)}</div>
+                <div
+                  className="title"
+                  dangerouslySetInnerHTML={{
+                    __html: fifth.title?.rendered || '',
+                  }}
+                />
+                <div className="dste">
+                  {fifth.modified
+                    ? format(new Date(fifth.modified), 'd MMMM yyyy')
+                    : ''}
+                </div>
+              </div>
+            </Item>
+          )}
+        </PostRow>
+      )}
+      {Boolean(categories?.length) && <Categories data={categories} />}
     </Container>
   )
 }

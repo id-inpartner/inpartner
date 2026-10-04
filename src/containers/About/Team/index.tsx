@@ -7,8 +7,11 @@ import { Container, Root } from './styled'
 import Target from '@components/Target'
 import Button from '@components/Button'
 import Link from 'next/link'
+import useTranslation from '../../../locales/useTranslation'
 
 export const Team: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <Container>
       <Root>
@@ -22,14 +25,12 @@ export const Team: FC = () => {
             sizes="(min-width: 992px) 425px, (min-width: 768px) 320px, 100vw"
           />
         </Ratio>
-        <Card title="Team" className="team">
-          INPARTNER team are diverse with strong analytic, great insight ,
-          excellent idea as well as fun that focus on goals and developing
-          long-term strategic plans
+        <Card title={t.aboutPage.teamTitle} className="team">
+          {t.aboutPage.teamDesc}
         </Card>
       </Root>
-      <Link href="" passHref>
-        <Button>Meet our Team</Button>
+      <Link href="/team" passHref legacyBehavior>
+        <Button>{t.aboutPage.meetTeam}</Button>
       </Link>
     </Container>
   )

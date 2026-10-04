@@ -13,8 +13,11 @@ import {
 } from './styled'
 import logo from './logo.png'
 import Image from 'next/image'
+import useTranslation from '../../locales/useTranslation'
 
 export const Footer: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <Root>
       <Row>
@@ -31,14 +34,14 @@ export const Footer: FC = () => {
       <Row>
         <Properties>
           <div>
-            <div className="name">Phone</div>
+            <div className="name">{t.footer.phone}</div>
             <div className="c">:</div>
             <div className="value">
               <a href="tel:+6289628310192">0896 2831 0192</a>
             </div>
           </div>
           <div>
-            <div className="name">Email</div>
+            <div className="name">{t.footer.email}</div>
             <div className="c">:</div>
             <div className="value">
               <a href="mailto:corporatesecretary@inpartner.id">
@@ -47,24 +50,23 @@ export const Footer: FC = () => {
             </div>
           </div>
           <div>
-            <div className="name">Address</div>
+            <div className="name">{t.footer.address}</div>
             <div className="c">:</div>
             <div className="value">
               <div>
                 <a href="https://goo.gl/maps/Jn7pdGFG1Q5j6McL8">
-                  Pakuwon Tower Lantai 10, Jl. Raya Casablanca Kav.88, Menteng
-                  Dalam, Tebet, Jakarta Selatan.
+                  {t.footer.jakartaOffice}
                 </a>
               </div>
               <div>
                 <a href="https://goo.gl/maps/VZKExdeS4SheESnX6">
-                  Jemur Sari Street V No.10, Surabaya
+                  {t.footer.surabayaOffice}
                 </a>
               </div>
             </div>
           </div>
           <div>
-            <div className="name">Website</div>
+            <div className="name">{t.footer.website}</div>
             <div className="c">:</div>
             <div className="value">
               <Link href="/" passHref>
@@ -73,7 +75,7 @@ export const Footer: FC = () => {
             </div>
           </div>
           <div className="social">
-            <div className="name">Follow Us</div>
+            <div className="name">{t.footer.followUs}</div>
             <div className="c">:</div>
             <div className="value social">
               <a
@@ -121,42 +123,50 @@ export const Footer: FC = () => {
         </Properties>
         <Menus>
           <Col>
-            <MenuTitle href="/">About Us</MenuTitle>
-            <Menu href={{ pathname: '/about', hash: 'vision' }}>Vision</Menu>
-            <Menu href={{ pathname: '/about', hash: 'missions' }}>
-              Missions
+            <MenuTitle href="/">{t.footer.aboutUs}</MenuTitle>
+            <Menu href={{ pathname: '/about', hash: 'vision' }}>
+              {t.footer.vision}
             </Menu>
-            <Menu href={{ pathname: '/about', hash: 'history' }}>History</Menu>
-            <Menu href={{ pathname: '/about', hash: 'values' }}>Values</Menu>
+            <Menu href={{ pathname: '/about', hash: 'missions' }}>
+              {t.footer.missions}
+            </Menu>
+            <Menu href={{ pathname: '/about', hash: 'history' }}>
+              {t.footer.history}
+            </Menu>
+            <Menu href={{ pathname: '/about', hash: 'values' }}>
+              {t.footer.values}
+            </Menu>
             <Menu href={{ pathname: '/about', hash: 'diversity' }}>
-              Diversity
+              {t.footer.diversity}
             </Menu>
             <Menu href={{ pathname: '/about', hash: 'sustainability' }}>
-              Sustainability
+              {t.footer.sustainability}
             </Menu>
-            <Menu href={{ pathname: '/about', hash: 'team' }}>Team</Menu>
+            <Menu href={{ pathname: '/about', hash: 'team' }}>
+              {t.footer.team}
+            </Menu>
           </Col>
           <Col>
-            <MenuTitle href="/services">Services</MenuTitle>
+            <MenuTitle href="/services">{t.footer.services}</MenuTitle>
             <Menu
               href={{ pathname: '/services', hash: 'business-and-management' }}
             >
-              Business and Management Consulting
+              {t.footer.business}
             </Menu>
             <Menu href={{ pathname: '/services', hash: 'investment' }}>
-              Investment
+              {t.footer.investment}
             </Menu>
             <Menu href={{ pathname: '/services', hash: 'capacity-building' }}>
-              Capacity Building
+              {t.footer.capacity}
             </Menu>
           </Col>
           <Col>
-            <MenuTitle href="/project">Projects</MenuTitle>
-            <MenuTitle href="/sector">Sectors</MenuTitle>
-            <MenuTitle href="/career">Career</MenuTitle>
-            <MenuTitle href="/blog">Insight & Update</MenuTitle>
+            <MenuTitle href="/project">{t.footer.projects}</MenuTitle>
+            <MenuTitle href="/sector">{t.footer.sectors}</MenuTitle>
+            <MenuTitle href="/career">{t.footer.career}</MenuTitle>
+            <MenuTitle href="/blog">{t.footer.blog}</MenuTitle>
             <MenuTitle href="https://btf.inpartner.id/public">
-              ICT-BTF
+              {t.footer.ictBtf}
             </MenuTitle>
           </Col>
         </Menus>
@@ -166,7 +176,7 @@ export const Footer: FC = () => {
         <Copyright>
           {`Copyright © ${new Date().getFullYear()} `}
           <Link passHref href="/">
-            INPARTNER
+            {t.footer.copyright}
           </Link>
         </Copyright>
       </Row>

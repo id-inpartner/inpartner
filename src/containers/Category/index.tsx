@@ -14,6 +14,7 @@ import {
   Title,
 } from './styled'
 import type { Category, Post } from './types'
+import useTranslation from '../../locales/useTranslation'
 
 export interface IndexProps {
   readonly category: Category
@@ -21,8 +22,25 @@ export interface IndexProps {
   readonly categories: ReadonlyArray<Category>
 }
 
+const getMedia = (post?: Post) => {
+  const media = post?._embedded?.['wp:featuredmedia']?.[0]
+  return {
+    source_url: media?.source_url || '/images/default_post_img.png',
+    alt_text: media?.alt_text || '',
+  }
+}
+
+const getTerm = (post?: Post) => {
+  const terms = post?._embedded?.['wp:term']
+  if (Array.isArray(terms) && terms[0] && terms[0][0]) {
+    return terms[0][0].name
+  }
+  return ''
+}
+
 export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
   const router = useRouter()
+  const { t } = useTranslation()
   const { c, q }: { c: Record<string, boolean | undefined>; q: string } =
     useMemo(() => {
       let c = {}
@@ -82,7 +100,24 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
   }, [posts])
 
   if (!first) {
-    return <div />
+    return (
+      <Container>
+        <Banner>
+          <Title>{category.name}</Title>
+          <div
+            style={{
+              textAlign: 'center',
+              width: '100%',
+              padding: '64px 16px',
+              color: '#666',
+              fontSize: '18px',
+            }}
+          >
+            {t.blogPage.noCategoryArticles}
+          </div>
+        </Banner>
+      </Container>
+    )
   }
 
   return (
@@ -123,18 +158,21 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
             <Image
               fill
               quality={100}
-              src={first._embedded['wp:featuredmedia'][0].source_url}
-              alt={first._embedded['wp:featuredmedia'][0].alt_text}
+              src={getMedia(first).source_url}
+              alt={getMedia(first).alt_text}
+              sizes="(min-width: 1200px) 760px, (min-width: 768px) 60vw, 100vw"
             />
           </div>
           <div className="content">
-            <div className="term">{first._embedded['wp:term'][0][0].name}</div>
+            <div className="term">{getTerm(first)}</div>
             <div
               className="title"
-              dangerouslySetInnerHTML={{ __html: first.title.rendered }}
+              dangerouslySetInnerHTML={{ __html: first.title?.rendered || '' }}
             />
             <div className="dste">
-              {format(new Date(first.modified), 'd MMMM yyyy')}
+              {first.modified
+                ? format(new Date(first.modified), 'd MMMM yyyy')
+                : ''}
             </div>
           </div>
         </Item>
@@ -145,20 +183,23 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
                 <Image
                   fill
                   quality={100}
-                  src={second._embedded['wp:featuredmedia'][0].source_url}
-                  alt={second._embedded['wp:featuredmedia'][0].alt_text}
+                  src={getMedia(second).source_url}
+                  alt={getMedia(second).alt_text}
+                  sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                 />
               </div>
               <div className="content">
-                <div className="term">
-                  {second._embedded['wp:term'][0][0].name}
-                </div>
+                <div className="term">{getTerm(second)}</div>
                 <div
                   className="title"
-                  dangerouslySetInnerHTML={{ __html: second.title.rendered }}
+                  dangerouslySetInnerHTML={{
+                    __html: second.title?.rendered || '',
+                  }}
                 />
                 <div className="dste">
-                  {format(new Date(second.modified), 'd MMMM yyyy')}
+                  {second.modified
+                    ? format(new Date(second.modified), 'd MMMM yyyy')
+                    : ''}
                 </div>
               </div>
             </Item>
@@ -168,20 +209,23 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
                   <Image
                     fill
                     quality={100}
-                    src={third._embedded['wp:featuredmedia'][0].source_url}
-                    alt={third._embedded['wp:featuredmedia'][0].alt_text}
+                    src={getMedia(third).source_url}
+                    alt={getMedia(third).alt_text}
+                    sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                   />
                 </div>
                 <div className="content">
-                  <div className="term">
-                    {third._embedded['wp:term'][0][0].name}
-                  </div>
+                  <div className="term">{getTerm(third)}</div>
                   <div
                     className="title"
-                    dangerouslySetInnerHTML={{ __html: third.title.rendered }}
+                    dangerouslySetInnerHTML={{
+                      __html: third.title?.rendered || '',
+                    }}
                   />
                   <div className="dste">
-                    {format(new Date(third.modified), 'd MMMM yyyy')}
+                    {third.modified
+                      ? format(new Date(third.modified), 'd MMMM yyyy')
+                      : ''}
                   </div>
                 </div>
               </Item>
@@ -199,18 +243,23 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
                 <Image
                   fill
                   quality={100}
-                  src={it._embedded['wp:featuredmedia'][0].source_url}
-                  alt={it._embedded['wp:featuredmedia'][0].alt_text}
+                  src={getMedia(it).source_url}
+                  alt={getMedia(it).alt_text}
+                  sizes="(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                 />
               </div>
               <div className="content">
-                <div className="term">{it._embedded['wp:term'][0][0].name}</div>
+                <div className="term">{getTerm(it)}</div>
                 <div
                   className="title"
-                  dangerouslySetInnerHTML={{ __html: it.title.rendered }}
+                  dangerouslySetInnerHTML={{
+                    __html: it.title?.rendered || '',
+                  }}
                 />
                 <div className="dste">
-                  {format(new Date(it.modified), 'd MMMM yyyy')}
+                  {it.modified
+                    ? format(new Date(it.modified), 'd MMMM yyyy')
+                    : ''}
                 </div>
               </div>
             </Item>
@@ -220,9 +269,14 @@ export const Index: FC<IndexProps> = ({ category, posts, categories }) => {
         </PostRow>
       )}
       <Categories>
-        <Title>Check Other Articles</Title>
+        <Title>{t.blogPage.checkOtherArticles}</Title>
         {categories.map((it) => (
-          <Link key={it.id} passHref href={{ pathname: '/blog' }}>
+          <Link
+            key={it.id}
+            passHref
+            legacyBehavior
+            href={{ pathname: '/blog' }}
+          >
             <Button>{it.name}</Button>
           </Link>
         ))}

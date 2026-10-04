@@ -1,11 +1,12 @@
 import { breakpoints } from '@components/GlobalStyle'
 import styled from '@emotion/styled'
-import axios from 'axios'
-import { FC, useEffect, useState } from 'react'
-import { NavDropdown, NavDropdownProps } from 'react-bootstrap'
+import { FC } from 'react'
+import NavDropdown, { NavDropdownProps } from './NavDropdown'
 import DropTitle, { DropTitleProps } from './DropTitle'
 import { ItemLink } from './styled'
 import { useSectors, Sector } from '../../hooks/useSectors'
+import useTranslation from '../../locales/useTranslation'
+import { getSectorTitle } from '../../locales/sectors'
 
 export type { Sector }
 
@@ -24,13 +25,14 @@ export const Sectors: FC<SectorsProps> = ({
   onMouseLeave,
   show,
 }) => {
+  const { t, locale } = useTranslation()
   const sectors = useSectors()
   return (
     <Dropdown
       title={
         <DropTitle
           href="/sector"
-          title="Sectors"
+          title={t.navbar.sectors}
           onButtonClick={onButtonClick}
         />
       }
@@ -43,7 +45,7 @@ export const Sectors: FC<SectorsProps> = ({
       <div className="items">
         {sectors.map((it) => (
           <ItemLink key={it.id} href={`/sector/${it.slug}`}>
-            {it.name}
+            {getSectorTitle(it.slug, it.name, locale)}
           </ItemLink>
         ))}
       </div>

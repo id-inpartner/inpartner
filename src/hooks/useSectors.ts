@@ -10,7 +10,8 @@ export interface Sector {
 const CACHE_KEY = 'inpartner_sectors_v1'
 
 const DEFAULT_SECTORS: ReadonlyArray<Sector> = [
-  { id: '1', slug: 'restructuring-pre-ipo-ipo-and-right-issue', name: 'Restructuring, Pre-IPO, IPO, and Right Issue' },
+  { id: '1', slug: 'restructuring-pre-ipo-ipo-and-right-issue', 
+   name: 'Restructuring, Pre-IPO, IPO, and Right Issue' },
   { id: '2', slug: 'alternative-investment', name: 'Alternative Investment' },
   { id: '3', slug: 'financial-services', name: 'Financial Services' },
   { id: '4', slug: 'infrastructure', name: 'Infrastructure' },

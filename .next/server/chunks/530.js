@@ -41,7 +41,7 @@ const organizationSchema = {
     ],
     contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+62-896-2831-0192",
+        telephone: "+62-859-3454-8202",
         contactType: "corporate inquiries",
         email: "corporatesecretary@inpartner.id",
         availableLanguage: [

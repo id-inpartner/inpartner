@@ -145,8 +145,10 @@ const Footer = ()=>{
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "value",
                                         children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                                            href: "tel:+6289628310192",
-                                            children: "0896 2831 0192"
+                                            href: "https://wa.me/6285934548202",
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                            children: "+62 859-3454-8202"
                                         })
                                     })
                                 ]

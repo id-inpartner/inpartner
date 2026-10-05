@@ -5,31 +5,6 @@ exports.id = 405;
 exports.ids = [405];
 exports.modules = {
 
-/***/ 9740:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "YS": () => (/* binding */ CardLink),
-/* harmony export */   "ZP": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* unused harmony export Card */
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1480);
-/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const Card = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()("div", {
-    target: "ev7rpqc0"
-})("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
-const CardLink = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0___default()((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-    target: "ev7rpqc1"
-})("background-color:white;box-shadow:3px 3px 8px rgba(0,0,0,0.12);border-radius:8px;border:1px solid rgba(0,0,0,0.05);");
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
-
-
-/***/ }),
-
 /***/ 9413:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -76,6 +51,8 @@ const Title = /*#__PURE__*/ styled_default()(SectionTitle/* default */.Z, {
 
 // EXTERNAL MODULE: ./src/components/Button/index.ts
 var Button = __webpack_require__(3900);
+// EXTERNAL MODULE: ./src/locales/useTranslation.ts + 2 modules
+var useTranslation = __webpack_require__(3064);
 ;// CONCATENATED MODULE: ./src/containers/Home/About/index.tsx
 
 
@@ -83,19 +60,22 @@ var Button = __webpack_require__(3900);
 
 
 
+
 const About = ()=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Title, {
-                children: "About Us"
+                children: t.home.about.title
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Text/* default */.Z, {
-                children: "INPARTNER (PT Inpartner Optima Integra) is a transformation of management consulting services which established in 2009. We started as consultant to help increase accessibility to market, financing, technology, productivity and provide capacity building of the MSME sector in East Jave. Then we change for a better through continuous improvement. Now, we come up as a consultation service in business and management to middle and large corporation."
+                children: t.home.about.text
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
                 href: "/about",
                 children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
-                    children: "Learn More"
+                    as: "span",
+                    children: t.home.about.learnMore
                 })
             })
         ]
@@ -173,7 +153,9 @@ const LearnMore = /*#__PURE__*/ styled_default()(Button/* default */.Z, {
 
 
 
+
 const Banner = ()=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     const [index, setIndex] = (0,external_react_.useState)(0);
     const [interval, setInterval] = (0,external_react_.useState)(null);
     (0,external_react_.useEffect)(()=>{
@@ -199,9 +181,10 @@ const Banner = ()=>{
                                 children: /*#__PURE__*/ jsx_runtime_.jsx(BI, {
                                     fill: true,
                                     quality: 100,
-                                    alt: "",
+                                    alt: "Inpartner Advisory Banner 1",
                                     src: _1,
-                                    priority: true
+                                    priority: true,
+                                    sizes: "100vw"
                                 })
                             })
                         })
@@ -212,8 +195,9 @@ const Banner = ()=>{
                                 children: /*#__PURE__*/ jsx_runtime_.jsx(BI, {
                                     fill: true,
                                     quality: 100,
-                                    alt: "",
-                                    src: _2
+                                    alt: "Inpartner Advisory Banner 2",
+                                    src: _2,
+                                    sizes: "100vw"
                                 })
                             })
                         })
@@ -224,8 +208,9 @@ const Banner = ()=>{
                                 children: /*#__PURE__*/ jsx_runtime_.jsx(BI, {
                                     fill: true,
                                     quality: 100,
-                                    alt: "",
-                                    src: _3
+                                    alt: "Inpartner Advisory Banner 3",
+                                    src: _3,
+                                    sizes: "100vw"
                                 })
                             })
                         })
@@ -237,18 +222,18 @@ const Banner = ()=>{
                     children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Content, {
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx(styled_Title, {
-                                children: "UNLEASH THE POWER OF YOUR BUSINESS"
+                                children: t.home.banner.title
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx(Subtitle, {
-                                children: "Go Beyond Than Just Consultancy"
+                                children: t.home.banner.subtitle
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx(Description, {
-                                children: "Through our Consultation Services, we take a holistic approach to identify the problem and give you a home run. We have clear guides to unleash the power of your business for brighter future."
+                                children: t.home.banner.description
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx(LearnMore, {
                                 href: "/about",
                                 variant: "secondary",
-                                children: "Learn More"
+                                children: t.home.banner.learnMore
                             })
                         ]
                     })
@@ -259,8 +244,8 @@ const Banner = ()=>{
 };
 /* harmony default export */ const Home_Banner = (Banner);
 
-// EXTERNAL MODULE: ./src/components/Project/index.tsx
-var Project = __webpack_require__(4941);
+// EXTERNAL MODULE: ./src/components/Project/index.tsx + 1 modules
+var Project = __webpack_require__(4959);
 ;// CONCATENATED MODULE: ./src/containers/Home/Blog/styled.ts
 
 
@@ -289,10 +274,11 @@ var format_default = /*#__PURE__*/__webpack_require__.n(format_);
 
 
 const Item_Item = ({ data  })=>{
-    const image = data._embedded["wp:featuredmedia"][0] || {
+    const image = data._embedded?.["wp:featuredmedia"]?.[0] || {
         source_url: "/images/default_post_img.png"
     };
-    const category = data._embedded["wp:term"].find((it)=>it.find((i)=>i.taxonomy === "category"))[0] || {
+    const termGroup = data._embedded?.["wp:term"]?.find((it)=>it.find((i)=>i.taxonomy === "category"));
+    const category = termGroup && termGroup[0] || {
         name: ""
     };
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Item_C, {
@@ -334,7 +320,7 @@ const Item_C = /*#__PURE__*/ styled_default()(Card/* CardLink */.YS, {
 })("display:flex;flex-direction:column;align-items:stretch;margin:12px;flex:1;min-width:300px;transition:transform 0.3s ease-in-out;position:relative;&:hover{transform:scale(1.015);}border-radius:12px;overflow:hidden;");
 const Aspect = /*#__PURE__*/ styled_default()("div", {
     target: "e1n770x42"
-})("position:relative;width:100%;& > .aspect{padding-top:", 415 / 3.44, "%;& > img{object-fit:cover;}}");
+})("position:relative;width:100%;& > .aspect{position:relative;padding-top:", 415 / 3.44, "%;& > img{object-fit:cover;}}");
 const Item_Content = /*#__PURE__*/ styled_default()("div", {
     target: "e1n770x43"
 })("position:absolute;display:flex;flex-direction:column;justify-content:flex-end;width:100%;height:100%;bottom:0;left:0;right:0;color:white;background-color:rgba(0,0,0,0.3);");
@@ -356,11 +342,13 @@ const Dates = /*#__PURE__*/ styled_default()("table", {
 
 
 
+
 const Blog = ({ data  })=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Blog_styled_Title, {
-                children: "Insight\xa0&\xa0Update"
+                children: t.home.blog.title
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Items, {
                 children: data.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx(Blog_Item, {
@@ -370,7 +358,8 @@ const Blog = ({ data  })=>{
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
                 href: "/blog",
                 children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
-                    children: "View All"
+                    as: "span",
+                    children: t.home.blog.viewAll
                 })
             })
         ]
@@ -578,12 +567,14 @@ const styled_Items = /*#__PURE__*/ styled_default()("div", {
 
 
 
+
 const Clients = ()=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(ColumnContainer/* default */.Z, {
                 children: /*#__PURE__*/ jsx_runtime_.jsx(Clients_styled_Title, {
-                    children: "Our Clients"
+                    children: t.home.clients.title
                 })
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Con, {
@@ -1098,30 +1089,32 @@ var TitleDescription = __webpack_require__(4267);
 
 
 
+
 const Pillars = ()=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(TitleDescription/* default */.ZP, {
-                title: "We Have Four Pillars To Work On",
-                children: "We Have Years Of Experience Working On These Fields"
+                title: t.home.pillars.title,
+                children: t.home.pillars.subtitle
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Pillars_styled_Items, {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx(Pillars_Item, {
                         icon: funding,
-                        label: "Funding"
+                        label: t.home.pillars.funding
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Pillars_Item, {
                         icon: funding,
-                        label: "Growth"
+                        label: t.home.pillars.growth
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Pillars_Item, {
                         icon: funding,
-                        label: "Profitability"
+                        label: t.home.pillars.profitability
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Pillars_Item, {
                         icon: capacity_building,
-                        label: "Capacity Building"
+                        label: t.home.pillars.capacity
                     })
                 ]
             })
@@ -1149,11 +1142,13 @@ const Project_styled_Items = /*#__PURE__*/ styled_default()(Project/* ProjectsCo
 
 
 
+
 const Project_Project = ({ data  })=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Project_styled_Title, {
-                children: "Projects"
+                children: t.home.projects.title
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Project_styled_Items, {
                 children: data.map((r)=>/*#__PURE__*/ jsx_runtime_.jsx(Project/* default */.ZP, {
@@ -1163,7 +1158,8 @@ const Project_Project = ({ data  })=>{
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
                 href: "/project",
                 children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
-                    children: "View All"
+                    as: "span",
+                    children: t.home.projects.viewAll
                 })
             })
         ]
@@ -1241,7 +1237,11 @@ const Sectors_Item_Item = ({ href , image , label  })=>{
 };
 /* harmony default export */ const Sectors_Item = (Sectors_Item_Item);
 
+// EXTERNAL MODULE: ./src/locales/sectors.ts
+var sectors = __webpack_require__(9488);
 ;// CONCATENATED MODULE: ./src/containers/Home/Sectors/index.tsx
+
+
 
 
 
@@ -1274,11 +1274,12 @@ const Sectors_images = {
     10: environmental
 };
 const Sectors = ({ data  })=>{
+    const { t , locale  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(TitleDescription/* default */.ZP, {
-                title: "Sectors & Themes Coverage",
-                children: "Here are access that we can provide"
+                title: t.home.sectors.title,
+                children: t.home.sectors.subtitle
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(Sectors_styled_Items, {
                 arrows: true,
@@ -1330,14 +1331,15 @@ const Sectors = ({ data  })=>{
                 ],
                 children: data.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx(Sectors_Item, {
                         image: Sectors_images[it.id] || it.image,
-                        label: it.title,
+                        label: (0,sectors/* getSectorTitle */.qZ)(it.slug, it.title, locale),
                         href: `/sector/${it.slug}`
                     }, it.id))
             }),
             /*#__PURE__*/ jsx_runtime_.jsx(ViewMore, {
-                href: "/project",
+                href: "/sector",
                 children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
-                    children: "View All"
+                    as: "span",
+                    children: t.home.sectors.viewAll
                 })
             })
         ]
@@ -1385,11 +1387,13 @@ const styled_Label = /*#__PURE__*/ styled_default()(Text/* default */.Z, {
 
 
 
+
 const Services = ()=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(ColumnContainer/* default */.Z, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Services_styled_Title, {
-                children: "Our Service & Scope"
+                children: t.home.services.title
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Services_styled_Items, {
                 children: [
@@ -1405,17 +1409,13 @@ const Services = ()=>{
                                     children: /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
                                         fill: true,
                                         src: business,
-                                        alt: "Business and Management Consulting",
+                                        alt: t.home.services.business,
                                         quality: 100,
                                         sizes: "(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
                                     })
                                 }),
-                                /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Label, {
-                                    children: [
-                                        "Business and",
-                                        /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
-                                        "Management Consulting"
-                                    ]
+                                /*#__PURE__*/ jsx_runtime_.jsx(styled_Label, {
+                                    children: t.home.services.business
                                 })
                             ]
                         })
@@ -1433,17 +1433,13 @@ const Services = ()=>{
                                         children: /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
                                             fill: true,
                                             src: capacity,
-                                            alt: "Capacity Building (The Executive Business Program)",
+                                            alt: t.home.services.capacity,
                                             quality: 100,
                                             sizes: "(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
                                         })
                                     }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Label, {
-                                        children: [
-                                            "Capacity Building",
-                                            /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
-                                            "(The Executive Business Program)"
-                                        ]
+                                    /*#__PURE__*/ jsx_runtime_.jsx(styled_Label, {
+                                        children: t.home.services.capacity
                                     })
                                 ]
                             }),
@@ -1458,13 +1454,13 @@ const Services = ()=>{
                                         children: /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
                                             fill: true,
                                             src: Services_investment,
-                                            alt: "Investment",
+                                            alt: t.home.services.investment,
                                             quality: 100,
                                             sizes: "(min-width: 1200px) 580px, (min-width: 992px) 470px, (min-width: 768px) 360px, 100vw"
                                         })
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx(styled_Label, {
-                                        children: "Investment"
+                                        children: t.home.services.investment
                                     })
                                 ]
                             })
@@ -1532,14 +1528,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _containers_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9413);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__]);
-([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7507);
+/* harmony import */ var _utils_seo_schemas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4530);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9648);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_7__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -1547,18 +1547,16 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 const Page = (props)=>{
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
+    const isKo = router.locale === "ko";
+    const title = isKo ? "인도네시아 비즈니스 경영 컨설팅 및 투자 자문 | 인파트너" : "Business & Management Consulting Jakarta | Inpartner";
+    const description = isKo ? "인파트너(Inpartner)는 한국 기업의 인도네시아 시장 진출, 현지 법인 설립 자문, 사업 타당성 조사(FS), 투자 실사를 전문으로 지원하는 현지 전략 컨설팅 펌입니다." : "Inpartner is a leading management consulting and investment advisory firm in Jakarta and Surabaya, helping enterprises drive growth and optimize operations.";
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-                children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                        children: "Business Consultant Company, Jakarta, Indonesia | Inpartner"
-                    }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "description",
-                        content: "Inpartner are The Most Trusted Consulting Partner To help create positive and endure changes in Local and Global Coverage"
-                    })
-                ]
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+                title: title,
+                description: description,
+                schemaData: _utils_seo_schemas__WEBPACK_IMPORTED_MODULE_6__/* .organizationSchema */ .U$
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Home__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
@@ -1569,6 +1567,15 @@ const Page = (props)=>{
     });
 };
 const getServerSideProps = async ({ req  })=>{
+    if (!req?.ctx?.sequelize) {
+        return {
+            props: {
+                projects: [],
+                sectors: [],
+                posts: []
+            }
+        };
+    }
     const { sequelize  } = req.ctx;
     const { Project , Sector  } = sequelize.models;
     const transaction = await sequelize.transaction();
@@ -1605,7 +1612,7 @@ const getServerSideProps = async ({ req  })=>{
             Sector.findAll({
                 transaction
             }),
-            axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+            axios__WEBPACK_IMPORTED_MODULE_7__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
                 params: {
                     _embed: 1,
                     per_page: 3,
@@ -1675,13 +1682,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 8982:
-/***/ ((module) => {
-
-module.exports = require("cookies-next");
 
 /***/ }),
 
@@ -1853,6 +1853,13 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ 1853:
+/***/ ((module) => {
+
+module.exports = require("next/router");
+
+/***/ }),
+
 /***/ 6689:
 /***/ ((module) => {
 
@@ -1874,17 +1881,17 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
+/***/ 8582:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Dropdown");
+
+/***/ }),
+
 /***/ 2540:
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
 
 /***/ }),
 
@@ -1923,7 +1930,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,51,135,941], () => (__webpack_exec__(85)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,222,135,530,959], () => (__webpack_exec__(85)));
 module.exports = __webpack_exports__;
 
 })();

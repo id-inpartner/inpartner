@@ -22,8 +22,9 @@ __webpack_require__.r(__webpack_exports__);
 
 class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1__["default"] {
     render() {
+        const locale = this.props.__NEXT_DATA__?.locale || "en";
         return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Html, {
-            lang: "en",
+            lang: locale,
             children: [
                 /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Head, {
                     children: [

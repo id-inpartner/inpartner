@@ -77,13 +77,17 @@ const Item = /*#__PURE__*/ styled_default()((link_default()), {
     target: "e1u7fl109"
 })("display:flex;margin-top:32px;flex-direction:column;&:hover{& > .content{& > .title{text-decoration:underline;}}}& img{object-fit:cover;border-radius:12px;}& > .content{flex:1;margin-top:8px;& > .category{font-size:14px;}& > .title{font-weight:700;font-size:16px;}}");
 
+// EXTERNAL MODULE: ./src/locales/useTranslation.ts + 2 modules
+var useTranslation = __webpack_require__(3064);
 ;// CONCATENATED MODULE: ./src/containers/Post/index.tsx
 
 
 
 
 
+
 const Index = ({ post , related  })=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Article, {
@@ -102,9 +106,9 @@ const Index = ({ post , related  })=>{
                         }
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Chips, {
-                        children: post._embedded["wp:term"].map((its)=>its.map((it)=>it && it.id ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        children: post._embedded?.["wp:term"] ? post._embedded["wp:term"].map((its)=>its.map((it)=>it && it.id ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                     children: it.name
-                                }, it.id) : undefined))
+                                }, it.id) : undefined)) : null
                     })
                 ]
             }),
@@ -113,14 +117,15 @@ const Index = ({ post , related  })=>{
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                         className: "title",
-                        children: "Related Articles"
+                        children: t.blogPage.relatedArticles
                     }),
                     related && related.length ? related.map((it)=>{
-                        const m = it._embedded["wp:featuredmedia"].length ? it._embedded["wp:featuredmedia"][0] : {
+                        const m = it._embedded?.["wp:featuredmedia"]?.length ? it._embedded["wp:featuredmedia"][0] : {
                             alt_text: "",
                             source_url: "/images/default_post_img.png"
                         };
-                        const [c] = it._embedded["wp:term"].find((i)=>i.find((ii)=>ii.taxonomy === "category"));
+                        const catGroup = it._embedded?.["wp:term"]?.find((i)=>i.find((ii)=>ii.taxonomy === "category"));
+                        const c = catGroup && catGroup[0];
                         return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Item, {
                             href: `/blog/${it.slug}`,
                             children: [
@@ -149,7 +154,7 @@ const Index = ({ post , related  })=>{
                             ]
                         }, it.id);
                     }) : /*#__PURE__*/ jsx_runtime_.jsx(Empty, {
-                        children: "No related articles"
+                        children: t.blogPage.noRelatedArticles
                     })
                 ]
             })
@@ -172,16 +177,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9154);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9648);
-/* harmony import */ var _containers_Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(333);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__]);
-([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7507);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
+/* harmony import */ var _containers_Post__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(333);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -190,55 +194,54 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 const Page = ({ post , related  })=>{
-    const meta = post.yoast_head_json;
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
+    const isKo = router.locale === "ko";
+    if (!post) {
+        return null;
+    }
+    const meta = post.yoast_head_json || {};
+    const cleanExcerpt = post.excerpt?.rendered?.replace(/<[^>]+>/g, "").trim() || "";
+    const pageTitle = isKo ? `${post.title?.rendered || "인사이트"} | 인파트너 블로그` : meta.title || `${post.title?.rendered || "Insights"} | Inpartner Insights`;
+    const pageDescription = isKo ? `인파트너 비즈니스 인사이트: ${cleanExcerpt.slice(0, 140) || post.title?.rendered || ""}` : meta.og_description || cleanExcerpt.slice(0, 160) || post.title?.rendered || "Inpartner Insights";
+    const ogImg = meta.og_image?.[0]?.url || post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://inpartner.id/og-image.jpg";
+    const authorName = post._embedded?.author?.[0]?.name;
+    const section = post._embedded?.["wp:term"]?.[0]?.[0]?.name;
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title?.rendered || pageTitle,
+        description: pageDescription,
+        image: ogImg,
+        datePublished: post.date,
+        dateModified: post.modified || post.date,
+        author: {
+            "@type": "Person",
+            name: authorName || "Inpartner"
+        },
+        publisher: {
+            "@type": "Organization",
+            name: isKo ? "인파트너" : "Inpartner",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://inpartner.id/logo.png"
+            }
+        }
+    };
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-                children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                        children: meta.title
-                    }),
-                    Object.keys(meta).map((k)=>{
-                        if (k.startsWith("og_")) {
-                            const it = meta[k];
-                            if (k.endsWith("_image")) {
-                                const [i] = it;
-                                return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-                                    children: [
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:url",
-                                            content: i.url
-                                        }),
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:type",
-                                            content: i.type
-                                        }),
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:width",
-                                            content: `${i.width}`
-                                        }),
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:height",
-                                            content: `${i.height}`
-                                        }),
-                                        i.alt && /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:alt",
-                                            content: i.alt
-                                        })
-                                    ]
-                                }, k);
-                            }
-                            return /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                name: k.replace("_", ":"),
-                                content: it
-                            }, k);
-                        }
-                        return undefined;
-                    })
-                ]
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                title: pageTitle,
+                description: pageDescription,
+                ogImage: ogImg,
+                ogType: "article",
+                publishedTime: post.date,
+                modifiedTime: post.modified,
+                author: authorName,
+                section: section,
+                schemaData: articleSchema
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Post__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Post__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
                 post: post,
                 related: related
             }),
@@ -246,40 +249,52 @@ const Page = ({ post , related  })=>{
         ]
     });
 };
-const getServerSideProps = async ({ req , query  })=>{
+const getServerSideProps = async ({ query  })=>{
     const { slug  } = query;
-    const posts = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
-        params: {
-            slug,
-            related: 3,
-            _embed: 1
-        },
-        headers: {
-            accept: "application/json"
+    try {
+        const posts = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+            params: {
+                slug,
+                related: 3,
+                _embed: 1
+            },
+            headers: {
+                accept: "application/json"
+            }
+        });
+        if (!Array.isArray(posts.data) || posts.data.length === 0) {
+            return {
+                notFound: true
+            };
         }
-    });
-    if (Array.isArray(posts.data) && posts.data.length == 0) {
+        const post = posts.data[0];
+        let related = [];
+        try {
+            const relatedRes = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/yarpp/v1/related/${post.id}`, {
+                params: {
+                    limit: 3,
+                    _fields: "id,title,slug,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
+                    _embed: 1
+                },
+                headers: {
+                    accept: "application/json"
+                }
+            });
+            related = Array.isArray(relatedRes.data) ? relatedRes.data : [];
+        } catch  {
+            related = [];
+        }
+        return {
+            props: {
+                post,
+                related
+            }
+        };
+    } catch  {
         return {
             notFound: true
         };
     }
-    const post = posts.data[0];
-    const related = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/yarpp/v1/related/${post.id}`, {
-        params: {
-            limit: 3,
-            _fields: "id,title,slug,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
-            _embed: 1
-        },
-        headers: {
-            accept: "application/json"
-        }
-    });
-    return {
-        props: {
-            post,
-            related: related.data
-        }
-    };
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
@@ -320,13 +335,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 8982:
-/***/ ((module) => {
-
-module.exports = require("cookies-next");
 
 /***/ }),
 
@@ -498,6 +506,13 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ 1853:
+/***/ ((module) => {
+
+module.exports = require("next/router");
+
+/***/ }),
+
 /***/ 6689:
 /***/ ((module) => {
 
@@ -519,17 +534,17 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
+/***/ 8582:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Dropdown");
+
+/***/ }),
+
 /***/ 2540:
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
 
 /***/ }),
 
@@ -554,7 +569,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,51], () => (__webpack_exec__(5777)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,222], () => (__webpack_exec__(5777)));
 module.exports = __webpack_exports__;
 
 })();

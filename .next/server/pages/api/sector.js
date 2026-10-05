@@ -14,6 +14,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const handler = async (req, res)=>{
     if (req.method == "GET") {
+        if (!req.ctx?.sequelize) {
+            return res.json([]);
+        }
         const { sequelize  } = req.ctx;
         const { Sector  } = sequelize.models;
         try {

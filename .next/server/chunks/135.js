@@ -39,7 +39,7 @@ const ColumnContainer = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_0
 
 
 
-const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default()("h5", {
+const SectionTitle = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_1___default()("h2", {
     target: "e3y0cv0"
 })("font-weight:600;font-family:", (_fonts_index__WEBPACK_IMPORTED_MODULE_2___default().style.fontFamily), ";font-size:20px;@media (min-width:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_0__/* .breakpoints.md */ .AV.md, "){font-size:28px;}");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionTitle);

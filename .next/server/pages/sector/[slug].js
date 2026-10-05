@@ -21,8 +21,8 @@ var Banner = __webpack_require__(9988);
 // EXTERNAL MODULE: external "react-bootstrap/Container"
 var Container_ = __webpack_require__(4678);
 var Container_default = /*#__PURE__*/__webpack_require__.n(Container_);
-// EXTERNAL MODULE: ./src/components/Project/index.tsx
-var Project = __webpack_require__(4941);
+// EXTERNAL MODULE: ./src/components/Project/index.tsx + 1 modules
+var Project = __webpack_require__(4959);
 // EXTERNAL MODULE: ./src/components/GlobalStyle.ts
 var GlobalStyle = __webpack_require__(9920);
 // EXTERNAL MODULE: external "@emotion/styled"
@@ -114,7 +114,10 @@ const Item = ({ icon , title , description , titleBackgroundColor  })=>{
 /* harmony default export */ const career = ({"src":"/_next/static/media/career.04fd203f.png","height":72,"width":72,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAJFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmWAJHAAAADHRSTlMVAWZxI0uifVgriTOa1uLeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAN0lEQVR4nCXJuQHAMAwDsSP12t5/3xRBC6S0UyLd3e0kCqACo3PEEtczL+qvqMvO+s0NlCfX6AMgHQEC+GOjKQAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
 ;// CONCATENATED MODULE: ./src/containers/Sector/TrainingEducation/Infographic/book.png
 /* harmony default export */ const book = ({"src":"/_next/static/media/book.0d464641.png","height":82,"width":82,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAKlBMVEUAAAAAAAAAAAAAAABMaXEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD3h1zXAAAADnRSTlMkVl5qAHwdlBI+CQFkOSiB1uMAAAAJcEhZcwAACxMAAAsTAQCanBgAAAA4SURBVHicFclBDsAwCANBmyyQpO3/v1txG2nEI0kX4QznQixHOAafdN7BhprKdOSUu7sPgqqqzQ8iYgER6ybP5QAAAABJRU5ErkJggg==","blurWidth":8,"blurHeight":8});
+// EXTERNAL MODULE: ./src/locales/useTranslation.ts + 2 modules
+var useTranslation = __webpack_require__(3064);
 ;// CONCATENATED MODULE: ./src/containers/Sector/TrainingEducation/Infographic/index.tsx
+
 
 
 
@@ -133,10 +136,11 @@ const Dots = /*#__PURE__*/ styled_default()("div", {
     target: "e1l4pg2s2"
 })("display:none;@media (min-width:", GlobalStyle/* breakpoints.lg */.AV.lg, "){position:absolute;display:block;border-top:2px dotted black;left:160px;right:160px;top:86px;z-index:0;}");
 const Infographic = ()=>{
+    const { t  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Infographic_Title, {
-                children: "Why Choose Inpartner?"
+                children: t.sectorTraining.whyChooseTitle
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
                 children: [
@@ -144,26 +148,26 @@ const Infographic = ()=>{
                     /*#__PURE__*/ jsx_runtime_.jsx(Infographic_Item, {
                         icon: trainer,
                         titleBackgroundColor: "#1976D2",
-                        title: "Expert Instructor",
-                        description: "Learn from industry experts with extensive experience and knowledge."
+                        title: t.sectorTraining.expertInstructor,
+                        description: t.sectorTraining.expertDesc
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Infographic_Item, {
                         icon: time,
                         titleBackgroundColor: "#1562AF",
-                        title: "Flexible Learning",
-                        description: "Access our courses online or in-person, with flexible scheduling to fit your busy lifestyle."
+                        title: t.sectorTraining.flexibleLearning,
+                        description: t.sectorTraining.flexibleDesc
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Infographic_Item, {
                         icon: career,
                         titleBackgroundColor: "#1976D2",
-                        title: "Career Support",
-                        description: "Benefit from our career support services, including resume building, interview preparation, and job placement assistance."
+                        title: t.sectorTraining.careerSupport,
+                        description: t.sectorTraining.careerDesc
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Infographic_Item, {
                         icon: book,
                         titleBackgroundColor: "#0C3B69",
-                        title: "Cutting-Edge Curriculum",
-                        description: "Stay ahead with our up-to-date curriculum, incorporating the latest trends and technologies."
+                        title: t.sectorTraining.cuttingEdge,
+                        description: t.sectorTraining.cuttingEdgeDesc
                     })
                 ]
             })
@@ -172,6 +176,8 @@ const Infographic = ()=>{
 };
 /* harmony default export */ const TrainingEducation_Infographic = (Infographic);
 
+// EXTERNAL MODULE: ./src/locales/sectors.ts
+var sectors = __webpack_require__(9488);
 ;// CONCATENATED MODULE: ./src/containers/Sector/index.tsx
 
 
@@ -179,7 +185,10 @@ const Infographic = ()=>{
 
 
 
+
+
 const Index = ({ data  })=>{
+    const { locale  } = (0,useTranslation/* default */.Z)();
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Banner/* default */.ZP, {
@@ -189,7 +198,7 @@ const Index = ({ data  })=>{
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Container_default()), {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx(Title, {
-                        children: data.title
+                        children: (0,sectors/* getSectorTitle */.qZ)(data.slug, data.title, locale)
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Description, {
                         dangerouslySetInnerHTML: {
@@ -231,11 +240,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _containers_Sector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2153);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7507);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
 _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -243,19 +253,19 @@ _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies_
 
 
 
+
 const Page = (props)=>{
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
+    const isKo = router.locale === "ko";
+    const rawDesc = props.description ? props.description.replace(/<[^>]+>/g, "").trim() : "";
+    const title = isKo ? `${props.title} | 산업별 커버리지 | 인파트너` : `${props.metaTitle || props.title} | Inpartner`;
+    const description = isKo ? `인파트너(Inpartner)의 ${props.title} 부문 전문 컨설팅 및 자문 서비스를 확인하십시오. ${props.metaDescription || rawDesc.slice(0, 120) || ""}` : props.metaDescription || rawDesc.slice(0, 155) || `${props.title} advisory services by Inpartner.`;
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-                children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                        children: props.metaTitle
-                    }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "description",
-                        content: props.metaDescription
-                    })
-                ]
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+                title: title,
+                description: description,
+                ogImage: props.image
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Sector__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
@@ -348,13 +358,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 8982:
-/***/ ((module) => {
-
-module.exports = require("cookies-next");
 
 /***/ }),
 
@@ -519,6 +522,13 @@ module.exports = require("next/head");
 
 /***/ }),
 
+/***/ 1853:
+/***/ ((module) => {
+
+module.exports = require("next/router");
+
+/***/ }),
+
 /***/ 6689:
 /***/ ((module) => {
 
@@ -540,17 +550,17 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
+/***/ 8582:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Dropdown");
+
+/***/ }),
+
 /***/ 2540:
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
 
 /***/ }),
 
@@ -575,7 +585,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,51,468,941], () => (__webpack_exec__(1127)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,222,988,959], () => (__webpack_exec__(1127)));
 module.exports = __webpack_exports__;
 
 })();

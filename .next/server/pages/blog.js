@@ -99,8 +99,9 @@ const Item = ({ data  })=>{
                 /*#__PURE__*/ jsx_runtime_.jsx(Image/* default */.Z, {
                     fill: true,
                     src: data._embedded["wp:featuredmedia"][0].source_url,
-                    alt: data._embedded["wp:featuredmedia"][0].alt_text,
+                    alt: data._embedded["wp:featuredmedia"][0].alt_text || "",
                     quality: 100,
+                    sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw",
                     placeholder: "empty"
                 }),
                 /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Content, {
@@ -147,6 +148,7 @@ const Cat = ({ category , posts , index  })=>{
                     /*#__PURE__*/ jsx_runtime_.jsx(Title, {
                         href: `/blog/category/${category.slug}`,
                         passHref: true,
+                        legacyBehavior: true,
                         children: /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
                             children: category.name
                         })
@@ -231,8 +233,10 @@ const PostRow = /*#__PURE__*/ styled_default()("div", {
 })("display:flex;flex-wrap:wrap;margin-left:-8px;margin-right:-8px;align-items:stretch;& > a{margin-left:8px;margin-right:8px;margin-top:16px;min-width:calc(100% - 8px - 8px);@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){flex:1;min-width:0;}@media (min-width:", GlobalStyle/* breakpoints.xl */.AV.xl, "){&:first-child{flex:8;}&:last-child{flex:18;& > .aspect{padding-top:0;min-height:100%;}}}}");
 const styled_Item = /*#__PURE__*/ styled_default()((link_default()), {
     target: "e3o9it13"
-})("position:relative;display:block;border-radius:12px;overflow:hidden;& > .aspect{width:100%;padding-top:", 296 / 3.04, "%;& > img{object-fit:cover;}}& > .content{position:absolute;width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;bottom:0;left:0;right:0;background-color:rgba(0,0,0,0.3);color:white;padding:16px;& > .term{font-size:20px;font-weight:bold;}& > .title{font-size:24px;font-weight:bold;}& > .date{font-size:14px;}}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){&.main{& > .aspect{padding-top:", 608 / 9.28, "%;}& > .content{padding:32px;& > .term{font-size:24px;}& > .title{font-size:28px;}}}}");
+})("position:relative;display:block;border-radius:12px;overflow:hidden;& > .aspect{position:relative;width:100%;padding-top:", 296 / 3.04, "%;& > img{object-fit:cover;}}& > .content{position:absolute;width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;bottom:0;left:0;right:0;background-color:rgba(0,0,0,0.3);color:white;padding:16px;& > .term{font-size:20px;font-weight:bold;}& > .title{font-size:24px;font-weight:bold;}& > .date{font-size:14px;}}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){&.main{& > .aspect{padding-top:", 608 / 9.28, "%;}& > .content{padding:32px;& > .term{font-size:24px;}& > .title{font-size:28px;}}}}");
 
+// EXTERNAL MODULE: ./src/locales/useTranslation.ts + 2 modules
+var useTranslation = __webpack_require__(3064);
 ;// CONCATENATED MODULE: ./src/containers/Blog/index.tsx
 
 
@@ -246,8 +250,24 @@ const styled_Item = /*#__PURE__*/ styled_default()((link_default()), {
 
 
 
-const Index = ({ posts , categories  })=>{
+
+const getMedia = (post)=>{
+    const media = post?._embedded?.["wp:featuredmedia"]?.[0];
+    return {
+        source_url: media?.source_url || "/images/default_post_img.png",
+        alt_text: media?.alt_text || ""
+    };
+};
+const getTerm = (post)=>{
+    const terms = post?._embedded?.["wp:term"];
+    if (Array.isArray(terms) && terms[0] && terms[0][0]) {
+        return terms[0][0].name;
+    }
+    return "";
+};
+const Index = ({ posts =[] , categories =[]  })=>{
     const router = (0,router_.useRouter)();
+    const { t , locale  } = (0,useTranslation/* default */.Z)();
     const { c , q  } = (0,external_react_.useMemo)(()=>{
         let c = {};
         if (router.query.c) {
@@ -294,6 +314,9 @@ const Index = ({ posts , categories  })=>{
         router.events
     ]);
     const [first, second, third, fourth, fifth] = (0,external_react_.useMemo)(()=>{
+        if (!posts || posts.length === 0) {
+            return [];
+        }
         if (posts.length === 1) {
             return [
                 ...posts,
@@ -337,12 +360,15 @@ const Index = ({ posts , categories  })=>{
                         className: "search",
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx((Form_default()).Control, {
-                                placeholder: "Search article ...",
-                                "aria-label": "Search",
+                                id: "blog-search",
+                                name: "q",
+                                placeholder: t.blogPage.searchPlaceholder,
+                                "aria-label": t.blogPage.searchPlaceholder,
                                 value: search,
                                 onChange: (e)=>setSearch(e.target.value.toLowerCase())
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx(Button/* default */.Z, {
+                                "aria-label": locale === "ko" ? "검색" : "Search",
                                 disabled: loading,
                                 onClick: ()=>{
                                     router.push({
@@ -362,53 +388,29 @@ const Index = ({ posts , categories  })=>{
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
-                        href: `/blog/${first.slug}`,
-                        className: "main",
-                        children: [
-                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: "aspect",
-                                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
-                                    fill: true,
-                                    quality: 100,
-                                    src: first._embedded["wp:featuredmedia"][0].source_url,
-                                    alt: first._embedded["wp:featuredmedia"][0].alt_text
-                                })
-                            }),
-                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                className: "content",
-                                children: [
-                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                        className: "term",
-                                        children: first._embedded["wp:term"][0][0].name
-                                    }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                        className: "title",
-                                        dangerouslySetInnerHTML: {
-                                            __html: first.title.rendered
-                                        }
-                                    }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                        className: "dste",
-                                        children: format_default()(new Date(first.modified), "d MMMM yyyy")
-                                    })
-                                ]
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: "side",
+                    !first ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        style: {
+                            textAlign: "center",
+                            width: "100%",
+                            padding: "64px 16px",
+                            color: "#666",
+                            fontSize: "18px"
+                        },
+                        children: t.blogPage.noArticles
+                    }) : /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
                         children: [
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
-                                href: `/blog/${second.slug}`,
+                                href: `/blog/${first.slug}`,
+                                className: "main",
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "aspect",
                                         children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                             fill: true,
                                             quality: 100,
-                                            src: second._embedded["wp:featuredmedia"][0].source_url,
-                                            alt: second._embedded["wp:featuredmedia"][0].alt_text
+                                            src: getMedia(first).source_url,
+                                            alt: getMedia(first).alt_text,
+                                            sizes: "(min-width: 1200px) 760px, (min-width: 768px) 60vw, 100vw"
                                         })
                                     }),
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -416,50 +418,90 @@ const Index = ({ posts , categories  })=>{
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "term",
-                                                children: second._embedded["wp:term"][0][0].name
+                                                children: getTerm(first)
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "title",
                                                 dangerouslySetInnerHTML: {
-                                                    __html: second.title.rendered
+                                                    __html: first.title?.rendered || ""
                                                 }
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "dste",
-                                                children: format_default()(new Date(second.modified), "d MMMM yyyy")
+                                                children: first.modified ? format_default()(new Date(first.modified), "d MMMM yyyy") : ""
                                             })
                                         ]
                                     })
                                 ]
                             }),
-                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
-                                href: `/blog/${third.slug}`,
+                            second && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: "side",
                                 children: [
-                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                        className: "aspect",
-                                        children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
-                                            fill: true,
-                                            quality: 100,
-                                            src: third._embedded["wp:featuredmedia"][0].source_url,
-                                            alt: third._embedded["wp:featuredmedia"][0].alt_text
-                                        })
-                                    }),
-                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                        className: "content",
+                                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                                        href: `/blog/${second.slug}`,
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                className: "term",
-                                                children: third._embedded["wp:term"][0][0].name
+                                                className: "aspect",
+                                                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                                    fill: true,
+                                                    quality: 100,
+                                                    src: getMedia(second).source_url,
+                                                    alt: getMedia(second).alt_text,
+                                                    sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
+                                                })
                                             }),
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                className: "content",
+                                                children: [
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "term",
+                                                        children: getTerm(second)
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "title",
+                                                        dangerouslySetInnerHTML: {
+                                                            __html: second.title?.rendered || ""
+                                                        }
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "dste",
+                                                        children: second.modified ? format_default()(new Date(second.modified), "d MMMM yyyy") : ""
+                                                    })
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    third && /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                                        href: `/blog/${third.slug}`,
+                                        children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                className: "title",
-                                                dangerouslySetInnerHTML: {
-                                                    __html: third.title.rendered
-                                                }
+                                                className: "aspect",
+                                                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                                                    fill: true,
+                                                    quality: 100,
+                                                    src: getMedia(third).source_url,
+                                                    alt: getMedia(third).alt_text,
+                                                    sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
+                                                })
                                             }),
-                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                className: "dste",
-                                                children: format_default()(new Date(third.modified), "d MMMM yyyy")
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                className: "content",
+                                                children: [
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "term",
+                                                        children: getTerm(third)
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "title",
+                                                        dangerouslySetInnerHTML: {
+                                                            __html: third.title?.rendered || ""
+                                                        }
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "dste",
+                                                        children: third.modified ? format_default()(new Date(third.modified), "d MMMM yyyy") : ""
+                                                    })
+                                                ]
                                             })
                                         ]
                                     })
@@ -469,7 +511,7 @@ const Index = ({ posts , categories  })=>{
                     })
                 ]
             }),
-            /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PostRow, {
+            fourth && /*#__PURE__*/ (0,jsx_runtime_.jsxs)(PostRow, {
                 children: [
                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
                         href: `/blog/${fourth.slug}`,
@@ -479,8 +521,9 @@ const Index = ({ posts , categories  })=>{
                                 children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                     fill: true,
                                     quality: 100,
-                                    src: fourth._embedded["wp:featuredmedia"][0].source_url,
-                                    alt: fourth._embedded["wp:featuredmedia"][0].alt_text
+                                    src: getMedia(fourth).source_url,
+                                    alt: getMedia(fourth).alt_text,
+                                    sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                                 })
                             }),
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -488,23 +531,23 @@ const Index = ({ posts , categories  })=>{
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "term",
-                                        children: fourth._embedded["wp:term"][0][0].name
+                                        children: getTerm(fourth)
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "title",
                                         dangerouslySetInnerHTML: {
-                                            __html: fourth.title.rendered
+                                            __html: fourth.title?.rendered || ""
                                         }
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "dste",
-                                        children: format_default()(new Date(fourth.modified), "d MMMM yyyy")
+                                        children: fourth.modified ? format_default()(new Date(fourth.modified), "d MMMM yyyy") : ""
                                     })
                                 ]
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
+                    fifth && /*#__PURE__*/ (0,jsx_runtime_.jsxs)(styled_Item, {
                         href: `/blog/${fifth.slug}`,
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
@@ -512,8 +555,9 @@ const Index = ({ posts , categories  })=>{
                                 children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                     fill: true,
                                     quality: 100,
-                                    src: fifth._embedded["wp:featuredmedia"][0].source_url,
-                                    alt: fifth._embedded["wp:featuredmedia"][0].alt_text
+                                    src: getMedia(fifth).source_url,
+                                    alt: getMedia(fifth).alt_text,
+                                    sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                                 })
                             }),
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -521,17 +565,17 @@ const Index = ({ posts , categories  })=>{
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "term",
-                                        children: fifth._embedded["wp:term"][0][0].name
+                                        children: getTerm(fifth)
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "title",
                                         dangerouslySetInnerHTML: {
-                                            __html: fifth.title.rendered
+                                            __html: fifth.title?.rendered || ""
                                         }
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "dste",
-                                        children: format_default()(new Date(fifth.modified), "d MMMM yyyy")
+                                        children: fifth.modified ? format_default()(new Date(fifth.modified), "d MMMM yyyy") : ""
                                     })
                                 ]
                             })
@@ -539,7 +583,7 @@ const Index = ({ posts , categories  })=>{
                     })
                 ]
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(Blog_Categories, {
+            Boolean(categories?.length) && /*#__PURE__*/ jsx_runtime_.jsx(Blog_Categories, {
                 data: categories
             })
         ]
@@ -561,14 +605,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9154);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9648);
-/* harmony import */ var _containers_Blog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7060);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__]);
-([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7507);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
+/* harmony import */ var _containers_Blog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7060);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -576,75 +622,81 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 const Page = (props)=>{
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
+    const isKo = router.locale === "ko";
+    const title = isKo ? "인도네시아 비즈니스 & 투자 인사이트 | 인파트너" : "Indonesia Business & Investment Insights | Inpartner Insights";
+    const description = isKo ? "인도네시아 시장 진출, 외국인 직접투자(FDI), 산업 동향 및 규제 정책에 대한 인파트너의 전문 시장 분석과 인사이트를 제공합니다." : "Authoritative analyses, market intelligence, and regulatory updates on Indonesian business expansion, foreign direct investment (FDI), and industrial trends.";
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-                children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                        children: "Insight\xa0&\xa0Update"
-                    }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "description",
-                        content: "Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
-                    })
-                ]
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                title: title,
+                description: description
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Blog__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Blog__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
                 ...props
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {})
         ]
     });
 };
-const getServerSideProps = async ({ req , query  })=>{
-    const [posts, c] = await Promise.all([
-        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
-            params: {
-                _embed: 1,
-                categories: Array.isArray(query.c) ? query.c.join(",") : query.c,
-                per_page: 5,
-                _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
-                search: query.q
-            },
-            headers: {
-                accept: "application/json"
-            }
-        }),
-        axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
-            params: {
-                _embed: 1,
-                _fields: "id,name,slug"
-            },
-            headers: {
-                accept: "application/json"
-            }
-        })
-    ]);
-    const categories = await Promise.all(c.data.filter((it)=>it.slug !== "others").map(async (it)=>{
-        const posts = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
-            params: {
-                _embed: 1,
-                categories: it.id,
-                per_page: 6,
-                _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
-                search: query.q
-            },
-            headers: {
-                accept: "application/json"
-            }
-        });
+const getServerSideProps = async ({ query  })=>{
+    try {
+        const [posts, c] = await Promise.all([
+            axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+                params: {
+                    _embed: 1,
+                    categories: Array.isArray(query.c) ? query.c.join(",") : query.c,
+                    per_page: 5,
+                    _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
+                    search: query.q
+                },
+                headers: {
+                    accept: "application/json"
+                }
+            }),
+            axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
+                params: {
+                    _embed: 1,
+                    _fields: "id,name,slug"
+                },
+                headers: {
+                    accept: "application/json"
+                }
+            })
+        ]);
+        const categories = await Promise.all(c.data.filter((it)=>it.slug !== "others").map(async (it)=>{
+            const catPosts = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+                params: {
+                    _embed: 1,
+                    categories: it.id,
+                    per_page: 6,
+                    _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
+                    search: query.q
+                },
+                headers: {
+                    accept: "application/json"
+                }
+            });
+            return {
+                category: it,
+                posts: catPosts.data
+            };
+        }));
         return {
-            category: it,
-            posts: posts.data
+            props: {
+                posts: posts.data,
+                categories: categories.filter((it)=>it.posts.length)
+            }
         };
-    }));
-    return {
-        props: {
-            posts: posts.data,
-            categories: categories.filter((it)=>it.posts.length)
-        }
-    };
+    } catch  {
+        return {
+            props: {
+                posts: [],
+                categories: []
+            }
+        };
+    }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
@@ -685,13 +737,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 8982:
-/***/ ((module) => {
-
-module.exports = require("cookies-next");
 
 /***/ }),
 
@@ -891,6 +936,13 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
+/***/ 8582:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Dropdown");
+
+/***/ }),
+
 /***/ 5226:
 /***/ ((module) => {
 
@@ -902,13 +954,6 @@ module.exports = require("react-bootstrap/Form");
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
 
 /***/ }),
 
@@ -940,7 +985,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,51], () => (__webpack_exec__(3792)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,222], () => (__webpack_exec__(3792)));
 module.exports = __webpack_exports__;
 
 })();

@@ -16,132 +16,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9920);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1480);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var cookies_next__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8982);
-/* harmony import */ var cookies_next__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(cookies_next__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
 
-const googleTranslateElementInit = ()=>{
-    new window.google.translate.TranslateElement({
-        pageLanguage: "auto",
-        autoDisplay: false,
-        includedLanguages: "en,ko",
-        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, "google_translate_element");
-};
-const LANGS = {
-    "/auto/en": {
-        label: "EN",
-        value: "/auto/en"
-    },
-    "/auto/ko": {
-        label: "KR",
-        value: "/auto/ko"
-    }
-};
 const AutoTranslate = ()=>{
-    const [lang, setLang] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(LANGS["/auto/en"]);
-    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
-        const cookie = typeof window.localStorage !== "undefined" && localStorage.getItem("googtrans");
-        const ss = document.body.querySelector("#googleTranslateElementInit");
-        if (cookie === "/auto/ko") {
-            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", cookie, {
-                sameSite: true,
-                secure: false
-            });
-            setLang(LANGS["/auto/ko"]);
-            if (!ss) {
-                var addScript = document.createElement("script");
-                addScript.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
-                addScript.setAttribute("id", "googleTranslateElementInit");
-                document.body.appendChild(addScript);
-            }
-            window.googleTranslateElementInit = googleTranslateElementInit;
-        } else {
-            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", "", {
-                sameSite: true,
-                secure: false,
-                maxAge: 0
-            });
-            setLang(LANGS["/auto/en"]);
-            window.googleTranslateElementInit = undefined;
-            if (ss) {
-                document.body.removeChild(ss);
-            }
-        }
-    }, []);
-    const onSelect = (l)=>{
-        if (l.value === "/auto/ko") {
-            localStorage.setItem("googtrans", l.value);
-            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", l.value, {
-                sameSite: true,
-                secure: false
-            });
-            window.googleTranslateElementInit = googleTranslateElementInit;
-        } else {
-            localStorage.removeItem("googtrans");
-            (0,cookies_next__WEBPACK_IMPORTED_MODULE_4__.setCookie)("googtrans", "", {
-                sameSite: true,
-                secure: false,
-                maxAge: 0
-            });
-            window.googleTranslateElementInit = undefined;
-        }
-        setTimeout(()=>window.location.reload());
-    };
-    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
-        console.log(lang);
-    }, [
-        lang
-    ]);
-    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
+    const currentLocale = router.locale || "en";
+    const isEn = currentLocale === "en";
+    const isKo = currentLocale === "ko";
+    return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(RadioGroup, {
         children: [
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                id: "google_translate_element",
-                style: {
-                    width: "0px",
-                    height: "0px",
-                    position: "absolute",
-                    left: "50%",
-                    zIndex: -99999,
-                    opacity: 0,
-                    display: "hidden"
-                }
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
+                href: router.asPath,
+                locale: "en",
+                disabled: isEn,
+                "aria-current": isEn ? "true" : undefined,
+                children: "EN"
             }),
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(RadioGroup, {
-                className: "notranslate",
-                children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
-                        disabled: lang === LANGS["/auto/en"],
-                        className: "notranslate",
-                        onClick: ()=>onSelect(LANGS["/auto/en"]),
-                        children: LANGS["/auto/en"].label
-                    }),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Divider, {}),
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
-                        disabled: lang === LANGS["/auto/ko"],
-                        className: "notranslate",
-                        onClick: ()=>onSelect(LANGS["/auto/ko"]),
-                        children: LANGS["/auto/ko"].label
-                    })
-                ]
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Divider, {}),
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Item, {
+                href: router.asPath,
+                locale: "ko",
+                disabled: isKo,
+                "aria-current": isKo ? "true" : undefined,
+                children: "KR"
             })
         ]
     });
 };
 const RadioGroup = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
     target: "ey4gp5r0"
-})("display:flex;flex-direction:row;align-items:stretch;align-self:center;");
-const Item = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("button", {
+})("display:flex;flex-direction:row;align-items:center;align-self:center;");
+const Item = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
     target: "ey4gp5r1"
-})("background:none;border:none;");
+})("background:none;border:none;padding:4px 8px;cursor:", (props)=>props.disabled ? "default" : "pointer", ";pointer-events:", (props)=>props.disabled ? "none" : "auto", ";font-weight:", (props)=>props.disabled ? "700" : "400", ";color:", (props)=>props.disabled ? _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__/* .color.primary.normal */ .$_.primary.normal : "#666666", ";text-decoration:none;font-size:14px;&:hover{color:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__/* .color.primary.normal */ .$_.primary.normal, ";text-decoration:none;}");
 const Divider = /*#__PURE__*/ _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default()("div", {
     target: "ey4gp5r2"
-})("width:1px;background-color:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__/* .color.primary.dark */ .$_.primary.dark, ";");
+})("width:1px;height:14px;background-color:", _components_GlobalStyle__WEBPACK_IMPORTED_MODULE_1__/* .color.primary.dark */ .$_.primary.dark, ";margin:0 4px;");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AutoTranslate);
 
 

@@ -63,11 +63,13 @@ const Dummy = /*#__PURE__*/ styled_default()("div", {
 })("height:0;");
 const Item = /*#__PURE__*/ styled_default()((link_default()), {
     target: "epge8fo5"
-})("position:relative;display:block;border-radius:12px;overflow:hidden;& > .aspect{width:100%;padding-top:", 296 / 3.04, "%;& > img{object-fit:cover;}}& > .content{position:absolute;width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;bottom:0;left:0;right:0;background-color:rgba(0,0,0,0.3);color:white;padding:16px;& > .term{font-size:14px;font-weight:bold;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:20px;}}& > .title{font-size:16px;font-weight:bold;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:24px;}}& > .date{font-size:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:14px;}}}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){&.main{& > .aspect{padding-top:", 608 / 9.28, "%;}& > .content{padding:32px;& > .term{font-size:24px;}& > .title{font-size:28px;}}}}");
+})("position:relative;display:block;border-radius:12px;overflow:hidden;& > .aspect{position:relative;width:100%;padding-top:", 296 / 3.04, "%;& > img{object-fit:cover;}}& > .content{position:absolute;width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;bottom:0;left:0;right:0;background-color:rgba(0,0,0,0.3);color:white;padding:16px;& > .term{font-size:14px;font-weight:bold;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:20px;}}& > .title{font-size:16px;font-weight:bold;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:24px;}}& > .date{font-size:12px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){font-size:14px;}}}@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){&.main{& > .aspect{padding-top:", 608 / 9.28, "%;}& > .content{padding:32px;& > .term{font-size:24px;}& > .title{font-size:28px;}}}}");
 const Categories = /*#__PURE__*/ styled_default()("div", {
     target: "epge8fo6"
 })("display:flex;flex-wrap:wrap;margin:0 -8px;margin-top:32px;@media (min-width:", GlobalStyle/* breakpoints.md */.AV.md, "){margin-top:64px;}& > a{margin:0 8px 8px 8px;& > button{background-color:white;color:black;border:none;font-weight:400;text-align:center;white-space:nowrap;width:100%;}}");
 
+// EXTERNAL MODULE: ./src/locales/useTranslation.ts + 2 modules
+var useTranslation = __webpack_require__(3064);
 ;// CONCATENATED MODULE: ./src/containers/Category/index.tsx
 
 
@@ -77,8 +79,24 @@ const Categories = /*#__PURE__*/ styled_default()("div", {
 
 
 
+
+const getMedia = (post)=>{
+    const media = post?._embedded?.["wp:featuredmedia"]?.[0];
+    return {
+        source_url: media?.source_url || "/images/default_post_img.png",
+        alt_text: media?.alt_text || ""
+    };
+};
+const getTerm = (post)=>{
+    const terms = post?._embedded?.["wp:term"];
+    if (Array.isArray(terms) && terms[0] && terms[0][0]) {
+        return terms[0][0].name;
+    }
+    return "";
+};
 const Index = ({ category , posts , categories  })=>{
     const router = (0,router_.useRouter)();
+    const { t  } = (0,useTranslation/* default */.Z)();
     const { c , q  } = (0,external_react_.useMemo)(()=>{
         let c = {};
         if (router.query.c) {
@@ -167,7 +185,25 @@ const Index = ({ category , posts , categories  })=>{
         posts
     ]);
     if (!first) {
-        return /*#__PURE__*/ jsx_runtime_.jsx("div", {});
+        return /*#__PURE__*/ jsx_runtime_.jsx(Container, {
+            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Banner, {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx(Title, {
+                        children: category.name
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        style: {
+                            textAlign: "center",
+                            width: "100%",
+                            padding: "64px 16px",
+                            color: "#666",
+                            fontSize: "18px"
+                        },
+                        children: t.blogPage.noCategoryArticles
+                    })
+                ]
+            })
+        });
     }
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Container, {
         children: [
@@ -185,8 +221,9 @@ const Index = ({ category , posts , categories  })=>{
                                 children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                     fill: true,
                                     quality: 100,
-                                    src: first._embedded["wp:featuredmedia"][0].source_url,
-                                    alt: first._embedded["wp:featuredmedia"][0].alt_text
+                                    src: getMedia(first).source_url,
+                                    alt: getMedia(first).alt_text,
+                                    sizes: "(min-width: 1200px) 760px, (min-width: 768px) 60vw, 100vw"
                                 })
                             }),
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -194,17 +231,17 @@ const Index = ({ category , posts , categories  })=>{
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "term",
-                                        children: first._embedded["wp:term"][0][0].name
+                                        children: getTerm(first)
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "title",
                                         dangerouslySetInnerHTML: {
-                                            __html: first.title.rendered
+                                            __html: first.title?.rendered || ""
                                         }
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "dste",
-                                        children: format_default()(new Date(first.modified), "d MMMM yyyy")
+                                        children: first.modified ? format_default()(new Date(first.modified), "d MMMM yyyy") : ""
                                     })
                                 ]
                             })
@@ -221,8 +258,9 @@ const Index = ({ category , posts , categories  })=>{
                                         children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                             fill: true,
                                             quality: 100,
-                                            src: second._embedded["wp:featuredmedia"][0].source_url,
-                                            alt: second._embedded["wp:featuredmedia"][0].alt_text
+                                            src: getMedia(second).source_url,
+                                            alt: getMedia(second).alt_text,
+                                            sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                                         })
                                     }),
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -230,17 +268,17 @@ const Index = ({ category , posts , categories  })=>{
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "term",
-                                                children: second._embedded["wp:term"][0][0].name
+                                                children: getTerm(second)
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "title",
                                                 dangerouslySetInnerHTML: {
-                                                    __html: second.title.rendered
+                                                    __html: second.title?.rendered || ""
                                                 }
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "dste",
-                                                children: format_default()(new Date(second.modified), "d MMMM yyyy")
+                                                children: second.modified ? format_default()(new Date(second.modified), "d MMMM yyyy") : ""
                                             })
                                         ]
                                     })
@@ -254,8 +292,9 @@ const Index = ({ category , posts , categories  })=>{
                                         children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                             fill: true,
                                             quality: 100,
-                                            src: third._embedded["wp:featuredmedia"][0].source_url,
-                                            alt: third._embedded["wp:featuredmedia"][0].alt_text
+                                            src: getMedia(third).source_url,
+                                            alt: getMedia(third).alt_text,
+                                            sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                                         })
                                     }),
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -263,17 +302,17 @@ const Index = ({ category , posts , categories  })=>{
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "term",
-                                                children: third._embedded["wp:term"][0][0].name
+                                                children: getTerm(third)
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "title",
                                                 dangerouslySetInnerHTML: {
-                                                    __html: third.title.rendered
+                                                    __html: third.title?.rendered || ""
                                                 }
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "dste",
-                                                children: format_default()(new Date(third.modified), "d MMMM yyyy")
+                                                children: third.modified ? format_default()(new Date(third.modified), "d MMMM yyyy") : ""
                                             })
                                         ]
                                     })
@@ -295,8 +334,9 @@ const Index = ({ category , posts , categories  })=>{
                                     children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                         fill: true,
                                         quality: 100,
-                                        src: it._embedded["wp:featuredmedia"][0].source_url,
-                                        alt: it._embedded["wp:featuredmedia"][0].alt_text
+                                        src: getMedia(it).source_url,
+                                        alt: getMedia(it).alt_text,
+                                        sizes: "(min-width: 1200px) 380px, (min-width: 768px) 50vw, 100vw"
                                     })
                                 }),
                                 /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -304,17 +344,17 @@ const Index = ({ category , posts , categories  })=>{
                                     children: [
                                         /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                             className: "term",
-                                            children: it._embedded["wp:term"][0][0].name
+                                            children: getTerm(it)
                                         }),
                                         /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                             className: "title",
                                             dangerouslySetInnerHTML: {
-                                                __html: it.title.rendered
+                                                __html: it.title?.rendered || ""
                                             }
                                         }),
                                         /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                             className: "dste",
-                                            children: format_default()(new Date(it.modified), "d MMMM yyyy")
+                                            children: it.modified ? format_default()(new Date(it.modified), "d MMMM yyyy") : ""
                                         })
                                     ]
                                 })
@@ -331,10 +371,11 @@ const Index = ({ category , posts , categories  })=>{
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Categories, {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx(Title, {
-                        children: "Check Other Articles"
+                        children: t.blogPage.checkOtherArticles
                     }),
                     categories.map((it)=>/*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                             passHref: true,
+                            legacyBehavior: true,
                             href: {
                                 pathname: "/blog"
                             },
@@ -363,16 +404,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9154);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9648);
-/* harmony import */ var _containers_Category__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7736);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__]);
-([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7507);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
+/* harmony import */ var _containers_Category__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7736);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -381,103 +421,73 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 const Page = (props)=>{
-    const meta = props.category.yoast_head_json;
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
+    const isKo = router.locale === "ko";
+    const meta = (props.category?.yoast_head_json) || {};
+    const categoryName = props.category?.name || "Category";
+    const pageTitle = isKo ? `${categoryName} 카테고리 아티클 및 인사이트 | 인파트너` : meta.title || `${categoryName} | Inpartner Insights`;
+    const pageDescription = isKo ? `인파트너 블로그의 ${categoryName} 관련 최신 비즈니스 트렌드, 산업 분석 및 전문 인사이트를 확인하세요.` : meta.og_description || `Read latest insights and articles in ${categoryName} on Inpartner.`;
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-                children: [
-                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                        children: meta.title
-                    }),
-                    Object.keys(meta).map((k)=>{
-                        const it = meta[k];
-                        if (k.startsWith("og_")) {
-                            if (k.endsWith("_image")) {
-                                const [i] = it;
-                                return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-                                    children: [
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:url",
-                                            content: i.url
-                                        }),
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:type",
-                                            content: i.type
-                                        }),
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:width",
-                                            content: `${i.width}`
-                                        }),
-                                        /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:height",
-                                            content: `${i.height}`
-                                        }),
-                                        i.alt && /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                            name: "og:image:alt",
-                                            content: i.alt
-                                        })
-                                    ]
-                                }, k);
-                            }
-                            return /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                name: k.replace("_", ":"),
-                                content: it
-                            }, k);
-                        }
-                        if (k.startsWith("twitter_")) {
-                            return /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                                name: k.replace("_", ":"),
-                                content: it
-                            }, k);
-                        }
-                        return undefined;
-                    })
-                ]
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                title: pageTitle,
+                description: pageDescription
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Category__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Category__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
                 ...props
             }),
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {})
         ]
     });
 };
-const getServerSideProps = async ({ req , query  })=>{
-    const slug = query.slug.toLowerCase();
-    const res = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
-        params: {
-            _embed: 1,
-            _fields: "id,name,slug,yoast_head_json"
-        },
-        headers: {
-            accept: "application/json"
-        }
-    });
-    const category = res.data.find((it)=>it.slug.toLowerCase() === slug);
-    if (!category) {
+const getServerSideProps = async ({ query  })=>{
+    const slug = query.slug?.toLowerCase();
+    if (!slug) {
         return {
             notFound: true
         };
     }
-    const categories = res.data.filter((it)=>it.slug.toLowerCase() !== slug && it.slug !== "others");
-    const posts = await axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
-        params: {
-            _embed: 1,
-            categories: category.id,
-            per_page: 6,
-            _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term"
-        },
-        headers: {
-            accept: "application/json"
+    try {
+        const res = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/categories`, {
+            params: {
+                _embed: 1,
+                _fields: "id,name,slug,yoast_head_json"
+            },
+            headers: {
+                accept: "application/json"
+            }
+        });
+        const category = res.data.find((it)=>it.slug.toLowerCase() === slug);
+        if (!category) {
+            return {
+                notFound: true
+            };
         }
-    });
-    return {
-        props: {
-            category,
-            posts: posts.data,
-            categories
-        }
-    };
+        const categories = res.data.filter((it)=>it.slug.toLowerCase() !== slug && it.slug !== "others");
+        const posts = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+            params: {
+                _embed: 1,
+                categories: category.id,
+                per_page: 6,
+                _fields: "id,title,slug,modified,categories,_embedded,_links.wp:featuredmedia,_links.wp:term"
+            },
+            headers: {
+                accept: "application/json"
+            }
+        });
+        return {
+            props: {
+                category,
+                posts: posts.data,
+                categories
+            }
+        };
+    } catch  {
+        return {
+            notFound: true
+        };
+    }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);
 
@@ -518,13 +528,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faCaretDown");
 /***/ ((module) => {
 
 module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-
-/***/ 8982:
-/***/ ((module) => {
-
-module.exports = require("cookies-next");
 
 /***/ }),
 
@@ -724,17 +727,17 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
+/***/ 8582:
+/***/ ((module) => {
+
+module.exports = require("react-bootstrap/Dropdown");
+
+/***/ }),
+
 /***/ 2540:
 /***/ ((module) => {
 
 module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
-/***/ 9070:
-/***/ ((module) => {
-
-module.exports = require("react-bootstrap/NavDropdown");
 
 /***/ }),
 
@@ -759,7 +762,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,51], () => (__webpack_exec__(1052)));
+var __webpack_exports__ = __webpack_require__.X(0, [210,636,172,302,222], () => (__webpack_exec__(1052)));
 module.exports = __webpack_exports__;
 
 })();

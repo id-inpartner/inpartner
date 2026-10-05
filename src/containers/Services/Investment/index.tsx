@@ -38,4 +38,3 @@ export const Investment: FC = () => {
 }
 
 export default Investment
-

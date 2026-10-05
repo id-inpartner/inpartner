@@ -11,12 +11,14 @@ export interface ItemProps {
 }
 
 export const Item: FC<ItemProps> = ({ data }) => {
-  const image = data._embedded['wp:featuredmedia'][0] || {
+  const image = data._embedded?.['wp:featuredmedia']?.[0] || {
     source_url: '/images/default_post_img.png',
   }
-  const category = data._embedded['wp:term'].find((it) =>
+  const termGroup = data._embedded?.['wp:term']?.find((it) =>
     it.find((i) => i.taxonomy === 'category')
-  )[0] || { name: '' }
+  )
+  const category = (termGroup && termGroup[0]) || { name: '' }
+
   return (
     <C href={`/blog/${data.slug}`}>
       <Aspect>
@@ -66,6 +68,7 @@ const Aspect = styled.div`
   position: relative;
   width: 100%;
   & > .aspect {
+    position: relative;
     padding-top: ${415 / 3.44}%;
     & > img {
       object-fit: cover;

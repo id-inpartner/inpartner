@@ -2,6 +2,9 @@ import type { RequestHandler } from 'express'
 
 const handler: RequestHandler = async (req, res) => {
   if (req.method == 'GET') {
+    if (!req.ctx?.sequelize) {
+      return res.json([])
+    }
     const { sequelize } = req.ctx
     const { Sector } = sequelize.models
     try {

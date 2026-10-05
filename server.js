@@ -11,9 +11,17 @@ const handle = app.getRequestHandler()
 
 ;(async () => {
   await app.prepare()
-  const db = await createDb()
+  let db = null
+  try {
+    db = await createDb()
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.warn('[Database] MySQL connection warning:', err.message)
+  }
   const server = express()
-  server.use(createContentMiddleware(db))
+  if (db) {
+    server.use(createContentMiddleware(db))
+  }
   server.use(createMailMiddleware())
   server.get('/Team.html', (_, res) => {
     return res.redirect(301, '/about#team')

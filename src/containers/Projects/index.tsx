@@ -14,6 +14,8 @@ import { Form, Pagination } from 'react-bootstrap'
 import { PageItem } from '@components/Pagination'
 import { useSectors } from '../../hooks/useSectors'
 import { useRouter } from 'next/router'
+import useTranslation from '../../locales/useTranslation'
+import { getSectorTitle } from '../../locales/sectors'
 
 export interface IndexProps {
   readonly page: number
@@ -32,6 +34,7 @@ const Index: FC<IndexProps> = ({
   sectorId,
   perPage,
 }) => {
+  const { t, locale } = useTranslation()
   const sectors = useSectors()
   const router = useRouter()
   const pageCount = Math.ceil(count / perPage)
@@ -52,10 +55,10 @@ const Index: FC<IndexProps> = ({
   }
   return (
     <>
-      <Banner title="Projects" backgroundSrc={banner} />
+      <Banner title={t.projectsPage.bannerTitle} backgroundSrc={banner} />
       <Container id="content">
         <SideMenu>
-          <MenuTitle>Projects</MenuTitle>
+          <MenuTitle>{t.projectsPage.sideTitle}</MenuTitle>
           <MenuItem
             href={{
               pathname: '/project',
@@ -64,7 +67,7 @@ const Index: FC<IndexProps> = ({
             }}
             className={categoryId === 1 ? 'selected' : ''}
           >
-            Business and Management Consulting
+            {t.projectsPage.catBusiness}
           </MenuItem>
           <MenuItem
             href={{
@@ -74,7 +77,7 @@ const Index: FC<IndexProps> = ({
             }}
             className={categoryId === 3 ? 'selected' : ''}
           >
-            Investment
+            {t.projectsPage.catInvestment}
           </MenuItem>
           <MenuItem
             href={{
@@ -84,13 +87,15 @@ const Index: FC<IndexProps> = ({
             }}
             className={categoryId === 2 ? 'selected' : ''}
           >
-            Capacity Building (The Executive Business Program)
+            {t.projectsPage.catCapacity}
           </MenuItem>
         </SideMenu>
         <Projects>
           <Queries>
             <Form.Select
-              aria-label="Sector"
+              id="sector-filter"
+              name="sectorId"
+              aria-label={t.projectsPage.selectSector}
               onChange={(e) => {
                 const sectorId = e.currentTarget.value
                 if (sectorId) {
@@ -108,18 +113,20 @@ const Index: FC<IndexProps> = ({
                 }
               }}
             >
-              <option>Sector</option>
+              <option value="">{t.projectsPage.selectSector}</option>
               {sectors.map((s) => (
                 <option key={s.id} value={s.id}>
-                  {s.name}
+                  {getSectorTitle(s.slug, s.name, locale)}
                 </option>
               ))}
             </Form.Select>
             {/* <Form.Control type="date" name="date" placeholder="Date" /> */}
           </Queries>
-          {rows.map((r) => (
-            <ProjectComponent key={r.id} data={r} />
-          ))}
+          {rows.length === 0 ? (
+            <p className="text-muted p-4">{t.projectsPage.empty}</p>
+          ) : (
+            rows.map((r) => <ProjectComponent key={r.id} data={r} />)
+          )}
           <Dummy aria-hidden />
           <Pagination>
             <PageItem
@@ -130,7 +137,9 @@ const Index: FC<IndexProps> = ({
               }}
             >
               <span>«</span>
-              <span className="visually-hidden">First</span>
+              <span className="visually-hidden">
+                {locale === 'ko' ? '처음' : 'First'}
+              </span>
             </PageItem>
             <PageItem
               href={{
@@ -140,7 +149,9 @@ const Index: FC<IndexProps> = ({
               }}
             >
               <span>‹</span>
-              <span className="visually-hidden">Prev</span>
+              <span className="visually-hidden">
+                {locale === 'ko' ? '이전' : 'Prev'}
+              </span>
             </PageItem>
             {pages.map((p) => (
               <PageItem
@@ -162,7 +173,9 @@ const Index: FC<IndexProps> = ({
               }}
             >
               <span>›</span>
-              <span className="visually-hidden">Next</span>
+              <span className="visually-hidden">
+                {locale === 'ko' ? '다음' : 'Next'}
+              </span>
             </PageItem>
             <PageItem
               href={{
@@ -172,7 +185,9 @@ const Index: FC<IndexProps> = ({
               }}
             >
               <span>»</span>
-              <span className="visually-hidden">Last</span>
+              <span className="visually-hidden">
+                {locale === 'ko' ? '마지막' : 'Last'}
+              </span>
             </PageItem>
           </Pagination>
         </Projects>

@@ -1,20 +1,25 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Container, { IndexProps } from '@containers/Projects'
 import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
+import SEO from '@components/SEO'
 import { jsonify } from '@utils/json'
 
 const Page: NextPage<IndexProps> = (props) => {
+  const router = useRouter()
+  const isKo = router.locale === 'ko'
+
+  const title = isKo
+    ? '주요 프로젝트 실적 및 포트폴리오 | 인파트너 인도네시아'
+    : 'Portfolio & Completed Advisory Projects | Inpartner Indonesia'
+  const description = isKo
+    ? '인도네시아 고속도로(BUJT) 실사, BRT 타당성 조사, 신재생에너지 재무 모델링, 투자 티저 등 인파트너가 성공적으로 완수한 공공·민간 프로젝트 실적입니다.'
+    : "Review Inpartner's delivered advisory track record: feasibility studies for toll roads, BRT transportation, renewable energy, and investment teasers."
+
   return (
     <>
-      <Head>
-        <title>Project & tender Inpartner</title>
-        <meta
-          name="description"
-          content="Inpartner involves the planning, organizing, and overseeing of resources to achieve a specific goal or objective within a defined timeline and budget"
-        />
-      </Head>
+      <SEO title={title} description={description} />
       <Navbar />
       <Container {...props} />
       <Footer />
@@ -26,7 +31,20 @@ export const getServerSideProps: GetServerSideProps = async ({
   req,
   query,
 }) => {
+  if (!req?.ctx?.sequelize) {
+    return {
+      props: {
+        rows: [],
+        count: 0,
+        page: 1,
+        perPage: 20,
+        categoryId: 1,
+        sectorId: null,
+      },
+    }
+  }
   const { sequelize, Op } = req.ctx
+
   const { Project } = sequelize.models
 
   let categoryId = parseInt(query.categoryId as string, 10)

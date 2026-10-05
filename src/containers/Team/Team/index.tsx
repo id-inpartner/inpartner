@@ -16,7 +16,13 @@ export const Team: FC<TeamProps> = ({ title, image, description, reverse }) => {
       <div className={`root${reverse ? ' reverse' : ''}`}>
         <Aspect>
           <div className="aspect">
-            <Image fill quality={100} alt={title} src={image} />
+            <Image
+              fill
+              quality={100}
+              alt={title}
+              src={image}
+              sizes="(min-width: 1200px) 704px, (min-width: 768px) 50vw, 100vw"
+            />
           </div>
         </Aspect>
         <Text>

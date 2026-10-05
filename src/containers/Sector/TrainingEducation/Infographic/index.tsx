@@ -5,6 +5,7 @@ import time from './time.png'
 import career from './career.png'
 import book from './book.png'
 import { breakpoints } from '@components/GlobalStyle'
+import useTranslation from '../../../../locales/useTranslation'
 
 const Container = styled.div`
   display: flex;
@@ -45,34 +46,36 @@ const Dots = styled.div`
 `
 
 const Infographic = () => {
+  const { t } = useTranslation()
+
   return (
     <>
-      <Title>Why Choose Inpartner?</Title>
+      <Title>{t.sectorTraining.whyChooseTitle}</Title>
       <Container>
         <Dots />
         <Item
           icon={trainer}
           titleBackgroundColor="#1976D2"
-          title="Expert Instructor"
-          description="Learn from industry experts with extensive experience and knowledge."
+          title={t.sectorTraining.expertInstructor}
+          description={t.sectorTraining.expertDesc}
         />
         <Item
           icon={time}
           titleBackgroundColor="#1562AF"
-          title="Flexible Learning"
-          description="Access our courses online or in-person, with flexible scheduling to fit your busy lifestyle."
+          title={t.sectorTraining.flexibleLearning}
+          description={t.sectorTraining.flexibleDesc}
         />
         <Item
           icon={career}
           titleBackgroundColor="#1976D2"
-          title="Career Support"
-          description="Benefit from our career support services, including resume building, interview preparation, and job placement assistance."
+          title={t.sectorTraining.careerSupport}
+          description={t.sectorTraining.careerDesc}
         />
         <Item
           icon={book}
           titleBackgroundColor="#0C3B69"
-          title="Cutting-Edge Curriculum"
-          description="Stay ahead with our up-to-date curriculum, incorporating the latest trends and technologies."
+          title={t.sectorTraining.cuttingEdge}
+          description={t.sectorTraining.cuttingEdgeDesc}
         />
       </Container>
     </>

@@ -146,6 +146,7 @@ export const Item = styled(Link)`
   border-radius: 12px;
   overflow: hidden;
   & > .aspect {
+    position: relative;
     width: 100%;
     padding-top: ${296 / 3.04}%;
     & > img {

@@ -1,128 +1,66 @@
 import { color } from '@components/GlobalStyle'
 import styled from '@emotion/styled'
-import { FC, useEffect, useState } from 'react'
-import { getCookie, setCookie, deleteCookie } from 'cookies-next'
-
-interface Lang {
-  readonly label: string
-  readonly value: '/auto/en' | '/auto/ko'
-}
-
-const googleTranslateElementInit = () => {
-  new window.google.translate.TranslateElement(
-    {
-      pageLanguage: 'auto',
-      autoDisplay: false,
-      includedLanguages: 'en,ko', // If you remove it, by default all google supported language will be included
-      layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-    },
-    'google_translate_element'
-  )
-}
-
-const LANGS = {
-  '/auto/en': { label: 'EN', value: '/auto/en' },
-  '/auto/ko': { label: 'KR', value: '/auto/ko' },
-} as const
+import { useRouter } from 'next/router'
+import { FC } from 'react'
+import Link from 'next/link'
 
 export const AutoTranslate: FC = () => {
-  const [lang, setLang] = useState<Lang>(LANGS['/auto/en'])
-
-  useEffect(() => {
-    const cookie =
-      typeof window.localStorage !== 'undefined' &&
-      localStorage.getItem('googtrans')
-    const ss = document.body.querySelector('#googleTranslateElementInit')
-    if (cookie === '/auto/ko') {
-      setCookie('googtrans', cookie, { sameSite: true, secure: false })
-      setLang(LANGS['/auto/ko'])
-      if (!ss) {
-        var addScript = document.createElement('script')
-        addScript.setAttribute(
-          'src',
-          'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-        )
-        addScript.setAttribute('id', 'googleTranslateElementInit')
-        document.body.appendChild(addScript)
-      }
-      window.googleTranslateElementInit = googleTranslateElementInit
-    } else {
-      setCookie('googtrans', '', { sameSite: true, secure: false, maxAge: 0 })
-      setLang(LANGS['/auto/en'])
-      window.googleTranslateElementInit = undefined
-      if (ss) {
-        document.body.removeChild(ss)
-      }
-    }
-  }, [])
-
-  const onSelect = (l: Lang) => {
-    if (l.value === '/auto/ko') {
-      localStorage.setItem('googtrans', l.value)
-      setCookie('googtrans', l.value, { sameSite: true, secure: false })
-      window.googleTranslateElementInit = googleTranslateElementInit
-    } else {
-      localStorage.removeItem('googtrans')
-      setCookie('googtrans', '', { sameSite: true, secure: false, maxAge: 0 })
-      window.googleTranslateElementInit = undefined
-    }
-    setTimeout(() => window.location.reload())
-  }
-
-  useEffect(() => {
-    console.log(lang)
-  }, [lang])
+  const router = useRouter()
+  const currentLocale = router.locale || 'en'
+  const isEn = currentLocale === 'en'
+  const isKo = currentLocale === 'ko'
 
   return (
-    <>
-      <div
-        id="google_translate_element"
-        style={{
-          width: '0px',
-          height: '0px',
-          position: 'absolute',
-          left: '50%',
-          zIndex: -99999,
-          opacity: 0,
-          display: 'hidden',
-        }}
-      />
-      <RadioGroup className="notranslate">
-        <Item
-          disabled={lang === LANGS['/auto/en']}
-          className="notranslate"
-          onClick={() => onSelect(LANGS['/auto/en'])}
-        >
-          {LANGS['/auto/en'].label}
-        </Item>
-        <Divider />
-        <Item
-          disabled={lang === LANGS['/auto/ko']}
-          className="notranslate"
-          onClick={() => onSelect(LANGS['/auto/ko'])}
-        >
-          {LANGS['/auto/ko'].label}
-        </Item>
-      </RadioGroup>
-    </>
+    <RadioGroup>
+      <Item
+        href={router.asPath}
+        locale="en"
+        disabled={isEn}
+        aria-current={isEn ? 'true' : undefined}
+      >
+        EN
+      </Item>
+      <Divider />
+      <Item
+        href={router.asPath}
+        locale="ko"
+        disabled={isKo}
+        aria-current={isKo ? 'true' : undefined}
+      >
+        KR
+      </Item>
+    </RadioGroup>
   )
 }
 
 const RadioGroup = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   align-self: center;
 `
 
-const Item = styled.button`
+const Item = styled(Link)<{ disabled?: boolean }>`
   background: none;
   border: none;
+  padding: 4px 8px;
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
+  pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
+  font-weight: ${(props) => (props.disabled ? '700' : '400')};
+  color: ${(props) => (props.disabled ? color.primary.normal : '#666666')};
+  text-decoration: none;
+  font-size: 14px;
+  &:hover {
+    color: ${color.primary.normal};
+    text-decoration: none;
+  }
 `
 
 const Divider = styled.div`
   width: 1px;
+  height: 14px;
   background-color: ${color.primary.dark};
+  margin: 0 4px;
 `
 
 export default AutoTranslate

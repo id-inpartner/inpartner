@@ -14,6 +14,7 @@ import { Container, FormControlProps } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import { reducer, Values } from './reducer'
 import wa from './wa.png'
+import useTranslation from '../../locales/useTranslation'
 
 const Root = styled.div`
   display: flex;
@@ -154,7 +155,20 @@ const WaLink = styled(Link)`
   }
 `
 
+const ContactH1 = styled.h1`
+  text-align: center;
+  font-weight: 700;
+  font-size: 26px;
+  margin-top: 50px;
+  color: #1a1a1a;
+  @media (min-width: ${breakpoints.md}) {
+    font-size: 36px;
+    margin-top: 80px;
+  }
+`
+
 export const Index = () => {
+  const { t } = useTranslation()
   const [state, dispatch] = useReducer(reducer, { status: 'idle' })
   const [values, setValues] = useState<Values>({
     email: '',
@@ -166,24 +180,22 @@ export const Index = () => {
 
   useEffect(() => {
     if (state.error) {
-      alert(state.error)
+      alert(t.contactPage.failed)
       dispatch({ type: 'reset' })
     } else if (state.status === 'success') {
-      alert('Message recorded!')
+      alert(t.contactPage.recorded)
       dispatch({ type: 'reset' })
     }
-  }, [state.status, state.error])
+  }, [state.status, state.error, t])
 
   const onChange: FormControlProps['onChange'] = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
   return (
     <ColumnContainer>
-      <TitleDescription title="What Can We Help?">
-        Thank you for your interest in INPARTNER. Your inquiry is important to
-        us. To help us route your request to the appropriate team or person, we
-        need a bit of information about you and the nature of your question or
-        project.
+      <ContactH1>{t.contactPage.contactH1}</ContactH1>
+      <TitleDescription title={t.contactPage.title}>
+        {t.contactPage.desc}
       </TitleDescription>
       <F
         onSubmit={(a) => {
@@ -196,23 +208,23 @@ export const Index = () => {
             })
             .catch((e) => {
               const err = e as AxiosError
-              if (err.isAxiosError) {
-                if (err.response) {
-                  dispatch({ type: 'failed', error: 'Internal Server Error' })
-                }
+              if (err.isAxiosError && err.response) {
+                dispatch({ type: 'failed', error: 'Internal Server Error' })
+              } else {
+                dispatch({ type: 'failed', error: (e as Error).message })
               }
-              dispatch({ type: 'failed', error: (e as Error).message })
             })
         }}
       >
-        <div className="title full mb-4">Contact Information</div>
+        <div className="title full mb-4">{t.contactPage.formTitle}</div>
         <Form.Group className="mb-4 half" controlId="name">
-          <Form.Label>Full Name*</Form.Label>
+          <Form.Label>{t.contactPage.fullName}</Form.Label>
           <Form.Control
             name="name"
             required
-            type="name"
-            placeholder="Enter your full name"
+            type="text"
+            autoComplete="name"
+            placeholder={t.contactPage.namePlaceholder}
             disabled={state.status === 'progress'}
             value={values.name}
             onChange={onChange}
@@ -220,27 +232,29 @@ export const Index = () => {
           />
         </Form.Group>
         <Form.Group className="mb-4 half" controlId="email">
-          <Form.Label>Email*</Form.Label>
+          <Form.Label>{t.contactPage.email}</Form.Label>
           <Form.Control
             name="email"
             required
             type="email"
-            placeholder="Enter your email"
+            autoComplete="email"
+            placeholder={t.contactPage.emailPlaceholder}
             disabled={state.status === 'progress'}
             value={values.email}
             onChange={onChange}
           />
           <Form.Control.Feedback type="invalid">
-            {`We'll never share your email with anyone else.`}
+            {t.contactPage.emailFeedback}
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group className="mb-4 half" controlId="subject">
-          <Form.Label>Company Name*</Form.Label>
+        <Form.Group className="mb-4 half" controlId="company">
+          <Form.Label>{t.contactPage.company}</Form.Label>
           <Form.Control
             name="company"
             required
             type="text"
-            placeholder="Enter your company name"
+            autoComplete="organization"
+            placeholder={t.contactPage.companyPlaceholder}
             disabled={state.status === 'progress'}
             value={values.company}
             onChange={onChange}
@@ -248,12 +262,13 @@ export const Index = () => {
           />
         </Form.Group>
         <Form.Group className="mb-4 half" controlId="subject">
-          <Form.Label>Subject*</Form.Label>
+          <Form.Label>{t.contactPage.subject}</Form.Label>
           <Form.Control
             name="subject"
             required
             type="text"
-            placeholder="Enter your subject"
+            autoComplete="off"
+            placeholder={t.contactPage.subjectPlaceholder}
             disabled={state.status === 'progress'}
             value={values.subject}
             onChange={onChange}
@@ -261,14 +276,14 @@ export const Index = () => {
           />
         </Form.Group>
         <Form.Group className="mb-4 full" controlId="message">
-          <Form.Label>Question or Project*</Form.Label>
+          <Form.Label>{t.contactPage.questionProject}</Form.Label>
           <Form.Control
             name="message"
             required
             type="text"
             as="textarea"
             rows={8}
-            placeholder="Enter your question or project"
+            placeholder={t.contactPage.messagePlaceholder}
             disabled={state.status === 'progress'}
             value={values.message}
             onChange={onChange}
@@ -280,13 +295,12 @@ export const Index = () => {
           type="submit"
           disabled={state.status === 'progress'}
         >
-          Submit
+          {state.status === 'progress'
+            ? t.contactPage.submitting
+            : t.contactPage.submit}
         </Button>
       </F>
-      <WaDescription>
-        To contact us for customer service questions or any other matter, please
-        use QR Code.
-      </WaDescription>
+      <WaDescription>{t.contactPage.waPrompt}</WaDescription>
       <WaTitle>INPARTNER</WaTitle>
       <Qr
         src={wa}

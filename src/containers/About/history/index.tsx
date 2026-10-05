@@ -6,8 +6,11 @@ import history2 from './2.png'
 import history3 from './3.png'
 import Target from '@components/Target'
 import { Images } from './styled'
+import useTranslation from '../../../locales/useTranslation'
 
 export const History: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Target id="history" />
@@ -44,15 +47,9 @@ export const History: FC = () => {
           </div>
         </Images>
       </div>
-      <Card title="History" className="content">
-        INPARTNER (PT Inpartrner Optima Integra) is a transformation of
-        management consulting services established in 2009. We started as a
-        consultant to help increase accessibility to market, financing,
-        technology, and productivity and provide capacity building for the MSME
-        sector in East Java. Our purpose is also to give a change for a better
-        through continuous improvement. And now, we come up as consultant
-        services in business and management to the middle and large
-        corporations.
+      <Card title={t.aboutPage.historyTitle} className="content">
+        <p>{t.aboutPage.historyText1}</p>
+        <p>{t.aboutPage.historyText2}</p>
       </Card>
     </>
   )

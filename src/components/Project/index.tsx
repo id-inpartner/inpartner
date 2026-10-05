@@ -43,7 +43,16 @@ export interface ProjectComponentProps {
   readonly data: Project
 }
 
+import { useRouter } from 'next/router'
+import { translateProjectTitle } from '@utils/project-translations'
+import { getCategoryTitle, getSectorTitleByName } from '../../locales/sectors'
+
 export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
+  const router = useRouter()
+  const displayTitle = translateProjectTitle(data.title, router.locale)
+  const categoryTitle = getCategoryTitle(data.category?.name, router.locale)
+  const sectorTitle = getSectorTitleByName(data.sector?.name, router.locale)
+
   return (
     <C className="project-component-root">
       <Aspect>
@@ -52,14 +61,14 @@ export const ProjectComponent: FC<ProjectComponentProps> = ({ data }) => {
             fill
             quality={100}
             src={data.image}
-            alt=""
+            alt={displayTitle}
             sizes={`(min-width: ${breakpoints.xxl}) 414px, (min-width: ${breakpoints.xl}) 354px, (min-width: ${breakpoints.lg}) 454px, (min-width: ${breakpoints.md}) 334px, (min-width: ${breakpoints.sm}) 514px, 400px`}
           />
         </div>
       </Aspect>
-      <Title>{data.title}</Title>
+      <Title>{displayTitle}</Title>
       <Subtitle>
-        {data.category.name} | {data.sector.name}
+        {categoryTitle} | {sectorTitle}
       </Subtitle>
       {/* <Dates>
         <tr>
@@ -101,6 +110,7 @@ const Aspect = styled.div`
   position: relative;
   margin: 24px 24px 0 24px;
   & > .aspect {
+    position: relative;
     padding-top: ${235 / 3.57}%;
     & > img {
       object-fit: contain;

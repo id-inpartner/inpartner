@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow Naver Yeti crawler
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://inpartner.id/sitemap.xml
+Sitemap: https://inpartner.id/ko-sitemap.xml

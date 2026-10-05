@@ -4,6 +4,7 @@ import banner from './banner.png'
 import { Items } from './styled'
 import Item, { Dummy } from './Item'
 import { FC } from 'react'
+import useTranslation from '../../locales/useTranslation'
 
 export interface Sector {
   readonly id: number
@@ -19,11 +20,13 @@ export interface IndexProps {
 }
 
 const Index: FC<IndexProps> = ({ data }) => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Banner
-        title="Sectors & Themes Coverage"
-        description="Here are access that we can provide"
+        title={t.sectorsPage.bannerTitle}
+        description={t.sectorsPage.bannerDesc}
         backgroundSrc={banner}
       />
       <Container>

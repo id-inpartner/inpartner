@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2020",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -10,28 +14,73 @@
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@components/*": ["./src/components/*", "./src/components/*/index"],
-      "@components": ["./src/components/index"],
-      "@containers/*": ["./src/containers/*", "./src/containers/*/index"],
-      "@containers": ["./src/containers/index"],
-      "@sass/*": ["./src/sass/*", "./src/sass/*/index"],
-      "@sass": ["./src/sass/index"],
-      "@fonts/*": ["./src/fonts/*", "./src/fonts/*/index"],
-      "@fonts": ["./src/fonts/index"],
-      "@images/*": ["./src/images/*", "./src/images/*/index"],
-      "@images": ["./src/images/index"],
-      "@storage/*": ["./src/storage/*", "./src/storage/*/index"],
-      "@storage": ["./src/storage/index"],
-      "@utils/*": ["./src/utils/*", "./src/utils/*/index"],
-      "@utils": ["./src/utils/index"]
+      "@components/*": [
+        "./src/components/*",
+        "./src/components/*/index"
+      ],
+      "@components": [
+        "./src/components/index"
+      ],
+      "@containers/*": [
+        "./src/containers/*",
+        "./src/containers/*/index"
+      ],
+      "@containers": [
+        "./src/containers/index"
+      ],
+      "@sass/*": [
+        "./src/sass/*",
+        "./src/sass/*/index"
+      ],
+      "@sass": [
+        "./src/sass/index"
+      ],
+      "@fonts/*": [
+        "./src/fonts/*",
+        "./src/fonts/*/index"
+      ],
+      "@fonts": [
+        "./src/fonts/index"
+      ],
+      "@images/*": [
+        "./src/images/*",
+        "./src/images/*/index"
+      ],
+      "@images": [
+        "./src/images/index"
+      ],
+      "@storage/*": [
+        "./src/storage/*",
+        "./src/storage/*/index"
+      ],
+      "@storage": [
+        "./src/storage/index"
+      ],
+      "@utils/*": [
+        "./src/utils/*",
+        "./src/utils/*/index"
+      ],
+      "@utils": [
+        "./src/utils/index"
+      ]
     },
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": [
+      "types",
+      "node_modules/@types"
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/sector"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/api/sector"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

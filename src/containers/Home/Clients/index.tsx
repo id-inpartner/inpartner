@@ -64,12 +64,15 @@ import lxinternational from './lxinternational.png'
 import posko from './posko.png'
 import hyundai from './hyundai.png'
 import bci from './bci.png'
+import useTranslation from '../../../locales/useTranslation'
 
 export const Clients: FC = () => {
+  const { t } = useTranslation()
+
   return (
     <>
       <ColumnContainer>
-        <Title>Our Clients</Title>
+        <Title>{t.home.clients.title}</Title>
       </ColumnContainer>
       <Con>
         <Items>

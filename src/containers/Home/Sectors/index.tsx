@@ -17,6 +17,8 @@ import renewable_energy from './renewable_energy.png'
 import biotechnology from './biotechnology.png'
 import Item from './Item'
 import Button from '@components/Button'
+import useTranslation from '../../../locales/useTranslation'
+import { getSectorTitle } from '../../../locales/sectors'
 
 export interface Sector {
   readonly id: number
@@ -45,10 +47,12 @@ const images = {
 }
 
 export const Sectors: FC<SectorsProps> = ({ data }) => {
+  const { t, locale } = useTranslation()
+
   return (
     <ColumnContainer>
-      <TitleDescription title="Sectors & Themes Coverage">
-        Here are access that we can provide
+      <TitleDescription title={t.home.sectors.title}>
+        {t.home.sectors.subtitle}
       </TitleDescription>
       <Items
         arrows
@@ -99,13 +103,13 @@ export const Sectors: FC<SectorsProps> = ({ data }) => {
           <Item
             key={it.id}
             image={images[it.id] || it.image}
-            label={it.title}
+            label={getSectorTitle(it.slug, it.title, locale)}
             href={`/sector/${it.slug}`}
           />
         ))}
       </Items>
-      <ViewMore href="/project">
-        <Button>View All</Button>
+      <ViewMore href="/sector">
+        <Button as="span">{t.home.sectors.viewAll}</Button>
       </ViewMore>
     </ColumnContainer>
   )

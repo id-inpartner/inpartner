@@ -81,7 +81,14 @@ export const Banner: FC<BannerProps> = ({
   return (
     <Root>
       <Aspect className={size === 'short' ? 'short' : 'height'}>
-        <Img fill src={backgroundSrc} priority alt="" quality={100} />
+        <Img
+          fill
+          src={backgroundSrc}
+          priority
+          alt={title || 'Inpartner Banner'}
+          quality={100}
+          sizes="100vw"
+        />
       </Aspect>
       <Content>
         {!!title && <Title>{title}</Title>}

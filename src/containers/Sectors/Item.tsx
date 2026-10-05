@@ -5,6 +5,8 @@ import styled from '@emotion/styled'
 import { ImageProps } from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
+import useTranslation from '../../locales/useTranslation'
+import { getSectorTitle } from '../../locales/sectors'
 
 export interface ItemProps {
   readonly image: ImageProps['src']
@@ -87,19 +89,22 @@ const L = styled(Link)`
 `
 
 const Item: FC<ItemProps> = ({ image, title, slug }) => {
+  const { t, locale } = useTranslation()
+  const translatedTitle = getSectorTitle(slug, title, locale)
+
   return (
     <C>
       <div className="img">
         <Image
           fill
           quality={100}
-          alt=""
+          alt={translatedTitle || ''}
           src={image}
           sizes={`(min-width: ${breakpoints.xxl}) 404px, (min-width: ${breakpoints.xl}) 344px, (min-width: ${breakpoints.lg}) 446px, (min-width: ${breakpoints.md}) 326px, (min-width: ${breakpoints.sm}) 244px, 400px`}
         />
       </div>
-      <Title>{title}</Title>
-      <L href={`/sector/${slug}`}>See All</L>
+      <Title>{translatedTitle}</Title>
+      <L href={`/sector/${slug}`}>{t.sectorsPage.seeAll}</L>
     </C>
   )
 }

@@ -20,7 +20,7 @@ export interface SuccessAction {
   readonly type: 'success'
 }
 
-export interface FailedActionn {
+export interface FailedAction {
   readonly type: 'failed'
   readonly error?: string
 }
@@ -31,7 +31,7 @@ export interface ResetAction {
 
 export const reducer = (
   state: State,
-  action: SubmitAction | SuccessAction | FailedActionn | ResetAction
+  action: SubmitAction | SuccessAction | FailedAction | ResetAction
 ): State => {
   switch (action.type) {
     case 'submit':

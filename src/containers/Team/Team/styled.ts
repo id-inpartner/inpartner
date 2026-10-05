@@ -34,6 +34,7 @@ export const Aspect = styled.div`
   flex: 704;
   min-width: 100%;
   & > .aspect {
+    position: relative;
     width: 100%;
     padding-top: ${480 / 7.04}%;
     & > img {

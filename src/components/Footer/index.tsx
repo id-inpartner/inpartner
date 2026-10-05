@@ -37,7 +37,13 @@ export const Footer: FC = () => {
             <div className="name">{t.footer.phone}</div>
             <div className="c">:</div>
             <div className="value">
-              <a href="tel:+6289628310192">0896 2831 0192</a>
+              <a
+                href="https://wa.me/6285934548202"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                +62 859-3454-8202
+              </a>
             </div>
           </div>
           <div>

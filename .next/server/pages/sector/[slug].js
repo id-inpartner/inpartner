@@ -189,6 +189,7 @@ var sectors = __webpack_require__(9488);
 
 const Index = ({ data  })=>{
     const { locale  } = (0,useTranslation/* default */.Z)();
+    const content = (0,sectors/* getSectorContent */.d0)(data.slug, data, locale);
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Banner/* default */.ZP, {
@@ -198,11 +199,11 @@ const Index = ({ data  })=>{
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((Container_default()), {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx(Title, {
-                        children: (0,sectors/* getSectorTitle */.qZ)(data.slug, data.title, locale)
+                        children: content.title
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Description, {
                         dangerouslySetInnerHTML: {
-                            __html: data.description
+                            __html: content.description
                         }
                     }),
                     data.slug == "education-training" && /*#__PURE__*/ jsx_runtime_.jsx(TrainingEducation_Infographic, {}),
@@ -246,6 +247,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
 /* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7507);
+/* harmony import */ var _locales_sectors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9488);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__]);
 _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -254,12 +256,15 @@ _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies_
 
 
 
+
 const Page = (props)=>{
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
-    const isKo = router.locale === "ko";
-    const rawDesc = props.description ? props.description.replace(/<[^>]+>/g, "").trim() : "";
-    const title = isKo ? `${props.title} | 산업별 커버리지 | 인파트너` : `${props.metaTitle || props.title} | Inpartner`;
-    const description = isKo ? `인파트너(Inpartner)의 ${props.title} 부문 전문 컨설팅 및 자문 서비스를 확인하십시오. ${props.metaDescription || rawDesc.slice(0, 120) || ""}` : props.metaDescription || rawDesc.slice(0, 155) || `${props.title} advisory services by Inpartner.`;
+    const locale = router.locale || "en";
+    const isKo = locale === "ko";
+    const content = (0,_locales_sectors__WEBPACK_IMPORTED_MODULE_6__/* .getSectorContent */ .d0)(props.slug, props, locale);
+    const rawDesc = content.description ? content.description.replace(/<[^>]+>/g, "").trim() : "";
+    const title = isKo ? `${content.title} | 산업별 커버리지 | 인파트너` : `${content.metaTitle || content.title} | Inpartner`;
+    const description = isKo ? content.metaDescription || `인파트너(Inpartner)의 ${content.title} 부문 전문 컨설팅 및 자문 서비스를 확인하십시오. ${rawDesc.slice(0, 120) || ""}` : content.metaDescription || rawDesc.slice(0, 155) || `${content.title} advisory services by Inpartner.`;
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {

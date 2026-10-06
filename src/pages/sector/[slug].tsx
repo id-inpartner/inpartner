@@ -5,26 +5,32 @@ import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
 import SEO from '@components/SEO'
 
+import { getSectorContent } from '../../locales/sectors'
+
 const Page: NextPage<Sector> = (props) => {
   const router = useRouter()
-  const isKo = router.locale === 'ko'
+  const locale = router.locale || 'en'
+  const isKo = locale === 'ko'
 
-  const rawDesc = props.description
-    ? props.description.replace(/<[^>]+>/g, '').trim()
+  const content = getSectorContent(props.slug, props, locale)
+
+  const rawDesc = content.description
+    ? content.description.replace(/<[^>]+>/g, '').trim()
     : ''
   const title = isKo
-    ? `${props.title} | 산업별 커버리지 | 인파트너`
-    : `${props.metaTitle || props.title} | Inpartner`
+    ? `${content.title} | 산업별 커버리지 | 인파트너`
+    : `${content.metaTitle || content.title} | Inpartner`
 
   const description = isKo
-    ? `인파트너(Inpartner)의 ${
-        props.title
+    ? content.metaDescription ||
+      `인파트너(Inpartner)의 ${
+        content.title
       } 부문 전문 컨설팅 및 자문 서비스를 확인하십시오. ${
-        props.metaDescription || rawDesc.slice(0, 120) || ''
+        rawDesc.slice(0, 120) || ''
       }`
-    : props.metaDescription ||
+    : content.metaDescription ||
       rawDesc.slice(0, 155) ||
-      `${props.title} advisory services by Inpartner.`
+      `${content.title} advisory services by Inpartner.`
 
   return (
     <>

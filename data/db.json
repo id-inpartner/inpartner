@@ -1,0 +1,1066 @@
+{
+  "conversations": [
+    {
+      "id": "conv_1791357100787_em0x2",
+      "session_id": "sess_1791357100784_uque",
+      "started_at": "2026-10-07T07:11:40.788Z",
+      "user_intent": "service_information",
+      "created_at": "2026-10-07T07:11:40.790Z"
+    },
+    {
+      "id": "conv_1791357112379_ttxdz",
+      "session_id": "sess_1791357112378_zucb",
+      "started_at": "2026-10-07T07:11:52.379Z",
+      "user_intent": "contact",
+      "created_at": "2026-10-07T07:11:52.379Z"
+    },
+    {
+      "id": "conv_1791357197680_vneof",
+      "session_id": "sess_1790259058689_2tt0t",
+      "started_at": "2026-10-07T07:13:17.680Z",
+      "user_intent": "market_access",
+      "created_at": "2026-10-07T07:13:17.680Z"
+    },
+    {
+      "id": "conv_1791359547010_0q50g",
+      "session_id": "sess_1790250175933_1y2sg",
+      "started_at": "2026-10-07T07:52:27.010Z",
+      "user_intent": "strategy_corporate",
+      "created_at": "2026-10-07T07:52:27.010Z"
+    },
+    {
+      "id": "conv_1791379641127_tpxu9",
+      "session_id": "sess_1791379387039_efb2t",
+      "started_at": "2026-10-07T13:27:21.127Z",
+      "user_intent": "investment_advisory",
+      "created_at": "2026-10-07T13:27:21.130Z"
+    }
+  ],
+  "messages": [
+    {
+      "conversation_id": "conv_1791357100787_em0x2",
+      "sender": "user",
+      "message": "Halo Inpartner, apa saja layanan konsultasi yang tersedia?",
+      "id": "msg_1791357100791_akusb",
+      "created_at": "2026-10-07T07:11:40.791Z"
+    },
+    {
+      "conversation_id": "conv_1791357100787_em0x2",
+      "sender": "bot",
+      "message": "Halo! Saya adalah **Inpartner AI Assistant**, asisten konsultasi bisnis resmi dari **PT Inpartner Optima Integra (INPARTNER)**.\n\nSaya dapat membantu menganalisis kebutuhan perusahaan Anda dan memberikan rekomendasi solusi melalui **5 Layanan Resmi INPARTNER**:\n1. 🏢 **Strategy & Corporate Advisory:** Perumusan strategi korporat, transformasi bisnis, advisory M&A, persiapan IPO, dan restrukturisasi perusahaan.\n2. 💰 **Investment & Project Advisory:** Studi kelayakan (Feasibility Studies), analisis komersial & finansial, valuasi independen, dan pengembangan proyek investasi.\n3. 📈 **Market Access & Business Expansion:** Riset pasar, strategi Go-To-Market (GTM), identifikasi distributor, dan fasilitasi business matching.\n4. 🌏 **Cross-Border & Technology Advisory:** Kemitraan strategis internasional, Joint Venture (JV), dan transfer teknologi lintas negara.\n5. 👥 **Human Capital & Organization:** Executive search (C-level & senior leadership), desain organisasi, dan program pengembangan eksekutif (*The Executive Business Program*).\n\nSilakan ceritakan rencana bisnis atau kendala yang sedang dihadapi perusahaan Anda, dan saya siap membantu!",
+      "intent": "service_information",
+      "metadata": {
+        "sources": [
+          "INPARTNER Official Advisory Services",
+          "Advisory Handoff Protocol",
+          "INPARTNER 5-Stage Advisory Methodology"
+        ],
+        "suggest_lead_capture": false,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791357100822_r2lrb",
+      "created_at": "2026-10-07T07:11:40.822Z"
+    },
+    {
+      "conversation_id": "conv_1791357112379_ttxdz",
+      "sender": "user",
+      "message": "Apa alamat kantor Inpartner?",
+      "id": "msg_1791357112381_ds979",
+      "created_at": "2026-10-07T07:11:52.381Z"
+    },
+    {
+      "conversation_id": "conv_1791357112379_ttxdz",
+      "sender": "bot",
+      "message": "Anda dapat menghubungi tim resmi **Inpartner (PT Inpartner Optima Integra)** melalui saluran komunikasi berikut:\n\n📍 **Kantor Pusat Jakarta:**\nPakuwon Tower, Unit J, Lantai 10, Jl. Raya Casablanca Kav. 88, Jakarta Selatan, Indonesia.\n\n📞 **Telepon & WhatsApp Resmi:**\n[+62 859 3454 8202](https://wa.me/6285934548202)\n\n✉️ **Email Resmi:**\n[corporatesecretary@inpartner.id](mailto:corporatesecretary@inpartner.id)\n\n🔗 **LinkedIn:** [linkedin.com/company/inpartner](https://www.linkedin.com/company/inpartner/)\n\n🕒 **Jam Operasional:**\nMonday – Friday: 09:00 – 17:00 WIB.\n\nUntuk respon tercepat, Anda dapat langsung mengisi formulir konsultasi singkat di bawah ini atau menghubungi kami via WhatsApp. Tim Business Development kami akan segera menghubungi Anda untuk koordinasi lebih lanjut.",
+      "intent": "contact",
+      "metadata": {
+        "sources": [
+          "Official Head Office & Bilateral Contact",
+          "Physical Office",
+          "About INPARTNER (PT Inpartner Optima Integra)"
+        ],
+        "suggest_lead_capture": true,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791357113710_rowfb",
+      "created_at": "2026-10-07T07:11:53.710Z"
+    },
+    {
+      "conversation_id": "conv_1791357197680_vneof",
+      "sender": "user",
+      "message": "Saya membutuhkan bantuan untuk riset pasar, strategi masuk pasar baru, atau business matching.",
+      "intent": "market_access",
+      "id": "msg_1791357197683_ganni",
+      "created_at": "2026-10-07T07:13:17.683Z"
+    },
+    {
+      "conversation_id": "conv_1791357197680_vneof",
+      "sender": "bot",
+      "message": "Melalui layanan **Market Access & Business Expansion**, Inpartner mendampingi perusahaan dalam menavigasi pasar, mengidentifikasi peluang, dan memperluas jangkauan bisnis.\n\n**Fokus Pendampingan:**\n- **Riset Pasar & Intelijen Bisnis:** Mengidentifikasi ukuran pasar, tren pertumbuhan, perilaku pelanggan, dan peta kompetitif.\n- **Strategi Masuk Pasar:** Merancang framework Go-to-Market (GTM), strategi channel, dan roadmap peluncuran ke pasar baru.\n- **Business Matching:** Fasilitasi perkenalan strategis antara bisnis — menghubungkan perusahaan dengan mitra, klien, dan distributor yang relevan.\n- **Identifikasi Mitra / Distributor:** Identifikasi sistematis dan seleksi mitra potensial, serta fasilitasi perkenalan jaringan distribusi.\n- **Ekspansi Pasar:** Advisory strategis untuk perusahaan yang sedang memperluas kehadiran pasar domestik maupun internasional.\n\nApakah ekspansi yang Anda rencanakan berfokus pada pasar domestik baru atau akses ke pasar internasional?",
+      "intent": "market_access",
+      "metadata": {
+        "recommended_service": "Market Access & Business Expansion",
+        "sources": [
+          "3. Market Access & Business Expansion",
+          "Thematic Project Experience",
+          "About INPARTNER (PT Inpartner Optima Integra)"
+        ],
+        "suggest_lead_capture": true,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791357199349_ccwvg",
+      "created_at": "2026-10-07T07:13:19.349Z"
+    },
+    {
+      "conversation_id": "conv_1791359547010_0q50g",
+      "sender": "user",
+      "message": "Bagaimana Inpartner dapat mendampingi strategi korporat, investasi, atau advisory pasar untuk perusahaan saya?",
+      "intent": "strategy_corporate",
+      "id": "msg_1791359547013_xzopg",
+      "created_at": "2026-10-07T07:52:27.013Z"
+    },
+    {
+      "conversation_id": "conv_1791359547010_0q50g",
+      "sender": "bot",
+      "message": "Berdasarkan dokumentasi resmi layanan konsultasi Inpartner mengenai **3. Market Access & Business Expansion**:\n\n## 3. Market Access & Business Expansion\nEnabling international companies (notably South Korean investors) and regional businesses to enter, capture, and dominate the Indonesian market.\n\n### Key Advisory Practices:\n- **Market Research & Business Intelligence:** Granular TAM/SAM/SOM market sizing, regulatory entry barriers, consumer demand patterns, and competitive benchmarking.\n- **Go-To-Market (GTM) Strategy:** Distribution architecture, pricing...\n\nInpartner mendampingi klien korporasi dengan pendekatan holistik menyelaraskan strategi bisnis, proses operasional, kapabilitas SDM, dan teknologi.\n\nUntuk pembahasan yang disesuaikan dengan prioritas bisnis perusahaan Anda, silakan ajukan konsultasi melalui formulir di bawah ini atau terhubung langsung via WhatsApp di **[+62 859 3454 8202](https://wa.me/6285934548202)**. Tim Business Development kami akan segera menghubungi Anda untuk koordinasi lebih lanjut.",
+      "intent": "strategy_corporate",
+      "metadata": {
+        "recommended_service": "Strategy & Corporate Advisory",
+        "sources": [
+          "3. Market Access & Business Expansion",
+          "Thematic Project Experience",
+          "3. Advisory Practices & Deliverables"
+        ],
+        "suggest_lead_capture": true,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791359548784_ptp7w",
+      "created_at": "2026-10-07T07:52:28.784Z"
+    },
+    {
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "sender": "user",
+      "message": "Apakah perusahaan Anda sudah memiliki model keuangan dan pitch deck berstandar institusional?",
+      "id": "msg_1791379641134_smx4x",
+      "created_at": "2026-10-07T13:27:21.134Z"
+    },
+    {
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "sender": "bot",
+      "message": "Layanan **Investment & Project Advisory** Inpartner mendampingi perusahaan dalam merancang struktur investasi, analisis komersial, dan pengembangan proyek.\n\n**Ruang Lingkup Layanan:**\n- **Feasibility Studies (FS):** Analisis kelayakan komersial, keuangan, dan operasional untuk proyek dan investasi.\n- **Investment Advisory:** Advisory investasi independen untuk klien korporasi dan institusional.\n- **Commercial & Financial Analysis:** Analisis komersial dan keuangan mendalam, financial modeling, dan valuasi.\n- **Investment Opportunity Assessment:** Evaluasi peluang investasi secara sistematis lintas sektor.\n- **Project Development:** Advisory pengembangan proyek dari konsep hingga eksekusi.\n\nApakah perusahaan Anda sedang merencanakan investasi atau membutuhkan feasibility study untuk proyek tertentu?",
+      "intent": "investment_advisory",
+      "metadata": {
+        "recommended_service": "Investment & Project Advisory",
+        "sources": [],
+        "suggest_lead_capture": true,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791379642660_dl4r7",
+      "created_at": "2026-10-07T13:27:22.660Z"
+    },
+    {
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "sender": "user",
+      "message": "Apakah perusahaan Anda sudah memiliki model keuangan dan pitch deck berstandar institusional?",
+      "id": "msg_1791380621260_eqc2b",
+      "created_at": "2026-10-07T13:43:41.260Z"
+    },
+    {
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "sender": "bot",
+      "message": "Layanan **Investment & Project Advisory** Inpartner mendampingi perusahaan dalam merancang struktur investasi, analisis komersial, dan pengembangan proyek.\n\n**Ruang Lingkup Layanan:**\n- **Feasibility Studies (FS):** Analisis kelayakan komersial, keuangan, dan operasional untuk proyek dan investasi.\n- **Investment Advisory:** Advisory investasi independen untuk klien korporasi dan institusional.\n- **Commercial & Financial Analysis:** Analisis komersial dan keuangan mendalam, financial modeling, dan valuasi.\n- **Investment Opportunity Assessment:** Evaluasi peluang investasi secara sistematis lintas sektor.\n- **Project Development:** Advisory pengembangan proyek dari konsep hingga eksekusi.\n\nApakah perusahaan Anda sedang merencanakan investasi atau membutuhkan feasibility study untuk proyek tertentu?",
+      "intent": "investment_advisory",
+      "metadata": {
+        "recommended_service": "Investment & Project Advisory",
+        "sources": [],
+        "suggest_lead_capture": true,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791380622598_dk5o7",
+      "created_at": "2026-10-07T13:43:42.598Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead_1791357141557_du7od",
+      "created_at": "2026-10-07T07:12:21.557Z",
+      "status": "new",
+      "score": 77,
+      "priority_tier": "tier_1",
+      "score_breakdown": {
+        "tier_label": "Tier 1 (Hot / Urgent Opportunity)",
+        "target_sla": "Immediate Follow-up (< 2 business hours)",
+        "factors": [
+          {
+            "factor": "Advisory Pillar Alignment",
+            "score": 30,
+            "max": 30,
+            "description": "High-conviction demand in Strategy & Corporate Advisory or Investment/FS"
+          },
+          {
+            "factor": "Corporate Entity Attribution",
+            "score": 20,
+            "max": 20,
+            "description": "Verified corporate entity structure: \"PT Sumber Sukses Makmur\""
+          },
+          {
+            "factor": "International / Foreign Sponsor",
+            "score": 0,
+            "max": 20,
+            "description": "Domestic Indonesian business inquiry"
+          },
+          {
+            "factor": "Corporate Domain Verification",
+            "score": 15,
+            "max": 15,
+            "description": "Verified corporate domain: @example.com"
+          },
+          {
+            "factor": "Engagement & Diagnostic Depth",
+            "score": 2,
+            "max": 10,
+            "description": "Direct single-touch submission"
+          },
+          {
+            "factor": "Direct Contact Validity",
+            "score": 10,
+            "max": 10,
+            "description": "Validated corporate mobile / direct WhatsApp number"
+          }
+        ]
+      },
+      "name": "Budi Santoso",
+      "company": "PT Sumber Sukses Makmur",
+      "email": "budi@example.com",
+      "phone": "081289456721",
+      "business_need": "Strategy & Corporate Advisory",
+      "notes": ""
+    }
+  ],
+  "analytics_events": [
+    {
+      "id": "evt_1791357100791_5078x",
+      "created_at": "2026-10-07T07:11:40.791Z",
+      "event_name": "conversation_started",
+      "session_id": "sess_1791357100784_uque",
+      "conversation_id": "conv_1791357100787_em0x2",
+      "metadata": {}
+    },
+    {
+      "id": "evt_1791357100792_476nv",
+      "created_at": "2026-10-07T07:11:40.792Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1791357100784_uque",
+      "conversation_id": "conv_1791357100787_em0x2",
+      "metadata": {
+        "query": "Halo Inpartner, apa saja layanan konsultasi yang tersedia?"
+      }
+    },
+    {
+      "id": "evt_1791357112381_whbf6",
+      "created_at": "2026-10-07T07:11:52.381Z",
+      "event_name": "conversation_started",
+      "session_id": "sess_1791357112378_zucb",
+      "conversation_id": "conv_1791357112379_ttxdz",
+      "metadata": {}
+    },
+    {
+      "id": "evt_1791357112381_5omqn",
+      "created_at": "2026-10-07T07:11:52.381Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1791357112378_zucb",
+      "conversation_id": "conv_1791357112379_ttxdz",
+      "metadata": {
+        "query": "Apa alamat kantor Inpartner?"
+      }
+    },
+    {
+      "id": "evt_1791357178090_ru50b",
+      "created_at": "2026-10-07T07:12:58.090Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791357190661_cco8d",
+      "created_at": "2026-10-07T07:13:10.661Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791357197520_0vei7",
+      "created_at": "2026-10-07T07:13:17.520Z",
+      "event_name": "intent_selected",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": null,
+      "metadata": {
+        "intent": "market_access",
+        "query": "Saya membutuhkan bantuan untuk riset pasar, strategi masuk pasar baru, atau business matching.",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791357197682_gqoya",
+      "created_at": "2026-10-07T07:13:17.682Z",
+      "event_name": "conversation_started",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "initial_intent": "market_access"
+      }
+    },
+    {
+      "id": "evt_1791357197684_be985",
+      "created_at": "2026-10-07T07:13:17.684Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "query": "Saya membutuhkan bantuan untuk riset pasar, strategi masuk pasar baru, atau business matching.",
+        "selectedNeed": "market_access"
+      }
+    },
+    {
+      "id": "evt_1791357197730_ibllo",
+      "created_at": "2026-10-07T07:13:17.730Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791357199359_ipreb",
+      "created_at": "2026-10-07T07:13:19.359Z",
+      "event_name": "service_viewed",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": null,
+      "metadata": {
+        "service": "Market Access & Business Expansion",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791357210434_ibrhn",
+      "created_at": "2026-10-07T07:13:30.434Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791357342546_dwc58",
+      "created_at": "2026-10-07T07:15:42.546Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791357348688_gzrkr",
+      "created_at": "2026-10-07T07:15:48.688Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "page": "/ko"
+      }
+    },
+    {
+      "id": "evt_1791357358945_9f4oz",
+      "created_at": "2026-10-07T07:15:58.945Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "page": "/ko"
+      }
+    },
+    {
+      "id": "evt_1791358223738_k2knc",
+      "created_at": "2026-10-07T07:30:23.738Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "page": "/ko"
+      }
+    },
+    {
+      "id": "evt_1791358234312_ig8as",
+      "created_at": "2026-10-07T07:30:34.312Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790259058689_2tt0t",
+      "conversation_id": "conv_1791357197680_vneof",
+      "metadata": {
+        "page": "/ko"
+      }
+    },
+    {
+      "id": "evt_1791358240214_4xq70",
+      "created_at": "2026-10-07T07:30:40.214Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791358240144_h2zuv",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/ko"
+      }
+    },
+    {
+      "id": "evt_1791358703123_bvt8j",
+      "created_at": "2026-10-07T07:38:23.123Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791358240144_h2zuv",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/ko"
+      }
+    },
+    {
+      "id": "evt_1791358848390_13s8n",
+      "created_at": "2026-10-07T07:40:48.390Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359300475_fx67g",
+      "created_at": "2026-10-07T07:48:20.475Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359327569_m46mz",
+      "created_at": "2026-10-07T07:48:47.569Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359402840_vilpw",
+      "created_at": "2026-10-07T07:50:02.840Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359404839_gxrhw",
+      "created_at": "2026-10-07T07:50:04.839Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359407200_4bbhc",
+      "created_at": "2026-10-07T07:50:07.200Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359473249_uwnh5",
+      "created_at": "2026-10-07T07:51:13.249Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359477535_bleku",
+      "created_at": "2026-10-07T07:51:17.535Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359538599_phnwt",
+      "created_at": "2026-10-07T07:52:18.599Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359545937_jjdqu",
+      "created_at": "2026-10-07T07:52:25.938Z",
+      "event_name": "intent_selected",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "intent": "strategy_corporate",
+        "query": "Bagaimana Inpartner dapat mendampingi strategi korporat, investasi, atau advisory pasar untuk perusahaan saya?",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791359547011_68ncp",
+      "created_at": "2026-10-07T07:52:27.011Z",
+      "event_name": "conversation_started",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "initial_intent": "strategy_corporate"
+      }
+    },
+    {
+      "id": "evt_1791359547015_1kijs",
+      "created_at": "2026-10-07T07:52:27.015Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "query": "Bagaimana Inpartner dapat mendampingi strategi korporat, investasi, atau advisory pasar untuk perusahaan saya?",
+        "selectedNeed": "strategy_corporate"
+      }
+    },
+    {
+      "id": "evt_1791359547137_15n6n",
+      "created_at": "2026-10-07T07:52:27.137Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359548799_vkrub",
+      "created_at": "2026-10-07T07:52:28.799Z",
+      "event_name": "service_viewed",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "service": "Strategy & Corporate Advisory",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791359572751_91joh",
+      "created_at": "2026-10-07T07:52:52.751Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359573890_ahr5k",
+      "created_at": "2026-10-07T07:52:53.890Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359576205_8lc8t",
+      "created_at": "2026-10-07T07:52:56.205Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359635793_i2xto",
+      "created_at": "2026-10-07T07:53:55.793Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359636104_8jotg",
+      "created_at": "2026-10-07T07:53:56.104Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359704471_8f28i",
+      "created_at": "2026-10-07T07:55:04.471Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791359704695_oo01q",
+      "created_at": "2026-10-07T07:55:04.695Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791369220295_cj783",
+      "created_at": "2026-10-07T10:33:40.295Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791369256636_m06ke",
+      "created_at": "2026-10-07T10:34:16.636Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791369258448_p1s59",
+      "created_at": "2026-10-07T10:34:18.448Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791369260995_9xmyn",
+      "created_at": "2026-10-07T10:34:20.995Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791369302158_rhmtt",
+      "created_at": "2026-10-07T10:35:02.158Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791369411374_pd1ln",
+      "created_at": "2026-10-07T10:36:51.374Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791370578798_efn46",
+      "created_at": "2026-10-07T10:56:18.798Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791358240144_h2zuv",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791377895319_4l9n5",
+      "created_at": "2026-10-07T12:58:15.320Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791379477342_j4c8x",
+      "created_at": "2026-10-07T13:24:37.342Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791379641132_1o5vt",
+      "created_at": "2026-10-07T13:27:21.132Z",
+      "event_name": "conversation_started",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {}
+    },
+    {
+      "id": "evt_1791379641196_ua1ar",
+      "created_at": "2026-10-07T13:27:21.196Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "query": "Apakah perusahaan Anda sudah memiliki model keuangan dan pitch deck berstandar institusional?"
+      }
+    },
+    {
+      "id": "evt_1791379642694_pzmwp",
+      "created_at": "2026-10-07T13:27:22.694Z",
+      "event_name": "service_viewed",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": null,
+      "metadata": {
+        "service": "Investment & Project Advisory",
+        "lang": "en"
+      }
+    },
+    {
+      "id": "evt_1791379826090_gsm44",
+      "created_at": "2026-10-07T13:30:26.090Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379808906_ca54h",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791379827891_ea2ck",
+      "created_at": "2026-10-07T13:30:27.891Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379808906_ca54h",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791379828785_t8hpf",
+      "created_at": "2026-10-07T13:30:28.785Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379808906_ca54h",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791380482390_6kbyc",
+      "created_at": "2026-10-07T13:41:22.390Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791380621262_8wg3a",
+      "created_at": "2026-10-07T13:43:41.262Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "query": "Apakah perusahaan Anda sudah memiliki model keuangan dan pitch deck berstandar institusional?"
+      }
+    },
+    {
+      "id": "evt_1791380622623_3bzju",
+      "created_at": "2026-10-07T13:43:42.623Z",
+      "event_name": "service_viewed",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "service": "Investment & Project Advisory",
+        "lang": "ko"
+      }
+    },
+    {
+      "id": "evt_1791381294796_va6m3",
+      "created_at": "2026-10-07T13:54:54.796Z",
+      "event_name": "lead_form_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "defaultNeed": "Investment & Project Advisory",
+        "lang": "en"
+      }
+    },
+    {
+      "id": "evt_1791381403033_m91tl",
+      "created_at": "2026-10-07T13:56:43.033Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791381407885_xw8os",
+      "created_at": "2026-10-07T13:56:47.885Z",
+      "event_name": "lead_form_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "defaultNeed": "Investment & Project Advisory",
+        "lang": "en"
+      }
+    },
+    {
+      "id": "evt_1791381849793_hkt2e",
+      "created_at": "2026-10-07T14:04:09.807Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791381968859_zoutl",
+      "created_at": "2026-10-07T14:06:08.860Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791381970109_p7adn",
+      "created_at": "2026-10-07T14:06:10.109Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791387820017_1b404",
+      "created_at": "2026-10-07T15:43:40.017Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791389608783_an0xo",
+      "created_at": "2026-10-07T16:13:28.783Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791389834462_9awqc",
+      "created_at": "2026-10-07T16:17:14.462Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791391653149_oac0r",
+      "created_at": "2026-10-07T16:47:33.149Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791391670588_9agg0",
+      "created_at": "2026-10-07T16:47:50.589Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791391673102_kl14a",
+      "created_at": "2026-10-07T16:47:53.102Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791391680619_rjyf6",
+      "created_at": "2026-10-07T16:48:00.619Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791391683036_r5dak",
+      "created_at": "2026-10-07T16:48:03.036Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791395432781_hzh4x",
+      "created_at": "2026-10-07T17:50:32.781Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791395899221_15snu",
+      "created_at": "2026-10-07T17:58:19.221Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791395978937_pwlyl",
+      "created_at": "2026-10-07T17:59:38.937Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791396626075_s83ey",
+      "created_at": "2026-10-07T18:10:26.075Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791397147019_urbn5",
+      "created_at": "2026-10-07T18:19:07.020Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    }
+  ]
+}

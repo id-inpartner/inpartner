@@ -5,7 +5,9 @@ import Head from 'next/head'
 import { Global } from '@emotion/react'
 import { SSRProvider } from 'react-bootstrap'
 import '@sass/index.scss'
+import '@/styles/chatbot.css'
 import { globalStyles } from '@components/GlobalStyle'
+import { ChatbotMount } from '@components/Chatbot'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -40,6 +42,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Global styles={globalStyles} />
       <Component {...pageProps} />
+      {/* Inpartner AI Business Consultation Assistant Widget */}
+      <ChatbotMount />
     </SSRProvider>
   )
 }

@@ -34,6 +34,13 @@
       "started_at": "2026-10-07T13:27:21.127Z",
       "user_intent": "investment_advisory",
       "created_at": "2026-10-07T13:27:21.130Z"
+    },
+    {
+      "id": "conv_1791462383867_86v4n",
+      "session_id": "sess_1791460551504_b8t3w",
+      "started_at": "2026-10-08T12:26:23.867Z",
+      "user_intent": "market_access",
+      "created_at": "2026-10-08T12:26:23.867Z"
     }
   ],
   "messages": [
@@ -226,6 +233,74 @@
       },
       "id": "msg_1791380622598_dk5o7",
       "created_at": "2026-10-07T13:43:42.598Z"
+    },
+    {
+      "conversation_id": "conv_1791359547010_0q50g",
+      "sender": "user",
+      "message": "Bagaimana Inpartner dapat mendampingi strategi korporat, investasi, atau advisory pasar untuk perusahaan saya?",
+      "intent": "strategy_corporate",
+      "id": "msg_1791443477410_96ctp",
+      "created_at": "2026-10-08T07:11:17.410Z"
+    },
+    {
+      "conversation_id": "conv_1791359547010_0q50g",
+      "sender": "bot",
+      "message": "Berdasarkan dokumentasi resmi layanan konsultasi Inpartner mengenai **3. Market Access & Business Expansion**:\n\n## 3. Market Access & Business Expansion\nEnabling international companies (notably South Korean investors) and regional businesses to enter, capture, and dominate the Indonesian market.\n\n### Key Advisory Practices:\n- **Market Research & Business Intelligence:** Granular TAM/SAM/SOM market sizing, regulatory entry barriers, consumer demand patterns, and competitive benchmarking.\n- **Go-To-Market (GTM) Strategy:** Distribution architecture, pricing...\n\nInpartner mendampingi klien korporasi dengan pendekatan holistik menyelaraskan strategi bisnis, proses operasional, kapabilitas SDM, dan teknologi.\n\nUntuk pembahasan yang disesuaikan dengan prioritas bisnis perusahaan Anda, silakan ajukan konsultasi melalui formulir di bawah ini atau terhubung langsung via WhatsApp di **[+62 859 3454 8202](https://wa.me/6285934548202)**. Tim Business Development kami akan segera menghubungi Anda untuk koordinasi lebih lanjut.",
+      "intent": "strategy_corporate",
+      "metadata": {
+        "recommended_service": "Strategy & Corporate Advisory",
+        "sources": [
+          "3. Market Access & Business Expansion",
+          "Thematic Project Experience",
+          "3. Advisory Practices & Deliverables"
+        ],
+        "suggest_lead_capture": true,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791443479836_1jydc",
+      "created_at": "2026-10-08T07:11:19.836Z"
+    },
+    {
+      "conversation_id": "conv_1791462383867_86v4n",
+      "sender": "user",
+      "message": "Saya membutuhkan bantuan untuk riset pasar, strategi masuk pasar baru, atau business matching.",
+      "intent": "market_access",
+      "id": "msg_1791462383870_dymfd",
+      "created_at": "2026-10-08T12:26:23.871Z"
+    },
+    {
+      "conversation_id": "conv_1791462383867_86v4n",
+      "sender": "bot",
+      "message": "Melalui layanan **Market Access & Business Expansion**, Inpartner mendampingi perusahaan dalam menavigasi pasar, mengidentifikasi peluang, dan memperluas jangkauan bisnis.\n\n**Fokus Pendampingan:**\n- **Riset Pasar & Intelijen Bisnis:** Mengidentifikasi ukuran pasar, tren pertumbuhan, perilaku pelanggan, dan peta kompetitif.\n- **Strategi Masuk Pasar:** Merancang framework Go-to-Market (GTM), strategi channel, dan roadmap peluncuran ke pasar baru.\n- **Business Matching:** Fasilitasi perkenalan strategis antara bisnis — menghubungkan perusahaan dengan mitra, klien, dan distributor yang relevan.\n- **Identifikasi Mitra / Distributor:** Identifikasi sistematis dan seleksi mitra potensial, serta fasilitasi perkenalan jaringan distribusi.\n- **Ekspansi Pasar:** Advisory strategis untuk perusahaan yang sedang memperluas kehadiran pasar domestik maupun internasional.\n\nApakah ekspansi yang Anda rencanakan berfokus pada pasar domestik baru atau akses ke pasar internasional?",
+      "intent": "market_access",
+      "metadata": {
+        "recommended_service": "Market Access & Business Expansion",
+        "sources": [
+          "3. Market Access & Business Expansion",
+          "Thematic Project Experience",
+          "About INPARTNER (PT Inpartner Optima Integra)"
+        ],
+        "suggest_lead_capture": true,
+        "quick_actions": [
+          "🏢 Strategy & Corporate Advisory",
+          "💰 Investment & Project Advisory",
+          "📈 Market Access & Ekspansi Bisnis",
+          "🌏 Cross-Border & Technology",
+          "👥 Human Capital & Organization"
+        ],
+        "provider": "grounded_rag",
+        "model": "grounded_rag"
+      },
+      "id": "msg_1791462386418_tah5h",
+      "created_at": "2026-10-08T12:26:26.418Z"
     }
   ],
   "leads": [
@@ -1060,6 +1135,265 @@
       "conversation_id": "conv_1791379641127_tpxu9",
       "metadata": {
         "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791397337827_nc9cz",
+      "created_at": "2026-10-07T18:22:17.827Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791379387039_efb2t",
+      "conversation_id": "conv_1791379641127_tpxu9",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791441149416_il33z",
+      "created_at": "2026-10-08T06:32:29.416Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791441158993_xj5st",
+      "created_at": "2026-10-08T06:32:38.993Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791441554173_twhso",
+      "created_at": "2026-10-08T06:39:14.173Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791442030183_hks8t",
+      "created_at": "2026-10-08T06:47:10.183Z",
+      "event_name": "lead_form_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "defaultNeed": "Strategy & Corporate Advisory",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791442630696_ia8hl",
+      "created_at": "2026-10-08T06:57:10.696Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791443120643_x1krn",
+      "created_at": "2026-10-08T07:05:20.643Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791443465222_ucvln",
+      "created_at": "2026-10-08T07:11:05.223Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791443469423_zz1nk",
+      "created_at": "2026-10-08T07:11:09.423Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791443474451_ppo97",
+      "created_at": "2026-10-08T07:11:14.451Z",
+      "event_name": "intent_selected",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "intent": "strategy_corporate",
+        "query": "Bagaimana Inpartner dapat mendampingi strategi korporat, investasi, atau advisory pasar untuk perusahaan saya?",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791443477414_lsx2t",
+      "created_at": "2026-10-08T07:11:17.414Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "query": "Bagaimana Inpartner dapat mendampingi strategi korporat, investasi, atau advisory pasar untuk perusahaan saya?",
+        "selectedNeed": "strategy_corporate"
+      }
+    },
+    {
+      "id": "evt_1791443477755_9ipjo",
+      "created_at": "2026-10-08T07:11:17.755Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791443480088_crafd",
+      "created_at": "2026-10-08T07:11:20.088Z",
+      "event_name": "service_viewed",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": null,
+      "metadata": {
+        "service": "Strategy & Corporate Advisory",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791444055828_gftkb",
+      "created_at": "2026-10-08T07:20:55.828Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791446290316_e4c0w",
+      "created_at": "2026-10-08T07:58:10.316Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791446383010_058iv",
+      "created_at": "2026-10-08T07:59:43.010Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791448081392_6cbrt",
+      "created_at": "2026-10-08T08:28:01.392Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791458641717_3yvqh",
+      "created_at": "2026-10-08T11:24:01.717Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791460546781_dmjub",
+      "created_at": "2026-10-08T11:55:46.781Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1790250175933_1y2sg",
+      "conversation_id": "conv_1791359547010_0q50g",
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791460551527_wojti",
+      "created_at": "2026-10-08T11:55:51.527Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791460551504_b8t3w",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791460554447_t46um",
+      "created_at": "2026-10-08T11:55:54.447Z",
+      "event_name": "chatbot_opened",
+      "session_id": "sess_1791460551504_b8t3w",
+      "conversation_id": null,
+      "metadata": {
+        "page": "/"
+      }
+    },
+    {
+      "id": "evt_1791462382687_suxm0",
+      "created_at": "2026-10-08T12:26:22.689Z",
+      "event_name": "intent_selected",
+      "session_id": "sess_1791460551504_b8t3w",
+      "conversation_id": null,
+      "metadata": {
+        "intent": "market_access",
+        "query": "Saya membutuhkan bantuan untuk riset pasar, strategi masuk pasar baru, atau business matching.",
+        "lang": "id"
+      }
+    },
+    {
+      "id": "evt_1791462383868_8y76q",
+      "created_at": "2026-10-08T12:26:23.868Z",
+      "event_name": "conversation_started",
+      "session_id": "sess_1791460551504_b8t3w",
+      "conversation_id": "conv_1791462383867_86v4n",
+      "metadata": {
+        "initial_intent": "market_access"
+      }
+    },
+    {
+      "id": "evt_1791462383872_r2jvg",
+      "created_at": "2026-10-08T12:26:23.872Z",
+      "event_name": "question_asked",
+      "session_id": "sess_1791460551504_b8t3w",
+      "conversation_id": "conv_1791462383867_86v4n",
+      "metadata": {
+        "query": "Saya membutuhkan bantuan untuk riset pasar, strategi masuk pasar baru, atau business matching.",
+        "selectedNeed": "market_access"
+      }
+    },
+    {
+      "id": "evt_1791462386493_95dti",
+      "created_at": "2026-10-08T12:26:26.493Z",
+      "event_name": "service_viewed",
+      "session_id": "sess_1791460551504_b8t3w",
+      "conversation_id": null,
+      "metadata": {
+        "service": "Market Access & Business Expansion",
+        "lang": "id"
       }
     }
   ]

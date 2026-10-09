@@ -16,6 +16,9 @@ import {
   Sparkles,
   Square,
   RotateCcw,
+  Copy,
+  Check,
+  ShieldCheck,
 } from 'lucide-react'
 import {
   INPARTNER_CONFIG,
@@ -53,13 +56,18 @@ import {
   OnlineStatus,
   OnlineDot,
   HeaderActions,
+  LangSegmented,
+  LangSegmentBtn,
   LangPill,
   IconBtn,
   ChatBody,
   WelcomeView,
   BrandAvatarBox,
+  WelcomeTag,
   WelcomeHeading,
   WelcomeSub,
+  ActionCardList,
+  ActionCard,
   FeaturedCard,
   DividerBox,
   DividerLine,
@@ -153,6 +161,19 @@ export default function ChatWidget({
   const [hasUserInteracted, setHasUserInteracted] = useState(false)
   const [attribution, setAttribution] = useState<AttributionData | null>(null)
   const [lang, setLang] = useState<'id' | 'en' | 'ko'>('id')
+  const [copiedId, setCopiedId] = useState<string | null>(null)
+
+  const handleCopyMessage = (msgId: string, text: string) => {
+    try {
+      if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        navigator.clipboard.writeText(text)
+        setCopiedId(msgId)
+        setTimeout(() => setCopiedId(null), 2000)
+      }
+    } catch (e) {
+      console.warn('Failed to copy text:', e)
+    }
+  }
 
   // Trilingual UI Translations (ID / EN / KO)
   const t =
@@ -307,7 +328,7 @@ export default function ChatWidget({
 
   // Inpartner Agent Configuration derived from active language
   const agentConfig = {
-    name: 'Inpartner Agent',
+    name: lang === 'ko' ? '인파트너 AI' : 'Inpartner AI',
     title: t.title,
     subtitle: t.subtitle,
     featured: t.featured,
@@ -1047,7 +1068,12 @@ export default function ChatWidget({
               >
                 <span className="pill-dot" />
                 <span>
-                  Consult <strong>{agentConfig.name}</strong>
+                  {lang === 'id'
+                    ? 'Konsultasi '
+                    : lang === 'ko'
+                    ? '실시간 기업자문 '
+                    : 'Consult '}
+                  <strong>Inpartner AI</strong>
                 </span>
               </PillBtn>
             )}
@@ -1062,98 +1088,84 @@ export default function ChatWidget({
               }}
               aria-label={`Open ${agentConfig.name}`}
             >
-              <ChatbotIcon size="md" />
+              <ChatbotIcon size="md" variant="launcher" />
+              <span className="launcher-online-beacon" />
             </LauncherBtn>
           </LauncherRow>
         </LauncherWrap>
       )}
 
-      {/* Main Chat Window (Docked cleanly at bottom right, matching Image 1) */}
+      {/* Main Chat Window */}
       {(isOpen || embeddedMode) && (
         <ChatWindow embedded={embeddedMode}>
-          {/* Minimalist Top Header (Exact Match Image 1) */}
+          {/* Executive Top Header */}
           <ChatHeader>
             {/* Left: Brand Mascot + Agent Title */}
             <HeaderBrand>
               <div className="header-avatar">
-                <ChatbotIcon size="md" />
+                <ChatbotIcon size="xs" />
+                <OnlineDot className="pinned" />
               </div>
               <div>
-                <HeaderTitle>{agentConfig.name}</HeaderTitle>
-                <OnlineStatus>
-                  <OnlineDot />
-                  {t.onlineStatus}
-                </OnlineStatus>
+                <HeaderTitle>INPARTNER</HeaderTitle>
+                <OnlineStatus>{t.onlineStatus}</OnlineStatus>
               </div>
             </HeaderBrand>
 
-            {/* Right: Header Action Buttons (New Chat + Lang Toggle + Minimize + Close) */}
+            {/* Right: Header Action Buttons */}
             <HeaderActions>
+              {/* Segmented Language Switcher */}
+              <LangSegmented>
+                <LangSegmentBtn
+                  type="button"
+                  active={lang === 'id'}
+                  onClick={() => handleToggleLanguage('id')}
+                  aria-label="Bahasa Indonesia"
+                  title="Bahasa Indonesia"
+                >
+                  ID
+                </LangSegmentBtn>
+                <LangSegmentBtn
+                  type="button"
+                  active={lang === 'en'}
+                  onClick={() => handleToggleLanguage('en')}
+                  aria-label="English"
+                  title="English"
+                >
+                  EN
+                </LangSegmentBtn>
+                <LangSegmentBtn
+                  type="button"
+                  active={lang === 'ko'}
+                  onClick={() => handleToggleLanguage('ko')}
+                  aria-label="한국어"
+                  title="한국어"
+                >
+                  KO
+                </LangSegmentBtn>
+              </LangSegmented>
+
               {/* New Chat Button (Visible when chat has messages) */}
               {messages.length > 0 && (
                 <IconBtn
                   type="button"
+                  className="spin-on-hover"
                   onClick={handleResetConversation}
                   aria-label={t.newChat}
                   title={t.newChat}
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RotateCcw size={14} />
                 </IconBtn>
               )}
 
-              {/* Language Switcher Badge Button */}
-              <LangPill
-                type="button"
-                onClick={() => handleToggleLanguage()}
-                aria-label="Switch Language"
-                title="Switch Language"
-              >
-                <span
-                  style={{
-                    color: lang === 'id' ? '#0070BA' : '#94a3b8',
-                    fontWeight: lang === 'id' ? 700 : 500,
-                  }}
-                >
-                  ID
-                </span>
-                <span style={{ color: '#cbd5e1' }}>/</span>
-                <span
-                  style={{
-                    color: lang === 'en' ? '#0070BA' : '#94a3b8',
-                    fontWeight: lang === 'en' ? 700 : 500,
-                  }}
-                >
-                  EN
-                </span>
-                <span style={{ color: '#cbd5e1' }}>/</span>
-                <span
-                  style={{
-                    color: lang === 'ko' ? '#0070BA' : '#94a3b8',
-                    fontWeight: lang === 'ko' ? 700 : 500,
-                  }}
-                >
-                  KO
-                </span>
-              </LangPill>
-
-              {/* Minimize Button (Matching Image 1 ChevronDown) */}
-              <IconBtn
-                type="button"
-                onClick={() => setIsOpen(false)}
-                aria-label="Minimize Chat"
-                title="Minimize Chat"
-              >
-                <ChevronDown className="w-4 h-4" />
-              </IconBtn>
-
-              {/* Close Button (Matching Image 1 X) */}
+              {/* Close / Minimize Button */}
               <IconBtn
                 type="button"
                 onClick={handleCloseWidget}
                 aria-label="Close Chat"
                 title="Close Chat"
               >
-                <X className="w-4 h-4 stroke-[2.2]" />
+                <X size={16} />
               </IconBtn>
             </HeaderActions>
           </ChatHeader>
@@ -1161,63 +1173,61 @@ export default function ChatWidget({
           {/* Main Body Area */}
           <ChatBody>
             {messages.length === 0 ? (
-              /* State 1: Clean Minimalist Welcome Screen (Matching Screenshot) */
+              /* State 1: Clean Minimalist Welcome Screen */
               <WelcomeView>
                 {/* Agent Mascot / Brand Badge */}
                 <BrandAvatarBox>
-                  <ChatbotIcon size="lg" />
+                  <ChatbotIcon size="lg" animated />
                 </BrandAvatarBox>
 
+                <WelcomeTag>
+                  <Sparkles size={11} />
+                  <span>
+                    {lang === 'id'
+                      ? 'Asisten Konsultasi Bisnis Resmi'
+                      : lang === 'ko'
+                      ? '공식 AI 기업 전략 자문'
+                      : 'Official Advisory Assistant'}
+                  </span>
+                </WelcomeTag>
+
                 {/* Heading */}
-                <WelcomeHeading>
-                  {agentConfig.title}
-                </WelcomeHeading>
+                <WelcomeHeading>{agentConfig.title}</WelcomeHeading>
 
                 {/* Subtitle */}
                 <WelcomeSub>{agentConfig.subtitle}</WelcomeSub>
 
-                {/* Featured / Hero Card */}
-                <FeaturedCard
-                  type="button"
-                  onClick={() =>
-                    handleSendMessage(
-                      agentConfig.featured.query,
-                      agentConfig.featured.intent
-                    )
-                  }
-                >
-                  {/* Executive Inpartner Blue Icon */}
-                  <div className="featured-icon-box">
-                    <TrendingUp size={20} strokeWidth={2.3} />
-                  </div>
-
-                  {/* Text Details */}
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div className="featured-title">
-                      {agentConfig.featured.title}
-                    </div>
-                    <div className="featured-desc">
-                      {agentConfig.featured.desc}
-                    </div>
-                  </div>
-
-                  {/* Right Chevron */}
-                  <ChevronRight className="featured-arrow" />
-                </FeaturedCard>
-
-                {/* Divider */}
-                <DividerBox>
-                  <DividerLine />
-                  <DividerText>
-                    {agentConfig.dividerText}
-                  </DividerText>
-                </DividerBox>
-
-                {/* 2-Column Grid Secondary Cards */}
-                <SecondaryGrid>
-                  {/* Card 1: Funding & Profitability */}
-                  <SecondaryCard
+                {/* Action Card List (Compact & Perfectly Fitted) */}
+                <ActionCardList>
+                  {/* Card 1: Strategi Korporat */}
+                  <ActionCard
                     type="button"
+                    colorScheme="blue"
+                    onClick={() =>
+                      handleSendMessage(
+                        agentConfig.featured.query,
+                        agentConfig.featured.intent
+                      )
+                    }
+                  >
+                    <div className="action-icon-box">
+                      <TrendingUp size={18} strokeWidth={2.4} />
+                    </div>
+                    <div className="action-content">
+                      <div className="action-title">
+                        {agentConfig.featured.title}
+                      </div>
+                      <div className="action-desc">
+                        {agentConfig.featured.desc}
+                      </div>
+                    </div>
+                    <ChevronRight className="action-arrow" />
+                  </ActionCard>
+
+                  {/* Card 2: Akses Pasar */}
+                  <ActionCard
+                    type="button"
+                    colorScheme="cyan"
                     onClick={() =>
                       handleSendMessage(
                         agentConfig.secondary1.query,
@@ -1225,17 +1235,28 @@ export default function ChatWidget({
                       )
                     }
                   >
-                    <div className="card-icon-box">
-                      <Landmark size={18} strokeWidth={2} />
+                    <div className="action-icon-box">
+                      <Landmark size={18} strokeWidth={2.2} />
                     </div>
-                    <span className="card-title">
-                      {agentConfig.secondary1.title}
-                    </span>
-                  </SecondaryCard>
+                    <div className="action-content">
+                      <div className="action-title">
+                        {agentConfig.secondary1.title}
+                      </div>
+                      <div className="action-desc">
+                        {lang === 'id'
+                          ? 'Riset pasar mendalam, regulasi & ekspansi bisnis Indonesia'
+                          : lang === 'ko'
+                          ? '인도네시아 시장 진입, 규제 분석 및 비즈니스 매칭'
+                          : 'Market entry, regulatory intelligence & business matching'}
+                      </div>
+                    </div>
+                    <ChevronRight className="action-arrow" />
+                  </ActionCard>
 
-                  {/* Card 2: Business Diagnostic & Advisory Routing */}
-                  <SecondaryCard
+                  {/* Card 3: Diagnostik Kebutuhan Bisnis */}
+                  <ActionCard
                     type="button"
+                    colorScheme="emerald"
                     onClick={() =>
                       handleSendMessage(
                         agentConfig.secondary2.query,
@@ -1243,23 +1264,30 @@ export default function ChatWidget({
                       )
                     }
                   >
-                    <div className="card-icon-box">
-                      <Compass size={18} strokeWidth={2} />
+                    <div className="action-icon-box">
+                      <Compass size={18} strokeWidth={2.2} />
                     </div>
-                    <span className="card-title">
-                      {agentConfig.secondary2.title}
-                    </span>
-                  </SecondaryCard>
-                </SecondaryGrid>
+                    <div className="action-content">
+                      <div className="action-title">
+                        {agentConfig.secondary2.title}
+                      </div>
+                      <div className="action-desc">
+                        {lang === 'id'
+                          ? 'Scoping interaktif menemukan advisory yang tepat'
+                          : lang === 'ko'
+                          ? '기업 맞춤형 자문 필요성 대화형 진단'
+                          : 'Interactive preliminary scoping for your business'}
+                      </div>
+                    </div>
+                    <ChevronRight className="action-arrow" />
+                  </ActionCard>
+                </ActionCardList>
               </WelcomeView>
             ) : (
               /* State 2: Active Chat Thread */
               <ThreadWrap>
                 {messages.map((msg) => (
-                  <MsgRow
-                    key={msg.id}
-                    sender={msg.sender}
-                  >
+                  <MsgRow key={msg.id} sender={msg.sender}>
                     {msg.sender === 'bot' && (
                       <div className="bot-avatar-col">
                         <ChatbotIcon size="xs" />
@@ -1267,6 +1295,22 @@ export default function ChatWidget({
                     )}
                     <MsgCol sender={msg.sender}>
                       <Bubble sender={msg.sender}>
+                        {msg.sender === 'bot' && (
+                          <div className="bot-bubble-meta">
+                            <span className="bot-name-tag">
+                              <Sparkles size={10} /> INPARTNER AI
+                            </span>
+                            <span
+                              style={{
+                                fontSize: '10px',
+                                color: '#94a3b8',
+                              }}
+                            >
+                              {msg.timestamp}
+                            </span>
+                          </div>
+                        )}
+
                         {/* Message Content with Markdown rendering & Typewriter Caret */}
                         <div className="bot-prose">
                           {formatBotMessage(msg.text)}
@@ -1290,9 +1334,7 @@ export default function ChatWidget({
                           msg.sources.length > 0 &&
                           !msg.isStreaming && (
                             <SourcesWrap>
-                              <span className="sources-label">
-                                {t.sources}
-                              </span>
+                              <span className="sources-label">{t.sources}</span>
                               {msg.sources.map((s, idx) => (
                                 <SourceTag key={idx}>{s}</SourceTag>
                               ))}
@@ -1307,6 +1349,31 @@ export default function ChatWidget({
                               {t.generating}
                             </span>
                           ) : null}
+                          {msg.sender === 'bot' && !msg.isStreaming && (
+                            <button
+                              type="button"
+                              className={`copy-btn ${
+                                copiedId === msg.id ? 'copied' : ''
+                              }`}
+                              onClick={() =>
+                                handleCopyMessage(msg.id, msg.text)
+                              }
+                              aria-label="Salin jawaban"
+                              title="Salin jawaban"
+                            >
+                              {copiedId === msg.id ? (
+                                <>
+                                  <Check size={11} />{' '}
+                                  {lang === 'id' ? 'Tersalin' : 'Copied'}
+                                </>
+                              ) : (
+                                <>
+                                  <Copy size={11} />{' '}
+                                  {lang === 'id' ? 'Salin' : 'Copy'}
+                                </>
+                              )}
+                            </button>
+                          )}
                           <span>{msg.timestamp}</span>
                         </MsgTimestamp>
                       </Bubble>
@@ -1578,13 +1645,13 @@ export default function ChatWidget({
                               })
                             }
                           >
-                            <Phone className="w-4 h-4 text-white" />
+                            <Phone size={15} />
                             <span>
                               {lang === 'id'
-                                ? 'Konsultasi via WhatsApp'
+                                ? 'Konsultasi via WhatsApp Resmi'
                                 : lang === 'ko'
-                                ? 'WhatsApp으로 실시간 상담'
-                                : 'Consult via WhatsApp'}
+                                ? 'WhatsApp 공식 상담 연결'
+                                : 'Consult via Official WhatsApp'}
                             </span>
                           </BtnWa>
                         </ConsultationCard>
@@ -1621,7 +1688,7 @@ export default function ChatWidget({
             )}
           </ChatBody>
 
-          {/* Bottom Chat Input Bar - Fixed at Bottom (Matching Image 1 Pill Input) */}
+          {/* Bottom Chat Input Bar - Fixed at Bottom */}
           <ChatFooter>
             <InputForm
               onSubmit={(e) => {
@@ -1648,7 +1715,7 @@ export default function ChatWidget({
                   aria-label={t.stopGenerating}
                   title={t.stopGenerating}
                 >
-                  <Square className="w-3.5 h-3.5 fill-rose-600 stroke-rose-600" />
+                  <Square size={13} style={{ fill: '#e11d48' }} />
                 </SendBtn>
               ) : (
                 <SendBtn
@@ -1656,13 +1723,19 @@ export default function ChatWidget({
                   disabled={!inputMessage.trim()}
                   aria-label="Send message"
                 >
-                  <ArrowUp className="w-4 h-4 stroke-[2.5]" />
+                  <ArrowUp size={16} strokeWidth={2.6} />
                 </SendBtn>
               )}
             </InputForm>
 
-            {/* Disclaimer Matching Screenshot */}
-            <DisclaimerText>{t.disclaimer}</DisclaimerText>
+            {/* Disclaimer Matching Security & Advisory trust */}
+            <DisclaimerText>
+              <ShieldCheck
+                size={11}
+                style={{ color: '#0070ba', flexShrink: 0 }}
+              />
+              <span>{t.disclaimer}</span>
+            </DisclaimerText>
           </ChatFooter>
         </ChatWindow>
       )}
@@ -1720,9 +1793,7 @@ function formatBotMessage(text: string) {
       return (
         <div key={`num-${lineIndex}`} className="bot-num-row">
           <span className="num-prefix">{numMatch[1]}</span>
-          <div className="num-text">
-            {renderInlineElements(numMatch[2])}
-          </div>
+          <div className="num-text">{renderInlineElements(numMatch[2])}</div>
         </div>
       )
     }
@@ -1753,7 +1824,7 @@ function renderInlineElements(content: string) {
     // Bold: **text**
     if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
       return (
-        <strong key={index} className="font-semibold text-slate-900">
+        <strong key={index} style={{ fontWeight: 700, color: '#0f172a' }}>
           {part.slice(2, -2)}
         </strong>
       )
@@ -1767,7 +1838,7 @@ function renderInlineElements(content: string) {
       !part.includes('**')
     ) {
       return (
-        <span key={index} className="italic text-slate-700">
+        <span key={index} style={{ fontStyle: 'italic', color: '#334155' }}>
           {part.slice(1, -1)}
         </span>
       )
@@ -1782,7 +1853,12 @@ function renderInlineElements(content: string) {
           href={linkMatch[2]}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#0070BA] font-semibold underline underline-offset-2 hover:text-[#005FA0] transition-colors"
+          style={{
+            color: '#0070ba',
+            fontWeight: 600,
+            textDecoration: 'underline',
+            textUnderlineOffset: '2px',
+          }}
         >
           {linkMatch[1]}
         </a>

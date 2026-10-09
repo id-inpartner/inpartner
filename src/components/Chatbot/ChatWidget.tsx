@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
+import Head from 'next/head'
+import { Global, css } from '@emotion/react'
 import {
   ChevronDown,
   ChevronRight,
@@ -38,6 +40,60 @@ import {
   detectDiagnosticPillar,
   generateScopingSummary,
 } from '../../chatbot/lib/diagnostic'
+import {
+  Root,
+  LauncherWrap,
+  LauncherRow,
+  PillBtn,
+  LauncherBtn,
+  ChatWindow,
+  ChatHeader,
+  HeaderBrand,
+  HeaderTitle,
+  OnlineStatus,
+  OnlineDot,
+  HeaderActions,
+  LangPill,
+  IconBtn,
+  ChatBody,
+  WelcomeView,
+  BrandAvatarBox,
+  WelcomeHeading,
+  WelcomeSub,
+  FeaturedCard,
+  DividerBox,
+  DividerLine,
+  DividerText,
+  SecondaryGrid,
+  SecondaryCard,
+  ThreadWrap,
+  MsgRow,
+  MsgCol,
+  Bubble,
+  MsgTimestamp,
+  ConsultationCard,
+  ConsultationHeader,
+  ConsultationBadge,
+  ConsultationTitle,
+  ConsultationDesc,
+  BtnWa,
+  FollowupWrap,
+  FollowupChip,
+  TeaserCard,
+  ChatFooter,
+  InputForm,
+  ChatInput,
+  SendBtn,
+  DisclaimerText,
+  DiagModule,
+  DiagOptBtn,
+  TypingRow,
+  TypingBubble,
+  TypingDot,
+  ServiceBadge,
+  SourcesWrap,
+  SourceTag,
+} from './styled'
 
 export interface ActiveDiagnosticSession {
   pillarKey: DiagnosticPillarKey
@@ -883,8 +939,26 @@ export default function ChatWidget({
   if (!mounted) {
     if (embeddedMode) {
       return (
-        <div className="w-full h-full flex items-center justify-center bg-white">
-          <div className="w-6 h-6 border-2 border-[#005DAD] border-t-transparent rounded-full animate-spin"></div>
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#ffffff',
+          }}
+        >
+          <div
+            style={{
+              width: '24px',
+              height: '24px',
+              border: '2px solid #0070ba',
+              borderTopColor: 'transparent',
+              borderRadius: '9999px',
+              animation: 'spin 0.8s linear infinite',
+            }}
+          />
         </div>
       )
     }
@@ -892,13 +966,18 @@ export default function ChatWidget({
   }
 
   return (
-    <div id="inpartner-chatbot-container">
-      {/* Floating Launcher Button & Proactive Teaser Bubble (Only Shown When Chat Is Closed) */}
+    <Root id="inpartner-chatbot-container">
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       {!embeddedMode && !isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
+        <LauncherWrap>
           {/* Proactive Bubble Teaser */}
           {showTeaser && (
-            <div
+            <TeaserCard
               onClick={() => {
                 setShowTeaser(false)
                 setHasUserInteracted(true)
@@ -907,14 +986,11 @@ export default function ChatWidget({
                 )
                 setIsOpen(true)
               }}
-              className="pointer-events-auto max-w-[320px] w-full bg-white rounded-2xl p-4 shadow-2xl border border-[#0070BA]/20 animate-in fade-in slide-in-from-bottom-3 duration-300 cursor-pointer hover:shadow-3xl hover:border-[#0070BA]/40 transition-all group"
             >
-              <div className="flex items-center justify-between mb-1.5">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="font-bold text-[11px] text-[#0070BA]">
-                    {getNudgeMessage(nudgeType, lang).badge}
-                  </span>
+              <div className="teaser-badge-row">
+                <div className="teaser-badge">
+                  <span className="teaser-pulse-dot" />
+                  <span>{getNudgeMessage(nudgeType, lang).badge}</span>
                 </div>
                 <button
                   type="button"
@@ -927,25 +1003,25 @@ export default function ChatWidget({
                         : null
                     )
                   }}
-                  className="text-slate-400 hover:text-slate-600 p-0.5 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
+                  className="teaser-close-btn"
                   aria-label="Close teaser"
                 >
-                  <X className="w-3.5 h-3.5" />
+                  <X size={14} />
                 </button>
               </div>
 
-              <h4 className="font-bold text-sm text-slate-900 leading-snug group-hover:text-[#0070BA] transition-colors">
+              <h4 className="teaser-title">
                 {getNudgeMessage(nudgeType, lang).title}
               </h4>
-              <p className="text-xs text-slate-600 mt-1 leading-relaxed font-normal">
+              <p className="teaser-body">
                 {getNudgeMessage(nudgeType, lang).body}
               </p>
 
-              <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="font-bold text-[#0070BA] flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <div className="teaser-footer">
+                <span className="teaser-cta">
                   {getNudgeMessage(nudgeType, lang).cta}
                 </span>
-                <span className="text-[10px] text-slate-400">
+                <span className="teaser-subtext">
                   {lang === 'id'
                     ? 'Online 24/7 • Rahasia'
                     : lang === 'ko'
@@ -953,13 +1029,13 @@ export default function ChatWidget({
                     : '24/7 • Confidential'}
                 </span>
               </div>
-            </div>
+            </TeaserCard>
           )}
 
           {/* Launcher Row */}
-          <div className="flex items-center gap-3 pointer-events-auto">
+          <LauncherRow>
             {!showTeaser && (
-              <button
+              <PillBtn
                 onClick={() => {
                   setShowTeaser(false)
                   setHasUserInteracted(true)
@@ -968,18 +1044,14 @@ export default function ChatWidget({
                   )
                   setIsOpen(true)
                 }}
-                className="hidden sm:flex items-center gap-2 bg-white text-slate-800 text-xs font-semibold px-3.5 py-2.5 rounded-full shadow-lg border border-slate-200/80 hover:shadow-xl transition-all cursor-pointer"
               >
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="pill-dot" />
                 <span>
-                  Consult{' '}
-                  <strong className="text-[#0070BA] font-bold">
-                    {agentConfig.name}
-                  </strong>
+                  Consult <strong>{agentConfig.name}</strong>
                 </span>
-              </button>
+              </PillBtn>
             )}
-            <button
+            <LauncherBtn
               onClick={() => {
                 setShowTeaser(false)
                 setHasUserInteracted(true)
@@ -989,149 +1061,123 @@ export default function ChatWidget({
                 setIsOpen(true)
               }}
               aria-label={`Open ${agentConfig.name}`}
-              className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#0070BA] hover:bg-[#005FA0] text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-sky-200 cursor-pointer"
             >
-              <div className="flex items-center justify-center">
-                <ChatbotIcon
-                  size="md"
-                  className="transition-transform group-hover:scale-110 duration-200"
-                />
-              </div>
-            </button>
-          </div>
-        </div>
+              <ChatbotIcon size="md" />
+            </LauncherBtn>
+          </LauncherRow>
+        </LauncherWrap>
       )}
 
       {/* Main Chat Window (Docked cleanly at bottom right, matching Image 1) */}
       {(isOpen || embeddedMode) && (
-        <div
-          className={`${
-            embeddedMode
-              ? 'w-full h-full'
-              : 'fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-24px)] sm:w-[410px] h-[min(640px,calc(100dvh-24px))] sm:h-[640px] sm:max-h-[calc(100dvh-48px)] rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200/90 animate-in fade-in zoom-in-95 duration-200'
-          } flex flex-col bg-white overflow-hidden transition-all duration-300 font-sans`}
-        >
+        <ChatWindow embedded={embeddedMode}>
           {/* Minimalist Top Header (Exact Match Image 1) */}
-          <div className="sticky top-0 px-4 sm:px-5 py-3 sm:py-3.5 border-b border-slate-100 flex items-center justify-between bg-white shrink-0 z-20">
+          <ChatHeader>
             {/* Left: Brand Mascot + Agent Title */}
-            <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0">
+            <HeaderBrand>
+              <div className="header-avatar">
                 <ChatbotIcon size="md" />
               </div>
               <div>
-                <h2 className="font-bold text-sm sm:text-[15px] text-[#0070BA] tracking-tight leading-snug">
-                  {agentConfig.name}
-                </h2>
-                <div className="flex items-center gap-1.5 text-[11px] text-emerald-600 font-medium tracking-normal mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <HeaderTitle>{agentConfig.name}</HeaderTitle>
+                <OnlineStatus>
+                  <OnlineDot />
                   {t.onlineStatus}
-                </div>
+                </OnlineStatus>
               </div>
-            </div>
+            </HeaderBrand>
 
             {/* Right: Header Action Buttons (New Chat + Lang Toggle + Minimize + Close) */}
-            <div className="flex items-center gap-1 sm:gap-1.5">
+            <HeaderActions>
               {/* New Chat Button (Visible when chat has messages) */}
               {messages.length > 0 && (
-                <button
+                <IconBtn
                   type="button"
                   onClick={handleResetConversation}
-                  className="w-7 h-7 sm:w-7.5 sm:h-7.5 flex items-center justify-center text-slate-400 hover:text-[#0070BA] hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
                   aria-label={t.newChat}
                   title={t.newChat}
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                </button>
+                </IconBtn>
               )}
 
               {/* Language Switcher Badge Button */}
-              <button
+              <LangPill
                 type="button"
                 onClick={() => handleToggleLanguage()}
-                className="px-2 sm:px-2.5 py-0.5 sm:py-1 text-[11px] font-semibold rounded-full border border-slate-200/90 hover:border-[#0070BA] hover:bg-[#0070BA]/5 text-slate-700 transition-colors cursor-pointer flex items-center gap-1 bg-slate-50/70"
                 aria-label="Switch Language"
                 title="Switch Language"
               >
                 <span
-                  className={
-                    lang === 'id'
-                      ? 'text-[#0070BA] font-bold'
-                      : 'text-slate-400 font-normal'
-                  }
+                  style={{
+                    color: lang === 'id' ? '#0070BA' : '#94a3b8',
+                    fontWeight: lang === 'id' ? 700 : 500,
+                  }}
                 >
                   ID
                 </span>
-                <span className="text-slate-300">/</span>
+                <span style={{ color: '#cbd5e1' }}>/</span>
                 <span
-                  className={
-                    lang === 'en'
-                      ? 'text-[#0070BA] font-bold'
-                      : 'text-slate-400 font-normal'
-                  }
+                  style={{
+                    color: lang === 'en' ? '#0070BA' : '#94a3b8',
+                    fontWeight: lang === 'en' ? 700 : 500,
+                  }}
                 >
                   EN
                 </span>
-                <span className="text-slate-300">/</span>
+                <span style={{ color: '#cbd5e1' }}>/</span>
                 <span
-                  className={
-                    lang === 'ko'
-                      ? 'text-[#0070BA] font-bold'
-                      : 'text-slate-400 font-normal'
-                  }
+                  style={{
+                    color: lang === 'ko' ? '#0070BA' : '#94a3b8',
+                    fontWeight: lang === 'ko' ? 700 : 500,
+                  }}
                 >
                   KO
                 </span>
-              </button>
+              </LangPill>
 
               {/* Minimize Button (Matching Image 1 ChevronDown) */}
-              <button
+              <IconBtn
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="w-7 h-7 sm:w-7.5 sm:h-7.5 flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
                 aria-label="Minimize Chat"
                 title="Minimize Chat"
               >
                 <ChevronDown className="w-4 h-4" />
-              </button>
+              </IconBtn>
 
               {/* Close Button (Matching Image 1 X) */}
-              <button
+              <IconBtn
                 type="button"
                 onClick={handleCloseWidget}
-                className="w-7 h-7 sm:w-7.5 sm:h-7.5 flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
                 aria-label="Close Chat"
                 title="Close Chat"
               >
                 <X className="w-4 h-4 stroke-[2.2]" />
-              </button>
-            </div>
-          </div>
+              </IconBtn>
+            </HeaderActions>
+          </ChatHeader>
 
           {/* Main Body Area */}
-          <div className="flex-1 min-h-0 overflow-y-auto px-4 sm:px-5 py-3.5 sm:py-4 overscroll-contain scroll-smooth">
+          <ChatBody>
             {messages.length === 0 ? (
               /* State 1: Clean Minimalist Welcome Screen (Matching Screenshot) */
-              <div className="min-h-full max-w-[340px] mx-auto w-full py-3 sm:py-6 flex flex-col items-center justify-start sm:justify-center">
+              <WelcomeView>
                 {/* Agent Mascot / Brand Badge */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-slate-50 via-white to-slate-100 border border-slate-200/90 flex items-center justify-center shadow-xs mb-3 ring-4 ring-[#0070BA]/8 group">
-                  <ChatbotIcon
-                    size="lg"
-                    className="transition-transform group-hover:scale-105 duration-200"
-                  />
-                </div>
+                <BrandAvatarBox>
+                  <ChatbotIcon size="lg" />
+                </BrandAvatarBox>
 
                 {/* Heading */}
-                <h1 className="text-lg sm:text-[20px] font-bold text-slate-900 text-center tracking-tight leading-snug">
+                <WelcomeHeading>
                   {agentConfig.title}
-                </h1>
+                </WelcomeHeading>
 
                 {/* Subtitle */}
-                <p className="text-xs sm:text-[13px] text-slate-500 text-center mt-1.5 leading-relaxed max-w-[310px] font-normal">
-                  {agentConfig.subtitle}
-                </p>
+                <WelcomeSub>{agentConfig.subtitle}</WelcomeSub>
 
                 {/* Featured / Hero Card */}
-                <button
+                <FeaturedCard
                   type="button"
                   onClick={() =>
                     handleSendMessage(
@@ -1139,39 +1185,38 @@ export default function ChatWidget({
                       agentConfig.featured.intent
                     )
                   }
-                  className="mt-5 w-full p-3.5 sm:p-4 rounded-2xl bg-[#0070BA]/6 hover:bg-[#0070BA]/10 border border-[#0070BA]/20 transition-all flex items-center justify-between gap-3 cursor-pointer shadow-2xs hover:shadow-xs text-left group active:scale-[0.99]"
                 >
                   {/* Executive Inpartner Blue Icon */}
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#0070BA] to-[#005FA0] text-white flex items-center justify-center shrink-0 shadow-xs ring-2 ring-[#0070BA]/20">
-                    <TrendingUp className="w-5 h-5 text-white stroke-[2.3]" />
+                  <div className="featured-icon-box">
+                    <TrendingUp size={20} strokeWidth={2.3} />
                   </div>
 
                   {/* Text Details */}
-                  <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-xs sm:text-sm text-slate-900 group-hover:text-[#0070BA] transition-colors leading-snug tracking-tight">
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div className="featured-title">
                       {agentConfig.featured.title}
                     </div>
-                    <div className="text-[11px] sm:text-xs text-slate-500 mt-0.5 leading-normal font-normal line-clamp-2">
+                    <div className="featured-desc">
                       {agentConfig.featured.desc}
                     </div>
                   </div>
 
                   {/* Right Chevron */}
-                  <ChevronRight className="w-4 h-4 text-slate-400 shrink-0 group-hover:text-[#0070BA] group-hover:translate-x-0.5 transition-all" />
-                </button>
+                  <ChevronRight className="featured-arrow" />
+                </FeaturedCard>
 
                 {/* Divider */}
-                <div className="my-4 sm:my-5 relative flex items-center justify-center w-full">
-                  <div className="w-full border-t border-slate-200/80"></div>
-                  <span className="absolute bg-white px-2.5 text-[10px] sm:text-[10.5px] uppercase font-bold text-slate-400 tracking-wider select-none">
+                <DividerBox>
+                  <DividerLine />
+                  <DividerText>
                     {agentConfig.dividerText}
-                  </span>
-                </div>
+                  </DividerText>
+                </DividerBox>
 
                 {/* 2-Column Grid Secondary Cards */}
-                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 w-full">
+                <SecondaryGrid>
                   {/* Card 1: Funding & Profitability */}
-                  <button
+                  <SecondaryCard
                     type="button"
                     onClick={() =>
                       handleSendMessage(
@@ -1179,18 +1224,17 @@ export default function ChatWidget({
                         agentConfig.secondary1.intent
                       )
                     }
-                    className="p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 hover:border-[#0070BA]/40 hover:bg-[#0070BA]/5 transition-all flex flex-col items-center justify-center text-center gap-2 cursor-pointer shadow-2xs hover:shadow-xs group active:scale-[0.99] min-h-[102px]"
                   >
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0070BA]/10 text-[#0070BA] flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
-                      <Landmark className="w-4 h-4 stroke-[2]" />
+                    <div className="card-icon-box">
+                      <Landmark size={18} strokeWidth={2} />
                     </div>
-                    <span className="text-[11.5px] sm:text-xs font-semibold text-slate-800 group-hover:text-[#0070BA] transition-colors leading-snug tracking-tight line-clamp-2">
+                    <span className="card-title">
                       {agentConfig.secondary1.title}
                     </span>
-                  </button>
+                  </SecondaryCard>
 
                   {/* Card 2: Business Diagnostic & Advisory Routing */}
-                  <button
+                  <SecondaryCard
                     type="button"
                     onClick={() =>
                       handleSendMessage(
@@ -1198,100 +1242,74 @@ export default function ChatWidget({
                         agentConfig.secondary2.intent
                       )
                     }
-                    className="p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 hover:border-[#0070BA]/40 hover:bg-[#0070BA]/5 transition-all flex flex-col items-center justify-center text-center gap-2 cursor-pointer shadow-2xs hover:shadow-xs group active:scale-[0.99] min-h-[102px]"
                   >
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0070BA]/10 text-[#0070BA] flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
-                      <Compass className="w-4 h-4 stroke-[2]" />
+                    <div className="card-icon-box">
+                      <Compass size={18} strokeWidth={2} />
                     </div>
-                    <span className="text-[11.5px] sm:text-xs font-semibold text-slate-800 group-hover:text-[#0070BA] transition-colors leading-snug tracking-tight line-clamp-2">
+                    <span className="card-title">
                       {agentConfig.secondary2.title}
                     </span>
-                  </button>
-                </div>
-              </div>
+                  </SecondaryCard>
+                </SecondaryGrid>
+              </WelcomeView>
             ) : (
               /* State 2: Active Chat Thread */
-              <div className="space-y-3.5 w-full max-w-2xl mx-auto py-1 sm:py-2">
+              <ThreadWrap>
                 {messages.map((msg) => (
-                  <div
+                  <MsgRow
                     key={msg.id}
-                    className={`flex gap-2 sm:gap-2.5 ${
-                      msg.sender === 'user'
-                        ? 'justify-end'
-                        : 'justify-start items-start'
-                    }`}
+                    sender={msg.sender}
                   >
                     {msg.sender === 'bot' && (
-                      <div className="w-7 h-7 sm:w-7.5 sm:h-7.5 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="bot-avatar-col">
                         <ChatbotIcon size="xs" />
                       </div>
                     )}
-                    <div
-                      className={`flex flex-col ${
-                        msg.sender === 'user' ? 'items-end' : 'items-start'
-                      } max-w-[85%] sm:max-w-[80%]`}
-                    >
-                      <div
-                        className={`w-full rounded-2xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm leading-relaxed ${
-                          msg.sender === 'user'
-                            ? 'bg-[#0070BA] text-white rounded-br-xs shadow-xs font-normal'
-                            : 'bg-slate-50/95 border border-slate-200/70 text-slate-800 rounded-bl-xs shadow-2xs font-normal'
-                        }`}
-                      >
+                    <MsgCol sender={msg.sender}>
+                      <Bubble sender={msg.sender}>
                         {/* Message Content with Markdown rendering & Typewriter Caret */}
-                        <div className="prose prose-sm max-w-none text-xs sm:text-sm leading-relaxed space-y-0.5">
+                        <div className="bot-prose">
                           {formatBotMessage(msg.text)}
                           {msg.isStreaming && (
-                            <span className="inline-block w-1.5 h-3.5 ml-1 bg-[#0070BA] animate-pulse align-middle rounded-xs" />
+                            <span className="streaming-caret" />
                           )}
                         </div>
 
                         {/* Recommended Service Badge */}
                         {msg.recommendedService && !msg.isStreaming && (
-                          <div className="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#0070BA]/10 text-[#0070BA] border border-[#0070BA]/20 rounded-lg text-[11px] sm:text-xs font-semibold tracking-tight">
-                            <Sparkles className="w-3.5 h-3.5 text-[#0070BA]" />
+                          <ServiceBadge>
+                            <Sparkles size={14} />
                             <span>
                               {t.service} {msg.recommendedService}
                             </span>
-                          </div>
+                          </ServiceBadge>
                         )}
 
                         {/* Official Sources */}
                         {msg.sources &&
                           msg.sources.length > 0 &&
                           !msg.isStreaming && (
-                            <div className="mt-2.5 pt-2 border-t border-slate-200/60 flex flex-wrap items-center gap-1.5 text-xs text-slate-500">
-                              <span className="font-bold text-slate-400 uppercase tracking-wider text-[9.5px]">
+                            <SourcesWrap>
+                              <span className="sources-label">
                                 {t.sources}
                               </span>
                               {msg.sources.map((s, idx) => (
-                                <span
-                                  key={idx}
-                                  className="bg-white px-2 py-0.5 rounded-md border border-slate-200/90 font-mono text-[10.5px] text-slate-600 font-medium"
-                                >
-                                  {s}
-                                </span>
+                                <SourceTag key={idx}>{s}</SourceTag>
                               ))}
-                            </div>
+                            </SourcesWrap>
                           )}
 
                         {/* Timestamp & Realtime indicator */}
-                        <div
-                          className={`mt-1.5 flex items-center justify-end text-[10px] font-mono ${
-                            msg.sender === 'user'
-                              ? 'text-sky-100/85 text-right'
-                              : 'text-slate-400'
-                          }`}
-                        >
+                        <MsgTimestamp sender={msg.sender}>
                           {msg.sender === 'bot' && msg.isStreaming ? (
-                            <span className="inline-flex items-center gap-1 text-[#0070BA] font-medium not-italic animate-pulse mr-auto">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#0070BA]" />
+                            <span className="streaming-tag">
+                              <span className="tag-dot" />
                               {t.generating}
                             </span>
                           ) : null}
                           <span>{msg.timestamp}</span>
-                        </div>
-                      </div>
+                        </MsgTimestamp>
+                      </Bubble>
 
                       {/* Interactive Consultative Discovery Module */}
                       {msg.diagnosticPillar &&
@@ -1325,27 +1343,25 @@ export default function ChatWidget({
                               }`
 
                           return (
-                            <div className="mt-3 w-full sm:w-[94%] bg-gradient-to-br from-white via-sky-50/40 to-[#0070BA]/5 border border-[#0070BA]/20 rounded-2xl p-3.5 sm:p-4 shadow-xs">
+                            <DiagModule>
                               {/* Module Header */}
-                              <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5 mb-3">
-                                <div className="flex items-center gap-2 min-w-0">
-                                  <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#0070BA] to-[#005FA0] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                                    <Compass className="w-4 h-4 text-white stroke-[2.2]" />
+                              <div className="diag-header">
+                                <div className="diag-badge-left">
+                                  <div className="diag-icon-box">
+                                    <Compass size={16} strokeWidth={2.2} />
                                   </div>
-                                  <div className="min-w-0">
-                                    <span className="text-[10px] font-bold text-[#0070BA] uppercase tracking-wider block truncate">
+                                  <div className="diag-titles">
+                                    <span className="diag-badge-label">
                                       {t.diagnosticBadge}
                                     </span>
-                                    <span className="text-xs font-semibold text-slate-800 block truncate">
+                                    <span className="diag-service-name">
                                       {tree[`serviceName_${lang}`]}
                                     </span>
                                   </div>
                                 </div>
                                 <span
-                                  className={`text-[10px] font-bold px-2.5 py-1 rounded-full border shrink-0 ${
-                                    isCompleted
-                                      ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                                      : 'bg-sky-50 text-[#0070BA] border-sky-200'
+                                  className={`diag-step-pill ${
+                                    isCompleted ? 'completed' : 'active'
                                   }`}
                                 >
                                   {currentStepTitle}
@@ -1354,13 +1370,13 @@ export default function ChatWidget({
 
                               {/* Step 1 State */}
                               {isStep1 && (
-                                <div className="space-y-2.5">
-                                  <p className="text-xs sm:text-[13px] font-semibold text-slate-900 leading-snug">
+                                <div className="diag-step-content">
+                                  <p className="diag-question">
                                     {tree.step1[`question_${lang}`]}
                                   </p>
-                                  <div className="space-y-1.5 pt-1">
+                                  <div className="diag-opt-list">
                                     {tree.step1.options.map((opt) => (
-                                      <button
+                                      <DiagOptBtn
                                         key={opt.id}
                                         type="button"
                                         onClick={() =>
@@ -1370,22 +1386,21 @@ export default function ChatWidget({
                                             opt
                                           )
                                         }
-                                        className="w-full text-left p-2.5 sm:p-3 rounded-xl border border-slate-200 bg-white hover:border-[#0070BA] hover:bg-[#0070BA]/5 transition-all shadow-2xs group flex items-start gap-2.5 cursor-pointer active:scale-[0.99]"
                                       >
-                                        <div className="w-5 h-5 rounded-full bg-slate-100 group-hover:bg-[#0070BA]/10 text-slate-500 group-hover:text-[#0070BA] flex items-center justify-center shrink-0 mt-0.5 transition-colors">
-                                          <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                                        <div className="diag-opt-icon">
+                                          <ChevronRight size={14} />
                                         </div>
-                                        <div className="flex-1 min-w-0">
-                                          <span className="font-semibold text-xs sm:text-sm text-slate-800 group-hover:text-[#0070BA] block leading-snug">
+                                        <div className="diag-opt-text-wrap">
+                                          <span className="diag-opt-title">
                                             {opt[`label_${lang}`]}
                                           </span>
                                           {opt[`detail_${lang}`] && (
-                                            <span className="text-[11px] text-slate-500 mt-0.5 block leading-tight font-normal">
+                                            <span className="diag-opt-desc">
                                               {opt[`detail_${lang}`]}
                                             </span>
                                           )}
                                         </div>
-                                      </button>
+                                      </DiagOptBtn>
                                     ))}
                                   </div>
                                 </div>
@@ -1393,11 +1408,11 @@ export default function ChatWidget({
 
                               {/* Step 2 State */}
                               {isStep2 && (
-                                <div className="space-y-2.5">
+                                <div className="diag-step-content">
                                   {/* Confirmed Step 1 Choice Chip */}
-                                  <div className="flex items-center justify-between bg-sky-50/80 border border-sky-200/80 rounded-xl px-3 py-1.5 text-xs text-slate-700">
-                                    <span className="truncate pr-2 font-medium">
-                                      <span className="text-slate-400 font-semibold mr-1">
+                                  <div className="diag-choice-chip">
+                                    <span className="chip-left">
+                                      <span className="chip-step-label">
                                         {t.diagnosticStep1}:
                                       </span>
                                       <strong>
@@ -1409,18 +1424,18 @@ export default function ChatWidget({
                                       onClick={() =>
                                         handleResetDiagnostic(tree.pillarKey)
                                       }
-                                      className="text-[#0070BA] hover:underline font-semibold text-[11px] shrink-0 cursor-pointer"
+                                      className="chip-reset-btn"
                                     >
                                       {t.diagnosticChangeStep1}
                                     </button>
                                   </div>
 
-                                  <p className="text-xs sm:text-[13px] font-semibold text-slate-900 leading-snug">
+                                  <p className="diag-question">
                                     {tree.step2[`question_${lang}`]}
                                   </p>
-                                  <div className="space-y-1.5 pt-1">
+                                  <div className="diag-opt-list">
                                     {tree.step2.options.map((opt) => (
-                                      <button
+                                      <DiagOptBtn
                                         key={opt.id}
                                         type="button"
                                         onClick={() =>
@@ -1430,22 +1445,21 @@ export default function ChatWidget({
                                             opt
                                           )
                                         }
-                                        className="w-full text-left p-2.5 sm:p-3 rounded-xl border border-slate-200 bg-white hover:border-[#0070BA] hover:bg-[#0070BA]/5 transition-all shadow-2xs group flex items-start gap-2.5 cursor-pointer active:scale-[0.99]"
                                       >
-                                        <div className="w-5 h-5 rounded-full bg-slate-100 group-hover:bg-[#0070BA]/10 text-slate-500 group-hover:text-[#0070BA] flex items-center justify-center shrink-0 mt-0.5 transition-colors">
-                                          <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                                        <div className="diag-opt-icon">
+                                          <ChevronRight size={14} />
                                         </div>
-                                        <div className="flex-1 min-w-0">
-                                          <span className="font-semibold text-xs sm:text-sm text-slate-800 group-hover:text-[#0070BA] block leading-snug">
+                                        <div className="diag-opt-text-wrap">
+                                          <span className="diag-opt-title">
                                             {opt[`label_${lang}`]}
                                           </span>
                                           {opt[`detail_${lang}`] && (
-                                            <span className="text-[11px] text-slate-500 mt-0.5 block leading-tight font-normal">
+                                            <span className="diag-opt-desc">
                                               {opt[`detail_${lang}`]}
                                             </span>
                                           )}
                                         </div>
-                                      </button>
+                                      </DiagOptBtn>
                                     ))}
                                   </div>
                                 </div>
@@ -1453,21 +1467,21 @@ export default function ChatWidget({
 
                               {/* Completed Scoping State */}
                               {isCompleted && (
-                                <div className="space-y-3">
-                                  <div className="p-3 bg-emerald-50/70 border border-emerald-200/90 rounded-xl space-y-1">
-                                    <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">
+                                <div className="diag-step-content">
+                                  <div className="diag-summary-box">
+                                    <span className="summary-label">
                                       {lang === 'id'
                                         ? 'Hasil Scoping Diagnostik Awal'
                                         : lang === 'ko'
                                         ? '사전 진단 요약 결과'
                                         : 'Preliminary Scoping Synthesis'}
                                     </span>
-                                    <p className="text-xs sm:text-sm font-semibold text-emerald-950 leading-relaxed">
+                                    <p className="summary-text">
                                       {currentDiagState.scopingSummary}
                                     </p>
                                   </div>
 
-                                  <div className="flex flex-wrap items-center gap-2 pt-1">
+                                  <div className="diag-cta-row">
                                     <a
                                       href={getWhatsAppUrl(
                                         lang === 'ko'
@@ -1484,9 +1498,9 @@ export default function ChatWidget({
                                           location: 'diagnostic_complete',
                                         })
                                       }
-                                      className="bg-[#0070BA] hover:bg-[#005FA0] text-white text-xs font-bold px-3.5 py-2.5 rounded-xl shadow-xs hover:shadow-md transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
+                                      className="diag-wa-btn"
                                     >
-                                      <Phone className="w-3.5 h-3.5" />{' '}
+                                      <Phone size={14} />{' '}
                                       {t.diagnosticWaWithScoping}
                                     </a>
                                     <button
@@ -1494,14 +1508,14 @@ export default function ChatWidget({
                                       onClick={() =>
                                         handleResetDiagnostic(tree.pillarKey)
                                       }
-                                      className="text-slate-500 hover:text-slate-700 text-xs font-medium px-2 py-1 transition-colors cursor-pointer"
+                                      className="diag-restart-btn"
                                     >
                                       {t.diagnosticRestart}
                                     </button>
                                   </div>
                                 </div>
                               )}
-                            </div>
+                            </DiagModule>
                           )
                         })()}
 
@@ -1509,35 +1523,35 @@ export default function ChatWidget({
                       {msg.followUpQuestions &&
                         msg.followUpQuestions.length > 0 &&
                         !msg.isStreaming && (
-                          <div className="mt-2 flex flex-wrap gap-1.5 max-w-[90%]">
+                          <FollowupWrap>
                             {msg.followUpQuestions.map((q, idx) => (
-                              <button
+                              <FollowupChip
                                 key={idx}
+                                type="button"
                                 onClick={() => handleSendMessage(q)}
-                                className="text-left text-[11.5px] sm:text-xs font-medium bg-white hover:bg-[#0070BA]/5 text-slate-700 hover:text-[#0070BA] px-3 py-1.5 rounded-full border border-slate-200 hover:border-[#0070BA]/40 transition-all shadow-2xs flex items-center gap-1.5 group cursor-pointer"
                               >
                                 <span>{q}</span>
-                                <ChevronRight className="w-3 h-3 text-slate-400 group-hover:text-[#0070BA] shrink-0" />
-                              </button>
+                                <ChevronRight size={12} />
+                              </FollowupChip>
                             ))}
-                          </div>
+                          </FollowupWrap>
                         )}
 
                       {/* Consultation CTA Card */}
                       {msg.suggestLeadCapture && !msg.isStreaming && (
-                        <div className="mt-3.5 mb-1 w-full bg-[#F0F7FD] border border-[#CDE3F7] rounded-2xl p-4 sm:p-4.5 shadow-xs">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="w-10 h-10 rounded-xl bg-[#0070BA] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                        <ConsultationCard>
+                          <ConsultationHeader>
+                            <ConsultationBadge>
                               <Building2 className="w-5 h-5 text-white" />
-                            </div>
-                            <h4 className="text-sm sm:text-[14.5px] font-bold text-slate-900 leading-snug tracking-tight">
+                            </ConsultationBadge>
+                            <ConsultationTitle>
                               {t.interestedCta}
-                            </h4>
-                          </div>
-                          <p className="text-xs sm:text-[12.5px] text-slate-600 leading-relaxed font-normal mb-3.5">
+                            </ConsultationTitle>
+                          </ConsultationHeader>
+                          <ConsultationDesc>
                             {t.interestedDesc}
-                          </p>
-                          <a
+                          </ConsultationDesc>
+                          <BtnWa
                             href={getWhatsAppUrl(
                               lang === 'id'
                                 ? `Halo tim Inpartner, saya ingin berkonsultasi lebih lanjut mengenai ${
@@ -1563,7 +1577,6 @@ export default function ChatWidget({
                                 service: msg.recommendedService,
                               })
                             }
-                            className="w-full py-2.5 px-4 rounded-xl bg-[#0070BA] hover:bg-[#005FA0] text-white font-bold text-xs sm:text-[13px] shadow-xs hover:shadow-md transition-all active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
                           >
                             <Phone className="w-4 h-4 text-white" />
                             <span>
@@ -1573,46 +1586,50 @@ export default function ChatWidget({
                                 ? 'WhatsApp으로 실시간 상담'
                                 : 'Consult via WhatsApp'}
                             </span>
-                          </a>
-                        </div>
+                          </BtnWa>
+                        </ConsultationCard>
                       )}
-                    </div>
-                  </div>
+                    </MsgCol>
+                  </MsgRow>
                 ))}
 
                 {/* Typing Indicator (Only before first token/chunk arrives) */}
                 {isLoading && !messages.some((m) => m.isStreaming) && (
-                  <div className="flex gap-2 sm:gap-2.5 items-start">
-                    <div className="w-7 h-7 sm:w-7.5 sm:h-7.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center shrink-0 shadow-2xs mt-1 ring-1 ring-black/5">
+                  <TypingRow>
+                    <div className="bot-avatar-col">
                       <ChatbotIcon size="xs" />
                     </div>
-                    <div className="bg-slate-50 border border-slate-100 rounded-2xl rounded-bl-xs px-3.5 sm:px-4 py-2.5 sm:py-3 shadow-2xs">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-[#0070BA] animate-bounce"></div>
-                        <div className="w-2 h-2 rounded-full bg-[#0070BA] animate-bounce [animation-delay:0.2s]"></div>
-                        <div className="w-2 h-2 rounded-full bg-[#0070BA] animate-bounce [animation-delay:0.4s]"></div>
-                        <span className="text-xs text-slate-500 font-medium ml-1.5">
-                          {t.sending}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                    <TypingBubble>
+                      <TypingDot />
+                      <TypingDot delay="0.2s" />
+                      <TypingDot delay="0.4s" />
+                      <span
+                        style={{
+                          fontSize: '12px',
+                          color: '#64748b',
+                          fontWeight: 500,
+                          marginLeft: '4px',
+                        }}
+                      >
+                        {t.sending}
+                      </span>
+                    </TypingBubble>
+                  </TypingRow>
                 )}
                 <div ref={messagesEndRef} />
-              </div>
+              </ThreadWrap>
             )}
-          </div>
+          </ChatBody>
 
           {/* Bottom Chat Input Bar - Fixed at Bottom (Matching Image 1 Pill Input) */}
-          <div className="sticky bottom-0 z-20 shrink-0 border-t border-slate-100 p-2.5 sm:p-3.5 bg-white shadow-[0_-4px_16px_rgba(0,0,0,0.03)] pb-[max(0.65rem,env(safe-area-inset-bottom))]">
-            <form
+          <ChatFooter>
+            <InputForm
               onSubmit={(e) => {
                 e.preventDefault()
                 handleSendMessage()
               }}
-              className="relative flex items-center"
             >
-              <input
+              <ChatInput
                 ref={inputRef}
                 id="chat-input-message"
                 name="chatMessage"
@@ -1621,39 +1638,35 @@ export default function ChatWidget({
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder={agentConfig.inputPlaceholder}
-                className="w-full bg-slate-50 hover:bg-slate-100/60 focus:bg-white text-slate-900 text-xs sm:text-[13.5px] font-normal pl-4 pr-11 py-2.5 sm:py-3 rounded-full border border-slate-200 focus:border-[#0070BA] focus:ring-2 focus:ring-[#0070BA]/15 focus:outline-none transition-all placeholder:text-slate-400 placeholder:font-normal"
                 disabled={isLoading || isStreaming}
               />
               {isLoading || isStreaming ? (
-                <button
+                <SendBtn
+                  isStop
                   type="button"
                   onClick={handleStopGeneration}
                   aria-label={t.stopGenerating}
-                  className="absolute right-1.5 sm:right-2 top-1/2 -translate-y-1/2 w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all bg-rose-50 hover:bg-rose-100 text-rose-600 cursor-pointer active:scale-95 shadow-xs border border-rose-200"
                   title={t.stopGenerating}
                 >
                   <Square className="w-3.5 h-3.5 fill-rose-600 stroke-rose-600" />
-                </button>
+                </SendBtn>
               ) : (
-                <button
+                <SendBtn
                   type="submit"
                   disabled={!inputMessage.trim()}
                   aria-label="Send message"
-                  className="absolute right-1.5 sm:right-2 top-1/2 -translate-y-1/2 w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all disabled:bg-slate-100 disabled:text-slate-300 bg-[#0070BA] hover:bg-[#005FA0] text-white cursor-pointer active:scale-95 shadow-xs"
                 >
                   <ArrowUp className="w-4 h-4 stroke-[2.5]" />
-                </button>
+                </SendBtn>
               )}
-            </form>
+            </InputForm>
 
             {/* Disclaimer Matching Screenshot */}
-            <div className="text-center text-[10px] sm:text-[11px] text-slate-400 mt-1.5 font-normal tracking-normal select-none">
-              {t.disclaimer}
-            </div>
-          </div>
-        </div>
+            <DisclaimerText>{t.disclaimer}</DisclaimerText>
+          </ChatFooter>
+        </ChatWindow>
       )}
-    </div>
+    </Root>
   )
 }
 
@@ -1675,17 +1688,14 @@ function formatBotMessage(text: string) {
 
     // 1. Horizontal rules (--- or ***) -> render clean subtle divider
     if (/^(\-{3,}|\*{3,}|_{3,})$/.test(trimmed)) {
-      return <hr key={`hr-${lineIndex}`} className="my-2 border-slate-200/80" />
+      return <hr key={`hr-${lineIndex}`} />
     }
 
     // 2. Headings (### Title or ## Title) -> render clean bold subheader without ### symbols
     const headingMatch = trimmed.match(/^#{1,4}\s+(.+)$/)
     if (headingMatch) {
       return (
-        <div
-          key={`h-${lineIndex}`}
-          className="font-bold text-[#0070BA] text-xs sm:text-sm mt-2.5 mb-1 leading-snug"
-        >
+        <div key={`h-${lineIndex}`} className="bot-heading">
           {renderInlineElements(headingMatch[1])}
         </div>
       )
@@ -1695,14 +1705,9 @@ function formatBotMessage(text: string) {
     const bulletMatch = trimmed.match(/^[\*\-\•]\s+(.+)$/)
     if (bulletMatch) {
       return (
-        <div
-          key={`b-${lineIndex}`}
-          className="flex items-start gap-2 my-1 pl-0.5"
-        >
-          <span className="text-[#0070BA] font-bold select-none text-xs leading-5">
-            •
-          </span>
-          <div className="flex-1 text-slate-800 text-xs sm:text-sm leading-relaxed">
+        <div key={`b-${lineIndex}`} className="bot-bullet-row">
+          <span className="bullet-dot">•</span>
+          <div className="bullet-text">
             {renderInlineElements(bulletMatch[1])}
           </div>
         </div>
@@ -1713,14 +1718,9 @@ function formatBotMessage(text: string) {
     const numMatch = trimmed.match(/^(\d+[\.\)])\s+(.+)$/)
     if (numMatch) {
       return (
-        <div
-          key={`num-${lineIndex}`}
-          className="flex items-start gap-2 my-1 pl-0.5"
-        >
-          <span className="text-[#0070BA] font-semibold select-none text-xs leading-5 min-w-[16px]">
-            {numMatch[1]}
-          </span>
-          <div className="flex-1 text-slate-800 text-xs sm:text-sm leading-relaxed">
+        <div key={`num-${lineIndex}`} className="bot-num-row">
+          <span className="num-prefix">{numMatch[1]}</span>
+          <div className="num-text">
             {renderInlineElements(numMatch[2])}
           </div>
         </div>
@@ -1729,15 +1729,12 @@ function formatBotMessage(text: string) {
 
     // 5. Empty line -> clean spacing
     if (!trimmed) {
-      return <div key={`empty-${lineIndex}`} className="h-1.5" />
+      return <div key={`empty-${lineIndex}`} style={{ height: '6px' }} />
     }
 
     // 6. Regular paragraph text
     return (
-      <div
-        key={`p-${lineIndex}`}
-        className="my-1 text-slate-800 text-xs sm:text-sm leading-relaxed"
-      >
+      <div key={`p-${lineIndex}`} className="bot-paragraph">
         {renderInlineElements(line)}
       </div>
     )

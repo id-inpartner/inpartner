@@ -14,10 +14,7 @@ if (process.env.NODE_ENV === 'production' && !process.env.ADMIN_PASSWORD) {
 }
 
 // Secret used to sign session cookies
-const AUTH_SECRET =
-  process.env.AUTH_SECRET ||
-  process.env.ADMIN_PASSWORD ||
-  ''
+const AUTH_SECRET = process.env.AUTH_SECRET || process.env.ADMIN_PASSWORD || ''
 
 if (process.env.NODE_ENV === 'production' && !process.env.AUTH_SECRET) {
   console.warn(

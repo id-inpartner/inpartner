@@ -99,8 +99,6 @@ import {
   TypingBubble,
   TypingDot,
   ServiceBadge,
-  SourcesWrap,
-  SourceTag,
 } from './styled'
 
 export interface ActiveDiagnosticSession {
@@ -126,6 +124,7 @@ interface ChatMessage {
   isFallback?: boolean
   isStreaming?: boolean
   diagnosticPillar?: DiagnosticPillarKey
+  diagnosticDismissed?: boolean
 }
 
 interface ChatWidgetProps {
@@ -221,13 +220,16 @@ export default function ChatWidget({
           interestedCta: 'Tertarik dengan Konsultasi Strategis Lebih Lanjut?',
           interestedDesc:
             'Konsultasikan kebutuhan strategis dan tantangan bisnis Anda secara langsung bersama tim penasihat senior Inpartner.',
-          diagnosticBadge: 'Diagnostik Penjajakan Kebutuhan Bisnis',
+          diagnosticBadge:
+            'Biar kami pahami kebutuhan Anda · 2 pertanyaan singkat',
           diagnosticStep1: 'Langkah 1/2',
           diagnosticStep2: 'Langkah 2/2',
           diagnosticCompletedBadge: 'Scoping Diagnostik Selesai',
           diagnosticWaWithScoping: 'Konsultasi via WhatsApp',
           diagnosticChangeStep1: 'Ubah Pilihan Langkah 1',
           diagnosticRestart: 'Ulangi Diagnostik',
+          diagnosticOther: 'Lainnya / belum yakin',
+          diagnosticOtherDesc: 'Ceritakan langsung kebutuhan Anda di chat',
         }
       : lang === 'ko'
       ? {
@@ -270,13 +272,15 @@ export default function ChatWidget({
           interestedCta: '심층 비즈니스 자문이 필요하십니까?',
           interestedDesc:
             '기업의 전략적 목표와 경영 과제를 인파트너 수석 자문팀과 실시간으로 상담해 보세요.',
-          diagnosticBadge: '맞춤형 기업 사전 진단 (Consultative Discovery)',
+          diagnosticBadge: '귀사의 요구사항 파악을 위한 2가지 간단한 질문',
           diagnosticStep1: '1단계 / 2단계',
           diagnosticStep2: '2단계 / 2단계',
           diagnosticCompletedBadge: '사전 진단 요약 완료',
           diagnosticWaWithScoping: '수석 파트너 WhatsApp 실시간 문의',
           diagnosticChangeStep1: '1단계 선택 변경',
           diagnosticRestart: '진단 다시 시작하기',
+          diagnosticOther: '기타 / 잘 모르겠음',
+          diagnosticOtherDesc: '채팅으로 직접 설명해 주세요',
         }
       : {
           onlineStatus: 'Online • Ready to assist',
@@ -319,13 +323,15 @@ export default function ChatWidget({
           interestedCta: 'Interested in Further Corporate Advisory?',
           interestedDesc:
             'Consult your strategic goals and business challenges directly with Inpartner senior advisors.',
-          diagnosticBadge: 'Consultative Discovery Diagnostic',
+          diagnosticBadge: 'Help us understand your needs · 2 quick questions',
           diagnosticStep1: 'Step 1 of 2',
           diagnosticStep2: 'Step 2 of 2',
           diagnosticCompletedBadge: 'Preliminary Scoping Complete',
           diagnosticWaWithScoping: 'Fast-Track WhatsApp Discussion',
           diagnosticChangeStep1: 'Change Step 1 Choice',
           diagnosticRestart: 'Restart Diagnostic',
+          diagnosticOther: 'Other / not sure yet',
+          diagnosticOtherDesc: 'Describe your need directly in the chat',
         }
 
   // Inpartner Agent Configuration derived from active language
@@ -635,6 +641,10 @@ export default function ChatWidget({
     if (text.length > 2000) return
 
     const currentNeed = needCategory || selectedNeed || undefined
+    // Offer the diagnostic card only after the visitor has described a need
+    // (a picked service, or at least one earlier message), never on the first free-typed line.
+    const canOfferDiagnostic =
+      !!currentNeed || messages.some((m) => m.sender === 'user')
 
     const userMsg: ChatMessage = {
       id: `usr_${Date.now()}`,
@@ -763,9 +773,11 @@ export default function ChatWidget({
                     service: event.recommendedService,
                   })
                 }
-                const detectedPillar = detectDiagnosticPillar(
-                  event.intent || event.recommendedService || finalAnswer
-                )
+                const detectedPillar = canOfferDiagnostic
+                  ? detectDiagnosticPillar(
+                      event.intent || event.recommendedService || ''
+                    )
+                  : null
                 setMessages((prev) =>
                   prev.map((m) =>
                     m.id === botMsgId
@@ -813,9 +825,9 @@ export default function ChatWidget({
           trackEvent('service_viewed', { service: data.recommendedService })
         }
 
-        const detectedPillar = detectDiagnosticPillar(
-          data.intent || data.recommendedService || data.answer
-        )
+        const detectedPillar = canOfferDiagnostic
+          ? detectDiagnosticPillar(data.intent || data.recommendedService || '')
+          : null
         const botMsg: ChatMessage = {
           id: botMsgId,
           sender: 'bot',
@@ -961,7 +973,36 @@ export default function ChatWidget({
         pillar: pillarKey,
         scoping_summary: synthesis.scopingSummary,
       })
+
+      // Let the assistant respond to the visitor's choices instead of ending silently
+      handleSendMessage(
+        lang === 'ko'
+          ? `제 상황: ${s1Label} — ${optLabel}`
+          : lang === 'en'
+          ? `My situation: ${s1Label} — ${optLabel}`
+          : `Kebutuhan saya: ${s1Label} — ${optLabel}`
+      )
     }
+  }
+
+  const handleDismissDiagnostic = (
+    msgId: string,
+    pillarKey: DiagnosticPillarKey
+  ) => {
+    setMessages((prev) =>
+      prev.map((m) =>
+        m.id === msgId ? { ...m, diagnosticDismissed: true } : m
+      )
+    )
+    setActiveDiagnostic(null)
+    trackEvent('diagnostic_dismissed', { pillar: pillarKey })
+    handleSendMessage(
+      lang === 'ko'
+        ? '제 요구사항이 선택지에 없습니다. 직접 설명드려도 될까요?'
+        : lang === 'en'
+        ? "My need isn't listed in those options. Can I explain it directly?"
+        : 'Kebutuhan saya belum ada di pilihan tersebut. Boleh saya jelaskan langsung?'
+    )
   }
 
   const handleResetDiagnostic = (pillarKey: DiagnosticPillarKey) => {
@@ -971,6 +1012,12 @@ export default function ChatWidget({
     })
     trackEvent('diagnostic_reset', { pillar: pillarKey })
   }
+
+  // The discovery card lives on the first bot reply that carries a pillar, so it
+  // appears once per conversation and does not jump while the visitor fills it in.
+  const diagnosticAnchorId = messages.find(
+    (m) => m.sender === 'bot' && m.diagnosticPillar
+  )?.id
 
   if (!mounted) {
     if (embeddedMode) {
@@ -1344,18 +1391,6 @@ export default function ChatWidget({
                           </ServiceBadge>
                         )}
 
-                        {/* Official Sources */}
-                        {msg.sources &&
-                          msg.sources.length > 0 &&
-                          !msg.isStreaming && (
-                            <SourcesWrap>
-                              <span className="sources-label">{t.sources}</span>
-                              {msg.sources.map((s, idx) => (
-                                <SourceTag key={idx}>{s}</SourceTag>
-                              ))}
-                            </SourcesWrap>
-                          )}
-
                         {/* Timestamp & Realtime indicator */}
                         <MsgTimestamp sender={msg.sender}>
                           {msg.sender === 'bot' && msg.isStreaming ? (
@@ -1395,6 +1430,8 @@ export default function ChatWidget({
 
                       {/* Interactive Consultative Discovery Module */}
                       {msg.diagnosticPillar &&
+                        msg.id === diagnosticAnchorId &&
+                        !msg.diagnosticDismissed &&
                         !msg.isStreaming &&
                         (() => {
                           const tree = getDiagnosticTree(msg.diagnosticPillar)
@@ -1484,6 +1521,27 @@ export default function ChatWidget({
                                         </div>
                                       </DiagOptBtn>
                                     ))}
+                                    <DiagOptBtn
+                                      type="button"
+                                      onClick={() =>
+                                        handleDismissDiagnostic(
+                                          msg.id,
+                                          tree.pillarKey
+                                        )
+                                      }
+                                    >
+                                      <div className="diag-opt-icon">
+                                        <ChevronRight size={14} />
+                                      </div>
+                                      <div className="diag-opt-text-wrap">
+                                        <span className="diag-opt-title">
+                                          {t.diagnosticOther}
+                                        </span>
+                                        <span className="diag-opt-desc">
+                                          {t.diagnosticOtherDesc}
+                                        </span>
+                                      </div>
+                                    </DiagOptBtn>
                                   </div>
                                 </div>
                               )}
@@ -1543,6 +1601,27 @@ export default function ChatWidget({
                                         </div>
                                       </DiagOptBtn>
                                     ))}
+                                    <DiagOptBtn
+                                      type="button"
+                                      onClick={() =>
+                                        handleDismissDiagnostic(
+                                          msg.id,
+                                          tree.pillarKey
+                                        )
+                                      }
+                                    >
+                                      <div className="diag-opt-icon">
+                                        <ChevronRight size={14} />
+                                      </div>
+                                      <div className="diag-opt-text-wrap">
+                                        <span className="diag-opt-title">
+                                          {t.diagnosticOther}
+                                        </span>
+                                        <span className="diag-opt-desc">
+                                          {t.diagnosticOtherDesc}
+                                        </span>
+                                      </div>
+                                    </DiagOptBtn>
                                   </div>
                                 </div>
                               )}

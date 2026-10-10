@@ -56,12 +56,33 @@ export default async function handler(
       })
     }
 
+    // chatHistory is client-supplied: bound its size and shape before it reaches the model
+    const safeHistory: { sender: 'user' | 'bot'; text: string }[] = (
+      Array.isArray(chatHistory) ? chatHistory : []
+    )
+      .filter(
+        (m: any) =>
+          m &&
+          (m.sender === 'user' || m.sender === 'bot') &&
+          typeof m.text === 'string' &&
+          m.text.trim()
+      )
+      .slice(-20)
+      .map((m: any) => ({ sender: m.sender, text: m.text.slice(0, 2000) }))
+
+    const safeNeed =
+      typeof selectedNeed === 'string' && selectedNeed.trim()
+        ? selectedNeed.trim().slice(0, 200)
+        : undefined
+
     const session =
-      sessionId ||
+      (typeof sessionId === 'string' &&
+        /^[A-Za-z0-9_-]{1,100}$/.test(sessionId) &&
+        sessionId) ||
       `sess_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`
     const conversation = await getOrCreateConversationAsync(
       session,
-      selectedNeed
+      safeNeed
     )
 
     // Save user message to database
@@ -69,7 +90,7 @@ export default async function handler(
       conversation_id: conversation.id,
       sender: 'user',
       message: message.trim(),
-      intent: selectedNeed || undefined,
+      intent: safeNeed || undefined,
     })
 
     // Track analytics event: question_asked
@@ -77,15 +98,15 @@ export default async function handler(
       event_name: 'question_asked',
       session_id: session,
       conversation_id: conversation.id,
-      metadata: { query: message, selectedNeed },
+      metadata: { query: message, selectedNeed: safeNeed },
     }).catch(() => {})
 
     // Mode A: Non-streaming legacy mode (if stream === false)
     if (stream === false) {
       const aiResponse = await generateConsultationResponse(
         message,
-        chatHistory || [],
-        selectedNeed
+        safeHistory,
+        safeNeed
       )
 
       await updateConversationIntentAsync(conversation.id, aiResponse.intent)
@@ -131,8 +152,8 @@ export default async function handler(
 
     const generator = generateConsultationResponseStream(
       message,
-      chatHistory || [],
-      selectedNeed,
+      safeHistory,
+      safeNeed,
       true
     )
 

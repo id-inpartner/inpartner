@@ -47,3 +47,7 @@ next-env.d.ts
 
 # ide
 .vscode/
+
+# chatbot secrets & runtime data
+.env
+data/db.json

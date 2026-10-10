@@ -147,7 +147,9 @@ export default function ChatWidget({
       onClose()
     }
     if (typeof window !== 'undefined') {
-      window.parent?.postMessage({ type: 'inpartner_close_chat' }, '*')
+      const targetOrigin =
+        process.env.NEXT_PUBLIC_SITE_URL || window.location.origin
+      window.parent?.postMessage({ type: 'inpartner_close_chat' }, targetOrigin)
     }
   }
   const [sessionId, setSessionId] = useState('')
@@ -630,6 +632,7 @@ export default function ChatWidget({
   ) => {
     const text = (textToSend || inputMessage).trim()
     if (!text || isLoading || isStreaming) return
+    if (text.length > 2000) return
 
     const currentNeed = needCategory || selectedNeed || undefined
 
@@ -692,6 +695,7 @@ export default function ChatWidget({
         let botMessageCreated = false
         let accumulatedText = ''
         let botMetadata: Partial<ChatMessage> = {}
+        let streamErrored = false
 
         setIsStreaming(true)
 
@@ -750,6 +754,8 @@ export default function ChatWidget({
                     )
                   )
                 }
+              } else if (event.type === 'error') {
+                streamErrored = true
               } else if (event.type === 'done') {
                 const finalAnswer = event.fullAnswer || accumulatedText
                 if (event.recommendedService) {
@@ -783,6 +789,11 @@ export default function ChatWidget({
               console.warn('Failed to parse SSE chunk:', err)
             }
           }
+        }
+
+        // Server-side stream failure before any text: show the standard error bubble
+        if (streamErrored && !botMessageCreated) {
+          throw new Error('Chat stream error')
         }
 
         // Final safety check after stream ends: ensure isStreaming is marked false
@@ -827,7 +838,7 @@ export default function ChatWidget({
       }
     } catch (err: any) {
       if (err.name === 'AbortError') {
-        console.log('AI generation stopped by user')
+        // user stopped generation — no action needed
       } else {
         const errorMsg: ChatMessage = {
           id: `err_${Date.now()}`,
@@ -852,6 +863,10 @@ export default function ChatWidget({
           isStreaming: false,
         }
         setMessages((prev) => [...prev, errorMsg])
+        setTimeout(
+          () => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }),
+          50
+        )
       }
     } finally {
       setIsLoading(false)
@@ -1706,6 +1721,7 @@ export default function ChatWidget({
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder={agentConfig.inputPlaceholder}
                 disabled={isLoading || isStreaming}
+                maxLength={2000}
               />
               {isLoading || isStreaming ? (
                 <SendBtn
@@ -1846,6 +1862,10 @@ function renderInlineElements(content: string) {
 
     // Link: [label](url)
     const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/)
+    // Model output is untrusted: only allow safe URL schemes (blocks javascript:, data:, etc.)
+    if (linkMatch && !/^(https?:|mailto:|tel:)/i.test(linkMatch[2].trim())) {
+      return linkMatch[1]
+    }
     if (linkMatch) {
       return (
         <a

@@ -59,6 +59,8 @@ INTEGRITY RULES (STRICT):
 7. The visitor is already on the official website (inpartner.id). Never tell them to "visit our website" or link to inpartner.id.
 8. FORMATTING: Never output "###", "##", "---", or "* " bullets. Use **bold** sparingly, "• " or "1." for lists.`
 
+const GEMINI_MODEL_ID = 'gemini-3.5-flash-lite'
+
 export type AIStreamEvent =
   | {
       type: 'start'
@@ -324,15 +326,9 @@ export async function* generateConsultationResponseStream(
   if (geminiApiKey) {
     try {
       const genAI = new GoogleGenerativeAI(geminiApiKey)
-      const candidateModels = Array.from(
-        new Set(
-          [
-            process.env.GEMINI_MODEL,
-            'gemini-3.5-flash',
-            'gemini-3.8-flash',
-          ].filter(Boolean) as string[]
-        )
-      ).slice(0, 2)
+      // Locked to a single model on purpose (cost/latency); env cannot override it.
+      // If it fails, the offline grounded template below answers instead.
+      const candidateModels = [GEMINI_MODEL_ID]
 
       const contextText =
         retrievedChunks.length > 0
@@ -429,14 +425,9 @@ SECURITY:
           const model = genAI.getGenerativeModel({
             model: mName,
             systemInstruction,
-            // Gemini 3.x thinks by default: that spends the output budget (truncated
-            // replies) and delays the first token ~5s. Chat replies don't need it.
-            // thinkingConfig is not in this SDK version's types but is passed through.
-            generationConfig: {
-              temperature: 0.7,
-              maxOutputTokens: 2048,
-              thinkingConfig: { thinkingBudget: 0 },
-            } as any,
+            // Flash Lite does not think by default (fast first token), and it
+            // rejects thinkingBudget with 400, so no thinkingConfig here.
+            generationConfig: { temperature: 0.7, maxOutputTokens: 2048 },
           })
           const result = await model.generateContentStream(
             { contents },

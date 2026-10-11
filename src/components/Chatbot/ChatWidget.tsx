@@ -1758,7 +1758,7 @@ export default function ChatWidget({
                 {isLoading && !messages.some((m) => m.isStreaming) && (
                   <TypingRow>
                     <div className="bot-avatar-col">
-                      <ChatbotIcon size="xs" />
+                      <ChatbotIcon size="xs" state="thinking" />
                     </div>
                     <TypingBubble>
                       <TypingDot />

@@ -44,3 +44,10 @@ next-env.d.ts
 
 #storage
 /storage-path
+
+# ide
+.vscode/
+
+# chatbot secrets & runtime data
+.env
+data/db.json

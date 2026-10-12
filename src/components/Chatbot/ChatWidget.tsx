@@ -20,21 +20,7 @@ import {
   Check,
   ShieldCheck,
 } from 'lucide-react'
-import {
-  INPARTNER_CONFIG,
-  getWhatsAppUrl,
-  PROACTIVE_TRIGGER_CONFIG,
-} from '../../chatbot/lib/config'
-import {
-  NudgeTriggerType,
-  canShowProactiveNudge,
-  markNudgeDismissed,
-  markNudgeShown,
-  recordVisitorSession,
-  getNudgeMessage,
-} from '../../chatbot/lib/proactiveNudge'
-import { captureMarketingAttribution } from '../../chatbot/lib/attribution'
-import type { AttributionData } from '../../chatbot/lib/db'
+import { INPARTNER_CONFIG, getWhatsAppUrl } from '../../chatbot/lib/config'
 import ChatbotIcon from './ChatbotIcon'
 import {
   DiagnosticPillarKey,
@@ -87,7 +73,6 @@ import {
   BtnWa,
   FollowupWrap,
   FollowupChip,
-  TeaserCard,
   ChatFooter,
   InputForm,
   ChatInput,
@@ -152,15 +137,9 @@ export default function ChatWidget({
     }
   }
   const [sessionId, setSessionId] = useState('')
-  const [conversationId, setConversationId] = useState<string | null>(null)
   const [inputMessage, setInputMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [selectedNeed, setSelectedNeed] = useState<string | null>(null)
-  const [showTeaser, setShowTeaser] = useState(false)
-  const [nudgeType, setNudgeType] = useState<NudgeTriggerType>('dwell_time')
-  const [isReturningVisitor, setIsReturningVisitor] = useState(false)
-  const [hasUserInteracted, setHasUserInteracted] = useState(false)
-  const [attribution, setAttribution] = useState<AttributionData | null>(null)
   const [lang, setLang] = useState<'id' | 'en' | 'ko'>('id')
   const [copiedId, setCopiedId] = useState<string | null>(null)
 
@@ -396,11 +375,6 @@ export default function ChatWidget({
         }
       }
 
-      const savedConvId = localStorage.getItem(`inpartner_conv_id_${sess}`)
-      if (savedConvId) {
-        setConversationId(savedConvId)
-      }
-
       const savedNeed = localStorage.getItem(`inpartner_selected_need_${sess}`)
       if (savedNeed) {
         setSelectedNeed(savedNeed)
@@ -436,20 +410,6 @@ export default function ChatWidget({
     } catch {}
   }
 
-  const trackEvent = (eventName: string, metadata?: Record<string, any>) => {
-    if (!sessionId) return
-    fetch('/api/analytics', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        event_name: eventName,
-        session_id: sessionId,
-        conversation_id: conversationId,
-        metadata: { ...metadata, lang },
-      }),
-    }).catch(() => {})
-  }
-
   // Auto-save messages to localStorage
   useEffect(() => {
     if (!mounted || !sessionId) return
@@ -466,16 +426,6 @@ export default function ChatWidget({
       console.warn('Failed to save chat messages to localStorage:', err)
     }
   }, [messages, sessionId, mounted])
-
-  // Auto-save conversationId
-  useEffect(() => {
-    if (!mounted || !sessionId) return
-    try {
-      if (conversationId) {
-        localStorage.setItem(`inpartner_conv_id_${sessionId}`, conversationId)
-      }
-    } catch {}
-  }, [conversationId, sessionId, mounted])
 
   // Auto-save selectedNeed
   useEffect(() => {
@@ -506,110 +456,6 @@ export default function ChatWidget({
       console.warn('Failed to save active diagnostic to localStorage:', err)
     }
   }, [activeDiagnostic, sessionId, mounted])
-
-  // Initialize visitor session & return visitor recognition on mount
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const { isReturning } = recordVisitorSession(window.localStorage)
-        setIsReturningVisitor(isReturning)
-
-        // Capture marketing attribution telemetry (UTM parameters, referrer, landing page)
-        const attr = captureMarketingAttribution(
-          window.location.href,
-          document.referrer,
-          window.sessionStorage
-        )
-        setAttribution(attr)
-      } catch {}
-    }
-  }, [])
-
-  // Proactive Advisory Engagement & Exit-Intent Triggers (Issue #8)
-  useEffect(() => {
-    if (embeddedMode || isOpen || hasUserInteracted) return
-    if (!PROACTIVE_TRIGGER_CONFIG.enabled) return
-
-    const canTrigger = canShowProactiveNudge({
-      isOpen,
-      hasInteracted: hasUserInteracted,
-      sessionStorage:
-        typeof window !== 'undefined' ? window.sessionStorage : null,
-    })
-    if (!canTrigger) return
-
-    // 1. Dwell Time Trigger: Configured dwell time (default 25s; 10s for recognized return visitors)
-    const dwellSeconds = isReturningVisitor
-      ? PROACTIVE_TRIGGER_CONFIG.returnVisitorDwellSeconds
-      : PROACTIVE_TRIGGER_CONFIG.dwellTimeSeconds
-
-    const dwellTimer = setTimeout(() => {
-      const stillEligible = canShowProactiveNudge({
-        isOpen,
-        hasInteracted: hasUserInteracted,
-        sessionStorage:
-          typeof window !== 'undefined' ? window.sessionStorage : null,
-      })
-
-      if (stillEligible && !isOpen) {
-        setNudgeType(isReturningVisitor ? 'return_visitor' : 'dwell_time')
-        setShowTeaser(true)
-        markNudgeShown(
-          typeof window !== 'undefined' ? window.sessionStorage : null
-        )
-      }
-    }, dwellSeconds * 1000)
-
-    // 2. Desktop Exit-Intent Trigger: Detect cursor movement towards tab closure/address bar
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (!PROACTIVE_TRIGGER_CONFIG.exitIntentEnabled) return
-      // Exit intent condition: cursor moves towards top boundary of window (y <= 15) on desktop
-      if (
-        e.clientY <= 15 &&
-        typeof window !== 'undefined' &&
-        window.innerWidth >= 768
-      ) {
-        const eligibleForExit = canShowProactiveNudge({
-          isOpen,
-          hasInteracted: hasUserInteracted,
-          sessionStorage: window.sessionStorage,
-        })
-
-        if (eligibleForExit && !isOpen) {
-          setNudgeType('exit_intent')
-          setShowTeaser(true)
-          markNudgeShown(window.sessionStorage)
-        }
-      }
-    }
-
-    if (typeof document !== 'undefined') {
-      document.addEventListener('mouseleave', handleMouseLeave)
-    }
-
-    return () => {
-      clearTimeout(dwellTimer)
-      if (typeof document !== 'undefined') {
-        document.removeEventListener('mouseleave', handleMouseLeave)
-      }
-    }
-  }, [isOpen, embeddedMode, isReturningVisitor, hasUserInteracted])
-
-  // Track chatbot open
-  useEffect(() => {
-    if (isOpen && sessionId) {
-      fetch('/api/analytics', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event_name: 'chatbot_opened',
-          session_id: sessionId,
-          conversation_id: conversationId,
-          metadata: { page: window.location.pathname },
-        }),
-      }).catch(() => {})
-    }
-  }, [isOpen, sessionId, conversationId])
 
   // Scroll to bottom on new message (Instant during streaming to prevent animation jitter, smooth on complete)
   useEffect(() => {
@@ -661,12 +507,7 @@ export default function ChatWidget({
     setIsLoading(true)
 
     if (textToSend && needCategory) {
-      trackEvent('intent_selected', { intent: needCategory, query: textToSend })
     }
-    trackEvent('chat_message_sent', {
-      text_length: text.length,
-      need: currentNeed,
-    })
 
     const abortController = new AbortController()
     abortControllerRef.current = abortController
@@ -727,9 +568,6 @@ export default function ChatWidget({
               const event = JSON.parse(jsonStr)
 
               if (event.type === 'start') {
-                if (event.conversationId) {
-                  setConversationId(event.conversationId)
-                }
                 botMetadata = {
                   recommendedService: event.recommendedService,
                   sources: event.sources,
@@ -769,9 +607,6 @@ export default function ChatWidget({
               } else if (event.type === 'done') {
                 const finalAnswer = event.fullAnswer || accumulatedText
                 if (event.recommendedService) {
-                  trackEvent('service_viewed', {
-                    service: event.recommendedService,
-                  })
                 }
                 const detectedPillar = canOfferDiagnostic
                   ? detectDiagnosticPillar(
@@ -817,12 +652,7 @@ export default function ChatWidget({
       } else {
         // Fallback for non-streaming JSON responses
         const data = await res.json()
-        if (data.conversationId) {
-          setConversationId(data.conversationId)
-        }
-
         if (data.recommendedService) {
-          trackEvent('service_viewed', { service: data.recommendedService })
         }
 
         const detectedPillar = canOfferDiagnostic
@@ -905,7 +735,6 @@ export default function ChatWidget({
       .substring(2, 7)}`
     localStorage.setItem('inpartner_chat_session', newSess)
     setSessionId(newSess)
-    setConversationId(null)
     setSelectedNeed(null)
     setActiveDiagnostic(null)
     setMessages([])
@@ -932,12 +761,6 @@ export default function ChatWidget({
         currentStep: 2,
         step1ChoiceId: option.id,
         step1ChoiceLabel: optLabel,
-      })
-      trackEvent('diagnostic_step_completed', {
-        pillar: pillarKey,
-        step: 1,
-        choice_id: option.id,
-        choice_label: optLabel,
       })
     } else if (stepNum === 2) {
       const s1Id =
@@ -969,11 +792,6 @@ export default function ChatWidget({
 
       setActiveDiagnostic(completedState)
 
-      trackEvent('diagnostic_completed', {
-        pillar: pillarKey,
-        scoping_summary: synthesis.scopingSummary,
-      })
-
       // Let the assistant respond to the visitor's choices instead of ending silently
       handleSendMessage(
         lang === 'ko'
@@ -995,7 +813,6 @@ export default function ChatWidget({
       )
     )
     setActiveDiagnostic(null)
-    trackEvent('diagnostic_dismissed', { pillar: pillarKey })
     handleSendMessage(
       lang === 'ko'
         ? '제 요구사항이 선택지에 없습니다. 직접 설명드려도 될까요?'
@@ -1010,7 +827,6 @@ export default function ChatWidget({
       pillarKey,
       currentStep: 1,
     })
-    trackEvent('diagnostic_reset', { pillar: pillarKey })
   }
 
   // The discovery card lives on the first bot reply that carries a pillar, so it
@@ -1058,94 +874,25 @@ export default function ChatWidget({
       </Head>
       {!embeddedMode && !isOpen && (
         <LauncherWrap>
-          {/* Proactive Bubble Teaser */}
-          {showTeaser && (
-            <TeaserCard
+          {/* Launcher Row */}
+          <LauncherRow>
+            <PillBtn
               onClick={() => {
-                setShowTeaser(false)
-                setHasUserInteracted(true)
-                markNudgeDismissed(
-                  typeof window !== 'undefined' ? window.sessionStorage : null
-                )
                 setIsOpen(true)
               }}
             >
-              <div className="teaser-badge-row">
-                <div className="teaser-badge">
-                  <span className="teaser-pulse-dot" />
-                  <span>{getNudgeMessage(nudgeType, lang).badge}</span>
-                </div>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    setShowTeaser(false)
-                    markNudgeDismissed(
-                      typeof window !== 'undefined'
-                        ? window.sessionStorage
-                        : null
-                    )
-                  }}
-                  className="teaser-close-btn"
-                  aria-label="Close teaser"
-                >
-                  <X size={14} />
-                </button>
-              </div>
-
-              <h4 className="teaser-title">
-                {getNudgeMessage(nudgeType, lang).title}
-              </h4>
-              <p className="teaser-body">
-                {getNudgeMessage(nudgeType, lang).body}
-              </p>
-
-              <div className="teaser-footer">
-                <span className="teaser-cta">
-                  {getNudgeMessage(nudgeType, lang).cta}
-                </span>
-                <span className="teaser-subtext">
-                  {lang === 'id'
-                    ? 'Online 24/7 • Rahasia'
-                    : lang === 'ko'
-                    ? '24시간 상시 운영 • 비밀보장'
-                    : '24/7 • Confidential'}
-                </span>
-              </div>
-            </TeaserCard>
-          )}
-
-          {/* Launcher Row */}
-          <LauncherRow>
-            {!showTeaser && (
-              <PillBtn
-                onClick={() => {
-                  setShowTeaser(false)
-                  setHasUserInteracted(true)
-                  markNudgeDismissed(
-                    typeof window !== 'undefined' ? window.sessionStorage : null
-                  )
-                  setIsOpen(true)
-                }}
-              >
-                <span className="pill-dot" />
-                <span>
-                  {lang === 'id'
-                    ? 'Konsultasi '
-                    : lang === 'ko'
-                    ? '실시간 기업자문 '
-                    : 'Consult '}
-                  <strong>Inpartner AI</strong>
-                </span>
-              </PillBtn>
-            )}
+              <span className="pill-dot" />
+              <span>
+                {lang === 'id'
+                  ? 'Konsultasi '
+                  : lang === 'ko'
+                  ? '실시간 기업자문 '
+                  : 'Consult '}
+                <strong>Inpartner AI</strong>
+              </span>
+            </PillBtn>
             <LauncherBtn
               onClick={() => {
-                setShowTeaser(false)
-                setHasUserInteracted(true)
-                markNudgeDismissed(
-                  typeof window !== 'undefined' ? window.sessionStorage : null
-                )
                 setIsOpen(true)
               }}
               aria-label={`Open ${agentConfig.name}`}
@@ -1653,12 +1400,6 @@ export default function ChatWidget({
                                       )}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      onClick={() =>
-                                        trackEvent('contact_clicked', {
-                                          channel: 'whatsapp',
-                                          location: 'diagnostic_complete',
-                                        })
-                                      }
                                       className="diag-wa-btn"
                                     >
                                       <Phone size={14} />{' '}
@@ -1731,13 +1472,6 @@ export default function ChatWidget({
                             )}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={() =>
-                              trackEvent('contact_clicked', {
-                                channel: 'whatsapp',
-                                location: 'chat_cta',
-                                service: msg.recommendedService,
-                              })
-                            }
                           >
                             <Phone size={15} />
                             <span>

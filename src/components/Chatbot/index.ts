@@ -1,5 +1,5 @@
 /**
- * Inpartner AI Advisory Assistant & Lead Generation Engine
+ * Inpartner AI Advisory Assistant
  * Component Entrypoint for Host Integration
  */
 

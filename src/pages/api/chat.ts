@@ -1,11 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {
-  getOrCreateConversationAsync,
-  addMessageAsync,
-  updateConversationIntentAsync,
-  logAnalyticsEventAsync,
-} from '@/chatbot/lib/db'
-import {
   generateConsultationResponse,
   generateConsultationResponseStream,
   AIStreamEvent,
@@ -80,27 +74,6 @@ export default async function handler(
         /^[A-Za-z0-9_-]{1,100}$/.test(sessionId) &&
         sessionId) ||
       `sess_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`
-    const conversation = await getOrCreateConversationAsync(
-      session,
-      safeNeed
-    )
-
-    // Save user message to database
-    await addMessageAsync({
-      conversation_id: conversation.id,
-      sender: 'user',
-      message: message.trim(),
-      intent: safeNeed || undefined,
-    })
-
-    // Track analytics event: question_asked
-    logAnalyticsEventAsync({
-      event_name: 'question_asked',
-      session_id: session,
-      conversation_id: conversation.id,
-      metadata: { query: message, selectedNeed: safeNeed },
-    }).catch(() => {})
-
     // Mode A: Non-streaming legacy mode (if stream === false)
     if (stream === false) {
       const aiResponse = await generateConsultationResponse(
@@ -109,34 +82,8 @@ export default async function handler(
         safeNeed
       )
 
-      await updateConversationIntentAsync(conversation.id, aiResponse.intent)
-      await addMessageAsync({
-        conversation_id: conversation.id,
-        sender: 'bot',
-        message: aiResponse.answer,
-        intent: aiResponse.intent,
-        metadata: {
-          recommended_service: aiResponse.recommendedService,
-          sources: aiResponse.sources,
-          suggest_lead_capture: aiResponse.suggestLeadCapture,
-          quick_actions: aiResponse.quickActions,
-          provider: aiResponse.provider,
-          model: aiResponse.model,
-        },
-      })
-
-      if (aiResponse.isFallback) {
-        logAnalyticsEventAsync({
-          event_name: 'human_handoff',
-          session_id: session,
-          conversation_id: conversation.id,
-          metadata: { reason: 'fallback_unknown_query' },
-        }).catch(() => {})
-      }
-
       return res.status(200).json({
         sessionId: session,
-        conversationId: conversation.id,
         ...aiResponse,
       })
     }
@@ -157,58 +104,22 @@ export default async function handler(
       true
     )
 
-    let finalResponse: Extract<AIStreamEvent, { type: 'done' }> | null = null
-
     try {
       for await (const event of generator) {
         if (event.type === 'start') {
           const startData = {
             ...event,
             sessionId: session,
-            conversationId: conversation.id,
           }
           res.write(`data: ${JSON.stringify(startData)}\n\n`)
         } else if (event.type === 'chunk') {
           res.write(`data: ${JSON.stringify(event)}\n\n`)
         } else if (event.type === 'done') {
-          finalResponse = event
           const doneData = {
             ...event,
             sessionId: session,
-            conversationId: conversation.id,
           }
           res.write(`data: ${JSON.stringify(doneData)}\n\n`)
-        }
-      }
-
-      if (finalResponse) {
-        await addMessageAsync({
-          conversation_id: conversation.id,
-          sender: 'bot',
-          message: finalResponse.fullAnswer,
-          intent: finalResponse.intent,
-          metadata: {
-            recommended_service: finalResponse.recommendedService,
-            sources: finalResponse.sources,
-            suggest_lead_capture: finalResponse.suggestLeadCapture,
-            quick_actions: finalResponse.quickActions,
-            provider: finalResponse.provider,
-            model: finalResponse.model,
-          },
-        })
-
-        await updateConversationIntentAsync(
-          conversation.id,
-          finalResponse.intent
-        )
-
-        if (finalResponse.isFallback) {
-          logAnalyticsEventAsync({
-            event_name: 'human_handoff',
-            session_id: session,
-            conversation_id: conversation.id,
-            metadata: { reason: 'fallback_unknown_query' },
-          }).catch(() => {})
         }
       }
     } catch (streamErr: any) {

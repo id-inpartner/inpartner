@@ -143,52 +143,11 @@ export function checkRateLimit(
 }
 
 /**
- * Distributed fixed-window rate limiter with TTL.
- * Supports Upstash Redis REST when UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN
- * are configured, with automatic graceful fallback to the local runtime memory store.
+ * Async wrapper around the in-memory rate limiter (kept for the /api/chat call site).
  */
 export async function checkRateLimitAsync(
   req: any,
   options: RateLimitOptions
 ): Promise<RateLimitResult> {
-  const redisUrl = process.env.UPSTASH_REDIS_REST_URL
-  const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN
-
-  if (redisUrl && redisToken) {
-    try {
-      const ip = getClientIp(req)
-      const key = `ratelimit:${options.identifier || 'default'}:${ip}`
-      const windowSec = Math.ceil(options.windowMs / 1000)
-
-      // Fixed-window counter with TTL (EXPIRE NX ensures window is not reset on every hit)
-      const res = await fetch(`${redisUrl}/pipeline`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${redisToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify([
-          ['INCR', key],
-          ['EXPIRE', key, windowSec, 'NX'],
-        ]),
-      })
-
-      if (res.ok) {
-        const data = await res.json()
-        const currentCount = Number(data[0]?.result || 1)
-        const isAllowed = currentCount <= options.limit
-        const remaining = Math.max(0, options.limit - currentCount)
-
-        return {
-          isAllowed,
-          remaining,
-          resetInSeconds: windowSec,
-        }
-      }
-    } catch (err) {
-      console.warn('[Distributed Rate Limiter fallback to in-memory]', err)
-    }
-  }
-
   return checkRateLimit(req, options)
 }

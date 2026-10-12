@@ -176,7 +176,9 @@ export default function ChatbotIcon({
         const dy = e.clientY - (rect.top + rect.height / 2)
         const dist = Math.hypot(dx, dy) || 1
         const k = Math.min(dist / 120, 1)
-        pupils.style.transform = `translate(${((dx / dist) * 2.2 * k).toFixed(2)}px, ${((dy / dist) * 1.6 * k).toFixed(2)}px)`
+        pupils.style.transform = `translate(${((dx / dist) * 2.2 * k).toFixed(
+          2
+        )}px, ${((dy / dist) * 1.6 * k).toFixed(2)}px)`
       })
     }
     window.addEventListener('mousemove', onMove)
@@ -227,9 +229,29 @@ export default function ChatbotIcon({
 
         <g className="cb-head">
           {/* Antenna */}
-          <line x1="32" y1="14" x2="32" y2="7" stroke={accent} strokeWidth="2.2" strokeLinecap="round" />
-          <circle className="cb-antenna-bulb" cx="32" cy="6" r="5" fill={`url(#cb-glow-${uid})`} />
-          <circle className="cb-antenna-bulb" cx="32" cy="6" r="2.6" fill="#38BDF8" />
+          <line
+            x1="32"
+            y1="14"
+            x2="32"
+            y2="7"
+            stroke={accent}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+          <circle
+            className="cb-antenna-bulb"
+            cx="32"
+            cy="6"
+            r="5"
+            fill={`url(#cb-glow-${uid})`}
+          />
+          <circle
+            className="cb-antenna-bulb"
+            cx="32"
+            cy="6"
+            r="2.6"
+            fill="#38BDF8"
+          />
 
           {/* Headset earpieces */}
           <rect x="4" y="27" width="7" height="16" rx="3.5" fill={accent} />
@@ -243,24 +265,58 @@ export default function ChatbotIcon({
             height="40"
             rx="15"
             fill={headFill}
-            stroke={isLauncher ? 'rgba(2,132,199,0.25)' : 'rgba(125,211,252,0.25)'}
+            stroke={
+              isLauncher ? 'rgba(2,132,199,0.25)' : 'rgba(125,211,252,0.25)'
+            }
             strokeWidth="1"
           />
           {/* Sheen */}
-          <path d="M17 21 Q24 16.5 33 17" stroke="#FFFFFF" strokeOpacity={isLauncher ? 0.9 : 0.35} strokeWidth="2" strokeLinecap="round" />
+          <path
+            d="M17 21 Q24 16.5 33 17"
+            stroke="#FFFFFF"
+            strokeOpacity={isLauncher ? 0.9 : 0.35}
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
 
           {/* Visor */}
-          <rect x="15" y="23" width="34" height="24" rx="10" fill={isLauncher ? '#0B1E33' : '#06121F'} />
+          <rect
+            x="15"
+            y="23"
+            width="34"
+            height="24"
+            rx="10"
+            fill={isLauncher ? '#0B1E33' : '#06121F'}
+          />
 
           {/* Eyes */}
           <g className="cb-scan">
             <g className="cb-eyes-open">
               <g ref={pupilsRef} className="cb-pupils">
-                <ellipse className="cb-eye" cx="25" cy="33" rx="3.2" ry="4" fill={eyeColor} />
-                <ellipse className="cb-eye" cx="39" cy="33" rx="3.2" ry="4" fill={eyeColor} />
+                <ellipse
+                  className="cb-eye"
+                  cx="25"
+                  cy="33"
+                  rx="3.2"
+                  ry="4"
+                  fill={eyeColor}
+                />
+                <ellipse
+                  className="cb-eye"
+                  cx="39"
+                  cy="33"
+                  rx="3.2"
+                  ry="4"
+                  fill={eyeColor}
+                />
               </g>
             </g>
-            <g className="cb-eye-happy" stroke={eyeColor} strokeWidth="2.4" strokeLinecap="round">
+            <g
+              className="cb-eye-happy"
+              stroke={eyeColor}
+              strokeWidth="2.4"
+              strokeLinecap="round"
+            >
               <path d="M21.5 34 Q25 29 28.5 34" />
               <path d="M35.5 34 Q39 29 42.5 34" />
             </g>

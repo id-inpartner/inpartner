@@ -51,3 +51,4 @@ next-env.d.ts
 # chatbot secrets & runtime data
 .env
 data/db.json
+.env.production

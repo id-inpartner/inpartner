@@ -335,7 +335,9 @@ export async function* generateConsultationResponseStream(
           ? retrievedChunks
               .map(
                 (c, i) =>
-                  `[Source ${i + 1}: ${c.title} (${c.sourceFile})]\n${c.content}`
+                  `[Source ${i + 1}: ${c.title} (${c.sourceFile})]\n${
+                    c.content
+                  }`
               )
               .join('\n\n---\n\n')
           : 'No specific knowledge base entry matched this message.'
@@ -366,7 +368,10 @@ export async function* generateConsultationResponseStream(
       }
 
       const ctaGuidance = suggestLeadCapture
-        ? userTurnCount >= 1 || /harga|biaya|tarif|fee|cost|pricing|jadwal|schedule|meeting|kontak|contact|hubungi|proposal/i.test(userMessage)
+        ? userTurnCount >= 1 ||
+          /harga|biaya|tarif|fee|cost|pricing|jadwal|schedule|meeting|kontak|contact|hubungi|proposal/i.test(
+            userMessage
+          )
           ? 'The visitor shows interest in engaging. After answering, invite them naturally (in your own words, one sentence) to leave their contact via the consultation form in this chat or WhatsApp so a consultant can follow up. Do not use a scripted sentence.'
           : 'Do not push a consultation yet. Understand their situation first; a gentle mention is fine only if it flows naturally.'
         : 'Do not include a sales call-to-action in this reply.'

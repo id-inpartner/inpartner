@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={"../components/Navbar/index.tsx -> @components/AutoTranslate":{id:6474,files:["static/chunks/474.4bcd1946f67cce28.js"]}};
+self.__REACT_LOADABLE_MANIFEST={"../components/Chatbot/ChatbotMount.tsx -> ./ChatWidget":{id:6212,files:[]},"../components/Navbar/index.tsx -> @components/AutoTranslate":{id:6474,files:["static/chunks/474.4bcd1946f67cce28.js"]}};

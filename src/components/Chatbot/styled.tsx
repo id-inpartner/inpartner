@@ -125,52 +125,6 @@ export const LauncherRow = styled.div`
   pointer-events: auto;
 `
 
-export const PillBtn = styled.button`
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(12px);
-  color: #1e293b;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  padding: 0.625rem 1rem;
-  border-radius: 9999px;
-  box-shadow: 0 10px 25px -5px rgba(0, 30, 60, 0.12),
-    0 2px 6px -1px rgba(0, 112, 186, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.95);
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-
-  @media (min-width: 640px) {
-    display: flex;
-  }
-
-  .pill-dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 9999px;
-    background: #10b981;
-    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
-    animation: ${pulse} 2s infinite;
-  }
-
-  strong {
-    color: #0070ba;
-    font-weight: 700;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 32px -6px rgba(0, 30, 60, 0.16),
-      0 0 0 1px rgba(0, 112, 186, 0.35);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-`
-
 export const LauncherBtn = styled.button`
   position: relative;
   display: flex;

@@ -33,7 +33,6 @@ import {
   Root,
   LauncherWrap,
   LauncherRow,
-  PillBtn,
   LauncherBtn,
   ChatWindow,
   ChatHeader,
@@ -876,21 +875,6 @@ export default function ChatWidget({
         <LauncherWrap>
           {/* Launcher Row */}
           <LauncherRow>
-            <PillBtn
-              onClick={() => {
-                setIsOpen(true)
-              }}
-            >
-              <span className="pill-dot" />
-              <span>
-                {lang === 'id'
-                  ? 'Konsultasi '
-                  : lang === 'ko'
-                  ? '실시간 기업자문 '
-                  : 'Consult '}
-                <strong>Inpartner AI</strong>
-              </span>
-            </PillBtn>
             <LauncherBtn
               onClick={() => {
                 setIsOpen(true)

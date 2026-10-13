@@ -15,6 +15,9 @@ const nextConfig = {
       transform: '@fortawesome/free-solid-svg-icons/{{member}}',
       skipDefaultConversion: true,
     },
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+    },
   },
   images: {
     domains: [

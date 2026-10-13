@@ -6,7 +6,7 @@ import { Global } from '@emotion/react'
 import { SSRProvider } from 'react-bootstrap'
 import '@sass/index.scss'
 import { globalStyles } from '@components/GlobalStyle'
-import { ChatbotMount } from '@components/Chatbot'
+import ChatbotMount from '@components/Chatbot/ChatbotMount'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()

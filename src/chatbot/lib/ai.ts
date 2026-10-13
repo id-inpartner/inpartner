@@ -61,7 +61,6 @@ INTEGRITY RULES (STRICT):
 
 export const GEMINI_PRIMARY_MODEL = 'gemini-3.5-flash-lite'
 export const GEMINI_FALLBACK_MODEL = 'gemini-3.1-flash-lite'
-const GEMINI_MODEL_ID = GEMINI_PRIMARY_MODEL
 
 export type AIStreamEvent =
   | {
@@ -333,10 +332,9 @@ export async function* generateConsultationResponseStream(
       // Backup: gemini-3.1-flash-lite (seamless failover if 3.5 hits temporary throttling)
       const configuredPrimary =
         process.env.GEMINI_MODEL_NAME || GEMINI_PRIMARY_MODEL
-      const candidateModels = [
-        configuredPrimary,
-        GEMINI_FALLBACK_MODEL,
-      ].filter((m, i, arr) => m && arr.indexOf(m) === i)
+      const candidateModels = [configuredPrimary, GEMINI_FALLBACK_MODEL].filter(
+        (m, i, arr) => m && arr.indexOf(m) === i
+      )
 
       const contextText =
         retrievedChunks.length > 0

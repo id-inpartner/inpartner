@@ -59,7 +59,8 @@ INTEGRITY RULES (STRICT):
 7. The visitor is already on the official website (inpartner.id). Never tell them to "visit our website" or link to inpartner.id.
 8. FORMATTING: Never output "###", "##", "---", or "* " bullets. Use **bold** sparingly, "• " or "1." for lists.`
 
-const GEMINI_MODEL_ID = 'gemini-3.5-flash-lite'
+export const GEMINI_PRIMARY_MODEL = 'gemini-3.5-flash-lite'
+export const GEMINI_FALLBACK_MODEL = 'gemini-3.1-flash-lite'
 
 export type AIStreamEvent =
   | {
@@ -326,9 +327,14 @@ export async function* generateConsultationResponseStream(
   if (geminiApiKey) {
     try {
       const genAI = new GoogleGenerativeAI(geminiApiKey)
-      // Locked to a single model on purpose (cost/latency); env cannot override it.
-      // If it fails, the offline grounded template below answers instead.
-      const candidateModels = [GEMINI_MODEL_ID]
+      // High-efficiency models with 500 RPD & 15 RPM limits on Google AI Studio
+      // Primary: gemini-3.5-flash-lite (fastest, high quota)
+      // Backup: gemini-3.1-flash-lite (seamless failover if 3.5 hits temporary throttling)
+      const configuredPrimary =
+        process.env.GEMINI_MODEL_NAME || GEMINI_PRIMARY_MODEL
+      const candidateModels = [configuredPrimary, GEMINI_FALLBACK_MODEL].filter(
+        (m, i, arr) => m && arr.indexOf(m) === i
+      )
 
       const contextText =
         retrievedChunks.length > 0

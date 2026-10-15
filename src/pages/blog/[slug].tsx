@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import Navbar from '@components/Navbar'
@@ -10,6 +11,60 @@ import type { PlainPost, Post } from '@containers/Post/types'
 const Page: NextPage<IndexProps> = ({ post, related }) => {
   const router = useRouter()
   const isKo = router.locale === 'ko'
+
+  // Reader Tracking to Inpartner Article Generator Analytics
+  useEffect(() => {
+    if (!post?.id || typeof window === 'undefined') return
+
+    const trackApiUrl =
+      process.env.NEXT_PUBLIC_GENERATOR_TRACKING_URL ||
+      'https://carylon-nondesigned-angeles.ngrok-free.dev/inpartner/api/analytics/track'
+
+    let sessionId = localStorage.getItem('inp_sid')
+    if (!sessionId) {
+      sessionId =
+        Math.random().toString(36).substring(2) + Date.now().toString(36)
+      localStorage.setItem('inp_sid', sessionId)
+    }
+
+    const postTitle = post.title?.rendered
+      ? post.title.rendered.replace(/<[^>]+>/g, '').trim()
+      : undefined
+
+    // 1. Record Pageview
+    fetch(trackApiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        wordpress_post_id: post.id,
+        article_title: postTitle,
+        event_type: 'view',
+        session_id: sessionId,
+        referrer: document.referrer || '',
+      }),
+    }).catch(() => {})
+
+    // 2. Active Tab Reading Heartbeat (every 10s)
+    let readingSeconds = 0
+    const interval = setInterval(() => {
+      if (!document.hidden) {
+        readingSeconds += 10
+        fetch(trackApiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            wordpress_post_id: post.id,
+            article_title: postTitle,
+            event_type: 'reading_heartbeat',
+            reading_seconds: readingSeconds,
+            session_id: sessionId,
+          }),
+        }).catch(() => {})
+      }
+    }, 10000)
+
+    return () => clearInterval(interval)
+  }, [post?.id])
 
   if (!post) {
     return null

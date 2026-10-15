@@ -2,7 +2,7 @@ import { CardLink as Card } from '@components/Card'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { FC } from 'react'
-import format from 'date-fns/format'
+import { format } from 'date-fns'
 import { breakpoints } from '@components/GlobalStyle'
 import type { Post } from './types'
 

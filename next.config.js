@@ -8,9 +8,6 @@ const nextConfig = {
     'react-bootstrap': {
       transform: 'react-bootstrap/{{member}}',
     },
-    'date-fns': {
-      transform: 'date-fns/{{member}}',
-    },
     '@fortawesome/free-solid-svg-icons': {
       transform: '@fortawesome/free-solid-svg-icons/{{member}}',
       skipDefaultConversion: true,

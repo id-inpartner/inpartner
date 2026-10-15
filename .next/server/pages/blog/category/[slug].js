@@ -20,9 +20,8 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime_ = __webpack_require__(5193);
 // EXTERNAL MODULE: ./src/components/Button/index.ts
 var Button = __webpack_require__(3900);
-// EXTERNAL MODULE: external "date-fns/format"
-var format_ = __webpack_require__(4384);
-var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+// EXTERNAL MODULE: external "date-fns"
+var external_date_fns_ = __webpack_require__(4146);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
@@ -241,7 +240,7 @@ const Index = ({ category , posts , categories  })=>{
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "dste",
-                                        children: first.modified ? format_default()(new Date(first.modified), "d MMMM yyyy") : ""
+                                        children: first.modified ? (0,external_date_fns_.format)(new Date(first.modified), "d MMMM yyyy") : ""
                                     })
                                 ]
                             })
@@ -278,7 +277,7 @@ const Index = ({ category , posts , categories  })=>{
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "dste",
-                                                children: second.modified ? format_default()(new Date(second.modified), "d MMMM yyyy") : ""
+                                                children: second.modified ? (0,external_date_fns_.format)(new Date(second.modified), "d MMMM yyyy") : ""
                                             })
                                         ]
                                     })
@@ -312,7 +311,7 @@ const Index = ({ category , posts , categories  })=>{
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "dste",
-                                                children: third.modified ? format_default()(new Date(third.modified), "d MMMM yyyy") : ""
+                                                children: third.modified ? (0,external_date_fns_.format)(new Date(third.modified), "d MMMM yyyy") : ""
                                             })
                                         ]
                                     })
@@ -354,7 +353,7 @@ const Index = ({ category , posts , categories  })=>{
                                         }),
                                         /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                             className: "dste",
-                                            children: it.modified ? format_default()(new Date(it.modified), "d MMMM yyyy") : ""
+                                            children: it.modified ? (0,external_date_fns_.format)(new Date(it.modified), "d MMMM yyyy") : ""
                                         })
                                     ]
                                 })
@@ -531,10 +530,10 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ 4384:
+/***/ 4146:
 /***/ ((module) => {
 
-module.exports = require("date-fns/format");
+module.exports = require("date-fns");
 
 /***/ }),
 

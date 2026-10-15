@@ -263,9 +263,8 @@ var Card = __webpack_require__(9740);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
-// EXTERNAL MODULE: external "date-fns/format"
-var format_ = __webpack_require__(4384);
-var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+// EXTERNAL MODULE: external "date-fns"
+var external_date_fns_ = __webpack_require__(4146);
 ;// CONCATENATED MODULE: ./src/containers/Home/Blog/Item.tsx
 
 
@@ -305,7 +304,7 @@ const Item_Item = ({ data  })=>{
                         children: data.title.rendered
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Dates, {
-                        children: format_default()(new Date(data.modified), "d MMMM yyyy")
+                        children: (0,external_date_fns_.format)(new Date(data.modified), "d MMMM yyyy")
                     })
                 ]
             })
@@ -1685,10 +1684,10 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ 4384:
+/***/ 4146:
 /***/ ((module) => {
 
-module.exports = require("date-fns/format");
+module.exports = require("date-fns");
 
 /***/ }),
 

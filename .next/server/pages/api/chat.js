@@ -20,6 +20,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "IT": () => (/* binding */ generateConsultationResponse),
 /* harmony export */   "YW": () => (/* binding */ generateConsultationResponseStream)
 /* harmony export */ });
+/* unused harmony exports GEMINI_PRIMARY_MODEL, GEMINI_FALLBACK_MODEL */
 /* harmony import */ var _intent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3770);
 /* harmony import */ var _rag__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8179);
 /* harmony import */ var _google_generative_ai__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3023);
@@ -69,7 +70,8 @@ INTEGRITY RULES (STRICT):
 6. Company figures (90+ projects, 70+ clients, 10+ foreign clients) may be cited only when relevant, attributed to the INPARTNER 2026 Company Profile.
 7. The visitor is already on the official website (inpartner.id). Never tell them to "visit our website" or link to inpartner.id.
 8. FORMATTING: Never output "###", "##", "---", or "* " bullets. Use **bold** sparingly, "• " or "1." for lists.`;
-const GEMINI_MODEL_ID = "gemini-3.5-flash-lite";
+const GEMINI_PRIMARY_MODEL = "gemini-3.5-flash-lite";
+const GEMINI_FALLBACK_MODEL = "gemini-3.1-flash-lite";
 async function* generateConsultationResponseStream(userMessage, chatHistory = [], selectedNeed, simulateTyping = true) {
     const query = (selectedNeed ? `${selectedNeed}: ` : "") + userMessage;
     const { intent , confidence  } = (0,_intent__WEBPACK_IMPORTED_MODULE_0__/* .detectIntent */ .H)(query);
@@ -189,11 +191,14 @@ async function* generateConsultationResponseStream(userMessage, chatHistory = []
     if (geminiApiKey) {
         try {
             const genAI = new _google_generative_ai__WEBPACK_IMPORTED_MODULE_2__.GoogleGenerativeAI(geminiApiKey);
-            // Locked to a single model on purpose (cost/latency); env cannot override it.
-            // If it fails, the offline grounded template below answers instead.
+            // High-efficiency models with 500 RPD & 15 RPM limits on Google AI Studio
+            // Primary: gemini-3.5-flash-lite (fastest, high quota)
+            // Backup: gemini-3.1-flash-lite (seamless failover if 3.5 hits temporary throttling)
+            const configuredPrimary = process.env.GEMINI_MODEL_NAME || GEMINI_PRIMARY_MODEL;
             const candidateModels = [
-                GEMINI_MODEL_ID
-            ];
+                configuredPrimary,
+                GEMINI_FALLBACK_MODEL
+            ].filter((m, i, arr)=>m && arr.indexOf(m) === i);
             const contextText = retrievedChunks.length > 0 ? retrievedChunks.map((c, i)=>`[Source ${i + 1}: ${c.title} (${c.sourceFile})]\n${c.content}`).join("\n\n---\n\n") : "No specific knowledge base entry matched this message.";
             const stripTags = (s)=>s.replace(/<\/?(?:system_directives|user_query|context_knowledge_base|chat_history|conversation_guidance)>/gi, "");
             const cleanUserMessage = stripTags(userMessage.trim());

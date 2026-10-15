@@ -18,9 +18,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "@emotion/react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(5193);
-// EXTERNAL MODULE: external "date-fns/format"
-var format_ = __webpack_require__(4384);
-var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+// EXTERNAL MODULE: external "date-fns"
+var external_date_fns_ = __webpack_require__(4146);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
@@ -98,7 +97,7 @@ const Index = ({ post , related  })=>{
                         }
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Meta, {
-                        children: format_default()(new Date(post.modified), "d MMMM yyyy")
+                        children: (0,external_date_fns_.format)(new Date(post.modified), "d MMMM yyyy")
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(Content, {
                         dangerouslySetInnerHTML: {
@@ -177,15 +176,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5193);
 /* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9104);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9154);
-/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7507);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9648);
-/* harmony import */ var _containers_Post__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(333);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__]);
-([_components_Navbar__WEBPACK_IMPORTED_MODULE_2__, axios__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9104);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9154);
+/* harmony import */ var _components_SEO__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7507);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9648);
+/* harmony import */ var _containers_Post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(333);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_6__]);
+([_components_Navbar__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -194,8 +196,56 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 const Page = ({ post , related  })=>{
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
     const isKo = router.locale === "ko";
+    // Reader Tracking to Inpartner Article Generator Analytics
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        if (!post?.id || "undefined" === "undefined") return;
+        const trackApiUrl = process.env.NEXT_PUBLIC_GENERATOR_TRACKING_URL || "https://carylon-nondesigned-angeles.ngrok-free.dev/inpartner/api/analytics/track";
+        let sessionId = localStorage.getItem("inp_sid");
+        if (!sessionId) {
+            sessionId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+            localStorage.setItem("inp_sid", sessionId);
+        }
+        const postTitle = post.title?.rendered ? post.title.rendered.replace(/<[^>]+>/g, "").trim() : undefined;
+        // 1. Record Pageview
+        fetch(trackApiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                wordpress_post_id: post.id,
+                article_title: postTitle,
+                event_type: "view",
+                session_id: sessionId,
+                referrer: document.referrer || ""
+            })
+        }).catch(()=>{});
+        // 2. Active Tab Reading Heartbeat (every 10s)
+        let readingSeconds = 0;
+        const interval = setInterval(()=>{
+            if (!document.hidden) {
+                readingSeconds += 10;
+                fetch(trackApiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        wordpress_post_id: post.id,
+                        article_title: postTitle,
+                        event_type: "reading_heartbeat",
+                        reading_seconds: readingSeconds,
+                        session_id: sessionId
+                    })
+                }).catch(()=>{});
+            }
+        }, 10000);
+        return ()=>clearInterval(interval);
+    }, [
+        post?.id
+    ]);
     if (!post) {
         return null;
     }
@@ -229,7 +279,7 @@ const Page = ({ post , related  })=>{
     };
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_SEO__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
                 title: pageTitle,
                 description: pageDescription,
                 ogImage: ogImg,
@@ -240,19 +290,19 @@ const Page = ({ post , related  })=>{
                 section: section,
                 schemaData: articleSchema
             }),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {}),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Post__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_containers_Post__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                 post: post,
                 related: related
             }),
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {})
+            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {})
         ]
     });
 };
 const getServerSideProps = async ({ query  })=>{
     const { slug  } = query;
     try {
-        const posts = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
+        const posts = await axios__WEBPACK_IMPORTED_MODULE_6__["default"].get(`${process.env.BLOG_URL}wp-json/wp/v2/posts`, {
             params: {
                 slug,
                 related: 3,
@@ -270,7 +320,7 @@ const getServerSideProps = async ({ query  })=>{
         const post = posts.data[0];
         let related = [];
         try {
-            const relatedRes = await axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(`${process.env.BLOG_URL}wp-json/yarpp/v1/related/${post.id}`, {
+            const relatedRes = await axios__WEBPACK_IMPORTED_MODULE_6__["default"].get(`${process.env.BLOG_URL}wp-json/yarpp/v1/related/${post.id}`, {
                 params: {
                     limit: 3,
                     _fields: "id,title,slug,categories,_embedded,_links.wp:featuredmedia,_links.wp:term",
@@ -338,10 +388,10 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ 4384:
+/***/ 4146:
 /***/ ((module) => {
 
-module.exports = require("date-fns/format");
+module.exports = require("date-fns");
 
 /***/ }),
 

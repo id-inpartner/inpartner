@@ -26,9 +26,8 @@ const faMagnifyingGlass_namespaceObject = require("@fortawesome/free-solid-svg-i
 const faSpinner_namespaceObject = require("@fortawesome/free-solid-svg-icons/faSpinner");
 // EXTERNAL MODULE: external "@fortawesome/react-fontawesome"
 var react_fontawesome_ = __webpack_require__(7197);
-// EXTERNAL MODULE: external "date-fns/format"
-var format_ = __webpack_require__(4384);
-var format_default = /*#__PURE__*/__webpack_require__.n(format_);
+// EXTERNAL MODULE: external "date-fns"
+var external_date_fns_ = __webpack_require__(4146);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
@@ -112,7 +111,7 @@ const Item = ({ data  })=>{
                             }
                         }),
                         /*#__PURE__*/ jsx_runtime_.jsx(Dates, {
-                            children: format_default()(new Date(data.modified), "d MMMM yyyy")
+                            children: (0,external_date_fns_.format)(new Date(data.modified), "d MMMM yyyy")
                         })
                     ]
                 })
@@ -428,7 +427,7 @@ const Index = ({ posts =[] , categories =[]  })=>{
                                             }),
                                             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                 className: "dste",
-                                                children: first.modified ? format_default()(new Date(first.modified), "d MMMM yyyy") : ""
+                                                children: first.modified ? (0,external_date_fns_.format)(new Date(first.modified), "d MMMM yyyy") : ""
                                             })
                                         ]
                                     })
@@ -465,7 +464,7 @@ const Index = ({ posts =[] , categories =[]  })=>{
                                                     }),
                                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                         className: "dste",
-                                                        children: second.modified ? format_default()(new Date(second.modified), "d MMMM yyyy") : ""
+                                                        children: second.modified ? (0,external_date_fns_.format)(new Date(second.modified), "d MMMM yyyy") : ""
                                                     })
                                                 ]
                                             })
@@ -499,7 +498,7 @@ const Index = ({ posts =[] , categories =[]  })=>{
                                                     }),
                                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                         className: "dste",
-                                                        children: third.modified ? format_default()(new Date(third.modified), "d MMMM yyyy") : ""
+                                                        children: third.modified ? (0,external_date_fns_.format)(new Date(third.modified), "d MMMM yyyy") : ""
                                                     })
                                                 ]
                                             })
@@ -541,7 +540,7 @@ const Index = ({ posts =[] , categories =[]  })=>{
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "dste",
-                                        children: fourth.modified ? format_default()(new Date(fourth.modified), "d MMMM yyyy") : ""
+                                        children: fourth.modified ? (0,external_date_fns_.format)(new Date(fourth.modified), "d MMMM yyyy") : ""
                                     })
                                 ]
                             })
@@ -575,7 +574,7 @@ const Index = ({ posts =[] , categories =[]  })=>{
                                     }),
                                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                         className: "dste",
-                                        children: fifth.modified ? format_default()(new Date(fifth.modified), "d MMMM yyyy") : ""
+                                        children: fifth.modified ? (0,external_date_fns_.format)(new Date(fifth.modified), "d MMMM yyyy") : ""
                                     })
                                 ]
                             })
@@ -740,10 +739,10 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 
-/***/ 4384:
+/***/ 4146:
 /***/ ((module) => {
 
-module.exports = require("date-fns/format");
+module.exports = require("date-fns");
 
 /***/ }),
 
